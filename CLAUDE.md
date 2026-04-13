@@ -1,278 +1,90 @@
 # Petit Train Carnac — Project Brain
 
 ## Stack
+- Next.js 16.2.3, TypeScript, Tailwind CSS v4
+- Vercel deploy via GitHub push (branch: main)
+- Figma MCP (local desktop plugin), file key: `wTd0GeN1Y2HWGw3nkii3t8`
 
-- Next.js 16.2.3 App Router, TypeScript, Tailwind CSS v4
-- Deployed on Vercel via GitHub push (branch: main)
-- Figma Professional plan + Figma MCP server (local desktop plugin)
-- Plugin: gbasin/figma-to-react for generation + visual validation
-
-## Installed Libraries (exact import paths)
-
+## Libraries (exact import paths)
 ```
-motion@12.38.0        → import { useAnimate } from 'motion/react'
-                        import type { DOMKeyframesDefinition, AnimationOptions } from 'motion'
-clsx@2.1.1            → import { type ClassValue, clsx } from 'clsx'
-tailwind-merge@3.5.0  → import { twMerge } from 'tailwind-merge'
-oxlint@1.16.0         → npx oxlint --fix <file>
-playwright@1.59.1     → dev dependency, chromium installed
+motion@12.38.0     → import { useAnimate } from 'motion/react'
+                     import type { DOMKeyframesDefinition, AnimationOptions } from 'motion'
+clsx@2.1.1         → import { type ClassValue, clsx } from 'clsx'
+tailwind-merge     → import { twMerge } from 'tailwind-merge'
+oxlint             → npx oxlint --fix <file>
 ```
 
-## File Structure (established — do not reorganise)
-
+## File Structure
 ```
 app/
-  globals.css           ← @import "../styles/figma-tokens.css" THEN @import "tailwindcss"
-  layout.tsx            ← Navbar + Footer rendered here; persists across all pages
-  page.tsx              ← imports sections only, no logic/styles
+  globals.css       ← @import "../styles/figma-tokens.css" THEN @import "tailwindcss"
+  layout.tsx        ← Navbar + Footer here — never re-add in page files
+  page.tsx          ← section imports only, no logic/styles
 components/
-  fancy/image/
-    image-trail.tsx     ← fancycomponents.dev ImageTrail (DO NOT rewrite)
-  layout/
-    Navbar.tsx          ← "use client"; sticky; scroll shadow; nav-link; btn-primary/secondary
-  sections/             ← one file per Figma section (all 12 homepage sections done ✅)
-  ui/
-    ScrollReveal.tsx    ← IntersectionObserver reveal; direction=up/left/right; delay prop
-lib/
-  utils.ts              ← cn() helper: twMerge(clsx(inputs))
-styles/
-  figma-tokens.css      ← CSS vars: --color-primary, --color-bg, --color-bg-dark,
-                           --color-text, --color-text-muted
-public/figma-assets/    ← all images/SVGs served here; URL prefix: /figma-assets/
+  fancy/image/image-trail.tsx   ← DO NOT rewrite
+  layout/Navbar.tsx             ← "use client"; sticky; scroll shadow
+  sections/                     ← one file per Figma section
+  ui/ScrollReveal.tsx           ← IntersectionObserver reveal; direction=up/left/right; delay prop
+lib/utils.ts                    ← cn() = twMerge(clsx(inputs))
+styles/figma-tokens.css         ← CSS vars: --color-primary, --color-bg, --color-bg-dark, --color-text, --color-text-muted
+public/figma-assets/            ← all images/SVGs; URL prefix /figma-assets/
 ```
 
-## Architecture Rules
-
-- app/ → page composition only, zero styling logic
-- components/ui/ → reusable primitives (Button, Card, Badge, SectionTitle, Container) — not yet built
-- components/sections/ → one component per Figma frame
-- components/fancy/ → third-party animation components (keep as-is)
-- lib/ → utility functions only
-- styles/ → global CSS and design tokens
-
-## Figma-to-Code Workflow (figma-to-react skill)
-
-1. Run `$SKILL_DIR/scripts/status.sh` to find current step
-2. Arm hook: `rm -rf /tmp/figma-to-react && mkdir -p /tmp/figma-to-react/captures && touch /tmp/figma-to-react/capture-active`
-3. Write config.json to `/tmp/figma-to-react/config.json` with componentDir, assetDir, screens, screenNames
-4. Spawn sub-agent with fileKey `wTd0GeN1Y2HWGw3nkii3t8` + nodeId, componentName, componentPath
-5. Sub-agent calls `mcp__plugin_figma_figma__get_metadata` then `mcp__plugin_figma_figma__get_design_context`
-6. Sub-agent writes the .tsx file, runs `npx tsc --noEmit`
-7. Parent verifies file, updates progress.md, done
-
-Figma file key: `wTd0GeN1Y2HWGw3nkii3t8`
-
-## Section Build Order (homepage — all done ✅)
-
-| #   | Section               | Node ID | Status  |
-| --- | --------------------- | ------- | ------- |
-| 1   | Hero                  | 8:783   | ✅ done |
-| 2   | Souvenirs             | 49:2977 | ✅ done |
-| 3   | Features              | 1:13279 | ✅ done |
-| 4   | Group Booking CTA     | 1:13740 | ✅ done |
-| 5   | Practical Information | 49:2694 | ✅ done |
-| 6   | Prices                | 1:13387 | ✅ done |
-| 7   | Reviews               | 1:13645 | ✅ done |
-| 8   | FAQ                   | 1:13767 | ✅ done |
-| 9   | Our Location          | 1:13453 | ✅ done |
-| 10  | Routes Timeline       | 1:13507 | ✅ done |
-| 11  | Locations             | 49:2226 | ✅ done |
-| 12  | Footer                | 33:832  | ✅ done |
+## Figma-to-Code Workflow
+1. Arm hook: `rm -rf /tmp/figma-to-react && mkdir -p /tmp/figma-to-react/captures && touch /tmp/figma-to-react/capture-active`
+2. Write config.json to `/tmp/figma-to-react/config.json`
+3. Spawn sub-agent: call `get_metadata` then `get_design_context`
+4. Sub-agent writes .tsx, runs `npx tsc --noEmit`
+5. Parent verifies, updates `docs/progress.md`
 
 ## Page Build Order (remaining)
+| # | Page | Node ID | Route | Status |
+|---|---|---|---|---|
+| 1 | Informations | 1:13939 | app/informations/page.tsx | ✅ done |
+| 2 | Prices and Tickets | 1:17365 | app/prices/page.tsx | next |
+| 3 | Routes | 1:23354 | app/routes/page.tsx | pending |
+| 4 | FAQs | 1:20537 | app/faqs/page.tsx | pending |
+| 5 | Book | 1:24145 | app/book/page.tsx | pending |
+| 6 | Privatization | 1:17070 | app/privatization/page.tsx | pending |
+| 7 | Careers | 1:23842 | app/careers/page.tsx | pending |
 
-| #   | Page               | Node ID | Route                      | Status  |
-| --- | ------------------ | ------- | -------------------------- | ------- |
-| 1   | Informations       | 1:13939 | app/informations/page.tsx  | pending |
-| 2   | Prices and Tickets | 1:17365 | app/prices/page.tsx        | pending |
-| 3   | Routes             | 1:23354 | app/routes/page.tsx        | pending |
-| 4   | FAQs               | 1:20537 | app/faqs/page.tsx          | pending |
-| 5   | Book               | 1:24145 | app/book/page.tsx          | pending |
-| 6   | Privatization      | 1:17070 | app/privatization/page.tsx | pending |
-| 7   | Careers            | 1:23842 | app/careers/page.tsx       | pending |
+**One page per session. Finish, commit, end session.**
 
-Build one page per session. Navbar + Footer are in app/layout.tsx — never re-add to page files.
-
-## Component Patterns That Work
-
-### Section skeleton
-
-```tsx
-"use client"; // only if using hooks or browser APIs
-
-import Image from "next/image";
-import Link from "next/link";
-
-export default function SectionName() {
-  return <section className="...">...</section>;
-}
-```
-
-### cn() utility (always use for conditional classes)
-
-```tsx
-import { cn } from "@/lib/utils";
-// Usage: cn('base-class', condition && 'conditional-class', className)
-```
-
-### ImageTrail (mouse cursor trail effect)
-
-```tsx
-import ImageTrail, {
-  ImageTrailItem,
-} from "@/components/fancy/image/image-trail";
-
-// CRITICAL: container must have explicit height — min-h-screen or a fixed height.
-// h-full collapses to 0 inside a min-h-screen parent → onMouseMove never fires.
-<ImageTrail
-  threshold={80}
-  intensity={0.3}
-  repeatChildren={2}
-  keyframes={{ opacity: [0, 1, 1, 0], scale: [0.9, 1, 1, 0.9] }}
-  keyframesOptions={{ duration: 1.5, times: [0, 0.05, 0.85, 1] }}
-  className="min-h-screen" // ← must be explicit, not h-full
->
-  {items.map((item, i) => (
-    <ImageTrailItem key={i} className="rotate-2">
-      {" "}
-      // slight rotation per card
-      {/* content */}
-    </ImageTrailItem>
-  ))}
-</ImageTrail>;
-```
-
-### Background image with overlay
-
-```tsx
-<section className="relative overflow-hidden">
-  <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-    <Image src="/figma-assets/photo.jpg" alt="" fill className="object-cover" />
-    <div className="absolute inset-0 bg-black/50" />
-  </div>
-  <div className="relative z-10 ...">{/* content */}</div>
-</section>
-```
-
-### Section label (repeating pattern across all sections)
-
-```tsx
-<div className="flex items-center gap-2">
-  <div className="relative shrink-0 w-[19px] h-[19px]">
-    <Image
-      src="/figma-assets/icon-train.svg"
-      alt=""
-      fill
-      className="object-contain"
-      aria-hidden="true"
-    />
-  </div>
-  <p className="font-['Libre_Baskerville',serif] italic text-white text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
-    Section Title
-  </p>
-</div>
-```
-
-### Typography classes (from Figma)
-
-- Large headings: `font-['Libre_Baskerville',serif] text-[48px] leading-[1.15] tracking-[-3.36px]`
+## Typography (from Figma)
+- Headings: `font-['Libre_Baskerville',serif] text-[48px] leading-[1.15] tracking-[-3.36px]`
 - Section labels: `font-['Libre_Baskerville',serif] italic text-base tracking-[-0.48px]`
-- Body text: `font-['Inter',sans-serif] text-[18px] leading-[1.2] tracking-[-0.54px]`
-- Button text: `font-['Roboto',sans-serif] text-base font-medium tracking-[-0.64px]`
+- Body: `font-['Inter',sans-serif] text-[18px] leading-[1.2] tracking-[-0.54px]`
+- Buttons: `font-['Roboto',sans-serif] text-base font-medium tracking-[-0.64px]`
 
-### CTA button (cream style)
-
+## CTA Button (cream)
 ```tsx
-<Link
-  href="#"
-  className="inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#f7f7f0] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
->
-  Button label
+<Link href="#" className="inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#f7f7f0] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap">
+  Label
 </Link>
 ```
 
 ## Asset Conventions
+- All assets → `public/figma-assets/`
+- SVG icons: `<Image fill className="object-contain">` inside a sized `relative` div
+- Never `<img>` — always `next/image`
 
-- All assets go in `public/figma-assets/`
-- Placeholder images: `https://picsum.photos/seed/[name]/[w]/[h]` (unoptimized)
-- Placeholder src prop names must match future real asset: `/figma-assets/souvenir-1.jpg`
-- SVG icons: use Next.js `<Image fill className="object-contain">` inside a sized div
-- Never use `<img>` tags — always `next/image`
-
-## Known Pitfalls
-
-1. **h-full collapses to 0** inside a `min-h-screen` parent → mouse events never fire.
-   Fix: use `min-h-screen` (or explicit px height) on the interactive container itself.
-
-2. **pointer-events on overlay divs** — always add `pointer-events-none` to absolute
-   overlay/decorative divs that sit above content, or they'll block mouse interaction.
-
-3. **ImageTrailItem positioning** — items start `hidden` (display:none). The component
-   uses `querySelectorAll('.image-trail-item')` + motion's `animate()` to reveal them.
-   Do NOT add `display:block` or override visibility manually.
-
-4. **next/image with `fill`** — parent div must have `position: relative` and explicit
-   width + height (or use `relative overflow-hidden w-[Xpx] h-[Xpx]`).
-
-5. **Tailwind v4** — no `tailwind.config.js`; configuration is in CSS via `@theme`.
-   Arbitrary values still work: `bg-[#5a4a6e]`, `text-[48px]`, etc.
-
-6. **`use client` directive** — required for any component using hooks (useState,
-   useEffect, useAnimate, event handlers). Omit it for pure presentational components.
-
-7. **Server component importing "use client" component** — valid in Next.js App Router.
-   A server component (no "use client") CAN import and render a client component
-   (ScrollReveal, FAQ accordion, Navbar). Do not add "use client" to the parent just
-   because a child has it.
-
-8. **CSS accordion: use grid-template-rows trick, not max-height** — `max-height`
-   animations stutter and require guessing a max value. Use `.faq-answer-wrap` /
-   `.faq-answer-wrap.open` with `grid-template-rows: 0fr → 1fr` (already in globals.css).
-   Inner content needs `.faq-answer-inner` with `overflow: hidden`.
-
-9. **Infinite scroll columns: content must exceed container height** — for `reviews-track-down/up`
-   to loop seamlessly, the total height of one set of cards must be >= container height
-   (`h-[560px]`). If a column has few/short cards, add a gallery image or taller card
-   to that column to ensure enough content.
-
-10. **ScrollReveal breaks if parent has `overflow: hidden` without explicit height** —
-    IntersectionObserver fires immediately if the element is clipped before entering
-    viewport. Ensure ScrollReveal wrappers are inside scrollable containers, not clipped ones.
-
-11. **maskImage / WebkitMaskImage must be inline styles** — Tailwind cannot generate
-    `mask-image` with complex gradient values. This is the only approved exception to
-    the no-inline-styles rule. Use: `style={{ maskImage: "...", WebkitMaskImage: "..." }}`
-
-## Design Tokens (styles/figma-tokens.css)
-
-```css
---color-primary: #5a4a6e (Souvenirs purple bg) --color-bg: #f7f7f0
-  (cream — buttons, polaroid cards) --color-bg-dark: #3f3053
-  --color-text: #181d27 --color-text-muted: #535862;
-```
+## Known Pitfalls (project-specific only)
+- **CSS accordion**: use `grid-template-rows: 0fr → 1fr`, not `max-height`. Already in globals.css as `.faq-answer-wrap` / `.faq-answer-wrap.open`; inner content needs `.faq-answer-inner overflow-hidden`.
+- **Infinite scroll columns**: total height of one card set must be ≥ container height (`h-[560px]`) for seamless loop.
+- **maskImage**: must be inline styles — only approved exception to no-inline-styles rule. `style={{ maskImage: "...", WebkitMaskImage: "..." }}`
+- **Figma MCP**: decorative SVG vectors can cause 100k+ token bloat — select sections individually, never the whole page.
 
 ## Git Rules
+- Branch: main (direct commits approved)
+- One commit per completed section: `feat: add [name] section`
+- Never auto-commit/push without explicit approval
+- Stage specific files only — never `git add -A`
 
-- Working branch: main (direct commits approved)
-- One commit per completed and reviewed section; commit message: `feat: add [name] section`
-- Never auto-commit or auto-push without explicit approval
-- Stage specific files only — never `git add -A` (would catch .claude/, Desktop/)
+## Token Efficiency
+- Surgical edits only (Edit tool). Only full rewrite if > 60% of file changes.
+- `/compact` after every 2 major tasks.
+- Never run Playwright unless explicitly requested.
+- After each session: update `docs/progress.md`.
 
-## Token Efficiency Rules
-
-- Always read this file before starting
-- Inspect only files relevant to the current task
-- Never scan the full codebase unless explicitly asked for an audit
-- After each session: update docs/progress.md
-- **Surgical edits only** — always use targeted line-level edits (Edit tool with old_string/new_string)
-  instead of full component rewrites. Only rewrite if explicitly asked to rebuild, or if > 60% of
-  the file changes. Rewriting a 150-line component to change 3 class names wastes 5-10x tokens.
-- **Run /compact after every 2 major tasks**, not after each small edit. Major task = new component,
-  full section rebuild, new page. Minor task = class swap, prop change, bug fix.
-- **Never run Playwright visual validation** unless explicitly requested by the user. It burns context
-  and the user reviews changes directly in the browser.
-- **One page per session** — inner pages only. Do not batch multiple pages. Finish, commit, end session.
-
-**Routing convention:** Each page lives at `app/[route]/page.tsx`.
-Shared layout (Navbar + Footer) goes in `app/layout.tsx`.
-Page components import section components from `components/sections/`.
+## Error Handling
+Never silently swallow errors. Fallbacks must be disclosed. Priority: works correctly > visible fallback > clear error message > never silent degradation.

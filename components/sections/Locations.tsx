@@ -48,10 +48,10 @@ export default function Locations() {
               Locations
             </p>
           </div>
-          <h2 className="font-['Libre_Baskerville',serif] text-[48px] text-[#181d27] text-center leading-[1.1] tracking-[-3.36px] max-w-[570px] [text-wrap:balance]">
+          <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] text-center leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[570px] [text-wrap:balance] break-words">
             Discover our other Petit Train tours in Morbihan
           </h2>
-          <p className="font-['Roboto',sans-serif] text-[#535862] text-[16px] text-center leading-[1.2] tracking-[-0.48px] w-[600px]">
+          <p className="font-['Roboto',sans-serif] text-[#535862] text-[16px] text-center leading-[1.2] tracking-[-0.48px] max-w-[600px] w-full">
             Extend your visit to Morbihan by discovering other destinations
             aboard our Petit Trains. Each tour offers a different perspective on
             the region, from historic cities to spectacular coastal landscapes,

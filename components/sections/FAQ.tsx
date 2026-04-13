@@ -106,12 +106,11 @@ export default function FAQ() {
               />
             </div>
             <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
-              Frequently Asked Questions
+              FAQ
             </p>
           </div>
-          <h2 className="font-['Libre_Baskerville',serif] text-[48px] text-[#181d27] leading-[1.1] tracking-[-3.36px]">
-            How to access the{" "}
-            <em className="text-[#58496c]">Petit Train de Carnac</em>
+          <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] [text-wrap:balance] break-words">
+            Frequently <em className="text-[#58496c]">Asked Questions</em>
           </h2>
           <p className="font-['Roboto',sans-serif] text-[#535862] text-[16px] leading-[1.2] tracking-[-0.48px]">
             Find clear answers to the most common questions about the Petit

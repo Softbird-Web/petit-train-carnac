@@ -1,5 +1,15 @@
+"use client";
+
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+
+const CarnacMap = dynamic(() => import("@/components/ui/CarnacMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full rounded-2xl bg-[#e9eaeb] animate-pulse" />
+  ),
+});
 
 const locationItems = [
   {
@@ -24,18 +34,11 @@ const locationItems = [
 
 export default function OurLocation() {
   return (
-    <section className="bg-[#f7f7f0] py-28">
+    <section className="bg-[#f7f7f0] py-28 isolate">
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 w-full flex flex-col-reverse lg:flex-row items-start lg:items-center gap-12 lg:gap-20">
-        {/* Photo — bottom on mobile, left on desktop */}
-        <div className="flex-1 relative h-[400px] lg:h-[845px]">
-          <div className="relative w-full h-full rounded-2xl overflow-hidden">
-            <Image
-              src="/figma-assets/our-location.jpg"
-              alt="Carnac menhirs area — departure point for the Petit Train"
-              fill
-              className="object-cover"
-            />
-          </div>
+        {/* Map — bottom on mobile, left on desktop */}
+        <div className="w-full h-[400px] lg:flex-1 lg:self-stretch lg:h-auto lg:min-h-[560px] rounded-2xl overflow-hidden shadow-md">
+          <CarnacMap />
         </div>
 
         {/* Content — top on mobile, right on desktop */}
@@ -57,7 +60,7 @@ export default function OurLocation() {
           </div>
 
           {/* Heading */}
-          <h2 className="font-['Libre_Baskerville',serif] text-[48px] text-[#181d27] leading-[1.1] tracking-[-3.36px] max-w-[472px]">
+          <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[472px] break-words">
             How to access the{" "}
             <em className="text-[#58496c]">Petit Train de Carnac</em>
           </h2>

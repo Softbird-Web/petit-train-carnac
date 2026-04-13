@@ -50,7 +50,7 @@ export default function Features() {
                 Tour Overview
               </p>
             </div>
-            <h2 className="font-['Libre_Baskerville',serif] text-[48px] text-[#181d27] leading-[1.15] tracking-[-3.36px] max-w-[575px]">
+            <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] leading-[1.15] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[575px] [text-wrap:balance] break-words">
               A simple and enjoyable way to explore Carnac
             </h2>
           </div>
@@ -73,51 +73,49 @@ export default function Features() {
         </div>
       </div>
 
-      {/* Features 2×2 grid + flush-right photo */}
-      <div className="w-full flex flex-col lg:flex-row items-stretch">
-        {/* Left: 2×2 feature grid — aligned to max-w container left edge */}
-        <div className="flex-1 flex lg:justify-end px-5 xl:px-0">
-          <div className="w-full lg:max-w-[640px] lg:pr-12">
-            <div className="grid grid-cols-2 gap-x-8 gap-y-12">
-              {features.map((feature, index) => (
-                <ScrollReveal key={feature.title} delay={index * 70}>
-                  <div className="flex flex-col gap-5 items-start h-full">
-                    {/* Icon box */}
-                    <div className="relative shrink-0 w-16 h-16 rounded-[10px] border border-[#e9eaeb] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] overflow-hidden">
-                      <div
+      {/* Features 2×2 grid + photo — inside 1280px container */}
+      <div className="w-full max-w-[1280px] mx-auto px-5 xl:px-0 flex flex-col lg:flex-row items-stretch gap-12">
+        {/* Left: 2×2 feature grid */}
+        <div className="flex-1">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-12">
+            {features.map((feature, index) => (
+              <ScrollReveal key={feature.title} delay={index * 70}>
+                <div className="flex flex-col gap-5 items-start h-full">
+                  {/* Icon box */}
+                  <div className="relative shrink-0 w-16 h-16 rounded-[10px] border border-[#e9eaeb] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] overflow-hidden">
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-0 bg-[#58496c] pointer-events-none rounded-[10px]"
+                    />
+                    <div className="absolute inset-[15px]">
+                      <Image
+                        src={feature.icon}
+                        alt=""
+                        fill
+                        className="object-contain"
                         aria-hidden="true"
-                        className="absolute inset-0 bg-[#58496c] pointer-events-none rounded-[10px]"
                       />
-                      <div className="absolute inset-[15px]">
-                        <Image
-                          src={feature.icon}
-                          alt=""
-                          fill
-                          className="object-contain"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_0px_0px_1px_rgba(10,13,18,0.18),inset_0px_-2px_0px_0px_rgba(10,13,18,0.05)]" />
                     </div>
-
-                    {/* Text */}
-                    <div className="flex flex-col gap-2">
-                      <p className="font-['Inter',sans-serif] font-semibold text-[20px] text-[#181d27] leading-[1.5] tracking-[-0.8px]">
-                        {feature.title}
-                      </p>
-                      <p className="font-['Inter',sans-serif] text-base text-[#535862] leading-6">
-                        {feature.description}
-                      </p>
-                    </div>
+                    <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_0px_0px_1px_rgba(10,13,18,0.18),inset_0px_-2px_0px_0px_rgba(10,13,18,0.05)]" />
                   </div>
-                </ScrollReveal>
-              ))}
-            </div>
+
+                  {/* Text */}
+                  <div className="flex flex-col gap-2">
+                    <p className="font-['Inter',sans-serif] font-semibold text-[20px] text-[#181d27] leading-[1.5] tracking-[-0.8px]">
+                      {feature.title}
+                    </p>
+                    <p className="font-['Inter',sans-serif] text-base text-[#535862] leading-6">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
 
-        {/* Right: Large photo — flush to right viewport edge */}
-        <div className="hidden lg:block flex-1 relative min-h-[560px] rounded-tl-2xl rounded-bl-2xl overflow-hidden">
+        {/* Right: photo — inside container, rounded all corners */}
+        <div className="hidden lg:block flex-1 relative min-h-[560px] rounded-2xl overflow-hidden">
           <Image
             src="/figma-assets/features-photo.jpg"
             alt="Scenic view from the Petit Train de Carnac"

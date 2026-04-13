@@ -31,16 +31,55 @@ const reviews = [
     name: "B Ked.",
     text: "I think this was a beautiful trip around Carnac. I definitely recommend this to people who are coming to Carnac and want to learn about it!",
   },
+  {
+    id: "sophie",
+    name: "Sophie M.",
+    text: "A lovely experience with the whole family. The train is comfortable and the driver was very friendly. A perfect way to discover Carnac's famous menhirs without all the walking!",
+  },
+  {
+    id: "david",
+    name: "David R.",
+    text: "We did the tour on a sunny afternoon in July — absolutely worth it. The multilingual commentary is excellent and the route takes you to all the key sites. Highly recommended for first-time visitors to Carnac.",
+  },
+  {
+    id: "anneclaire",
+    name: "Anne-Claire B.",
+    text: "Charming little train! Our children loved every minute of it and learned so much about the standing stones. The audio guide is clear and engaging. We will definitely come back next summer.",
+  },
 ];
 
 const galleryImages = [
   {
-    src: "/figma-assets/review-gallery-1.jpg",
-    alt: "Petit Train de Carnac on the route",
+    src: "/figma-assets/testimonial-img-3.jpg",
+    alt: "Scenic view from the Petit Train de Carnac",
   },
   {
     src: "/figma-assets/review-gallery-2.jpg",
     alt: "Carnac menhirs landscape",
+  },
+  {
+    src: "/figma-assets/testimonial-img-1.jpg",
+    alt: "Visitor aboard the Petit Train de Carnac",
+  },
+  {
+    src: "/figma-assets/testimonial-img-2.jpg",
+    alt: "Family enjoying the Carnac tour",
+  },
+  {
+    src: "/figma-assets/testimonial-img-3.jpg",
+    alt: "Scenic view from the Petit Train de Carnac",
+  },
+  {
+    src: "/figma-assets/stop-1.jpg",
+    alt: "Petit Train stop at Carnac menhirs",
+  },
+  {
+    src: "/figma-assets/stop-2.jpg",
+    alt: "Petit Train stop at the beach",
+  },
+  {
+    src: "/figma-assets/stop-3.jpg",
+    alt: "Petit Train stop at La Trinité harbour",
   },
 ];
 
@@ -127,25 +166,30 @@ function Column({ items, direction, duration, className = "" }: ColumnProps) {
   );
 }
 
-// Col 1: Walter + gallery-1 + Marc  (~609px per half, direction down)
 const col1: TrackItem[] = [
   { kind: "review", index: 0 },
   { kind: "gallery", index: 0 },
   { kind: "review", index: 3 },
+  { kind: "gallery", index: 2 },
+  { kind: "review", index: 6 },
 ];
 
-// Col 2: Dom (tall) + Carine + Judit  (~724px per half, direction up)
 const col2: TrackItem[] = [
   { kind: "review", index: 1 },
+  { kind: "gallery", index: 3 },
   { kind: "review", index: 2 },
   { kind: "review", index: 4 },
+  { kind: "gallery", index: 5 },
+  { kind: "review", index: 7 },
 ];
 
-// Col 3: BKed + gallery-2 + Marc  (~631px per half, direction down)
 const col3: TrackItem[] = [
   { kind: "review", index: 5 },
   { kind: "gallery", index: 1 },
-  { kind: "review", index: 3 },
+  { kind: "review", index: 8 },
+  { kind: "gallery", index: 4 },
+  { kind: "gallery", index: 6 },
+  { kind: "gallery", index: 7 },
 ];
 
 export default function Reviews() {
@@ -169,11 +213,11 @@ export default function Reviews() {
             </p>
           </div>
 
-          <h2 className="font-['Libre_Baskerville',serif] text-[#f7f7f0] text-[48px] text-center leading-[1.1] tracking-[-3.36px] w-[410px]">
+          <h2 className="font-['Libre_Baskerville',serif] text-[#f7f7f0] text-[32px] sm:text-[40px] md:text-[48px] text-center leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[410px] w-full [text-wrap:balance] break-words">
             What visitors say about <em>the train?</em>
           </h2>
 
-          <p className="font-['Roboto',sans-serif] text-[#f7f7f0] text-[16px] text-center leading-[1.2] tracking-[-0.48px] w-[570px]">
+          <p className="font-['Roboto',sans-serif] text-[#f7f7f0] text-[16px] text-center leading-[1.2] tracking-[-0.48px] max-w-[570px] w-full">
             <strong>The Petit Train de Carnac</strong> has a rating over{" "}
             <a href="https://www.google.com/maps/search/Petit+Train+de+Carnac" target="_blank" rel="noopener noreferrer" className="text-[#d8b800] underline">4.7 on Google</a>,
             with over 6,000 reviews, making it one of the most popular touristic

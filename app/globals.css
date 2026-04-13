@@ -13,11 +13,17 @@ video {
   max-width: 100%;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* ── Scroll-reveal system ───────────────────────────────────── */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal.from-left {
@@ -43,7 +49,8 @@ video {
 .btn-primary {
   position: relative;
   overflow: hidden;
-  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .btn-primary::after {
@@ -85,7 +92,8 @@ video {
 
 /* ── Button hover — secondary (outlined) ───────────────────── */
 .btn-secondary {
-  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
     background-color 0.22s;
 }
 .btn-secondary:hover {
@@ -117,7 +125,9 @@ video {
 
 /* ── Footer link hover ──────────────────────────────────────── */
 .footer-link {
-  transition: opacity 0.2s, transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 0.2s,
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .footer-link:hover {
   opacity: 0.75;
@@ -126,7 +136,8 @@ video {
 
 /* ── Card hover ─────────────────────────────────────────────── */
 .card-hover {
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .card-hover:hover {
@@ -136,7 +147,9 @@ video {
 
 /* ── Social icon hover ──────────────────────────────────────── */
 .social-icon {
-  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s;
+  transition:
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.2s;
 }
 .social-icon:hover {
   transform: translateY(-3px);

@@ -23,10 +23,10 @@ const infoCards: { id: string; photo: string; title: string; description: ReactN
     title: "Departure",
     description: (
       <>
-        Tours depart from the <strong>Place de l&apos;Église</strong> in
-        Carnac-Ville. The stop is clearly signposted and easy to find in
-        the centre of town. No pre-booking required for individual
-        visitors.
+        Tours depart from the <strong>Ménec car park</strong> in Carnac,
+        directly in front of the Maison des Mégalithes. The stop is
+        clearly signposted and easy to reach. No pre-booking required
+        for individual visitors.
       </>
     ),
   },
@@ -78,7 +78,7 @@ export default function PracticalInfo() {
               Information
             </p>
           </div>
-          <h2 className="font-['Libre_Baskerville',serif] text-[48px] text-[#181d27] leading-[1.15] tracking-[-3.36px] max-w-[575px] w-full">
+          <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] leading-[1.15] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[575px] w-full break-words">
             Practical Information
           </h2>
           <p className="font-['Inter',sans-serif] text-[18px] text-[#535862] leading-[1.2] tracking-[-0.54px]">

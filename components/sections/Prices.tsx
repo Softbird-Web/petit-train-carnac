@@ -23,7 +23,7 @@ export default function Prices() {
           src="/figma-assets/prices-bg.jpg"
           alt=""
           fill
-          className="object-cover"
+          className="object-cover invert"
         />
       </div>
 
@@ -44,10 +44,10 @@ export default function Prices() {
               Prices
             </p>
           </div>
-          <h2 className="font-['Libre_Baskerville',serif] text-[48px] text-[#f7f7f0] leading-[1.1] tracking-[-3.36px] w-[581px]">
+          <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#f7f7f0] leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[581px] w-full [text-wrap:balance] break-words">
             An affordable adventure for the whole family
           </h2>
-          <p className="font-['Roboto',sans-serif] text-[#f7f7f0] text-[16px] leading-[1.2] tracking-[-0.48px] w-[551px]">
+          <p className="font-['Roboto',sans-serif] text-[#f7f7f0] text-[16px] leading-[1.2] tracking-[-0.48px] max-w-[551px] w-full">
             From solo explorers to large tribes, find the perfect rate for your
             visit. Take advantage of our special pricing for children and
             families.
@@ -58,11 +58,11 @@ export default function Prices() {
         <div className="relative flex flex-col lg:flex-row gap-8 items-start">
           {/* Individual Tickets */}
           <ScrollReveal direction="left">
-            <div className="bg-[#f7f7f0] flex flex-col w-[371px] h-[317px] p-6 relative">
+            <div className="bg-[#f7f7f0] flex flex-col w-full max-w-[371px] h-[317px] p-6 relative">
               <div className="flex items-center gap-2.5 mb-3">
                 <div className="relative shrink-0 w-6 h-6">
                   <Image
-                    src="/figma-assets/icon-ticket.svg"
+                    src="/figma-assets/PurpleCashIcon.svg"
                     alt=""
                     fill
                     className="object-contain"
@@ -109,7 +109,7 @@ export default function Prices() {
 
           {/* Group Booking */}
           <ScrollReveal direction="right">
-            <div className="bg-[#58496c] border border-[rgba(247,247,240,0.15)] flex flex-col w-[371px] h-[317px] p-6 relative">
+            <div className="bg-[#58496c] border border-[rgba(247,247,240,0.15)] flex flex-col w-full max-w-[371px] h-[317px] p-6 relative">
               <div className="flex items-center gap-2.5 mb-3">
                 <div className="relative shrink-0 w-6 h-6">
                   <Image

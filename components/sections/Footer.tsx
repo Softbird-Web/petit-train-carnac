@@ -33,7 +33,7 @@ export default function Footer() {
       <div className="relative w-full overflow-hidden">
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
           <Image
-            src="/figma-assets/hero-image.jpg"
+            src="/figma-assets/FooterBackground.jpg"
             alt=""
             fill
             className="object-cover object-center"
@@ -43,7 +43,7 @@ export default function Footer() {
         <div className="relative z-10 w-full max-w-[1280px] mx-auto px-5 xl:px-0 py-16">
           <div className="flex flex-col lg:flex-row gap-8 items-start">
             <div className="flex flex-col gap-8 max-w-[570px]">
-              <p className="font-['Libre_Baskerville',serif] text-[#f7f7f0] text-[40px] leading-[1.15] tracking-[-2.8px]">
+              <p className="font-['Libre_Baskerville',serif] text-[#f7f7f0] text-[28px] sm:text-[34px] md:text-[40px] leading-[1.15] tracking-[-1.3px] sm:tracking-[-2px] md:tracking-[-2.8px] break-words">
                 Ready to discover Carnac in a simple and enjoyable way?
               </p>
               <div className="flex flex-col gap-8 items-start">
@@ -53,17 +53,8 @@ export default function Footer() {
                 <div className="flex gap-3 items-center flex-wrap">
                   <Link
                     href="/book"
-                    className="btn-primary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#f7f7f0] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
+                    className="btn-primary inline-flex items-center h-[45px] px-[22px] bg-[#f7f7f0] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
                   >
-                    <div className="relative shrink-0 w-5 h-5">
-                      <Image
-                        src="/figma-assets/icon-ticket.svg"
-                        alt=""
-                        fill
-                        className="object-contain"
-                        aria-hidden="true"
-                      />
-                    </div>
                     Book your tour
                   </Link>
                   <Link
@@ -163,7 +154,16 @@ export default function Footer() {
       <div className="w-full max-w-[1280px] mx-auto px-5 xl:px-0">
         <div className="border-t border-[rgba(233,234,235,0.2)] pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 flex-wrap">
           <p className="font-['Inter',sans-serif] text-white text-base leading-6 whitespace-nowrap">
-            © 2026 Built by Softbird. All rights reserved.
+            © 2026 Built by{" "}
+            <a
+              href="https://www.softbird.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-white transition-colors"
+            >
+              Softbird
+            </a>
+            . All rights reserved.
           </p>
           <div className="flex gap-6 items-center">
             {socialIcons.map((icon) => (

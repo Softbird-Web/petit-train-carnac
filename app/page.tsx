@@ -9,7 +9,6 @@ import FAQ from '@/components/sections/FAQ'
 import OurLocation from '@/components/sections/OurLocation'
 import RoutesTimeline from '@/components/sections/RoutesTimeline'
 import Locations from '@/components/sections/Locations'
-import Footer from '@/components/sections/Footer'
 
 export default function Page() {
   return (
@@ -25,7 +24,6 @@ export default function Page() {
       <GroupBookingCTA />
       <Locations />
       <FAQ />
-      <Footer />
     </main>
   )
 }
