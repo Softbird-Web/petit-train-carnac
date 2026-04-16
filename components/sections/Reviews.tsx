@@ -4,82 +4,82 @@ const reviews = [
   {
     id: "walter",
     name: "Walter H.",
-    text: "The Menhirs are much more impressive than anticipated and the area is lovely. The audio is well put together and informative. More than an hour well spent.",
+    text: "Les menhirs sont bien plus impressionnants qu'on ne le pense, et le cadre est magnifique. Le commentaire audio est bien construit et instructif. Plus d'une heure vraiment bien passée.",
   },
   {
     id: "dom",
     name: "Dom L.",
-    text: "It was existential and out of body. All was pretty so so until we reached the megaliths at which I was overtaken by a spirit of wonder and wellness. At some point I was bathed in a bright white light and I felt my spirit leave my body. I became aware of 1000's of beings surrounding me, asking questions in tongues I'd never heard of. Then I woke up in the back of the train on its way back to the car park. Didn't expect all that for 8 euros. Well worth it I'd say.",
+    text: "C'était une expérience existentielle et hors du commun. Tout était assez banal jusqu'à ce que nous atteignions les mégalithes, où j'ai été envahi par un sentiment d'émerveillement et de bien-être. À un moment, j'ai été baigné d'une lumière blanche et j'ai senti mon âme quitter mon corps. Je me suis retrouvé entouré de milliers d'êtres me posant des questions dans des langues inconnues. Puis je me suis réveillé à l'arrière du train, sur le chemin du retour. Tout ça pour 8 euros, je ne m'y attendais pas. Ça vaut vraiment le coup.",
   },
   {
     id: "carine",
     name: "Carine V.",
-    text: "We took a wonderful tour with the Petit Train des Menhirs. To our surprise, the audio guide was also available in Dutch, spoken by a Flemish voice — which made listening so much more pleasant!",
+    text: "Nous avons effectué une merveilleuse visite avec le Petit Train des Menhirs. À notre grande surprise, le guide audio était également disponible en néerlandais, avec une voix flamande — ce qui rendait l'écoute bien plus agréable !",
   },
   {
     id: "marc",
     name: "Marc G.",
-    text: "A great way to see the megaliths, and also the added wonderfulness of having some English audio commentary, so that it all makes sense…. very good value and totally worthwhile.",
+    text: "Une excellente façon de voir les mégalithes, avec en prime un commentaire audio en anglais vraiment apprécié, pour que tout prenne sens... très bon rapport qualité-prix et vraiment incontournable.",
   },
   {
     id: "judit",
     name: "Judit Benard M.",
-    text: "Very nice people operating the little train, we got separated and they wanted and helped my husband join us. The tour is interesting, the train is comfortable and there are plenty of language options.",
+    text: "Des personnes vraiment chaleureuses à la tête de ce petit train. Nous nous étions séparés et ils ont tout fait pour aider mon mari à nous rejoindre. La visite est intéressante, le train est confortable et les options linguistiques sont nombreuses.",
   },
   {
     id: "bked",
     name: "B Ked.",
-    text: "I think this was a beautiful trip around Carnac. I definitely recommend this to people who are coming to Carnac and want to learn about it!",
+    text: "Je pense que c'était un très beau voyage autour de Carnac. Je le recommande vraiment aux personnes qui viennent à Carnac et qui souhaitent en apprendre davantage sur la ville !",
   },
   {
     id: "sophie",
     name: "Sophie M.",
-    text: "A lovely experience with the whole family. The train is comfortable and the driver was very friendly. A perfect way to discover Carnac's famous menhirs without all the walking!",
+    text: "Une belle expérience en famille. Le train est confortable et le conducteur était très sympathique. Une façon parfaite de découvrir les célèbres menhirs de Carnac sans avoir à marcher !",
   },
   {
     id: "david",
     name: "David R.",
-    text: "We did the tour on a sunny afternoon in July — absolutely worth it. The multilingual commentary is excellent and the route takes you to all the key sites. Highly recommended for first-time visitors to Carnac.",
+    text: "Nous avons fait la visite par un beau après-midi de juillet — absolument incontournable. Le commentaire multilingue est excellent et le parcours vous emmène à tous les sites clés. Fortement recommandé pour les premiers visiteurs de Carnac.",
   },
   {
     id: "anneclaire",
     name: "Anne-Claire B.",
-    text: "Charming little train! Our children loved every minute of it and learned so much about the standing stones. The audio guide is clear and engaging. We will definitely come back next summer.",
+    text: "Charmant petit train ! Nos enfants ont adoré chaque instant et ont tellement appris sur les pierres levées. Le guide audio est clair et captivant. Nous reviendrons certainement l'été prochain.",
   },
 ];
 
 const galleryImages = [
   {
     src: "/figma-assets/testimonial-img-3.jpg",
-    alt: "Scenic view from the Petit Train de Carnac",
-  },
-  {
-    src: "/figma-assets/review-gallery-2.jpg",
-    alt: "Carnac menhirs landscape",
-  },
-  {
-    src: "/figma-assets/testimonial-img-1.jpg",
-    alt: "Visitor aboard the Petit Train de Carnac",
+    alt: "Vue pittoresque depuis le Petit Train de Carnac",
   },
   {
     src: "/figma-assets/testimonial-img-2.jpg",
-    alt: "Family enjoying the Carnac tour",
+    alt: "Paysage des menhirs de Carnac",
+  },
+  {
+    src: "/figma-assets/testimonial-img-1.jpg",
+    alt: "Visiteur à bord du Petit Train de Carnac",
+  },
+  {
+    src: "/figma-assets/testimonial-img-2.jpg",
+    alt: "Famille profitant de la visite de Carnac",
   },
   {
     src: "/figma-assets/testimonial-img-3.jpg",
-    alt: "Scenic view from the Petit Train de Carnac",
+    alt: "Vue pittoresque depuis le Petit Train de Carnac",
   },
   {
     src: "/figma-assets/stop-1.jpg",
-    alt: "Petit Train stop at Carnac menhirs",
+    alt: "Arrêt du Petit Train aux menhirs de Carnac",
   },
   {
     src: "/figma-assets/stop-2.jpg",
-    alt: "Petit Train stop at the beach",
+    alt: "Arrêt du Petit Train à la plage",
   },
   {
     src: "/figma-assets/stop-3.jpg",
-    alt: "Petit Train stop at La Trinité harbour",
+    alt: "Arrêt du Petit Train au port de La Trinité",
   },
 ];
 
@@ -125,12 +125,13 @@ type TrackItem =
 function TrackCard({ item }: { item: TrackItem }) {
   if (item.kind === "gallery") {
     return (
-      <div className="rounded-[6px] overflow-hidden h-[265px] relative flex-shrink-0">
+      <div className="rounded-[6px] overflow-hidden h-[265px] w-full relative">
         <Image
           src={galleryImages[item.index].src}
           alt={galleryImages[item.index].alt}
           fill
           className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 420px"
         />
       </div>
     );
@@ -194,7 +195,7 @@ const col3: TrackItem[] = [
 
 export default function Reviews() {
   return (
-    <section className="bg-[#58496c] flex flex-col gap-20 items-center py-28 overflow-hidden">
+    <section className="bg-[#58496c] flex flex-col gap-20 items-center py-16 xl:py-28 overflow-hidden">
       {/* Header */}
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 w-full flex justify-center">
         <div className="flex flex-col gap-6 items-center text-center max-w-[623px]">
@@ -209,19 +210,19 @@ export default function Reviews() {
               />
             </div>
             <p className="font-['Libre_Baskerville',serif] italic text-[#f7f7f0] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
-              Reviews
+              Avis
             </p>
           </div>
 
           <h2 className="font-['Libre_Baskerville',serif] text-[#f7f7f0] text-[32px] sm:text-[40px] md:text-[48px] text-center leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[410px] w-full [text-wrap:balance] break-words">
-            What visitors say about <em>the train?</em>
+            Ce que disent les visiteurs <em>du train&nbsp;?</em>
           </h2>
 
           <p className="font-['Roboto',sans-serif] text-[#f7f7f0] text-[16px] text-center leading-[1.2] tracking-[-0.48px] max-w-[570px] w-full">
-            <strong>The Petit Train de Carnac</strong> has a rating over{" "}
-            <a href="https://www.google.com/maps/search/Petit+Train+de+Carnac" target="_blank" rel="noopener noreferrer" className="text-[#d8b800] underline">4.7 on Google</a>,
-            with over 6,000 reviews, making it one of the most popular touristic
-            attractions in Carnac.
+            <strong>Le Petit Train de Carnac</strong> est noté plus de{" "}
+            <a href="https://www.google.com/maps/search/Petit+Train+de+Carnac" target="_blank" rel="noopener noreferrer" className="text-[#d8b800] underline">4,7 sur Google</a>,
+            avec plus de 6 000 avis, ce qui en fait l&apos;une des attractions
+            touristiques les plus populaires de Carnac.
           </p>
 
           {/* Google badge */}
@@ -242,7 +243,7 @@ export default function Reviews() {
                 <StarRating />
               </div>
               <p className="font-['Nunito',sans-serif] text-[11px] text-black opacity-60 tracking-[-0.33px]">
-                6,000+ reviews
+                6 000+ avis
               </p>
             </div>
           </div>

@@ -11,19 +11,15 @@ const quickLinks = [
 ];
 
 const otherLinks = [
-  { label: "Politique de Confidentialité", href: "/privacy" },
-  { label: "Conditions d'Utilisation", href: "/terms" },
-  { label: "Politique Cookies", href: "/cookies" },
+  { label: "Mentions légales", href: "/mentions-legales" },
+  { label: "Politique de Confidentialité", href: "/politique-de-confidentialite" },
   { label: "Tarifs", href: "/prices" },
   { label: "FAQ", href: "/faqs" },
   { label: "Privatisation", href: "/privatisation" },
 ];
 
 const socialIcons = [
-  { src: "/figma-assets/icon-facebook.svg", alt: "Facebook", href: "#" },
-  { src: "/figma-assets/icon-twitter.svg", alt: "Twitter / X", href: "#" },
-  { src: "/figma-assets/icon-instagram.svg", alt: "Instagram", href: "#" },
-  { src: "/figma-assets/icon-linkedin.svg", alt: "LinkedIn", href: "#" },
+  { src: "/figma-assets/icon-facebook.svg", alt: "Facebook", href: "https://www.facebook.com/lespetitstrainsdumorbihan" },
 ];
 
 export default function Footer() {
@@ -84,7 +80,7 @@ export default function Footer() {
               />
             </div>
             <p className="font-['Roboto',sans-serif] font-light text-[12px] leading-[1.4] tracking-[-0.24px] text-[rgba(247,247,240,0.6)]">
-              The Petit Train de Carnac offers a guided sightseeing tour through one of the most remarkable areas of Southern Brittany. Comfortably seated aboard a tourist train, visitors can discover Carnac, its famous megaliths, beaches, and nearby harbour in a relaxed and accessible way.
+              Le Petit Train de Carnac propose une visite guidée à travers l'une des régions les plus remarquables du sud de la Bretagne. Confortablement installés à bord, les visiteurs découvrent Carnac, ses célèbres mégalithes, ses plages et le port voisin, de manière détendue et accessible.
             </p>
           </div>
 
@@ -109,7 +105,7 @@ export default function Footer() {
             {/* Contact Us */}
             <div className="flex flex-col gap-1 w-[222px]">
               <p className="font-['Inter',sans-serif] font-semibold text-[#f7f7f0] text-base leading-6 mb-1">
-                Contact Us
+                Contactez-nous
               </p>
               <a
                 href="mailto:petittrain-lebayon@orange.fr"
@@ -134,7 +130,7 @@ export default function Footer() {
             {/* Other */}
             <div className="flex flex-col gap-1 w-[156px]">
               <p className="font-['Inter',sans-serif] font-semibold text-[#f7f7f0] text-base leading-6 mb-1">
-                Other
+                Autres
               </p>
               {otherLinks.map((link) => (
                 <Link
@@ -163,7 +159,7 @@ export default function Footer() {
             >
               Softbird
             </a>
-            . All rights reserved.
+            . Tous droits réservés.
           </p>
           <div className="flex gap-6 items-center">
             {socialIcons.map((icon) => (
@@ -171,6 +167,8 @@ export default function Footer() {
                 key={icon.alt}
                 href={icon.href}
                 aria-label={icon.alt}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="social-icon relative w-6 h-6 shrink-0"
               >
                 <Image
