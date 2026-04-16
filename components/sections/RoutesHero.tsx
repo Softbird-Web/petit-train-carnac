@@ -26,8 +26,8 @@ export default function RoutesHero({
   flip = false,
   lightbox = false,
   headingLevel: Heading = 'h1',
-  primaryButton = { label: 'Individual Flyer', href: '#' },
-  secondaryButton = { label: 'Group Flyer', href: '#' },
+  primaryButton = { label: 'Flyer individuel', href: '#' },
+  secondaryButton = { label: 'Flyer de groupe', href: '#' },
 }: RoutesHeroProps) {
   const [open, setOpen] = useState(false)
 
@@ -41,14 +41,14 @@ export default function RoutesHero({
   }, [open])
 
   const imageBlock = (
-    <div className="flex-1 min-w-0">
+    <div className="w-full xl:flex-1 xl:min-w-0">
       <div
         className={`relative h-[400px] md:h-[520px] xl:h-[640px] rounded-[16px] border-[5px] border-[#5a4a6e] overflow-hidden${
           lightbox ? ' cursor-zoom-in' : ''
         }`}
         onClick={() => lightbox && setOpen(true)}
         role={lightbox ? 'button' : undefined}
-        aria-label={lightbox ? `View larger: ${imageAlt}` : undefined}
+        aria-label={lightbox ? `Agrandir : ${imageAlt}` : undefined}
         tabIndex={lightbox ? 0 : undefined}
         onKeyDown={(e) => {
           if (lightbox && (e.key === 'Enter' || e.key === ' ')) setOpen(true)
@@ -67,7 +67,7 @@ export default function RoutesHero({
   )
 
   const contentBlock = (
-    <div className="flex-1 min-w-0 flex flex-col gap-10 pr-0 xl:pr-8">
+    <div className="w-full xl:flex-1 xl:min-w-0 flex flex-col gap-10 pr-0 xl:pr-8">
       {/* Heading group */}
       <div className="flex flex-col gap-6">
         {/* Section label */}
@@ -101,7 +101,7 @@ export default function RoutesHero({
       <div className="flex items-center gap-3 flex-wrap">
         <Link
           href={primaryButton.href}
-          className="inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
+          className="btn-primary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
         >
           <div className="relative w-4 h-4 shrink-0">
             <Image
@@ -116,7 +116,7 @@ export default function RoutesHero({
         </Link>
         <Link
           href={secondaryButton.href}
-          className="inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#f7f7f0] rounded-[4px] border border-[rgba(0,0,0,0.2)] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
+          className="btn-secondary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#f7f7f0] rounded-[4px] border border-[rgba(0,0,0,0.2)] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
         >
           <div className="relative w-4 h-4 shrink-0">
             <Image
@@ -160,14 +160,14 @@ export default function RoutesHero({
               </div>
             </div>
             <span className="font-['Nunito',sans-serif] text-[11px] text-black/60 tracking-[-0.33px]">
-              6,000+ reviews
+              6 000+ avis
             </span>
           </div>
         </div>
         <p className="font-['Roboto',sans-serif] text-[#535862] text-[16px] leading-[1.2] tracking-[-0.48px] max-w-[499px]">
-          <strong className="font-bold text-[#535862]">The Petit Train de Carnac</strong>{' '}
-          has a rating over 4.7 on Google, with over 6,000 reviews, making it one of the most
-          popular touristic attractions in Carnac.
+          <strong className="font-bold text-[#535862]">Le Petit Train de Carnac</strong>{' '}
+          est noté plus de 4,7 sur Google, avec plus de 6 000 avis, ce qui en fait l&apos;une des
+          attractions touristiques les plus populaires de Carnac.
         </p>
       </div>
     </div>
@@ -175,7 +175,7 @@ export default function RoutesHero({
 
   return (
     <>
-      <section className="bg-[#f7f7f0] py-[112px] px-5 xl:px-[64px]">
+      <section className="bg-[#f7f7f0] py-16 xl:py-[112px] px-5 xl:px-[64px]">
         <div className="max-w-[1312px] mx-auto flex flex-col xl:flex-row items-center gap-[80px]">
           {flip ? (
             <>

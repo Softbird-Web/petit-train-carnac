@@ -16,32 +16,41 @@ video {
 html,
 body {
   overflow-x: hidden;
+  background-color: #f7f7f0;
 }
 
 /* ── Scroll-reveal system ───────────────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(40px);
+  filter: blur(8px);
+  will-change: opacity, transform, filter;
   transition:
-    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.75s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal.from-left {
-  transform: translateX(-24px);
+  transform: translateX(-40px);
+  filter: blur(8px);
 }
 .reveal.from-right {
-  transform: translateX(24px);
+  transform: translateX(40px);
+  filter: blur(8px);
 }
 .reveal.visible {
   opacity: 1;
   transform: translate(0, 0);
+  filter: blur(0px);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
     transform: none;
+    filter: none;
     transition: none;
+    will-change: auto;
   }
 }
 
@@ -176,9 +185,11 @@ body {
 
 .reviews-track-down {
   animation: scroll-down linear infinite;
+  will-change: transform;
 }
 .reviews-track-up {
   animation: scroll-up linear infinite;
+  will-change: transform;
 }
 .reviews-container:hover .reviews-track-down,
 .reviews-container:hover .reviews-track-up {

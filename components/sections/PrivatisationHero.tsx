@@ -94,11 +94,11 @@ export default function PrivatisationHero() {
               </div>
               <div className="flex flex-col gap-2">
                 <h2 className="font-['Libre_Baskerville',serif] text-[28px] text-[#181d27] tracking-[-2px] leading-[1.15]">
-                  Request sent!
+                  Demande envoyée !
                 </h2>
                 <p className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.4] tracking-[-0.48px]">
-                  Thank you for your interest. Our team will review your request and get back to you
-                  as soon as possible to confirm availability and discuss the details.
+                  Merci de votre intérêt. Notre équipe examinera votre demande et vous recontactera
+                  dès que possible pour confirmer la disponibilité et discuter des détails.
                 </p>
               </div>
             </div>
@@ -107,13 +107,13 @@ export default function PrivatisationHero() {
 
               {/* ── Your Details ── */}
               <p className="font-['Libre_Baskerville',serif] text-[#58496c] text-[28px] leading-none tracking-[-2px]">
-                Your Details
+                Vos Coordonnées
               </p>
 
               {/* First + Last name */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="relative">
-                  <FieldLabel>Your first name*</FieldLabel>
+                  <FieldLabel>Votre prénom*</FieldLabel>
                   <input
                     id="firstName"
                     type="text"
@@ -125,7 +125,7 @@ export default function PrivatisationHero() {
                   />
                 </div>
                 <div className="relative">
-                  <FieldLabel>Your name*</FieldLabel>
+                  <FieldLabel>Votre nom*</FieldLabel>
                   <input
                     id="lastName"
                     type="text"
@@ -141,7 +141,7 @@ export default function PrivatisationHero() {
               {/* Phone + Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="relative">
-                  <FieldLabel>Your phone number*</FieldLabel>
+                  <FieldLabel>Votre numéro de téléphone*</FieldLabel>
                   <input
                     id="phone"
                     type="tel"
@@ -153,7 +153,7 @@ export default function PrivatisationHero() {
                   />
                 </div>
                 <div className="relative">
-                  <FieldLabel>Your Email*</FieldLabel>
+                  <FieldLabel>Votre email*</FieldLabel>
                   <input
                     id="email"
                     type="email"
@@ -168,11 +168,11 @@ export default function PrivatisationHero() {
 
               {/* Company name */}
               <div className="relative">
-                <FieldLabel>Company name</FieldLabel>
+                <FieldLabel>{`Nom de l'entreprise`}</FieldLabel>
                 <input
                   id="companyName"
                   type="text"
-                  placeholder="Entreprise name"
+                  placeholder="Nom de l'entreprise"
                   value={values.companyName}
                   onChange={set('companyName')}
                   className={inputClass}
@@ -184,7 +184,7 @@ export default function PrivatisationHero() {
 
               {/* ── Event Details ── */}
               <p className="font-['Libre_Baskerville',serif] text-[#58496c] text-[28px] leading-none tracking-[-2px]">
-                Event Details
+                Détails de l&apos;événement
               </p>
 
               {/* Event type */}
@@ -302,9 +302,9 @@ export default function PrivatisationHero() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="inline-flex items-center justify-center h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap w-fit disabled:opacity-60 transition-opacity"
+                className="btn-primary inline-flex items-center justify-center h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap w-fit disabled:opacity-60"
               >
-                {status === 'loading' ? 'Sending…' : 'Envoyer la demande'}
+                {status === 'loading' ? 'Envoi en cours…' : 'Envoyer la demande'}
               </button>
             </form>
           )}
@@ -315,7 +315,7 @@ export default function PrivatisationHero() {
         <div className="xl:order-first xl:flex-1 relative min-h-[300px] sm:min-h-[420px] xl:min-h-[620px] rounded-[16px] overflow-hidden border border-[rgba(255,255,255,0.15)]">
           <Image
             src="/figma-assets/PrivatisationHero.jpg"
-            alt="Privatization of the Petit Train de Carnac"
+            alt="Privatisation du Petit Train de Carnac"
             fill
             className="object-cover object-center"
             sizes="(min-width: 1280px) 746px, 100vw"
@@ -324,8 +324,8 @@ export default function PrivatisationHero() {
           {/* Purple overlay */}
           <div className="absolute inset-0 bg-[rgba(88,73,108,0.5)]" />
 
-          {/* Bottom content */}
-          <div className="absolute bottom-0 left-0 right-0 p-6 xl:p-8 flex flex-col gap-4 xl:gap-6">
+          {/* Bottom content — hidden on mobile, visible on xl+ */}
+          <div className="hidden xl:flex absolute bottom-0 left-0 right-0 p-8 flex-col gap-6">
             {/* Google review badge */}
             <div className="inline-flex items-center gap-2 bg-white rounded-[8px] px-2 py-1.5 w-fit">
               <div className="relative w-6 h-6 shrink-0">
@@ -342,7 +342,7 @@ export default function PrivatisationHero() {
                     ))}
                   </div>
                 </div>
-                <p className="font-['Nunito',sans-serif] text-[11px] text-black/60 tracking-[-0.33px]">6,000+ reviews</p>
+                <p className="font-['Nunito',sans-serif] text-[11px] text-black/60 tracking-[-0.33px]">6 000+ avis</p>
               </div>
             </div>
 
@@ -352,21 +352,18 @@ export default function PrivatisationHero() {
                 <Image src="/figma-assets/icon-train-white.svg" alt="" fill className="object-contain" aria-hidden="true" />
               </div>
               <p className="font-['Libre_Baskerville',serif] italic text-[#f7f7f0] text-base leading-6 tracking-[-0.48px]">
-                Privatization &amp; B2B hire
+                Privatisation &amp; location B2B
               </p>
             </div>
 
             {/* Heading */}
             <h1 className="font-['Libre_Baskerville',serif] text-[32px] xl:text-[48px] leading-[1.1] tracking-[-2.5px] xl:tracking-[-3.36px] text-[#f7f7f0] max-w-[537px]">
-              Privatize the <em>Petit Train de Carnac</em> for your event
+              Privatisez le <em>Petit Train de Carnac</em> pour votre événement
             </h1>
 
             {/* Description */}
             <p className="hidden xl:block font-['Roboto',sans-serif] text-[rgba(247,247,240,0.7)] text-base leading-[1.2] tracking-[-0.48px] max-w-[500px]">
-              The Petit Train de Carnac can be privatized for group visits, corporate events, and
-              special occasions. This flexible solution allows you to offer your guests a guided
-              sightseeing tour through Carnac in a comfortable and original way, adapted to your
-              needs and schedule.
+              Le Petit Train de Carnac peut être privatisé pour des visites de groupe, des événements d&apos;entreprise et des occasions spéciales. Cette solution flexible vous permet d&apos;offrir à vos invités une visite guidée à travers Carnac, confortable et originale, adaptée à vos besoins et à votre programme.
             </p>
           </div>
         </div>

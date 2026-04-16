@@ -5,86 +5,88 @@ import Link from 'next/link'
 
 const faqs = [
   {
-    question: 'What is the Petit Train de Carnac?',
+    question: "Qu'est-ce que le Petit Train de Carnac ?",
     answer:
-      'The Petit Train de Carnac is a guided sightseeing tourist train that allows visitors to discover Carnac and its surroundings in a comfortable and accessible way. The tour includes the Carnac menhirs, Carnac plage, and the harbour of La Trinité sur Mer, with audio commentary throughout the journey.',
+      "Le Petit Train de Carnac est un train touristique guidé qui permet aux visiteurs de découvrir Carnac et ses environs de façon confortable et accessible. La visite inclut les menhirs de Carnac, la plage de Carnac et le port de La Trinité-sur-Mer, avec un commentaire audio tout au long du parcours.",
   },
   {
-    question: 'How long does the tour last?',
+    question: "Combien de temps dure la visite ?",
     answer:
-      'The guided sightseeing tour lasts approximately 55 minutes. This duration allows visitors to see the main highlights of Carnac without long walking distances.',
+      "La visite guidée dure environ 55 minutes. Cette durée permet aux visiteurs de voir les principaux sites de Carnac sans longues distances à parcourir à pied.",
   },
   {
-    question: 'Where does the Petit Train de Carnac depart from?',
+    question: "D'où part le Petit Train de Carnac ?",
     answer:
-      'The main departure and arrival point for individual visitors is the Ménec car park in Carnac, located in front of the Maison des Mégalithes.',
+      "Le point de départ et d'arrivée principal pour les visiteurs individuels est le parking du Ménec à Carnac, situé en face de la Maison des Mégalithes.",
   },
   {
-    question: 'Does the Petit Train operate every day?',
+    question: "Le Petit Train fonctionne-t-il tous les jours ?",
     answer:
-      'Yes. The Petit Train de Carnac operates every day from April to early November, including Sundays and public holidays.',
+      "Oui. Le Petit Train de Carnac fonctionne tous les jours d'avril à début novembre, y compris les dimanches et jours fériés.",
   },
   {
-    question: 'Does the tour operate in bad weather?',
+    question: "La visite fonctionne-t-elle par mauvais temps ?",
     answer:
-      'Yes. The Petit Train operates in all weather conditions. The trains are equipped to welcome visitors whether it is sunny, cloudy, or rainy.',
+      "Oui. Le Petit Train fonctionne par tous les temps. Les trains sont équipés pour accueillir les visiteurs qu'il fasse soleil, nuageux ou pluvieux.",
   },
   {
-    question: 'What will I see during the tour?',
+    question: "Que vais-je voir pendant la visite ?",
     answer:
-      'During the tour, you will pass close to the Carnac menhirs, including the Ménec, Kermario, and Kerlescan alignments. You will also discover Carnac plage, its white sand beaches, and the harbour of La Trinité sur Mer.',
+      "Pendant la visite, vous passerez à proximité des menhirs de Carnac, dont les alignements du Ménec, de Kermario et de Kerlescan. Vous découvrirez également la plage de Carnac, ses plages de sable blanc et le port de La Trinité-sur-Mer.",
   },
   {
-    question: 'In which languages is the audio commentary available?',
+    question: "Dans quelles langues le commentaire audio est-il disponible ?",
     answer:
-      'The guided audio commentary is available in French, English, German, Spanish, Italian, Portuguese, Dutch, Polish, Russian, Swedish, Danish, Czech, Chinese, and Japanese. A version adapted for children is also available.',
+      "Le commentaire audio guidé est disponible en français, anglais, allemand, espagnol, italien, portugais, néerlandais, polonais, russe, suédois, danois, tchèque, chinois et japonais. Une version adaptée aux enfants est également disponible.",
   },
   {
-    question: 'Is the tour suitable for children?',
+    question: "La visite est-elle adaptée aux enfants ?",
     answer:
-      "Yes. The Petit Train de Carnac is suitable for children and families. The children's audio commentary offers a fun and educational experience.",
+      "Oui. Le Petit Train de Carnac convient aux enfants et aux familles. Le commentaire audio pour enfants offre une expérience à la fois ludique et éducative.",
   },
   {
-    question: 'How much does a ticket cost?',
+    question: "Combien coûte un billet ?",
     answer: (
       <>
-        Ticket prices vary depending on age and group size. Adults and children under 12 years benefit
-        from different rates. Full prices are available on the{' '}
+        Les tarifs varient en fonction de l&apos;âge et de la taille du groupe. Les adultes et les
+        enfants de moins de 12 ans bénéficient de tarifs différents. Les tarifs complets sont
+        disponibles sur la{' '}
         <Link href="/prices" className="underline hover:text-[#5a4a6e] transition-colors">
-          Prices and Tickets page
+          page Tarifs et Billets
         </Link>
         .
       </>
     ),
   },
   {
-    question: 'Do I need to book in advance?',
+    question: "Faut-il réserver à l'avance ?",
     answer:
-      'Booking in advance is recommended, especially during busy tourist periods. Online bookings must be made at least two hours before departure.',
+      "La réservation à l'avance est recommandée, surtout pendant les périodes touristiques chargées. Les réservations en ligne doivent être effectuées au moins deux heures avant le départ.",
   },
   {
-    question: 'Can I buy tickets on site?',
+    question: "Puis-je acheter des billets sur place ?",
     answer:
-      'Yes. Tickets can be purchased at the ticket office at the Ménec car park, subject to availability.',
+      "Oui. Les billets peuvent être achetés au guichet situé au parking du Ménec, sous réserve de disponibilité.",
   },
   {
-    question: 'How early should I arrive before departure?',
+    question: "Combien de temps à l'avance dois-je arriver avant le départ ?",
     answer:
-      'Visitors are asked to arrive at least 15 minutes before departure to allow time for ticket check in and boarding.',
+      "Il est demandé aux visiteurs d'arriver au moins 15 minutes avant le départ pour valider leur billet et embarquer.",
   },
   {
-    question: 'Are group bookings available?',
+    question: "Les réservations de groupe sont-elles disponibles ?",
     answer:
-      'Yes. Group bookings are available for groups of 20 people or more. Advance reservation is recommended.',
+      "Oui. Les réservations de groupe sont disponibles pour les groupes de 20 personnes ou plus. La réservation à l'avance est recommandée.",
   },
   {
-    question: 'Can I privatize the Petit Train for an event?',
+    question: "Puis-je privatiser le Petit Train pour un événement ?",
     answer: (
       <>
-        Yes. The Petit Train de Carnac can be privatized for corporate events, associations, school
-        groups, and private occasions. A dedicated request form is available on the{' '}
+        Oui. Le Petit Train de Carnac peut être privatisé pour des événements d&apos;entreprise, des
+        associations, des groupes scolaires et des occasions privées. Un formulaire de demande dédié
+        est disponible sur la{' '}
         <Link href="/privatisation" className="underline hover:text-[#5a4a6e] transition-colors">
-          Privatisation page
+          page Privatisation
         </Link>
         .
       </>

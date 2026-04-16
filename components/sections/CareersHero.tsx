@@ -10,39 +10,39 @@ type JobPost = {
 
 const jobPosts: JobPost[] = [
   {
-    title: 'Petit Train Driver',
-    badge: 'Seasonal position',
+    title: 'Conducteur de Petit Train',
+    badge: 'Poste saisonnier',
     description:
-      'Operate the Petit Train safely along the sightseeing route and welcome visitors on board. This role involves driving the train, ensuring passenger comfort, and contributing to a positive atmosphere throughout the tour.',
-    requirement: 'A valid driving license is required. Previous experience with tourist vehicles is a plus.',
+      "Conduire le Petit Train en toute sécurité sur le parcours touristique et accueillir les visiteurs à bord. Ce poste implique de conduire le train, de veiller au confort des passagers et de contribuer à une atmosphère positive tout au long de la visite.",
+    requirement: "Un permis de conduire valide est requis. Une expérience préalable avec des véhicules touristiques est un plus.",
   },
   {
-    title: 'Ticket Office Assistant',
-    badge: 'Seasonal position',
+    title: 'Agent de Billetterie',
+    badge: 'Poste saisonnier',
     description:
-      'Welcome visitors, sell tickets, and provide clear information about schedules, prices, and the tour. This role is ideal for people who enjoy contact with the public and working in a lively tourist environment.',
+      "Accueillir les visiteurs, vendre les billets et fournir des informations claires sur les horaires, les tarifs et la visite. Ce poste est idéal pour les personnes qui aiment le contact avec le public et le travail dans un environnement touristique animé.",
     requirement:
-      'Basic communication skills and a friendly attitude are essential. Knowledge of foreign languages is appreciated.',
+      "De bonnes aptitudes à la communication et une attitude amicale sont essentielles. La connaissance de langues étrangères est appréciée.",
   },
   {
-    title: 'Tour Assistant',
-    badge: 'Seasonal position',
+    title: "Assistant de Visite",
+    badge: 'Poste saisonnier',
     description:
-      'Assist passengers during boarding and throughout the tour, help answer visitor questions, and ensure the smooth flow of departures and arrivals. This role supports both the driver and ticket office team.',
-    requirement: 'A positive attitude, reliability, and ease with visitors of all ages are key.',
+      "Accompagner les passagers lors de l'embarquement et tout au long de la visite, répondre aux questions des visiteurs et assurer le bon déroulement des départs et des arrivées. Ce poste soutient à la fois le conducteur et l'équipe de billetterie.",
+    requirement: "Une attitude positive, de la fiabilité et une aisance avec les visiteurs de tous âges sont essentielles.",
   },
   {
-    title: 'Group and Private Tour Coordinator',
-    badge: 'Seasonal / part time position',
+    title: 'Coordinateur de Groupes et de Visites Privées',
+    badge: 'Poste saisonnier / temps partiel',
     description:
-      'Handle group and private booking requests, assist with scheduling, and ensure that special tours run smoothly. This role involves coordination, communication, and attention to detail.',
-    requirement: 'Experience in tourism or customer service is a plus.',
+      "Traiter les demandes de réservation de groupe et de visite privée, aider à la planification des horaires et veiller au bon déroulement des visites spéciales. Ce poste implique de la coordination, de la communication et de la rigueur.",
+    requirement: "Une expérience dans le tourisme ou le service client est un plus.",
   },
 ]
 
 export default function CareersHero() {
   return (
-    <section className="bg-[#f7f7f0] relative overflow-hidden py-[112px] px-5 xl:px-[64px]">
+    <section className="bg-[#f7f7f0] relative overflow-hidden py-16 xl:py-[112px] px-5 xl:px-[64px]">
       {/* Background pattern */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <Image
@@ -54,7 +54,7 @@ export default function CareersHero() {
         />
       </div>
 
-      <div className="relative max-w-[1280px] mx-auto flex flex-col xl:flex-row gap-[64px] items-stretch">
+      <div className="relative max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-[64px] items-stretch">
         {/* Left: content + job listings */}
         <div className="flex-1 min-w-0 flex flex-col gap-8">
           {/* Heading group */}
@@ -71,32 +71,33 @@ export default function CareersHero() {
                 />
               </div>
               <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px]">
-                Careers
+                Carrières
               </p>
             </div>
 
             {/* Heading */}
             <h1 className="font-['Libre_Baskerville',serif] text-[40px] sm:text-[48px] xl:text-[60px] text-[#181d27] leading-[1.1] tracking-[-3.36px] [text-wrap:balance]">
-              Your career with the{' '}
+              Votre carrière au{' '}
               <em className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e]">
                 Petit Train de Carnac
               </em>{' '}
-              starts here
+              commence ici
             </h1>
 
             {/* Description */}
             <p className="font-['Roboto',sans-serif] text-[#535862] text-[16px] leading-[1.2] tracking-[-0.48px] max-w-[551px]">
-              Our philosophy is simple: offer visitors a warm welcome and a smooth sightseeing
-              experience while discovering Carnac and its surroundings. At the Petit Train de
-              Carnac, every team member plays an important role in creating a friendly and memorable
-              visit for people of all ages and from all over the world.
+              Notre philosophie est simple : offrir aux visiteurs un accueil chaleureux et une
+              expérience touristique fluide tout en découvrant Carnac et ses environs. Au Petit Train
+              de Carnac, chaque membre de l&apos;équipe joue un rôle important dans la création
+              d&apos;une visite conviviale et mémorable pour les personnes de tous âges et du monde
+              entier.
             </p>
 
             {/* Apply CTA */}
             <div>
               <Link
                 href="mailto:petittrain-lebayon@orange.fr"
-                className="inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
+                className="btn-primary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
               >
                 <div className="relative shrink-0 w-5 h-5">
                   <Image
@@ -107,7 +108,7 @@ export default function CareersHero() {
                     aria-hidden="true"
                   />
                 </div>
-                Apply Now &amp; Send us your CV
+                Postulez &amp; Envoyez-nous votre CV
               </Link>
             </div>
           </div>
@@ -115,7 +116,7 @@ export default function CareersHero() {
           {/* Job listings */}
           <div className="flex flex-col gap-0">
             <p className="font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] leading-[1.2] tracking-[-1.4px] mb-6">
-              Open Positions:
+              Postes Ouverts :
             </p>
 
             {jobPosts.map((job) => (
@@ -148,11 +149,11 @@ export default function CareersHero() {
         </div>
 
         {/* Right: tall image — fills the full height of the section content */}
-        <div className="hidden xl:flex shrink-0 w-[608px] self-stretch">
+        <div className="hidden lg:flex shrink-0 w-[460px] xl:w-[608px] self-stretch">
           <div className="relative w-full rounded-[8px] overflow-hidden">
             <Image
               src="/figma-assets/CareersHero.jpg"
-              alt="Working at the Petit Train de Carnac"
+              alt="Travailler au Petit Train de Carnac"
               fill
               className="object-cover"
               sizes="608px"

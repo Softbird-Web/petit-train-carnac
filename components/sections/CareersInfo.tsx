@@ -3,29 +3,29 @@ import Link from 'next/link'
 
 const panels = [
   {
-    heading: 'Who we are looking for',
+    heading: 'Qui cherchons-nous',
     paragraphs: [
-      'We are looking for motivated and reliable people who enjoy working with the public and contributing to a quality tourist experience.',
-      'You are comfortable working with international visitors, available during the tourist season, and able to work weekends and public holidays when needed.',
+      'Nous recherchons des personnes motivées et fiables qui aiment travailler avec le public et contribuer à une expérience touristique de qualité.',
+      'Vous êtes à l\'aise avec les visiteurs internationaux, disponible pendant la saison touristique et en mesure de travailler les week-ends et jours fériés si nécessaire.',
     ],
   },
   {
-    heading: 'Working with us',
+    heading: 'Travailler avec nous',
     paragraphs: [
-      'Positions are mainly seasonal and based in Carnac. Training is provided before starting. Working hours depend on the season and visitor attendance.',
-      'You will work outdoors and as part of a small, friendly team focused on visitor satisfaction.',
+      'Les postes sont principalement saisonniers et basés à Carnac. Une formation est dispensée avant la prise de poste. Les horaires de travail dépendent de la saison et de la fréquentation des visiteurs.',
+      'Vous travaillerez en extérieur et au sein d\'une petite équipe conviviale axée sur la satisfaction des visiteurs.',
     ],
   },
   {
-    heading: 'How to apply',
+    heading: 'Comment postuler',
     paragraphs: [
-      'To apply, please complete the application form and attach your CV. If your profile matches our needs, our team will contact you.',
+      'Pour postuler, veuillez remplir le formulaire de candidature et joindre votre CV. Si votre profil correspond à nos besoins, notre équipe vous contactera.',
     ],
   },
   {
-    heading: 'Join the Petit Train de Carnac team',
+    heading: 'Rejoindre l\'équipe du Petit Train de Carnac',
     paragraphs: [
-      'Apply now and take part in a local tourism experience that helps visitors discover Carnac in a simple and enjoyable way.',
+      'Postulez dès maintenant et participez à une expérience touristique locale qui aide les visiteurs à découvrir Carnac de façon simple et agréable.',
     ],
     cta: true,
   },
@@ -33,14 +33,14 @@ const panels = [
 
 export default function CareersInfo() {
   return (
-    <section className="bg-[#f7f7f0] py-[112px] px-5 xl:px-[64px]">
-      <div className="max-w-[1280px] mx-auto flex flex-col xl:flex-row gap-[80px] items-start">
+    <section className="bg-[#f7f7f0] py-16 xl:py-[112px] px-5 xl:px-[64px]">
+      <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-[80px] items-start">
         {/* Left: image */}
-        <div className="hidden xl:block shrink-0 w-[calc(50%-40px)]">
+        <div className="hidden lg:block shrink-0 w-[calc(50%-40px)]">
           <div className="relative w-full h-[829px] rounded-[16px] overflow-hidden">
             <Image
               src="/figma-assets/CareersLooking.png"
-              alt="Who we are looking for at the Petit Train de Carnac"
+              alt="Qui cherchons-nous au Petit Train de Carnac"
               fill
               className="object-cover"
               sizes="(max-width: 1280px) 100vw, 600px"
@@ -72,7 +72,7 @@ export default function CareersInfo() {
                 <div>
                   <Link
                     href="mailto:petittrain-lebayon@orange.fr"
-                    className="inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
+                    className="btn-primary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
                   >
                     <div className="relative shrink-0 w-5 h-5">
                       <Image
@@ -83,7 +83,7 @@ export default function CareersInfo() {
                         aria-hidden="true"
                       />
                     </div>
-                    Apply Now &amp; Send us your CV
+                    Postulez &amp; Envoyez-nous votre CV
                   </Link>
                 </div>
               )}

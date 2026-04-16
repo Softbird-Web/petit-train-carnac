@@ -8,16 +8,16 @@ import Locations from "@/components/sections/Locations";
 import FAQ from "@/components/sections/FAQ";
 
 export const metadata = {
-  title: "Prices & Tickets — Petit Train de Carnac",
+  title: "Tarifs & Billets — Petit Train de Carnac",
   description:
-    "Discover the ticket prices for the Petit Train de Carnac. Individual and group rates for adults and children, with online booking available.",
+    "Découvrez les tarifs du Petit Train de Carnac. Tarifs individuels et de groupe pour adultes et enfants, avec réservation en ligne disponible.",
 };
 
 const pricesRightCard = (
   <div className="absolute bottom-[514px] lg:bottom-[30px] left-1/2 -translate-x-1/2 lg:left-[189px] lg:translate-x-0 bg-[rgba(90,74,110,0.65)] border border-[rgba(255,255,255,0.2)] rounded-xl p-6 w-[499px] max-w-[calc(100%-32px)] flex flex-col gap-4 z-20">
     <div className="flex items-start justify-between gap-4">
       <p className="font-['Roboto',sans-serif] font-semibold text-[20px] leading-[1.1] text-white tracking-[-0.8px] max-w-[312px]">
-        &ldquo;Didn&rsquo;t expect all that for 8 euros. Well worth it I&rsquo;d say.&rdquo;
+        &ldquo;Je ne m&rsquo;attendais pas à autant pour 8 euros. Vraiment une belle expérience.&rdquo;
       </p>
       <div className="relative h-[43px] w-[76px] shrink-0">
         <Image
@@ -36,39 +36,39 @@ const pricesRightCard = (
 
 const pricingFaqs = [
   {
-    question: "How much does a ticket for the Petit Train de Carnac cost?",
+    question: "Quel est le tarif d'un billet pour le Petit Train de Carnac ?",
     answer:
-      "Ticket prices depend on age and group size. For individual visitors, the standard adult ticket costs 8 euros. Children under 12 years benefit from a reduced rate of 5 euros. Group rates apply for groups of 20 people or more.",
+      "Les tarifs dépendent de l'âge et de la taille du groupe. Pour les visiteurs individuels, le billet adulte standard est à 8,5 euros. Les enfants de moins de 12 ans bénéficient d'un tarif réduit à 5 euros. Les tarifs de groupe s'appliquent à partir de 20 personnes.",
   },
   {
-    question: "Are there reduced prices for children?",
+    question: "Y a-t-il des tarifs réduits pour les enfants ?",
     answer:
-      "Yes. Children under 12 years benefit from a reduced ticket price. Children's tickets include the same guided sightseeing tour and access to the audio commentary, including the version adapted for children.",
+      "Oui. Les enfants de moins de 12 ans bénéficient d'un tarif réduit. Leur billet donne accès à la même visite guidée et au commentaire audio, dont une version spécialement adaptée aux enfants.",
   },
   {
-    question: "Do children need a ticket to ride the Petit Train?",
+    question: "Les enfants ont-ils besoin d'un billet pour monter dans le Petit Train ?",
     answer:
-      "Yes. All passengers require a ticket to board the Petit Train de Carnac. Reduced fares apply for children under 12 years.",
+      "Oui. Tout passager doit être en possession d'un billet pour embarquer dans le Petit Train de Carnac. Des tarifs réduits sont appliqués pour les enfants de moins de 12 ans.",
   },
   {
-    question: "Are there discounts for groups?",
+    question: "Existe-t-il des réductions pour les groupes ?",
     answer:
-      "Yes. Group rates are available for groups of 20 people or more. Reduced group prices apply to both adults and children. Advance reservation is recommended for group visits to ensure availability.",
+      "Oui. Des tarifs de groupe sont disponibles à partir de 20 personnes embarquant. Ces tarifs réduits s'appliquent aux adultes comme aux enfants. La réservation à l'avance est recommandée pour les groupes afin de garantir la disponibilité.",
   },
   {
-    question: "What is included in the ticket price?",
+    question: "Qu'est-ce qui est inclus dans le prix du billet ?",
     answer:
-      "Each ticket includes the full guided sightseeing tour of approximately 55 minutes, multilingual audio commentary, a dedicated children's commentary, and a seated and comfortable sightseeing experience. There are no additional fees.",
+      "Chaque billet comprend la visite guidée complète d'environ 55 minutes, le commentaire audio multilingue, une version adaptée aux enfants, et une expérience confortable à bord. Aucun supplément n'est à prévoir.",
   },
   {
-    question: "Can I buy tickets on site?",
+    question: "Peut-on acheter les billets sur place ?",
     answer:
-      "Yes. Tickets can be purchased at the ticket office located at the Ménec car park, subject to availability. During busy tourist periods, tickets may sell out, so booking in advance is recommended.",
+      "Oui. Les billets peuvent être achetés au guichet situé au parking du Ménec, sous réserve de disponibilité. En haute saison touristique, les places peuvent être complètes, il est donc conseillé de réserver à l'avance.",
   },
   {
-    question: "Can I book tickets online?",
+    question: "Peut-on réserver des billets en ligne ?",
     answer:
-      "Yes. Online booking is available and recommended, especially during peak tourist periods. Online reservations must be completed at least two hours before departure.",
+      "Oui. La réservation en ligne est disponible et recommandée, notamment en période de pointe. Les réservations en ligne doivent être effectuées au moins deux heures avant le départ.",
   },
 ];
 
@@ -76,14 +76,14 @@ export default function PricesPage() {
   return (
     <main>
       <Hero
-        label="Prices & Tickets"
+        label="Tarifs & Billets"
         heading={
           <>
-            Ticket prices for the{" "}
+            Tarifs des billets du{" "}
             <em className="italic text-[#58496c]">Petit Train de Carnac</em>
           </>
         }
-        description="Find all ticket prices and booking information for the Petit Train de Carnac. This page explains individual and group rates, reduced fares for children, and how to book your guided sightseeing tour in Carnac with confidence."
+        description="Retrouvez tous les tarifs et informations de réservation pour le Petit Train de Carnac. Cette page présente les tarifs individuels et de groupe, les réductions enfants, et comment réserver votre visite guidée à Carnac en toute confiance."
         tagline={null}
         buttons={
           <>
@@ -91,17 +91,17 @@ export default function PricesPage() {
               href="#"
               className="btn-primary bg-[#5a4a6e] h-[45px] px-[22px] rounded-[4px] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap inline-flex items-center shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)]"
             >
-              Individual Flyer
+              Flyer individuel
             </Link>
             <Link
               href="#"
               className="btn-secondary bg-[#f7f7f0] border border-[rgba(0,0,0,0.2)] h-[45px] px-[22px] rounded-[4px] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap inline-flex items-center"
             >
-              Group Flyer
+              Flyer de groupe
             </Link>
           </>
         }
-        googleBadgeText="The Petit Train de Carnac has a rating over 4.7 on Google, with over 6,000 reviews, making it one of the most popular touristic in Carnac."
+        googleBadgeText="Le Petit Train de Carnac est noté 4,7 sur Google, avec plus de 6 000 avis, ce qui en fait l'une des attractions touristiques les plus populaires de Carnac."
         rightImageSrc="/figma-assets/ImagePricesHero.png"
         rightImageAlt="Le Petit Train de Carnac"
         rightCard={pricesRightCard}
@@ -115,14 +115,14 @@ export default function PricesPage() {
       <Locations />
       <FAQ
         faqs={pricingFaqs}
-        label="Frequently Asked Questions"
+        label="Questions Fréquentes"
         heading={
           <>
-            Frequently Asked Questions{" "}
-            <em className="text-[#58496c]">about Pricing</em>
+            Questions Fréquemment Posées{" "}
+            <em className="text-[#58496c]">sur les Tarifs</em>
           </>
         }
-        description="Find clear answers to the most common questions about ticket prices, group rates, and how to book the Petit Train de Carnac."
+        description="Trouvez des réponses claires aux questions les plus fréquentes sur les tarifs, les réductions de groupe et comment réserver le Petit Train de Carnac."
       />
     </main>
   );

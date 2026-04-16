@@ -50,7 +50,7 @@ const defaultValues: FormValues = {
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
 // ---------------------------------------------------------------------------
-// Input + label primitives (isolated from presentation logic)
+// Input + label primitives
 // ---------------------------------------------------------------------------
 
 function Label({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
@@ -98,7 +98,7 @@ function IndividualFields({
           />
         </div>
         <div>
-          <Label htmlFor="ind-time">Departure time *</Label>
+          <Label htmlFor="ind-time">Heure de départ *</Label>
           <select
             id="ind-time"
             value={values.departureTime}
@@ -106,7 +106,7 @@ function IndividualFields({
             className={inputClass}
             required
           >
-            <option value="">Select time</option>
+            <option value="">Sélectionner l&apos;heure</option>
             {DEPARTURE_TIMES.map((t) => (
               <option key={t} value={t}>{t}</option>
             ))}
@@ -117,7 +117,7 @@ function IndividualFields({
       {/* Adults + Children */}
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <Label htmlFor="ind-adults">Adults *</Label>
+          <Label htmlFor="ind-adults">Adultes *</Label>
           <input
             id="ind-adults"
             type="number"
@@ -130,7 +130,7 @@ function IndividualFields({
           />
         </div>
         <div>
-          <Label htmlFor="ind-children">Children (4–12)</Label>
+          <Label htmlFor="ind-children">Enfants (4–12 ans)</Label>
           <input
             id="ind-children"
             type="number"
@@ -144,13 +144,13 @@ function IndividualFields({
       </div>
 
       <p className="font-['Roboto',sans-serif] text-xs text-[#535862] -mt-2">
-        Children under 4 ride free — no ticket needed.
+        Les enfants de moins de 4 ans voyagent gratuitement — aucun billet requis.
       </p>
 
       {/* Name */}
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <Label htmlFor="ind-fname">First name *</Label>
+          <Label htmlFor="ind-fname">Prénom *</Label>
           <input
             id="ind-fname"
             type="text"
@@ -162,7 +162,7 @@ function IndividualFields({
           />
         </div>
         <div>
-          <Label htmlFor="ind-lname">Last name *</Label>
+          <Label htmlFor="ind-lname">Nom *</Label>
           <input
             id="ind-lname"
             type="text"
@@ -185,12 +185,12 @@ function IndividualFields({
             value={values.email}
             onChange={(e) => onChange({ email: e.target.value })}
             className={inputClass}
-            placeholder="marie@example.com"
+            placeholder="marie@exemple.com"
             required
           />
         </div>
         <div>
-          <Label htmlFor="ind-phone">Phone</Label>
+          <Label htmlFor="ind-phone">Téléphone</Label>
           <input
             id="ind-phone"
             type="tel"
@@ -220,7 +220,7 @@ function GroupFields({
     <div className="flex flex-col gap-4">
       {/* Organisation */}
       <div>
-        <Label htmlFor="grp-org">Organisation / Group name *</Label>
+        <Label htmlFor="grp-org">Organisation / Nom du groupe *</Label>
         <input
           id="grp-org"
           type="text"
@@ -247,7 +247,7 @@ function GroupFields({
           />
         </div>
         <div>
-          <Label htmlFor="grp-time">Departure time *</Label>
+          <Label htmlFor="grp-time">Heure de départ *</Label>
           <select
             id="grp-time"
             value={values.departureTime}
@@ -255,7 +255,7 @@ function GroupFields({
             className={inputClass}
             required
           >
-            <option value="">Select time</option>
+            <option value="">Sélectionner l&apos;heure</option>
             {DEPARTURE_TIMES.map((t) => (
               <option key={t} value={t}>{t}</option>
             ))}
@@ -278,7 +278,7 @@ function GroupFields({
           />
         </div>
         <div>
-          <Label htmlFor="grp-adults">Adults</Label>
+          <Label htmlFor="grp-adults">Adultes</Label>
           <input
             id="grp-adults"
             type="number"
@@ -289,7 +289,7 @@ function GroupFields({
           />
         </div>
         <div>
-          <Label htmlFor="grp-children">Children (4–12)</Label>
+          <Label htmlFor="grp-children">Enfants (4–12 ans)</Label>
           <input
             id="grp-children"
             type="number"
@@ -304,7 +304,7 @@ function GroupFields({
       {/* Name */}
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <Label htmlFor="grp-fname">Contact first name *</Label>
+          <Label htmlFor="grp-fname">Prénom du contact *</Label>
           <input
             id="grp-fname"
             type="text"
@@ -316,7 +316,7 @@ function GroupFields({
           />
         </div>
         <div>
-          <Label htmlFor="grp-lname">Contact last name *</Label>
+          <Label htmlFor="grp-lname">Nom du contact *</Label>
           <input
             id="grp-lname"
             type="text"
@@ -339,12 +339,12 @@ function GroupFields({
             value={values.email}
             onChange={(e) => onChange({ email: e.target.value })}
             className={inputClass}
-            placeholder="marie@example.com"
+            placeholder="marie@exemple.com"
             required
           />
         </div>
         <div>
-          <Label htmlFor="grp-phone">Phone</Label>
+          <Label htmlFor="grp-phone">Téléphone</Label>
           <input
             id="grp-phone"
             type="tel"
@@ -358,7 +358,7 @@ function GroupFields({
 
       {/* Preferred contact */}
       <div>
-        <Label htmlFor="grp-contact">Preferred contact method *</Label>
+        <Label htmlFor="grp-contact">Méthode de contact préférée *</Label>
         <div className="flex gap-4 mt-1">
           {(['email', 'phone'] as const).map((method) => (
             <label
@@ -373,7 +373,7 @@ function GroupFields({
                 onChange={() => onChange({ preferredContact: method })}
                 className="accent-[#5a4a6e]"
               />
-              {method.charAt(0).toUpperCase() + method.slice(1)}
+              {method === 'email' ? 'Email' : 'Téléphone'}
             </label>
           ))}
         </div>
@@ -381,14 +381,14 @@ function GroupFields({
 
       {/* Special requirements */}
       <div>
-        <Label htmlFor="grp-special">Special requirements</Label>
+        <Label htmlFor="grp-special">Besoins particuliers</Label>
         <textarea
           id="grp-special"
           rows={3}
           value={values.specialRequirements}
           onChange={(e) => onChange({ specialRequirements: e.target.value })}
           className={textareaClass}
-          placeholder="Wheelchair access, dietary needs, language preferences…"
+          placeholder="Accès fauteuil roulant, besoins alimentaires, préférences linguistiques…"
         />
       </div>
     </div>
@@ -454,7 +454,7 @@ export default function BookingHero() {
   }
 
   return (
-    <section className="bg-[#5a4a6e] py-[112px] px-5 xl:px-[64px]">
+    <section className="bg-[#5a4a6e] py-16 xl:py-[112px] px-5 xl:px-[64px]">
       <div className="max-w-[1280px] mx-auto flex flex-col xl:flex-row gap-[64px] items-center">
         {/* ── Left: copy ── */}
         <div className="flex-1 min-w-0 flex flex-col gap-6">
@@ -470,20 +470,21 @@ export default function BookingHero() {
               />
             </div>
             <p className="font-['Libre_Baskerville',serif] italic text-white text-base leading-6 tracking-[-0.48px]">
-              Book your ride
+              Réservez votre trajet
             </p>
           </div>
 
           {/* Heading */}
           <h1 className="font-['Libre_Baskerville',serif] text-[40px] sm:text-[48px] xl:text-[60px] text-white leading-[1.1] tracking-[-3.36px] [text-wrap:balance]">
-            Book your Petit Train tour in Carnac
+            Réservez votre visite en Petit Train à Carnac
           </h1>
 
           {/* Description */}
           <p className="font-['Roboto',sans-serif] text-white/80 text-base leading-[1.2] tracking-[-0.48px] max-w-[551px]">
-            Reserve your tickets for the Petit Train de Carnac in just a few steps. Choose your date
-            and departure time, select the number of tickets, and confirm your booking online. The
-            tour includes multilingual audio commentary and a version adapted for children.
+            Réservez vos billets pour le Petit Train de Carnac en quelques étapes simples.
+            Choisissez votre date et votre heure de départ, sélectionnez le nombre de billets et
+            confirmez votre réservation en ligne. La visite inclut un commentaire audio multilingue
+            et une version adaptée aux enfants.
           </p>
 
           {/* Departure note */}
@@ -498,9 +499,9 @@ export default function BookingHero() {
               />
             </div>
             <p className="font-['Roboto',sans-serif] text-white/80 text-base leading-[1.2] tracking-[-0.48px]">
-              Departure from the{' '}
-              <strong className="font-bold text-white">Ménec car park</strong> in{' '}
-              <strong className="font-bold text-white">Carnac</strong>, in front of the Maison des
+              Départ depuis le{' '}
+              <strong className="font-bold text-white">parking du Ménec</strong> à{' '}
+              <strong className="font-bold text-white">Carnac</strong>, en face de la Maison des
               Mégalithes.
             </p>
           </div>
@@ -526,7 +527,7 @@ export default function BookingHero() {
                       : 'bg-[#f7f7f0] text-[#535862] hover:bg-[#eeeee6]'
                   }`}
                 >
-                  {t === 'individual' ? 'Individual booking' : 'Group booking'}
+                  {t === 'individual' ? 'Réservation individuelle' : 'Réservation de groupe'}
                 </button>
               ))}
             </div>
@@ -553,11 +554,11 @@ export default function BookingHero() {
                   </div>
                   <div>
                     <p className="font-['Libre_Baskerville',serif] text-[22px] text-[#181d27] leading-[1.2] tracking-[-1.4px] mb-2">
-                      {tab === 'individual' ? 'Booking request received!' : 'Group enquiry received!'}
+                      {tab === 'individual' ? 'Demande de réservation reçue !' : 'Demande de groupe reçue !'}
                     </p>
                     <p className="font-['Roboto',sans-serif] text-[#535862] text-sm leading-[1.4]">
-                      We've received your request and will be in touch at{' '}
-                      <strong className="text-[#181d27]">{values.email}</strong> shortly.
+                      Nous avons bien reçu votre demande et vous recontacterons à{' '}
+                      <strong className="text-[#181d27]">{values.email}</strong> prochainement.
                     </p>
                   </div>
                   <button
@@ -568,7 +569,7 @@ export default function BookingHero() {
                     }}
                     className="mt-2 font-['Roboto',sans-serif] text-sm text-[#5a4a6e] underline underline-offset-2"
                   >
-                    Submit another booking
+                    Soumettre une autre réservation
                   </button>
                 </div>
               ) : (
@@ -594,14 +595,14 @@ export default function BookingHero() {
                     className="mt-6 w-full h-[48px] bg-[#5a4a6e] text-white font-['Roboto',sans-serif] text-base font-medium tracking-[-0.64px] rounded-[4px] shadow-[0px_1px_2px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] hover:bg-[#4a3a5e] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {status === 'loading'
-                      ? 'Sending…'
+                      ? 'Envoi en cours…'
                       : tab === 'individual'
-                      ? 'Book now'
-                      : 'Request group booking'}
+                      ? 'Réserver maintenant'
+                      : 'Demande de réservation de groupe'}
                   </button>
 
                   <p className="mt-3 font-['Roboto',sans-serif] text-xs text-[#a4a7ae] text-center">
-                    * Required fields
+                    * Champs obligatoires
                   </p>
                 </form>
               )}

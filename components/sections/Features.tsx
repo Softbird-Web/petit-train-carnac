@@ -4,27 +4,27 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 const features = [
   {
     icon: "/figma-assets/icon-train-seat.svg",
-    title: "Comfortable sightseeing train",
+    title: "Petit train touristique confortable",
     description:
-      "Discover Carnac's best sites seated comfortably aboard our tourist train, designed for visitors who want to explore without effort.",
+      "Découvrez les plus beaux sites de Carnac confortablement assis à bord de notre train touristique, conçu pour les visiteurs qui souhaitent explorer sans effort.",
   },
   {
     icon: "/figma-assets/icon-audio-guide.svg",
-    title: "Guided commentary during the tour",
+    title: "Commentaire audio tout au long de la visite",
     description:
-      "Audio commentary provides clear and accessible information about the places you pass, bringing Carnac's history and atmosphere to life.",
+      "Le commentaire audio fournit des informations claires et accessibles sur les lieux que vous traversez, donnant vie à l'histoire et à l'atmosphère de Carnac.",
   },
   {
     icon: "/figma-assets/icon-landmark.svg",
-    title: "Discovery of Carnac's heritage and landscapes",
+    title: "Découverte du patrimoine et des paysages de Carnac",
     description:
-      "Visit the famous menhirs, white sand beaches, and the harbour of La Trinité sur Mer in a single relaxed and scenic journey.",
+      "Visitez les célèbres menhirs, les plages de sable blanc et le port de La Trinité-sur-Mer en un seul voyage détendu et pittoresque.",
   },
   {
     icon: "/figma-assets/icon-family.svg",
-    title: "Suitable for families, seniors, and groups",
+    title: "Adapté aux familles, seniors et groupes",
     description:
-      "Our train is welcoming for all ages and group sizes — no long walks, no effort, just a comfortable and enjoyable experience for everyone.",
+      "Notre train accueille tous les âges et toutes les tailles de groupes — pas de longues marches, pas d'effort, juste une expérience confortable et agréable pour tous.",
   },
 ];
 
@@ -47,27 +47,28 @@ export default function Features() {
                 />
               </div>
               <p className="font-['Libre_Baskerville',serif] italic text-[#111] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
-                Tour Overview
+                Aperçu du Circuit
               </p>
             </div>
             <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] leading-[1.15] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[575px] [text-wrap:balance] break-words">
-              A simple and enjoyable way to explore Carnac
+              Une façon simple et agréable d&apos;explorer Carnac
             </h2>
           </div>
 
           {/* Right: body text */}
           <div className="flex flex-col gap-5 max-w-[603px] font-['Inter',sans-serif] text-[18px] text-[#535862] leading-[1.2] tracking-[-0.54px]">
             <p>
-              The Petit Train de Carnac invites you to discover the town at a
-              relaxed pace, comfortably seated aboard a sightseeing train
-              designed for visitors who want to enjoy Carnac without effort.
+              Le Petit Train de Carnac vous invite à découvrir la ville à un
+              rythme détendu, confortablement installé à bord d&apos;un train
+              touristique conçu pour les visiteurs qui souhaitent profiter de
+              Carnac sans effort.
             </p>
             <p>
-              During the tour, audio commentary provides clear and accessible
-              information about the places you pass, helping you understand
-              Carnac&apos;s history, landmarks, and atmosphere. This tourist
-              train is ideal for visitors looking for a pleasant introduction to
-              Carnac and its surroundings.
+              Pendant la visite, le commentaire audio fournit des informations
+              claires et accessibles sur les lieux traversés, vous aidant à
+              comprendre l&apos;histoire, les monuments et l&apos;atmosphère de
+              Carnac. Ce train touristique est idéal pour les visiteurs qui
+              recherchent une introduction agréable à Carnac et ses environs.
             </p>
           </div>
         </div>
@@ -118,7 +119,7 @@ export default function Features() {
         <div className="hidden lg:block flex-1 relative min-h-[560px] rounded-2xl overflow-hidden">
           <Image
             src="/figma-assets/features-photo.jpg"
-            alt="Scenic view from the Petit Train de Carnac"
+            alt="Vue pittoresque depuis le Petit Train de Carnac"
             fill
             className="object-cover"
           />

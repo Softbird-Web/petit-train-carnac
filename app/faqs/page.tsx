@@ -2,9 +2,9 @@ import FAQsHero from '@/components/sections/FAQsHero'
 import FAQsSection from '@/components/sections/FAQsSection'
 
 export const metadata = {
-  title: 'FAQs — Petit Train de Carnac',
+  title: 'FAQ — Petit Train de Carnac',
   description:
-    'Frequently asked questions about the Petit Train de Carnac — tour duration, departure point, prices, booking, languages, groups, and privatisation.',
+    'Questions fréquemment posées sur le Petit Train de Carnac — durée de la visite, point de départ, tarifs, réservation, langues, groupes et privatisation.',
 }
 
 export default function FAQsPage() {

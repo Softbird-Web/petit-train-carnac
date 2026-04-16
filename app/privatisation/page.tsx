@@ -4,7 +4,7 @@ import Locations from '@/components/sections/Locations'
 export const metadata = {
   title: 'Privatisation — Petit Train de Carnac',
   description:
-    'Privatize the Petit Train de Carnac for your corporate event, group visit, or special occasion. Submit your request and our team will get back to you.',
+    'Privatisez le Petit Train de Carnac pour votre événement d\'entreprise, visite de groupe ou occasion spéciale. Soumettez votre demande et notre équipe vous recontactera.',
 }
 
 export default function PrivatisationPage() {

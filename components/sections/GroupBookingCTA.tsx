@@ -16,7 +16,7 @@ export default function GroupBookingCTA() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1280px] mx-auto px-5 xl:px-0 py-[112px]">
+      <div className="relative z-10 max-w-[1280px] mx-auto px-5 xl:px-0 py-16 xl:py-[112px]">
         <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-20">
           {/* Left column: label + heading */}
           <div className="flex-1 flex flex-col gap-3">
@@ -32,32 +32,32 @@ export default function GroupBookingCTA() {
                 />
               </div>
               <p className="font-['Libre_Baskerville',serif] italic text-[#f7f7f0] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
-                Group Booking - Privatization
+                Réservation de Groupe — Privatisation
               </p>
             </div>
 
             {/* Heading */}
             <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] leading-[1.15] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] text-[#f7f7f0] not-italic break-words">
-              Booking for private tours
+              Réservation pour visites privées
             </h2>
           </div>
 
           {/* Right column: body text + CTA */}
           <div className="flex-1 flex flex-col gap-8">
             <p className="font-['Inter',sans-serif] font-normal text-[18px] leading-[1.2] tracking-[-0.54px] text-[#e5e5e5]">
-              If you are travelling as a group or planning a private tour, we
-              recommend using our dedicated request form. This allows our team
-              to confirm availability and propose the best option for your
-              visit.
+              Si vous voyagez en groupe ou planifiez une visite privée, nous
+              vous recommandons d&apos;utiliser notre formulaire de demande
+              dédié. Cela permet à notre équipe de confirmer la disponibilité
+              et de vous proposer la meilleure option pour votre visite.
             </p>
 
             {/* CTA button */}
             <div>
               <Link
-                href="#"
+                href="/privatisation"
                 className="btn-primary inline-flex items-center h-[45px] px-[22px] bg-[#f7f7f0] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
               >
-                Privatization booking
+                Réservation privatisation
               </Link>
             </div>
           </div>

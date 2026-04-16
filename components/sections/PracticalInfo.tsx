@@ -7,52 +7,52 @@ const infoCards: { id: string; photo: string; title: string; description: ReactN
   {
     id: "duration",
     photo: "/figma-assets/practical-1.jpg",
-    title: "Duration",
+    title: "Durée",
     description: (
       <>
-        The sightseeing tour lasts approximately{" "}
-        <strong>55 minutes.</strong> This duration allows you to discover
-        Carnac at a relaxed pace while enjoying commentary and views,
-        without feeling rushed or tired.
+        La visite touristique dure environ{" "}
+        <strong>55 minutes.</strong> Cette durée vous permet de découvrir
+        Carnac à un rythme détendu tout en profitant du commentaire et des
+        paysages, sans vous sentir pressé ou fatigué.
       </>
     ),
   },
   {
     id: "departure",
     photo: "/figma-assets/practical-2.jpg",
-    title: "Departure",
+    title: "Départ",
     description: (
       <>
-        Tours depart from the <strong>Ménec car park</strong> in Carnac,
-        directly in front of the Maison des Mégalithes. The stop is
-        clearly signposted and easy to reach. No pre-booking required
-        for individual visitors.
+        Les départs se font depuis le <strong>parking du Ménec</strong> à
+        Carnac, directement en face de la Maison des Mégalithes. L&apos;arrêt
+        est clairement signalisé et facile d&apos;accès. Aucune réservation
+        préalable n&apos;est requise pour les visiteurs individuels.
       </>
     ),
   },
   {
     id: "schedule",
     photo: "/figma-assets/practical-3.jpg",
-    title: "Schedule",
+    title: "Horaires",
     description: (
       <>
-        Departures run from <strong>April to September</strong>, several
-        times a day. The train operates daily during peak season. Please
-        check the current timetable for exact departure times and
-        seasonal adjustments.
+        Les départs ont lieu <strong>d&apos;avril à septembre</strong>,
+        plusieurs fois par jour. Le train fonctionne tous les jours en haute
+        saison. Veuillez consulter les horaires actuels pour les heures exactes
+        de départ et les ajustements saisonniers.
       </>
     ),
   },
   {
     id: "accessibility",
     photo: "/figma-assets/practical-4.jpg",
-    title: "Accessibility",
+    title: "Accessibilité",
     description: (
       <>
-        The Petit Train is <strong>accessible to all</strong>. It is
-        ideal for families with young children, elderly visitors, and
-        anyone who prefers to avoid long walks while still enjoying the
-        best of Carnac.
+        Le Petit Train est <strong>accessible à tous</strong>. Il est idéal
+        pour les familles avec jeunes enfants, les visiteurs âgés et toute
+        personne préférant éviter les longues marches tout en profitant du
+        meilleur de Carnac.
       </>
     ),
   },
@@ -75,15 +75,16 @@ export default function PracticalInfo() {
               />
             </div>
             <p className="font-['Libre_Baskerville',serif] italic text-[#111] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
-              Information
+              Informations
             </p>
           </div>
           <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] leading-[1.15] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[575px] w-full break-words">
-            Practical Information
+            Informations Pratiques
           </h2>
           <p className="font-['Inter',sans-serif] text-[18px] text-[#535862] leading-[1.2] tracking-[-0.54px]">
-            To help you plan your tourist train tour in Carnac, here are the
-            essential details to know before booking.
+            Pour vous aider à planifier votre visite en train touristique à
+            Carnac, voici les informations essentielles à connaître avant de
+            réserver.
           </p>
         </div>
 
@@ -134,13 +135,14 @@ export default function PracticalInfo() {
               </div>
               <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-2 text-white">
                 <p className="font-['Libre_Baskerville',serif] text-[24px] leading-[1.5] tracking-[-1.68px]">
-                  Payment
+                  Paiement
                 </p>
                 <p className="font-['Inter',sans-serif] text-[14px] leading-[1.3] tracking-[-0.42px]">
-                  Tickets can be purchased{" "}
-                  <strong>directly on board</strong> or at the departure
-                  point. Payment by cash or card is accepted. Group and school
-                  rates are available — contact us for a quote.
+                  Les billets peuvent être achetés{" "}
+                  <strong>directement à bord</strong> ou au point de départ.
+                  Le paiement en espèces ou par carte est accepté. Des tarifs
+                  groupes et scolaires sont disponibles — contactez-nous pour
+                  un devis.
                 </p>
               </div>
             </div>
@@ -162,12 +164,12 @@ export default function PracticalInfo() {
               </div>
               <div className="absolute top-8 left-8 right-8 flex flex-col gap-2 text-white">
                 <p className="font-['Libre_Baskerville',serif] text-[32px] leading-[1.5] tracking-[-2.24px]">
-                  More Details
+                  Plus d&apos;informations
                 </p>
                 <p className="font-['Inter',sans-serif] text-[16px] leading-[1.3] tracking-[-0.48px] max-w-[357px]">
-                  Consult our full guide for ticket prices, payment methods,
-                  and additional tips to make the most of your journey through
-                  the megaliths.
+                  Consultez notre guide complet pour les tarifs des billets,
+                  les modes de paiement et des conseils supplémentaires pour
+                  profiter au maximum de votre voyage à travers les mégalithes.
                 </p>
               </div>
               <div className="absolute bottom-6 right-6">
@@ -175,7 +177,7 @@ export default function PracticalInfo() {
                   href="/informations"
                   className="btn-primary inline-flex items-center justify-center h-[45px] px-[22px] bg-[#f7f7f0] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-[#58496c] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
                 >
-                  Discover More
+                  En savoir plus
                 </Link>
               </div>
             </div>

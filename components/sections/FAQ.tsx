@@ -13,39 +13,39 @@ interface FaqData {
 
 const defaultFaqs: FaqData[] = [
   {
-    question: "What is the Petit Train de Carnac?",
+    question: "Qu'est-ce que le Petit Train de Carnac ?",
     answer:
-      "The Petit Train de Carnac is a guided sightseeing tourist train that allows visitors to discover Carnac and its surroundings in a comfortable and accessible way. The tour includes the famous Carnac menhirs, white sand beaches, and the harbour of La Trinité sur Mer, with audio commentary throughout the journey.",
+      "Le Petit Train de Carnac est un train touristique guidé qui permet aux visiteurs de découvrir Carnac et ses environs de façon confortable et accessible. La visite inclut les célèbres menhirs de Carnac, la plage de Carnac et le port de La Trinité-sur-Mer, avec un commentaire audio tout au long du parcours.",
   },
   {
-    question: "How long does the Petit Train tour in Carnac last?",
+    question: "Combien de temps dure la visite en Petit Train de Carnac ?",
     answer:
-      "The guided sightseeing tour lasts approximately 55 minutes. This duration allows visitors to see the main landmarks of Carnac without rushing and without long walking distances.",
+      "La visite guidée dure environ 55 minutes. Cette durée permet aux visiteurs de voir les principaux monuments de Carnac sans se presser et sans longues distances à parcourir à pied.",
   },
   {
-    question: "Where does the Petit Train de Carnac depart from?",
+    question: "D'où part le Petit Train de Carnac ?",
     answer:
-      "The main departure and arrival point for individual visitors is located at the Ménec car park in Carnac, in front of the Maison des Mégalithes. This is the only official starting point for individual tickets.",
+      "Le point de départ et d'arrivée principal pour les visiteurs individuels est situé au parking du Ménec à Carnac, en face de la Maison des Mégalithes. C'est le seul point de départ officiel pour les billets individuels.",
   },
   {
-    question: "What will I see during the Petit Train tour of Carnac?",
+    question: "Que vais-je voir pendant la visite en Petit Train de Carnac ?",
     answer:
-      "During the tour, you will pass close to the Carnac menhirs, including the alignments of Ménec, Kermario, and Kerlescan. You will also discover Carnac plage, its white sand beaches, and the harbour of La Trinité sur Mer. More than 40 points of interest are explained during the guided tour.",
+      "Pendant la visite, vous passerez à proximité des menhirs de Carnac, dont les alignements du Ménec, de Kermario et de Kerlescan. Vous découvrirez également la plage de Carnac, ses plages de sable blanc et le port de La Trinité-sur-Mer. Plus de 40 points d'intérêt sont expliqués au cours de la visite guidée.",
   },
   {
-    question: "Is the Petit Train de Carnac suitable for children and families?",
+    question: "Le Petit Train de Carnac est-il adapté aux enfants et aux familles ?",
     answer:
-      "Yes, the Petit Train de Carnac is suitable for families with children. A dedicated audio commentary adapted for children is available, making the tour both fun and educational for younger visitors.",
+      "Oui, le Petit Train de Carnac convient aux familles avec enfants. Un commentaire audio dédié adapté aux enfants est disponible, rendant la visite à la fois ludique et éducative pour les jeunes visiteurs.",
   },
   {
-    question: "In which languages is the guided commentary available?",
+    question: "Dans quelles langues le commentaire guidé est-il disponible ?",
     answer:
-      "The guided audio commentary is available in multiple languages, including French, English, German, Spanish, Italian, Portuguese, Dutch, Polish, Russian, Swedish, Danish, Czech, Chinese, and Japanese. This makes the tour accessible to international visitors.",
+      "Le commentaire audio guidé est disponible en plusieurs langues, dont le français, l'anglais, l'allemand, l'espagnol, l'italien, le portugais, le néerlandais, le polonais, le russe, le suédois, le danois, le tchèque, le chinois et le japonais. La visite est ainsi accessible aux visiteurs internationaux.",
   },
   {
-    question: "Do I need to book the Petit Train de Carnac in advance?",
+    question: "Faut-il réserver le Petit Train de Carnac à l'avance ?",
     answer:
-      "Booking in advance is recommended, especially during busy tourist periods in Carnac. Online booking must be completed at least two hours before departure. Tickets can also be purchased on site, subject to availability.",
+      "La réservation à l'avance est recommandée, surtout pendant les périodes touristiques chargées à Carnac. La réservation en ligne doit être effectuée au moins deux heures avant le départ. Les billets peuvent également être achetés sur place, sous réserve de disponibilité.",
   },
 ];
 
@@ -103,8 +103,8 @@ interface FAQProps {
 export default function FAQ({
   faqs = defaultFaqs,
   label = "FAQ",
-  heading = <>Frequently <em className="text-[#58496c]">Asked Questions</em></>,
-  description = "Find clear answers to the most common questions about the Petit Train de Carnac.",
+  heading = <>Questions <em className="text-[#58496c]">Fréquemment Posées</em></>,
+  description = "Trouvez des réponses claires aux questions les plus fréquentes sur le Petit Train de Carnac.",
 }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -137,7 +137,7 @@ export default function FAQ({
             href="/book"
             className="btn-primary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap w-fit"
           >
-            Book your tour
+            Réservez votre visite
           </Link>
         </div>
 

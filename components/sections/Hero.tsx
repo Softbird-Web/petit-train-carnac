@@ -17,19 +17,20 @@ interface HeroProps {
 
 const defaultHeading = (
   <>
-    Discover{" "}
+    Découvrez{" "}
     <em className="italic text-[#5a4a6e] not-[font-style:normal]">Carnac</em>{" "}
-    aboard the Petit Train
+    à bord du Petit Train
   </>
 );
 
 const defaultDescription = (
   <>
-    The Petit Train de Carnac offers a guided sightseeing tour through the town
-    and its surroundings. Discover the world&apos;s most beautiful Neolithic
-    site on this <strong className="font-bold">50-minute guided tour.</strong>{" "}
-    It is an easy and comfortable way to discover Carnac, its heritage, and its
-    iconic landscapes, without the need for long walks.
+    Le Petit Train de Carnac propose une visite guidée touristique à travers la
+    ville et ses environs. Découvrez le plus beau site néolithique du monde lors
+    de cette <strong className="font-bold">visite guidée de 50 minutes.</strong>{" "}
+    C&apos;est une façon simple et confortable de découvrir Carnac, son
+    patrimoine et ses paysages emblématiques, sans avoir besoin de marcher
+    longtemps.
   </>
 );
 
@@ -39,13 +40,13 @@ const defaultButtons = (
       href="/book"
       className="btn-primary bg-[#5a4a6e] h-[45px] px-[22px] rounded-[4px] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap inline-flex items-center shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)]"
     >
-      Book your tour
+      Réservez votre visite
     </Link>
     <Link
       href="/prices"
       className="btn-secondary bg-[#f7f7f0] border border-[rgba(0,0,0,0.2)] h-[45px] px-[22px] rounded-[4px] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap inline-flex items-center"
     >
-      See Pricing
+      Voir les Tarifs
     </Link>
   </>
 );
@@ -54,21 +55,21 @@ const defaultRightCard = (
   <div className="absolute bottom-[514px] lg:bottom-[30px] left-1/2 -translate-x-1/2 lg:left-[189px] lg:translate-x-0 bg-[rgba(90,74,110,0.65)] border border-[rgba(255,255,255,0.2)] rounded-xl p-6 w-[499px] max-w-[calc(100%-32px)] flex flex-col gap-4 z-20">
     <div className="flex items-start justify-between gap-4">
       <p className="font-['Roboto',sans-serif] font-semibold text-[20px] leading-[1.1] text-white tracking-[-0.8px] max-w-[312px]">
-        Guided sightseeing tour with audio commentary in 16 languages
+        Visite guidée avec commentaire audio en 16 langues
       </p>
       <div className="relative h-[43px] w-[83px] shrink-0 overflow-hidden rounded">
         <Image
           src="/figma-assets/languages-flags.png"
-          alt="Language flags"
+          alt="Drapeaux des langues"
           fill
           className="object-cover"
         />
       </div>
     </div>
     <p className="font-['Roboto',sans-serif] font-normal text-[14px] leading-[1.4] text-white tracking-[-0.56px] max-w-[312px]">
-      French, English, German, Spanish, Italian, Portuguese, Dutch, Russian,
-      Chinese, Japanese, Swedish, Danish, Polish, Arabic, Croatian, and
-      Slovenian.
+      Français, anglais, allemand, espagnol, italien, portugais, néerlandais,
+      russe, chinois, japonais, suédois, danois, polonais, arabe, croate et
+      slovène.
     </p>
   </div>
 );
@@ -77,11 +78,11 @@ export default function Hero({
   label = "Le Petit Trains de Morbihan · Carnac",
   heading = defaultHeading,
   description = defaultDescription,
-  tagline = "Perfect for families, couples, seniors, and visitors of all ages.",
+  tagline = "Idéal pour les familles, les couples, les seniors et les visiteurs de tous âges.",
   buttons = defaultButtons,
-  googleBadgeText = "The Petit Train de Carnac has a rating over 4.7 on Google, with over 6,000 reviews, making it one of the most popular touristic attractions in Carnac.",
+  googleBadgeText = "Le Petit Train de Carnac est noté 4,7 sur Google, avec plus de 6 000 avis, ce qui en fait l'une des attractions touristiques les plus populaires de Carnac.",
   rightImageSrc = "/figma-assets/hero-image.jpg",
-  rightImageAlt = "Le Petit Train de Carnac on a scenic route",
+  rightImageAlt = "Le Petit Train de Carnac sur un parcours pittoresque",
   rightCard = defaultRightCard,
   showBottomBanner = true,
 }: HeroProps) {
@@ -154,14 +155,14 @@ export default function Hero({
                       <div className="relative h-3 w-[76px] shrink-0">
                         <Image
                           src="/figma-assets/stars.svg"
-                          alt="4.7 out of 5 stars"
+                          alt="4,7 sur 5 étoiles"
                           fill
                           className="object-contain object-left"
                         />
                       </div>
                     </div>
                     <p className="font-['Nunito',sans-serif] font-normal text-[11px] leading-normal text-black tracking-[-0.33px] opacity-60">
-                      6,000+ reviews
+                      6 000+ avis
                     </p>
                   </div>
                 </div>
@@ -214,7 +215,7 @@ export default function Hero({
                 />
               </div>
               <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px]">
-                Important Note
+                Note Importante
               </p>
             </div>
 
@@ -223,20 +224,21 @@ export default function Hero({
               {/* Heading */}
               <div className="lg:w-[559px] shrink-0">
                 <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] text-[#181d27] not-italic break-words">
-                  Online Booking
+                  Réservation en Ligne
                 </h2>
               </div>
               {/* Supporting text */}
               <div className="flex-1">
                 <p className="font-['Inter',sans-serif] font-normal text-[20px] leading-[30px] text-[#535862]">
-                  Booking is possible but not mandatory. You can book up to
-                  <strong className="font-bold"> 2 hours </strong> before the
-                  desired service. Don&apos;t forget to consider travel time and
-                  parking at the site. After this deadline, go directly to the
-                  departure point and purchase your tickets at the ticket office
-                  or from the driver.
+                  La réservation est possible mais non obligatoire. Vous pouvez
+                  réserver jusqu&apos;à{" "}
+                  <strong className="font-bold">2 heures</strong> avant le
+                  départ souhaité. N&apos;oubliez pas de prévoir le temps de
+                  trajet et le stationnement sur place. Passé ce délai, rendez-
+                  vous directement au point de départ et achetez vos billets au
+                  guichet ou auprès du conducteur.
                   <br />
-                  Not all seats are available for online sale.
+                  Toutes les places ne sont pas disponibles à la vente en ligne.
                 </p>
               </div>
             </div>

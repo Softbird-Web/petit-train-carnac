@@ -16,16 +16,16 @@ export default function InformationsPage() {
   return (
     <main>
       <InformationsHero
-        label="Informations"
+        label="Informations Pratiques"
         heading={
           <>
-            Practical information for the{" "}
+            Informations pratiques pour le{" "}
             <em className="italic text-[#5a4a6e] not-italic font-['Libre_Baskerville',serif] italic">
               Petit Train de Carnac
             </em>
           </>
         }
-        description="Here you will find all the practical information you need before joining the Petit Train de Carnac. Learn about the departure point, tour duration, schedules, accessibility, and booking recommendations, so you can plan your visit to Carnac with confidence and enjoy a smooth sightseeing experience."
+        description="Retrouvez ici toutes les informations pratiques dont vous avez besoin avant de rejoindre le Petit Train de Carnac. Découvrez le point de départ, la durée de la visite, les horaires, l'accessibilité et les recommandations de réservation, pour planifier votre visite à Carnac en toute sérénité."
         imageSrc="/figma-assets/PracticalInformationHero.jpg"
         imageAlt="Le Petit Train de Carnac au bord de la mer"
       />

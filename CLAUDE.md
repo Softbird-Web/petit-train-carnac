@@ -88,3 +88,30 @@ public/figma-assets/            ← all images/SVGs; URL prefix /figma-assets/
 
 ## Error Handling
 Never silently swallow errors. Fallbacks must be disclosed. Priority: works correctly > visible fallback > clear error message > never silent degradation.
+
+## Skill Registry (qa-skills)
+Source: https://github.com/neonwatty/qa-skills — QA testing pipeline: workflow generation, Playwright E2E conversion, 6 audit agents.
+
+### Generators
+- [desktop-workflow-generator]: https://raw.githubusercontent.com/neonwatty/qa-skills/main/skills/desktop-workflow-generator/SKILL.md
+- [mobile-workflow-generator]: https://raw.githubusercontent.com/neonwatty/qa-skills/main/skills/mobile-workflow-generator/SKILL.md
+- [multi-user-workflow-generator]: https://raw.githubusercontent.com/neonwatty/qa-skills/main/skills/multi-user-workflow-generator/SKILL.md
+
+### Converters
+- [desktop-workflow-to-playwright]: https://raw.githubusercontent.com/neonwatty/qa-skills/main/skills/desktop-workflow-to-playwright/SKILL.md
+- [mobile-workflow-to-playwright]: https://raw.githubusercontent.com/neonwatty/qa-skills/main/skills/mobile-workflow-to-playwright/SKILL.md
+- [multi-user-workflow-to-playwright]: https://raw.githubusercontent.com/neonwatty/qa-skills/main/skills/multi-user-workflow-to-playwright/SKILL.md
+
+### Runner
+- [playwright-runner]: https://raw.githubusercontent.com/neonwatty/qa-skills/main/skills/playwright-runner/SKILL.md
+
+### Audits & Analysis
+- [adversarial-audit]: https://raw.githubusercontent.com/neonwatty/qa-skills/main/skills/adversarial-audit/SKILL.md
+- [resilience-audit]: https://raw.githubusercontent.com/neonwatty/qa-skills/main/skills/resilience-audit/SKILL.md
+- [keyword-wedge]: https://raw.githubusercontent.com/neonwatty/qa-skills/main/skills/keyword-wedge/SKILL.md
+- [trust-builder]: https://raw.githubusercontent.com/neonwatty/qa-skills/main/skills/trust-builder/SKILL.md
+- [review-learnings]: https://raw.githubusercontent.com/neonwatty/qa-skills/main/skills/review-learnings/SKILL.md
+- [submit-learnings]: https://raw.githubusercontent.com/neonwatty/qa-skills/main/skills/submit-learnings/SKILL.md
+
+### Utility
+- [use-profiles]: https://raw.githubusercontent.com/neonwatty/qa-skills/main/skills/use-profiles/SKILL.md

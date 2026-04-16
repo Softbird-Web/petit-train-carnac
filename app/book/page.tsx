@@ -6,9 +6,9 @@ import GroupBookingCTA from '@/components/sections/GroupBookingCTA'
 import Locations from '@/components/sections/Locations'
 
 export const metadata = {
-  title: 'Book your tour — Petit Train de Carnac',
+  title: 'Réservez votre visite — Petit Train de Carnac',
   description:
-    'Reserve your seats on the Petit Train de Carnac. Individual and group bookings available online.',
+    'Réservez vos places sur le Petit Train de Carnac. Réservations individuelles et de groupe disponibles en ligne.',
 }
 
 export default function BookPage() {

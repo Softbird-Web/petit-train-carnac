@@ -2,13 +2,13 @@ import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const individualRows = [
-  { label: "Adults", price: "8,5€" },
-  { label: "Children under 12", price: "5€" },
+  { label: "Adultes", price: "8,5€" },
+  { label: "Enfants de moins de 12 ans", price: "5€" },
 ];
 
 const groupRows = [
-  { label: "Adults", price: "7€" },
-  { label: "Children under 12", price: "4€" },
+  { label: "Adultes", price: "7€" },
+  { label: "Enfants de moins de 12 ans", price: "4€" },
 ];
 
 export default function Prices() {
@@ -42,16 +42,16 @@ export default function Prices() {
               />
             </div>
             <p className="font-['Libre_Baskerville',serif] italic text-[#f7f7f0] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
-              Prices
+              Tarifs
             </p>
           </div>
           <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#f7f7f0] leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[581px] w-full [text-wrap:balance] break-words">
-            An affordable adventure for the whole family
+            Une aventure abordable pour toute la famille
           </h2>
           <p className="font-['Roboto',sans-serif] text-[#f7f7f0] text-[16px] leading-[1.2] tracking-[-0.48px] max-w-[551px] w-full">
-            From solo explorers to large tribes, find the perfect rate for your
-            visit. Take advantage of our special pricing for children and
-            families.
+            Des explorateurs solitaires aux grandes familles, trouvez le tarif
+            idéal pour votre visite. Profitez de nos tarifs spéciaux pour les
+            enfants et les familles.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function Prices() {
                   />
                 </div>
                 <p className="font-['Libre_Baskerville',serif] italic text-[#58496c] text-[24px] leading-normal tracking-[-0.72px] whitespace-nowrap">
-                  Individual Tickets
+                  Billets Individuels
                 </p>
               </div>
               <div className="border-b border-[rgba(0,0,0,0.15)] mb-2" />
@@ -101,8 +101,8 @@ export default function Prices() {
                   />
                 </div>
                 <p className="font-['Nunito',sans-serif] text-[11px] text-[rgba(35,35,35,0.7)] leading-[1.4] tracking-[-0.5px]">
-                  <strong>For individuals:</strong> the meeting point is at the
-                  departure point; ticket office on-site.
+                  <strong>Pour les individuels :</strong> le point de rendez-vous
+                  est au point de départ ; guichet sur place.
                 </p>
               </div>
             </div>
@@ -122,7 +122,7 @@ export default function Prices() {
                   />
                 </div>
                 <p className="font-['Libre_Baskerville',serif] italic text-white text-[24px] leading-normal tracking-[-0.72px] whitespace-nowrap">
-                  Group Booking
+                  Réservation de Groupe
                 </p>
               </div>
               <div className="border-b border-[rgba(255,255,255,0.15)] mb-2" />
@@ -152,9 +152,9 @@ export default function Prices() {
                   />
                 </div>
                 <p className="font-['Nunito',sans-serif] text-[11px] text-[rgba(255,255,255,0.7)] leading-[1.4] tracking-[-0.5px]">
-                  <strong>For groups:</strong> reservation is advised.
-                  &ldquo;Group&rdquo; reduced rate only applies if there are
-                  over 20 people embarking.
+                  <strong>Pour les groupes :</strong> la réservation est
+                  conseillée. Le tarif réduit &ldquo;Groupe&rdquo; s&rsquo;applique
+                  uniquement à partir de 20 personnes embarquant.
                 </p>
               </div>
             </div>

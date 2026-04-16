@@ -18,38 +18,38 @@ type Stop = {
 const stops: Stop[] = [
   {
     number: "01",
-    name: "Ménec car park, Carnac",
+    name: "Parking du Ménec, Carnac",
     bullets: [
-      "Located in front of the Maison des Mégalithes",
-      "Starting point number 1",
-      "Mandatory departure point for individual visitors",
-      "Ticket office on site",
+      "Situé en face de la Maison des Mégalithes",
+      "Point de départ n°1",
+      "Point de départ obligatoire pour les visiteurs individuels",
+      "Guichet sur place",
     ],
-    note: "This is the only guaranteed boarding point for individual tickets.",
+    note: "C'est le seul point d'embarquement garanti pour les billets individuels.",
     image: "/figma-assets/stop-1.jpg",
-    imageAlt: "Ménec car park, Carnac — departure point for the Petit Train",
+    imageAlt: "Parking du Ménec, Carnac — point de départ du Petit Train",
     flip: false,
   },
   {
     number: "02",
     name: "Port en Drô, Carnac plage",
     bullets: [
-      "Stop located near Carnac's beach area",
-      "Ideal for visitors staying near the seaside",
+      "Arrêt situé près de la plage de Carnac",
+      "Idéal pour les visiteurs séjournant côté mer",
     ],
     image: "/figma-assets/stop-2.jpg",
-    imageAlt: "Carnac beach — Port en Drô stop",
+    imageAlt: "Plage de Carnac — arrêt Port en Drô",
     flip: true,
   },
   {
     number: "03",
-    name: "La Trinité sur Mer harbour",
+    name: "Port de La Trinité-sur-Mer",
     bullets: [
-      'Located near the "Cours des Quais" bus stop',
-      "Close to the famous marina and sailing area",
+      'Situé près de l\'arrêt de bus « Cours des Quais »',
+      "À proximité de la célèbre marina et du plan d'eau de voile",
     ],
     image: "/figma-assets/stop-3.jpg",
-    imageAlt: "La Trinité sur Mer harbour",
+    imageAlt: "Port de La Trinité-sur-Mer",
     flip: false,
   },
 ];
@@ -91,7 +91,7 @@ export default function RoutesTimeline() {
   }, []);
 
   return (
-    <section className="bg-[#f7f7f0] py-28">
+    <section className="bg-[#f7f7f0] py-16 xl:py-28">
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 w-full flex flex-col gap-20 items-center">
         {/* Header */}
         <div className="flex flex-col gap-6 items-center text-center max-w-[768px]">
@@ -106,21 +106,21 @@ export default function RoutesTimeline() {
               />
             </div>
             <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
-              Routes Timeline
+              Chronologie du Parcours
             </p>
           </div>
           <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] text-center leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[518px] [text-wrap:balance] break-words">
-            Stops and route of the{" "}
+            Arrêts et parcours du{" "}
             <em className="text-[#58496c]">Petit Train de Carnac</em>
           </h2>
           <p className="font-['Roboto',sans-serif] text-[#535862] text-[16px] text-center leading-[1.2] tracking-[-0.48px] max-w-[570px]">
-            During the guided sightseeing tour, the Petit Train de Carnac passes
-            through several key locations, offering a complete overview of
-            Carnac and its surroundings.
+            Au cours de la visite guidée, le Petit Train de Carnac traverse
+            plusieurs lieux clés, offrant un aperçu complet de Carnac et de ses
+            environs.
           </p>
           <p className="font-['Roboto',sans-serif] font-bold text-[#535862] text-[16px] text-center leading-[1.2] tracking-[-0.48px] max-w-[570px]">
-            The Petit Train de Carnac serves the following stops during the
-            tour:
+            Le Petit Train de Carnac dessert les arrêts suivants au cours de la
+            visite :
           </p>
         </div>
 
@@ -178,13 +178,13 @@ export default function RoutesTimeline() {
                         aria-hidden="true"
                       />
                     </div>
-                    Book your tour
+                    Réservez votre visite
                   </Link>
                   <Link
                     href="/prices"
                     className="btn-secondary inline-flex items-center justify-center h-[45px] px-[22px] bg-[#f7f7f0] border border-[rgba(0,0,0,0.2)] rounded-[4px] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
                   >
-                    See Pricing
+                    Voir les Tarifs
                   </Link>
                 </div>
               </div>

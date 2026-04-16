@@ -2,31 +2,30 @@ import Image from "next/image";
 
 const months = [
   {
-    name: "April",
-    hours: "From 10:00 AM to 6:00 PM",
-    note: "Departures every 30 minutes from the Ménec car park",
+    name: "Avril",
+    hours: "De 10h00 à 18h00",
+    note: "Départs toutes les 30 minutes depuis le parking du Ménec",
   },
   {
-    name: "May",
-    hours: "From 10:00 AM to 6:00 PM",
-    note: "Departures every 30 minutes from the Ménec car park",
+    name: "Mai",
+    hours: "De 10h00 à 18h00",
+    note: "Départs toutes les 30 minutes depuis le parking du Ménec",
   },
   {
-    name: "June",
-    hours: "From 10:00 AM to 6:00 PM",
-    note: "Departures every 30 minutes from the Ménec car park",
+    name: "Juin",
+    hours: "De 10h00 à 18h00",
+    note: "Départs toutes les 30 minutes depuis le parking du Ménec",
   },
   {
-    name: "July & August",
-    hours: "From 9:30 AM to 6:30 PM",
+    name: "Juillet & Août",
+    hours: "De 9h30 à 18h30",
     note: (
       <>
-        <span className="text-white">Ménec car park</span> — Departures every 30
-        minutes
+        <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
         <br />
-        <span className="text-white">Carnac plage</span> — Every hour 10:00 AM–12:00 PM &amp; 2:00–6:00 PM
+        <span className="text-white">Carnac plage</span> — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
         <br />
-        <span className="text-white">La Trinité sur Mer harbour</span> — Every hour 10:15–11:15 AM &amp; 2:15–5:15 PM
+        <span className="text-white">Port de La Trinité-sur-Mer</span> — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
       </>
     ),
   },
@@ -34,24 +33,24 @@ const months = [
 
 const monthsBottom = [
   {
-    name: "September",
-    hours: "From 10:00 AM to 6:00 PM",
-    note: "Departures every 30 minutes from the Ménec car park",
+    name: "Septembre",
+    hours: "De 10h00 à 18h00",
+    note: "Départs toutes les 30 minutes depuis le parking du Ménec",
   },
   {
-    name: "October",
-    hours: "From 10:00 AM to 6:00 PM",
-    note: "Departures every 30 minutes from the Ménec car park",
+    name: "Octobre",
+    hours: "De 10h00 à 18h00",
+    note: "Départs toutes les 30 minutes depuis le parking du Ménec",
   },
   {
-    name: "November",
-    hours: "From 10:00 AM to 6:00 PM",
-    note: "Departures every 30 minutes from the Ménec car park",
+    name: "Novembre",
+    hours: "De 10h00 à 18h00",
+    note: "Départs toutes les 30 minutes depuis le parking du Ménec",
   },
   {
-    name: "December to February",
+    name: "Décembre à Février",
     hours: null,
-    note: "The Petit Train de Carnac does not operate during this period.",
+    note: "Le Petit Train de Carnac ne fonctionne pas pendant cette période.",
   },
 ];
 
@@ -87,11 +86,11 @@ export default function InformationsSchedule() {
               </div>
               <div className="flex flex-col gap-4">
                 <h3 className="font-['Libre_Baskerville',serif] text-[28px] md:text-[32px] leading-[1.25] text-white tracking-[-2.24px]">
-                  Operating period
+                  Période d&apos;exploitation
                 </h3>
                 <p className="font-['Nunito',sans-serif] text-[14px] leading-[1.3] tracking-[-0.42px] text-white max-w-[400px]">
-                  The Petit Train de Carnac operates every day from April to
-                  early November, including Sundays and public holidays.
+                  Le Petit Train de Carnac fonctionne tous les jours d&apos;avril
+                  à début novembre, y compris les dimanches et jours fériés.
                 </p>
               </div>
             </div>
@@ -122,11 +121,11 @@ export default function InformationsSchedule() {
               </div>
               <div className="flex flex-col gap-4">
                 <h3 className="font-['Libre_Baskerville',serif] text-[28px] md:text-[32px] leading-[1.25] text-white tracking-[-2.24px]">
-                  Weather
+                  Météo
                 </h3>
                 <p className="font-['Nunito',sans-serif] text-[14px] leading-[1.3] tracking-[-0.42px] text-white max-w-[400px]">
-                  The trains operate in all weather conditions, allowing you to
-                  enjoy the tour whether it is sunny, cloudy, or rainy.
+                  Les trains fonctionnent par tous les temps, vous permettant de
+                  profiter de la visite qu&apos;il fasse soleil, nuageux ou pluvieux.
                 </p>
               </div>
             </div>
@@ -140,12 +139,12 @@ export default function InformationsSchedule() {
             <div className="flex items-center gap-4 pb-8 border-b border-[rgba(255,255,255,0.2)]">
               <div className="flex-1 h-px bg-[rgba(255,255,255,0.35)]" />
               <h2 className="font-['Libre_Baskerville',serif] italic text-white text-[28px] tracking-[-1.5px] whitespace-nowrap">
-                Timetables
+                Horaires
               </h2>
               <div className="flex-1 h-px bg-[rgba(255,255,255,0.35)]" />
             </div>
 
-            {/* Row 1 — April through July/August */}
+            {/* Row 1 — Avril à Juillet/Août */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-[rgba(255,255,255,0.4)]">
               {months.map((month) => (
                 <div key={month.name} className="flex flex-col gap-3">
@@ -175,7 +174,7 @@ export default function InformationsSchedule() {
               ))}
             </div>
 
-            {/* Row 2 — September through December */}
+            {/* Row 2 — Septembre à Décembre */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {monthsBottom.map((month) => (
                 <div key={month.name} className="flex flex-col gap-3">
@@ -213,19 +212,19 @@ export default function InformationsSchedule() {
           <div className="flex items-center gap-4 w-full">
             <div className="flex-1 h-px bg-[rgba(0,0,0,0.12)]" />
             <h2 className="font-['Libre_Baskerville',serif] italic text-[#58496c] text-[28px] tracking-[-1.5px] whitespace-nowrap">
-              Holidays &amp; Off-season
+              Jours fériés &amp; Hors-saison
             </h2>
             <div className="flex-1 h-px bg-[rgba(0,0,0,0.12)]" />
           </div>
           <p className="font-['Raleway',sans-serif] text-[#181d27] text-base leading-[normal] max-w-[476px]">
-            Special departure times may apply during public holidays and
-            off-season weekends.
+            Des horaires de départ spéciaux peuvent s&apos;appliquer pendant les
+            jours fériés et les week-ends hors-saison.
           </p>
           <p className="font-['Raleway',sans-serif] text-[#181d27] text-center">
-            <span className="text-[14px] tracking-[-0.48px]">Departures are usually scheduled at:</span>
+            <span className="text-[14px] tracking-[-0.48px]">Les départs sont généralement prévus à :</span>
             <br />
             <span className="text-[22px] tracking-[2.4px] font-medium">
-              2:00 PM · 2:45 PM · 3:30 PM · 4:45 PM · 5:30 PM
+              14h00 · 14h45 · 15h30 · 16h45 · 17h30
             </span>
           </p>
         </div>

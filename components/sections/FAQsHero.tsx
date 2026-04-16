@@ -6,8 +6,9 @@ export default function FAQsHero() {
       <div className="flex flex-col xl:flex-row min-h-[540px] xl:min-h-[721px]">
 
         {/* ── Left: text content ── */}
-        <div className="flex-1 flex items-center py-16 xl:py-[96px] px-5 xl:px-[80px]">
-          <div className="flex flex-col gap-10 max-w-[576px] w-full">
+        <div className="flex-1 flex items-center justify-end py-16 xl:py-24 bg-[#f7f7f0] relative z-10">
+          <div className="w-full max-w-[640px] px-5 xl:px-0">
+          <div className="xl:pr-8 flex flex-col gap-10 max-w-[576px]">
 
             {/* Heading block */}
             <div className="flex flex-col gap-6">
@@ -23,21 +24,21 @@ export default function FAQsHero() {
                   />
                 </div>
                 <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px]">
-                  FAQs
+                  FAQ
                 </p>
               </div>
 
               {/* Heading */}
               <h1 className="font-['Libre_Baskerville',serif] text-[40px] sm:text-[48px] xl:text-[60px] text-[#181d27] leading-[1.1] tracking-[-2.5px] xl:tracking-[-4.2px] [text-wrap:balance]">
-                Frequently Asked Questions
+                Questions Fréquemment Posées
               </h1>
 
               {/* Description */}
               <p className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.2] tracking-[-0.48px] max-w-[551px]">
-                Find answers to the most frequently asked questions about the Petit Train de Carnac.
-                This page covers practical information, booking details, the tour route,
-                accessibility, and group visits, to help you plan your sightseeing experience in
-                Carnac with confidence.
+                Trouvez des réponses aux questions les plus fréquentes sur le Petit Train de Carnac.
+                Cette page couvre les informations pratiques, la réservation, le parcours de la
+                visite, l&apos;accessibilité et les visites de groupe, pour vous aider à planifier
+                votre expérience touristique à Carnac en toute confiance.
               </p>
             </div>
 
@@ -77,26 +78,32 @@ export default function FAQsHero() {
                     </div>
                   </div>
                   <p className="font-['Nunito',sans-serif] text-[11px] text-black/60 tracking-[-0.33px]">
-                    6,000+ reviews
+                    6 000+ avis
                   </p>
                 </div>
               </div>
 
               {/* Supporting text */}
               <p className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.2] tracking-[-0.48px] max-w-[499px]">
-                <strong className="font-bold text-[#181d27]">The Petit Train de Carnac</strong> has a
-                rating over 4.7 on Google, with over 6,000 reviews, making it one of the most popular
-                touristic attractions in Carnac.
+                <strong className="font-bold text-[#181d27]">Le Petit Train de Carnac</strong> est
+                noté 4,7 sur Google, avec plus de 6 000 avis, ce qui en fait l&apos;une des
+                attractions touristiques les plus populaires de Carnac.
               </p>
             </div>
+          </div>
           </div>
         </div>
 
         {/* ── Right: photo with card overlay ── */}
-        <div className="flex-1 relative min-h-[300px] sm:min-h-[420px] xl:min-h-[721px]">
+        <div className="flex-1 relative min-h-[500px] xl:min-h-[721px]">
+          {/* Diagonal left edge overlay — matches homepage Hero split */}
+          <div
+            className="absolute inset-y-0 left-0 w-24 bg-[#f7f7f0] z-10 origin-top-left [clip-path:polygon(0_0,100%_0,0_100%)]"
+            aria-hidden="true"
+          />
           <Image
             src="/figma-assets/FAQsHero.jpg"
-            alt="The Petit Train de Carnac near the menhirs"
+            alt="Le Petit Train de Carnac près des menhirs"
             fill
             className="object-cover object-center"
             sizes="(min-width: 1280px) 720px, 100vw"
@@ -107,20 +114,20 @@ export default function FAQsHero() {
           <div className="absolute bottom-8 right-0 left-1/4 xl:left-[189px] mx-4 xl:mx-0 backdrop-blur-sm bg-[rgba(90,74,110,0.65)] border border-[rgba(255,255,255,0.2)] rounded-[12px] shadow-[0px_-10px_80px_0px_rgba(22,61,92,0.5)] p-6">
             <div className="flex items-start justify-between gap-4 mb-3">
               <p className="font-['Roboto',sans-serif] font-semibold text-[18px] xl:text-[20px] text-white leading-[1.1] tracking-[-0.8px] max-w-[312px]">
-                Guided sightseeing tour with audio commentary in 16 languages
+                Visite guidée avec commentaire audio en 16 langues
               </p>
               <div className="relative shrink-0 w-[70px] h-[43px]">
                 <Image
                   src="/figma-assets/stars.svg"
-                  alt="4.7 stars"
+                  alt="4,7 étoiles"
                   fill
                   className="object-contain object-right-top"
                 />
               </div>
             </div>
             <p className="font-['Roboto',sans-serif] text-[14px] text-white leading-[1.4] tracking-[-0.56px] max-w-[312px]">
-              French, English, German, Spanish, Italian, Portuguese, Dutch, Russian, Chinese,
-              Japanese, Swedish, Danish, Polish, Arabic, Croatian, and Slovenian.
+              Français, anglais, allemand, espagnol, italien, portugais, néerlandais, russe,
+              chinois, japonais, suédois, danois, polonais, arabe, croate et slovène.
             </p>
           </div>
         </div>

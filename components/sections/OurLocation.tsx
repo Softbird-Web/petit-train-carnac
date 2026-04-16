@@ -14,27 +14,27 @@ const CarnacMap = dynamic(() => import("@/components/ui/CarnacMap"), {
 const locationItems = [
   {
     icon: "/figma-assets/icon-map-pin.svg",
-    title: "Main departure point",
+    title: "Point de départ principal",
     description:
-      "The main departure point for individual visitors is located at the Ménec car park in Carnac, directly in front of the Maison des Mégalithes. This location is clearly signposted and easy to reach on foot from nearby attractions.",
+      "Le point de départ principal pour les visiteurs individuels est situé au parking du Ménec à Carnac, directement en face de la Maison des Mégalithes. Cet emplacement est clairement indiqué et facile d'accès à pied depuis les attractions voisines.",
   },
   {
     icon: "/figma-assets/icon-car.svg",
-    title: "By car",
+    title: "En voiture",
     description:
-      "If you are arriving by car, leave the Nantes to Brest road at Auray, then follow the signs towards Carnac and La Trinité sur Mer. Once in Carnac, follow the signs for the Maison des Mégalithes. The Petit Train departure point is located on the Ménec car park. Parking is available nearby.",
+      "Si vous venez en voiture, quittez la route Nantes–Brest à Auray, puis suivez les panneaux vers Carnac et La Trinité-sur-Mer. Une fois à Carnac, suivez les panneaux pour la Maison des Mégalithes. Le point de départ du Petit Train se trouve au parking du Ménec. Des places de stationnement sont disponibles à proximité.",
   },
   {
     icon: "/figma-assets/icon-train-sm.svg",
-    title: "By train",
+    title: "En train",
     description:
-      "The nearest train station is Auray, served by TGV trains on the Paris to Quimper and Bordeaux to Brest lines. From Auray station, you can reach Carnac by car, taxi, or local transport. The Ménec departure point is then easy to access once you arrive in Carnac.",
+      "La gare la plus proche est Auray, desservie par des TGV sur les lignes Paris–Quimper et Bordeaux–Brest. Depuis la gare d'Auray, vous pouvez rejoindre Carnac en voiture, taxi ou transport local. Le point de départ du Ménec est ensuite facile d'accès une fois arrivé à Carnac.",
   },
 ];
 
 export default function OurLocation() {
   return (
-    <section className="bg-[#f7f7f0] py-28 isolate">
+    <section className="bg-[#f7f7f0] py-16 xl:py-28 isolate">
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 w-full flex flex-col-reverse lg:flex-row items-start lg:items-center gap-12 lg:gap-20">
         {/* Map — bottom on mobile, left on desktop */}
         <div className="w-full h-[400px] lg:flex-1 lg:self-stretch lg:h-auto lg:min-h-[560px] rounded-2xl overflow-hidden shadow-md">
@@ -55,21 +55,22 @@ export default function OurLocation() {
               />
             </div>
             <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
-              Our Location
+              Notre Emplacement
             </p>
           </div>
 
           {/* Heading */}
           <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[472px] break-words">
-            How to access the{" "}
+            Comment accéder au{" "}
             <em className="text-[#58496c]">Petit Train de Carnac</em>
           </h2>
 
           {/* Subtext */}
           <p className="font-['Roboto',sans-serif] text-[#535862] text-[16px] leading-[1.2] tracking-[-0.48px] max-w-[570px]">
-            The Petit Train de Carnac is easy to access whether you are arriving
-            by car or by train. The main departure point is located close to the
-            Carnac menhirs and the town&apos;s main tourist areas.
+            Le Petit Train de Carnac est facilement accessible, que vous arriviez
+            en voiture ou en train. Le point de départ principal est situé à
+            proximité des menhirs de Carnac et des principales zones touristiques
+            de la ville.
           </p>
 
           {/* Feature items */}
@@ -108,11 +109,11 @@ export default function OurLocation() {
           {/* Arrival recommendation */}
           <div className="flex flex-col gap-2 pl-16">
             <p className="font-['Roboto',sans-serif] font-semibold text-[#5a4a6e] text-[20px] leading-[1.2] tracking-[-0.6px]">
-              Arrival recommendation
+              Conseil d&apos;arrivée
             </p>
             <p className="font-['Roboto',sans-serif] text-[#535862] text-[16px] leading-[1.2] tracking-[-0.48px] max-w-[435px]">
-              Please arrive at least 15 minutes before departure to allow enough
-              time for ticket check in and boarding.
+              Merci d&apos;arriver au moins 15 minutes avant le départ afin
+              d&apos;avoir le temps de valider votre billet et d&apos;embarquer.
             </p>
           </div>
         </div>
