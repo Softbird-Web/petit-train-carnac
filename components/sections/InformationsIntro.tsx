@@ -29,7 +29,9 @@ export default function InformationsIntro() {
           </div>
           <div className="flex-1">
             <p className="font-['Inter',sans-serif] text-[18px] md:text-[20px] leading-[1.5] text-[#535862]">
-             La réservation est possible mais non obligatoire. Vous pouvez réserver jusqu à 2 heures avant le départ souhaité. N'oubliez pas de prévoir le temps de trajet et le stationnement sur place. Passé ce délai, rendez-vous directement au point de départ et achetez vos billets au guichet ou auprès du conducteur.
+              La réservation est possible mais non obligatoire. Vous pouvez réserver jusqu&apos;à <strong>2 heures</strong> avant le départ souhaité. N&apos;oubliez pas de prévoir le temps de trajet et le stationnement sur place. Passé ce délai, rendez-vous directement au point de départ et achetez vos billets au guichet ou auprès du conducteur.
+              <br />
+              Toutes les places ne sont pas disponibles à la vente en ligne.
             </p>
           </div>
         </div>
