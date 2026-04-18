@@ -26,7 +26,7 @@ export default function RoutesHero({
   flip = false,
   lightbox = false,
   headingLevel: Heading = 'h1',
-  primaryButton = { label: 'Flyer individuel', href: '#' },
+  primaryButton = { label: 'Flyer individuel', href: '/figma-assets/FlyerIndividual.pdf' },
   secondaryButton = { label: 'Flyer de groupe', href: '#' },
 }: RoutesHeroProps) {
   const [open, setOpen] = useState(false)
@@ -99,8 +99,10 @@ export default function RoutesHero({
 
       {/* CTA buttons */}
       <div className="flex items-center gap-3 flex-wrap">
-        <TransitionLink
+        <a
           href={primaryButton.href}
+          target="_blank"
+          rel="noopener noreferrer"
           className="btn-primary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
         >
           <div className="relative w-4 h-4 shrink-0">
@@ -113,7 +115,7 @@ export default function RoutesHero({
             />
           </div>
           {primaryButton.label}
-        </TransitionLink>
+        </a>
         <TransitionLink
           href={secondaryButton.href}
           className="btn-secondary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#f7f7f0] rounded-[4px] border border-[rgba(0,0,0,0.2)] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
