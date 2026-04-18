@@ -232,7 +232,7 @@ export default function Hero({
                 <p className="font-['Inter',sans-serif] font-normal text-[20px] leading-[30px] text-[#535862]">
                   La réservation est possible mais non obligatoire. Vous pouvez
                   réserver jusqu&apos;à{" "}
-                  <strong className="font-bold">2 heures</strong> avant le
+                  <strong className="font-bold">2 heures</strong>{" "}avant le
                   départ souhaité. N&apos;oubliez pas de prévoir le temps de
                   trajet et le stationnement sur place. Passé ce délai, rendez-
                   vous directement au point de départ et achetez vos billets au
