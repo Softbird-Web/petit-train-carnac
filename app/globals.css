@@ -54,63 +54,15 @@ body {
   }
 }
 
-/* ── Button hover — primary (filled) ───────────────────────── */
+/* ── Button base classes (hover handled by Osmo stagger below) ── */
 .btn-primary {
   position: relative;
   overflow: hidden;
-  transition:
-    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.btn-primary::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.1);
-  opacity: 0;
-  transition: opacity 0.22s;
-  pointer-events: none;
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-}
-.btn-primary:hover::after {
-  opacity: 1;
-}
-.btn-primary:active {
-  transform: translateY(0);
-  box-shadow: none;
 }
 
-/* Ripple */
-.btn-primary .ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  transform: scale(0);
-  animation: ripple-anim 0.55s linear;
-  pointer-events: none;
-}
-@keyframes ripple-anim {
-  to {
-    transform: scale(2.5);
-    opacity: 0;
-  }
-}
-
-/* ── Button hover — secondary (outlined) ───────────────────── */
 .btn-secondary {
-  transition:
-    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
-    background-color 0.22s;
-}
-.btn-secondary:hover {
-  transform: translateY(-2px);
-  background-color: rgba(90, 74, 110, 0.08);
-}
-.btn-secondary:active {
-  transform: translateY(0);
+  position: relative;
+  overflow: hidden;
 }
 
 /* ── Nav link underline ─────────────────────────────────────── */
@@ -345,24 +297,32 @@ body {
 }
 
 .btn-animate-chars__bg {
+  border-radius: inherit;
   position: absolute;
   inset: 0;
+  transition: inset 0.6s cubic-bezier(0.625, 0.05, 0, 1);
   pointer-events: none;
 }
 
-.btn-animate-chars__text {
-  position: relative;
-  display: flex;
+.btn-animate-chars:hover .btn-animate-chars__bg {
+  inset: 3px;
+}
+
+.btn-animate-chars [data-button-animate-chars] {
   overflow: hidden;
-  line-height: 1;
-}
-
-.btn-animate-chars__text > span {
+  position: relative;
   display: inline-block;
-  transition: transform 0.5s cubic-bezier(0.625, 0.05, 0, 1);
-  text-shadow: 0px 1.3em currentColor;
+  line-height: 1.3;
 }
 
-.btn-animate-chars:hover .btn-animate-chars__text > span {
-  transform: translateY(-1.3em);
+.btn-animate-chars [data-button-animate-chars] span {
+  display: inline-block;
+  position: relative;
+  text-shadow: 0px 1.3em currentColor;
+  transform: translateY(0em) rotate(0.001deg);
+  transition: transform 0.6s cubic-bezier(0.625, 0.05, 0, 1);
+}
+
+.btn-animate-chars:hover [data-button-animate-chars] span {
+  transform: translateY(-1.3em) rotate(0.001deg);
 }
