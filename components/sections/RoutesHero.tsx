@@ -43,7 +43,7 @@ export default function RoutesHero({
   const imageBlock = (
     <div className="w-full xl:flex-1 xl:min-w-0">
       <div
-        className={`relative h-[400px] md:h-[520px] xl:h-[640px] rounded-[16px] border-[5px] border-[#5a4a6e] overflow-hidden${
+        className={`relative h-[400px] md:h-[520px] xl:h-[640px] rounded-[16px] border-[5px] border-[#54206d] overflow-hidden${
           lightbox ? ' cursor-zoom-in' : ''
         }`}
         onClick={() => lightbox && setOpen(true)}
@@ -81,7 +81,7 @@ export default function RoutesHero({
               aria-hidden="true"
             />
           </div>
-          <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
+          <p className="font-['Libre_Baskerville',serif] italic text-[#54206d] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
             {label}
           </p>
         </div>
@@ -104,7 +104,7 @@ export default function RoutesHero({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={primaryButton.label}
-          className="btn-animate-chars btn-primary gap-2 h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
+          className="btn-animate-chars btn-primary gap-2 h-[45px] px-[22px] bg-[#54206d] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
         >
           <div className="btn-animate-chars__bg" />
           <div className="relative w-4 h-4 shrink-0">

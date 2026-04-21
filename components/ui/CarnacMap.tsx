@@ -27,7 +27,7 @@ const STOPS = [
 const PIN_SVG = `
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="42" viewBox="0 0 32 42">
   <path d="M16 0C7.163 0 0 7.163 0 16c0 10.314 14.286 24.857 15.143 25.714a1.143 1.143 0 0 0 1.714 0C17.714 40.857 32 26.314 32 16 32 7.163 24.837 0 16 0z"
-        fill="#5a4a6e"/>
+        fill="#54206d"/>
   <circle cx="16" cy="16" r="7" fill="white"/>
 </svg>`;
 

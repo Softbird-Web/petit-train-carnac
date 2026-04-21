@@ -9,7 +9,7 @@ const reviews = [
   },
   {
     id: 2,
-    text: "It was existential and out of body. All was pretty so so until we reached the megaliths at which I was overtaken by a spirit of wonder and wellness. At some point I was bathed in a bright white light and I felt my spirit leave my body. I became aware of 1000's of beings surrounding me, asking questions in tongues I'd never heard of. Then I woke up in the back of the train on its way back to the car park. Didn't expect all that for 8 euros. Well worth it I'd say.",
+    text: "It was existential and out of body. All was pretty so so until we reached the megaliths at which I was overtaken by a spirit of wonder and wellness. At some point I was bathed in a bright white light and I felt my spirit leave my body. I became aware of 1000's of beings surrounding me, asking questions in tongues I'd never heard of. Then I woke up in the back of the train on its way back to the car park. Didn't expect all that for 8.50 euros. Well worth it I'd say.",
     author: "Dom L.",
     col: 2,
   },
@@ -64,7 +64,7 @@ function ReviewCard({ text, author }: { text: string; author: string }) {
 
 export default function InformationsReviews() {
   return (
-    <section className="bg-[#58496c] py-20 overflow-hidden">
+    <section className="bg-[#4d1c64] py-20 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 flex flex-col items-center gap-16">
 
         {/* Heading + Google badge */}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import TransitionLink from "@/components/ui/TransitionLink";
+import HeroVideoPanel from "@/components/ui/HeroVideoPanel";
 import type { ReactNode } from "react";
 
 interface HeroProps {
@@ -12,6 +13,7 @@ interface HeroProps {
   rightImageSrc?: string;
   rightImageAlt?: string;
   rightVideoSrc?: string;
+  openingImageSrc?: string;
   rightCard?: ReactNode;
   showBottomBanner?: boolean;
 }
@@ -19,7 +21,7 @@ interface HeroProps {
 const defaultHeading = (
   <>
     Découvrez{" "}
-    <em className="italic text-[#5a4a6e] not-[font-style:normal]">Carnac</em>{" "}
+    <em className="italic text-[#54206d] not-[font-style:normal]">Carnac</em>{" "}
     à bord du Petit Train
   </>
 );
@@ -40,7 +42,7 @@ const defaultButtons = (
     <TransitionLink
       href="/book"
       aria-label="Réservez votre visite"
-      className="btn-animate-chars btn-primary bg-[#5a4a6e] h-[45px] px-[22px] rounded-[4px] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)]"
+      className="btn-animate-chars btn-primary bg-[#54206d] h-[45px] px-[22px] rounded-[4px] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)]"
     >
       <div className="btn-animate-chars__bg" />
       <span data-button-animate-chars="" className="btn-animate-chars__text">Réservez votre visite</span>
@@ -57,7 +59,7 @@ const defaultButtons = (
 );
 
 const defaultRightCard = (
-  <div className="absolute bottom-[514px] lg:bottom-[30px] left-1/2 -translate-x-1/2 lg:left-[189px] lg:translate-x-0 bg-[rgba(90,74,110,0.65)] border border-[rgba(255,255,255,0.2)] rounded-xl p-6 w-[499px] max-w-[calc(100%-32px)] flex flex-col gap-4 z-20">
+  <div className="absolute bottom-[514px] lg:bottom-[30px] left-1/2 -translate-x-1/2 lg:left-auto lg:right-6 lg:translate-x-0 bg-[rgba(84,32,109,0.65)] border border-[rgba(255,255,255,0.2)] rounded-xl p-6 w-[499px] max-w-[calc(100%-32px)] flex flex-col gap-4 z-20">
     <div className="flex items-start justify-between gap-4">
       <p className="font-['Roboto',sans-serif] font-semibold text-[20px] leading-[1.1] text-white tracking-[-0.8px] max-w-[312px]">
         Visite guidée avec commentaire audio en 16 langues
@@ -89,6 +91,7 @@ export default function Hero({
   rightImageSrc = "/figma-assets/hero-image.jpg",
   rightImageAlt = "Le Petit Train de Carnac sur un parcours pittoresque",
   rightVideoSrc,
+  openingImageSrc,
   rightCard = defaultRightCard,
   showBottomBanner = true,
 }: HeroProps) {
@@ -113,7 +116,7 @@ export default function Hero({
                       aria-hidden="true"
                     />
                   </div>
-                  <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
+                  <p className="font-['Libre_Baskerville',serif] italic text-[#54206d] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
                     {label}
                   </p>
                 </div>
@@ -185,20 +188,18 @@ export default function Hero({
         <div className="flex-1 relative min-h-[320px] lg:min-h-0 overflow-hidden rounded-2xl lg:rounded-none mx-4 lg:mx-0 mb-4 lg:mb-0">
           {/* Diagonal left edge overlay — desktop only */}
           <div
-            className="hidden lg:block absolute inset-y-0 left-0 w-24 bg-[#f7f7f0] z-10 origin-top-left [clip-path:polygon(0_0,100%_0,0_100%)]"
+            className="hidden lg:block absolute inset-y-0 left-0 w-24 bg-[#54206d] z-10 origin-top-left [clip-path:polygon(0_0,100%_0,0_100%)]"
             aria-hidden="true"
           />
 
-          {/* Hero media: video or image */}
+          {/* Hero media: video (with optional opening image) or static image */}
           <div className="absolute inset-0">
             {rightVideoSrc ? (
-              <video
-                src={rightVideoSrc}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover"
+              <HeroVideoPanel
+                videoSrc={rightVideoSrc}
+                openingImageSrc={openingImageSrc}
+                imageSrc={rightImageSrc}
+                imageAlt={rightImageAlt}
               />
             ) : (
               <Image
@@ -231,7 +232,7 @@ export default function Hero({
                   aria-hidden="true"
                 />
               </div>
-              <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px]">
+              <p className="font-['Libre_Baskerville',serif] italic text-[#54206d] text-base leading-6 tracking-[-0.48px]">
                 Note Importante
               </p>
             </div>

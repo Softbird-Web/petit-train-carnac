@@ -24,7 +24,7 @@ const socialIcons = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#58496c] flex flex-col items-center gap-16 pb-12 overflow-hidden">
+    <footer className="bg-[#4d1c64] flex flex-col items-center gap-16 pb-12 overflow-hidden">
       {/* CTA Block — has background image */}
       <div className="relative w-full overflow-hidden">
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none">

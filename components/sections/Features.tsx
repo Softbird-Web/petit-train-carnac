@@ -9,9 +9,9 @@ const features = [
   },
   {
     icon: "/figma-assets/icon-audio-guide.svg",
-    title: "Commentaire audio tout au long de la visite",
+    title: "Commentaire audio en 16 langues — inclus dans le billet",
     description:
-      "Le commentaire audio fournit des informations claires et accessibles sur les lieux que vous traversez, donnant vie à l'histoire et à l'atmosphère de Carnac.",
+      "Le commentaire audio est disponible en 16 langues, inclus dans le prix du billet. Une version pour les enfants est disponible en français et en anglais.",
   },
   {
     icon: "/figma-assets/icon-landmark.svg",
@@ -84,7 +84,7 @@ export default function Features() {
                   <div className="relative shrink-0 w-16 h-16 rounded-[10px] border border-[#e9eaeb] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] overflow-hidden">
                     <div
                       aria-hidden="true"
-                      className="absolute inset-0 bg-[#58496c] pointer-events-none rounded-[10px]"
+                      className="absolute inset-0 bg-[#4d1c64] pointer-events-none rounded-[10px]"
                     />
                     <div className="absolute inset-[15px]">
                       <Image

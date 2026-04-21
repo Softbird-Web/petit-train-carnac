@@ -8,7 +8,7 @@ export default function PolitiqueDeConfidentialitePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-[#5a4a6e] py-16 xl:py-24 px-5 xl:px-[64px]">
+      <section className="bg-[#54206d] py-16 xl:py-24 px-5 xl:px-[64px]">
         <div className="max-w-[1312px] mx-auto">
           <h1 className="font-['Libre_Baskerville',serif] text-[40px] sm:text-[52px] xl:text-[64px] text-[#f7f7f0] leading-[1.1] tracking-[-3.36px]">
             Politique de Confidentialité
@@ -44,7 +44,7 @@ export default function PolitiqueDeConfidentialitePage() {
             </p>
           </div>
 
-          <div className="border-t border-[rgba(88,73,108,0.12)]" />
+          <div className="border-t border-[rgba(77,28,100,0.12)]" />
 
           {/* Cookies section */}
           <div className="flex flex-col gap-4">
@@ -63,7 +63,7 @@ export default function PolitiqueDeConfidentialitePage() {
             <div className="overflow-x-auto">
               <table className="w-full font-['Roboto',sans-serif] text-sm text-[#535862] border-collapse">
                 <thead>
-                  <tr className="border-b border-[rgba(88,73,108,0.12)]">
+                  <tr className="border-b border-[rgba(77,28,100,0.12)]">
                     <th className="text-left py-2 pr-4 text-[#181d27] font-semibold whitespace-nowrap">Nom</th>
                     <th className="text-left py-2 pr-4 text-[#181d27] font-semibold whitespace-nowrap">Type</th>
                     <th className="text-left py-2 pr-4 text-[#181d27] font-semibold whitespace-nowrap">Durée</th>
@@ -77,8 +77,8 @@ export default function PolitiqueDeConfidentialitePage() {
                     { name: '_gid', type: 'Statistiques', duration: '1 jour', desc: 'Utilisé par Google Analytics pour mesurer l\'audience.' },
                     { name: '_ga', type: 'Statistiques', duration: '2 ans', desc: 'Utilisé par Google Analytics pour mesurer l\'audience.' },
                   ].map((cookie) => (
-                    <tr key={cookie.name} className="border-b border-[rgba(88,73,108,0.08)]">
-                      <td className="py-2.5 pr-4 font-mono text-xs text-[#5a4a6e] whitespace-nowrap">{cookie.name}</td>
+                    <tr key={cookie.name} className="border-b border-[rgba(77,28,100,0.08)]">
+                      <td className="py-2.5 pr-4 font-mono text-xs text-[#54206d] whitespace-nowrap">{cookie.name}</td>
                       <td className="py-2.5 pr-4 whitespace-nowrap">{cookie.type}</td>
                       <td className="py-2.5 pr-4 whitespace-nowrap">{cookie.duration}</td>
                       <td className="py-2.5 leading-[1.5]">{cookie.desc}</td>
@@ -89,7 +89,7 @@ export default function PolitiqueDeConfidentialitePage() {
             </div>
           </div>
 
-          <div className="border-t border-[rgba(88,73,108,0.12)]" />
+          <div className="border-t border-[rgba(77,28,100,0.12)]" />
 
           {/* Rights section */}
           <PrivacySection title="Formulaire et Téléservice">
@@ -110,7 +110,7 @@ export default function PolitiqueDeConfidentialitePage() {
               href="https://www.bloctel.gouv.fr"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#5a4a6e] underline"
+              className="text-[#54206d] underline"
             >
               www.bloctel.gouv.fr
             </a>
@@ -125,7 +125,7 @@ export default function PolitiqueDeConfidentialitePage() {
               href="https://www.cnil.fr"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#5a4a6e] underline"
+              className="text-[#54206d] underline"
             >
               www.cnil.fr
             </a>
@@ -145,7 +145,7 @@ export default function PolitiqueDeConfidentialitePage() {
               <li>Connaissance client et statistiques d&apos;audience du site</li>
               <li>Envoi de messages par email (si consentement donné)</li>
             </ul>
-            <div className="border-t border-[rgba(88,73,108,0.12)] mt-1" />
+            <div className="border-t border-[rgba(77,28,100,0.12)] mt-1" />
           </div>
 
           <div className="flex flex-col gap-3">
@@ -157,7 +157,7 @@ export default function PolitiqueDeConfidentialitePage() {
               <li>Données de contact : Email, adresse postale, numéro de téléphone</li>
               <li>Données de localisation</li>
             </ul>
-            <div className="border-t border-[rgba(88,73,108,0.12)] mt-1" />
+            <div className="border-t border-[rgba(77,28,100,0.12)] mt-1" />
           </div>
 
           <div className="flex flex-col gap-3">
@@ -167,19 +167,19 @@ export default function PolitiqueDeConfidentialitePage() {
             <div className="overflow-x-auto">
               <table className="w-full font-['Roboto',sans-serif] text-sm text-[#535862] border-collapse">
                 <thead>
-                  <tr className="border-b border-[rgba(88,73,108,0.12)]">
+                  <tr className="border-b border-[rgba(77,28,100,0.12)]">
                     <th className="text-left py-2 pr-4 text-[#181d27] font-semibold">Nom</th>
                     <th className="text-left py-2 pr-4 text-[#181d27] font-semibold">Usage</th>
                     <th className="text-left py-2 text-[#181d27] font-semibold">Hors UE</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-[rgba(88,73,108,0.08)]">
+                  <tr className="border-b border-[rgba(77,28,100,0.08)]">
                     <td className="py-2.5 pr-4 font-medium text-[#181d27]">OVH</td>
                     <td className="py-2.5 pr-4">Hébergement du site</td>
                     <td className="py-2.5">Non</td>
                   </tr>
-                  <tr className="border-b border-[rgba(88,73,108,0.08)]">
+                  <tr className="border-b border-[rgba(77,28,100,0.08)]">
                     <td className="py-2.5 pr-4 font-medium text-[#181d27]">Google Analytics</td>
                     <td className="py-2.5 pr-4">Outils statistiques</td>
                     <td className="py-2.5">Non</td>
@@ -187,7 +187,7 @@ export default function PolitiqueDeConfidentialitePage() {
                 </tbody>
               </table>
             </div>
-            <div className="border-t border-[rgba(88,73,108,0.12)] mt-1" />
+            <div className="border-t border-[rgba(77,28,100,0.12)] mt-1" />
           </div>
 
           <div className="flex flex-col gap-3">
@@ -221,7 +221,7 @@ function PrivacySection({
       <p className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.7] tracking-[-0.3px]">
         {children}
       </p>
-      <div className="border-t border-[rgba(88,73,108,0.12)]" />
+      <div className="border-t border-[rgba(77,28,100,0.12)]" />
     </div>
   )
 }

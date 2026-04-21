@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top announcement banner */}
-      <div className="bg-[#3f3053] border-b border-[rgba(213,215,218,0.4)]">
+      <div className="bg-[#33114d] border-b border-[rgba(213,215,218,0.4)]">
         <div className="max-w-[1280px] mx-auto px-5 xl:px-0 py-[6px] flex items-center justify-center">
           <p className="text-[#f7f7f0] text-[12px] md:text-base leading-5 md:leading-6 tracking-[-0.48px] text-center font-['Roboto',sans-serif]">
             Ce site fait partie des Petits Trains du Morbihan. Découvrez nos autres circuits à{" "}
@@ -44,7 +44,7 @@ export default function Navbar() {
 
       {/* Navbar */}
       <nav
-        className={`relative bg-[#5a4a6e] h-20 flex items-center ${
+        className={`relative bg-[#54206d] h-20 flex items-center ${
           scrolled ? "navbar-scrolled" : ""
         }`}
       >
@@ -77,7 +77,7 @@ export default function Navbar() {
             <TransitionLink
               href="/prices"
               aria-label="Voir les Tarifs"
-              className="btn-animate-chars btn-secondary bg-[#5a4a6e] border border-[rgba(255,255,255,0.15)] h-[45px] px-[22px] rounded-[4px] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
+              className="btn-animate-chars btn-secondary bg-[#54206d] border border-[rgba(255,255,255,0.15)] h-[45px] px-[22px] rounded-[4px] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
             >
               <div className="btn-animate-chars__bg" />
               <span data-button-animate-chars="" className="btn-animate-chars__text">Voir les Tarifs</span>
@@ -120,7 +120,7 @@ export default function Navbar() {
 
         {/* Mobile menu drawer — absolute relative to nav (h-20), so top-full = bottom of nav */}
         <div
-          className={`lg:hidden absolute top-full left-0 right-0 bg-[#5a4a6e] border-t border-[rgba(255,255,255,0.1)] overflow-hidden transition-all duration-300 z-50 ${
+          className={`lg:hidden absolute top-full left-0 right-0 bg-[#54206d] border-t border-[rgba(255,255,255,0.1)] overflow-hidden transition-all duration-300 z-50 ${
             mobileOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
@@ -139,7 +139,7 @@ export default function Navbar() {
               <TransitionLink
                 href="/prices"
                 aria-label="Voir les Tarifs"
-                className="btn-animate-chars btn-secondary bg-[#5a4a6e] border border-[rgba(255,255,255,0.15)] h-[45px] px-[22px] rounded-[4px] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap justify-center"
+                className="btn-animate-chars btn-secondary bg-[#54206d] border border-[rgba(255,255,255,0.15)] h-[45px] px-[22px] rounded-[4px] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap justify-center"
                 onClick={() => setMobileOpen(false)}
               >
                 <div className="btn-animate-chars__bg" />

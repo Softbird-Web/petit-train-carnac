@@ -4,17 +4,41 @@ const months = [
   {
     name: "Avril",
     hours: "De 10h00 à 18h00",
-    note: "Départs toutes les 30 minutes depuis le parking du Ménec",
+    note: (
+      <>
+        <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
+        <br />
+        <span className="text-white">Carnac plage</span> — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
+        <br />
+        <span className="text-white">La Trinité-sur-Mer</span> — Arrêt de bus Courqué, côté mer — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
+      </>
+    ),
   },
   {
     name: "Mai",
     hours: "De 10h00 à 18h00",
-    note: "Départs toutes les 30 minutes depuis le parking du Ménec",
+    note: (
+      <>
+        <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
+        <br />
+        <span className="text-white">Carnac plage</span> — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
+        <br />
+        <span className="text-white">La Trinité-sur-Mer</span> — Arrêt de bus Courqué, côté mer — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
+      </>
+    ),
   },
   {
     name: "Juin",
     hours: "De 10h00 à 18h00",
-    note: "Départs toutes les 30 minutes depuis le parking du Ménec",
+    note: (
+      <>
+        <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
+        <br />
+        <span className="text-white">Carnac plage</span> — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
+        <br />
+        <span className="text-white">La Trinité-sur-Mer</span> — Arrêt de bus Courqué, côté mer — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
+      </>
+    ),
   },
   {
     name: "Juillet & Août",
@@ -23,9 +47,9 @@ const months = [
       <>
         <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
         <br />
-        <span className="text-white">Carnac plage</span> — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
+        <span className="text-white">Carnac plage</span> — Achetez vos billets sur place — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
         <br />
-        <span className="text-white">Port de La Trinité-sur-Mer</span> — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
+        <span className="text-white">La Trinité-sur-Mer</span> — Arrêt de bus Courqué, côté mer, juste avant le rond-point Alain Barrière — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
       </>
     ),
   },
@@ -35,17 +59,41 @@ const monthsBottom = [
   {
     name: "Septembre",
     hours: "De 10h00 à 18h00",
-    note: "Départs toutes les 30 minutes depuis le parking du Ménec",
+    note: (
+      <>
+        <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
+        <br />
+        <span className="text-white">Carnac plage</span> — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
+        <br />
+        <span className="text-white">La Trinité-sur-Mer</span> — Arrêt de bus Courqué, côté mer — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
+      </>
+    ),
   },
   {
     name: "Octobre",
     hours: "De 10h00 à 18h00",
-    note: "Départs toutes les 30 minutes depuis le parking du Ménec",
+    note: (
+      <>
+        <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
+        <br />
+        <span className="text-white">Carnac plage</span> — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
+        <br />
+        <span className="text-white">La Trinité-sur-Mer</span> — Arrêt de bus Courqué, côté mer — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
+      </>
+    ),
   },
   {
     name: "Novembre",
     hours: "De 10h00 à 18h00",
-    note: "Départs toutes les 30 minutes depuis le parking du Ménec",
+    note: (
+      <>
+        <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
+        <br />
+        <span className="text-white">Carnac plage</span> — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
+        <br />
+        <span className="text-white">La Trinité-sur-Mer</span> — Arrêt de bus Courqué, côté mer — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
+      </>
+    ),
   },
   {
     name: "Décembre à Février",
@@ -70,10 +118,10 @@ export default function InformationsSchedule() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-[rgba(88,73,108,0.9)]" />
+              <div className="absolute inset-0 bg-[rgba(77,28,100,0.9)]" />
             </div>
             <div className="relative z-10 flex items-start gap-4 p-6">
-              <div className="shrink-0 w-[65px] h-[65px] rounded-[10px] bg-[#58496c] border border-[rgba(233,234,235,0.15)] flex items-center justify-center shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
+              <div className="shrink-0 w-[65px] h-[65px] rounded-[10px] bg-[#4d1c64] border border-[rgba(233,234,235,0.15)] flex items-center justify-center shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
                 <div className="relative w-[41px] h-[41px]">
                   <Image
                     src="/figma-assets/CalendarIconBig.svg"
@@ -105,10 +153,10 @@ export default function InformationsSchedule() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-[rgba(88,73,108,0.9)]" />
+              <div className="absolute inset-0 bg-[rgba(77,28,100,0.9)]" />
             </div>
             <div className="relative z-10 flex items-start gap-4 p-6">
-              <div className="shrink-0 w-[65px] h-[65px] rounded-[10px] bg-[#58496c] border border-[rgba(233,234,235,0.15)] flex items-center justify-center shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
+              <div className="shrink-0 w-[65px] h-[65px] rounded-[10px] bg-[#4d1c64] border border-[rgba(233,234,235,0.15)] flex items-center justify-center shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
                 <div className="relative w-[40px] h-[40px]">
                   <Image
                     src="/figma-assets/WeatherIconBig.svg"
@@ -124,8 +172,8 @@ export default function InformationsSchedule() {
                   Météo
                 </h3>
                 <p className="font-['Nunito',sans-serif] text-[14px] leading-[1.3] tracking-[-0.42px] text-white max-w-[400px]">
-                  Les trains fonctionnent par tous les temps, vous permettant de
-                  profiter de la visite qu&apos;il fasse soleil, nuageux ou pluvieux.
+                  En cas de pluie ou de grand vent, le train est vitré sur trois
+                  côtés, vous permettant de profiter pleinement de votre visite.
                 </p>
               </div>
             </div>
@@ -133,7 +181,7 @@ export default function InformationsSchedule() {
         </div>
 
         {/* Timetable grid — purple gradient */}
-        <div className="rounded-[32px] overflow-hidden" style={{ background: "linear-gradient(112deg, #58496c 23%, #7c6e8f 85%)" }}>
+        <div className="rounded-[32px] overflow-hidden" style={{ background: "linear-gradient(112deg, #4d1c64 23%, #7b3a94 85%)" }}>
           <div className="px-10 py-12 flex flex-col gap-10">
             {/* Timetables heading */}
             <div className="flex items-center gap-4 pb-8 border-b border-[rgba(255,255,255,0.2)]">
@@ -211,21 +259,14 @@ export default function InformationsSchedule() {
           {/* Heading */}
           <div className="flex items-center gap-4 w-full">
             <div className="flex-1 h-px bg-[rgba(0,0,0,0.12)]" />
-            <h2 className="font-['Libre_Baskerville',serif] italic text-[#58496c] text-[28px] tracking-[-1.5px] whitespace-nowrap">
+            <h2 className="font-['Libre_Baskerville',serif] italic text-[#4d1c64] text-[28px] tracking-[-1.5px] whitespace-nowrap">
               Jours fériés &amp; Hors-saison
             </h2>
             <div className="flex-1 h-px bg-[rgba(0,0,0,0.12)]" />
           </div>
           <p className="font-['Raleway',sans-serif] text-[#181d27] text-base leading-[normal] max-w-[476px]">
-            Des horaires de départ spéciaux peuvent s&apos;appliquer pendant les
-            jours fériés et les week-ends hors-saison.
-          </p>
-          <p className="font-['Raleway',sans-serif] text-[#181d27] text-center">
-            <span className="text-[14px] tracking-[-0.48px]">Les départs sont généralement prévus à :</span>
-            <br />
-            <span className="text-[22px] tracking-[2.4px] font-medium">
-              14h00 · 14h45 · 15h30 · 16h45 · 17h30
-            </span>
+            Les horaires des jours fériés sont identiques aux horaires habituels.
+            Le Petit Train fonctionne normalement tous les jours fériés d&apos;avril à début novembre.
           </p>
         </div>
 

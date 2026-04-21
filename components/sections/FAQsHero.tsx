@@ -23,7 +23,7 @@ export default function FAQsHero() {
                     aria-hidden="true"
                   />
                 </div>
-                <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px]">
+                <p className="font-['Libre_Baskerville',serif] italic text-[#54206d] text-base leading-6 tracking-[-0.48px]">
                   FAQ
                 </p>
               </div>
@@ -111,7 +111,7 @@ export default function FAQsHero() {
           />
 
           {/* Card overlay */}
-          <div className="absolute bottom-8 right-0 left-1/4 xl:left-[189px] mx-4 xl:mx-0 backdrop-blur-sm bg-[rgba(90,74,110,0.65)] border border-[rgba(255,255,255,0.2)] rounded-[12px] shadow-[0px_-10px_80px_0px_rgba(22,61,92,0.5)] p-6">
+          <div className="absolute bottom-8 right-0 left-1/4 xl:left-[189px] mx-4 xl:mx-0 backdrop-blur-sm bg-[rgba(84,32,109,0.65)] border border-[rgba(255,255,255,0.2)] rounded-[12px] shadow-[0px_-10px_80px_0px_rgba(22,61,92,0.5)] p-6">
             <div className="flex items-start justify-between gap-4 mb-3">
               <p className="font-['Roboto',sans-serif] font-semibold text-[18px] xl:text-[20px] text-white leading-[1.1] tracking-[-0.8px] max-w-[312px]">
                 Visite guidée avec commentaire audio en 16 langues

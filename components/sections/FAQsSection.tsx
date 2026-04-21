@@ -27,7 +27,7 @@ const faqs = [
   {
     question: "La visite fonctionne-t-elle par mauvais temps ?",
     answer:
-      "Oui. Le Petit Train fonctionne par tous les temps. Les trains sont équipés pour accueillir les visiteurs qu'il fasse soleil, nuageux ou pluvieux.",
+      "Oui. Le Petit Train fonctionne par tous les temps. En cas de pluie ou de grand vent, le train est vitré sur trois côtés, vous permettant de profiter pleinement de votre visite.",
   },
   {
     question: "Que vais-je voir pendant la visite ?",
@@ -37,7 +37,7 @@ const faqs = [
   {
     question: "Dans quelles langues le commentaire audio est-il disponible ?",
     answer:
-      "Le commentaire audio guidé est disponible en français, anglais, allemand, espagnol, italien, portugais, néerlandais, polonais, russe, suédois, danois, tchèque, chinois et japonais. Une version adaptée aux enfants est également disponible.",
+      "Le commentaire audio guidé est disponible en 16 langues : français, anglais, allemand, espagnol, italien, portugais, néerlandais, polonais, russe, suédois, danois, tchèque, chinois, japonais et d'autres langues. Le commentaire audio est inclus dans le prix du billet — aucun supplément. Une version spécialement conçue pour les enfants est disponible en français et en anglais.",
   },
   {
     question: "La visite est-elle adaptée aux enfants ?",
@@ -51,7 +51,7 @@ const faqs = [
         Les tarifs varient en fonction de l&apos;âge et de la taille du groupe. Les adultes et les
         enfants de moins de 12 ans bénéficient de tarifs différents. Les tarifs complets sont
         disponibles sur la{' '}
-        <TransitionLink href="/prices" className="underline hover:text-[#5a4a6e] transition-colors">
+        <TransitionLink href="/prices" className="underline hover:text-[#54206d] transition-colors">
           page Tarifs et Billets
         </TransitionLink>
         .
@@ -85,7 +85,7 @@ const faqs = [
         Oui. Le Petit Train de Carnac peut être privatisé pour des événements d&apos;entreprise, des
         associations, des groupes scolaires et des occasions privées. Un formulaire de demande dédié
         est disponible sur la{' '}
-        <TransitionLink href="/privatisation" className="underline hover:text-[#5a4a6e] transition-colors">
+        <TransitionLink href="/privatisation" className="underline hover:text-[#54206d] transition-colors">
           page Privatisation
         </TransitionLink>
         .
@@ -117,7 +117,7 @@ function FaqItem({
           {question}
         </p>
         <span
-          className="shrink-0 mt-0.5 w-6 h-6 flex items-center justify-center rounded-full border border-[rgba(0,0,0,0.15)] text-[#5a4a6e] transition-all duration-300"
+          className="shrink-0 mt-0.5 w-6 h-6 flex items-center justify-center rounded-full border border-[rgba(0,0,0,0.15)] text-[#54206d] transition-all duration-300"
           aria-hidden="true"
         >
           {open ? (

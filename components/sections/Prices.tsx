@@ -1,18 +1,18 @@
 import Image from "next/image";
 
 const individualRows = [
-  { label: "Adultes", price: "8,5€" },
+  { label: "Adultes", price: "8,50€" },
   { label: "Enfants de moins de 12 ans", price: "5€" },
 ];
 
-const groupRows = [
-  { label: "Adultes", price: "7€" },
-  { label: "Enfants de moins de 12 ans", price: "4€" },
+const bonsPlansRows = [
+  { label: "Adultes", price: "7,00€" },
+  { label: "Enfants de moins de 12 ans", price: "3,50€" },
 ];
 
 export default function Prices() {
   return (
-    <section data-anim-section className="relative bg-[#58496c] py-20 overflow-hidden">
+    <section data-anim-section className="relative bg-[#4d1c64] py-20 overflow-hidden">
       {/* Decorative background illustration */}
       <div
         aria-hidden="true"
@@ -55,9 +55,9 @@ export default function Prices() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="relative flex flex-col lg:flex-row gap-8 items-start">
+        <div className="relative flex flex-col lg:flex-row gap-8 items-start justify-center">
           {/* Individual Tickets */}
-          <div className="bg-[#f7f7f0] flex flex-col w-full max-w-[371px] h-[317px] p-6 relative">
+          <div className="bg-[#f7f7f0] flex flex-col w-full max-w-[371px] min-h-[317px] p-6 relative">
               <div className="flex items-center gap-2.5 mb-3">
                 <div className="relative shrink-0 w-6 h-6">
                   <Image
@@ -68,7 +68,7 @@ export default function Prices() {
                     aria-hidden="true"
                   />
                 </div>
-                <p className="font-['Libre_Baskerville',serif] italic text-[#58496c] text-[24px] leading-normal tracking-[-0.72px] whitespace-nowrap">
+                <p className="font-['Libre_Baskerville',serif] italic text-[#4d1c64] text-[24px] leading-normal tracking-[-0.72px] whitespace-nowrap">
                   Billets Individuels
                 </p>
               </div>
@@ -82,7 +82,7 @@ export default function Prices() {
                     <p className="font-['Roboto',sans-serif] text-[#232323] text-[16px]">
                       {row.label}
                     </p>
-                    <p className="font-['Roboto',sans-serif] font-extrabold text-[#58496c] text-[18px] text-right">
+                    <p className="font-['Roboto',sans-serif] font-extrabold text-[#4d1c64] text-[18px] text-right">
                       {row.price}
                     </p>
                   </div>
@@ -105,8 +105,61 @@ export default function Prices() {
               </div>
           </div>
 
+          {/* Bons Plans — Premiers départs du matin */}
+          <div className="bg-[#f7f7f0] border-2 border-[#4d1c64] flex flex-col w-full max-w-[371px] min-h-[317px] p-6 relative">
+              <div className="absolute top-0 right-0 bg-[#4d1c64] px-3 py-1">
+                <p className="font-['Roboto',sans-serif] text-white text-[11px] font-medium tracking-[0.5px] uppercase">
+                  Bon Plan
+                </p>
+              </div>
+              <div className="flex items-center gap-2.5 mb-3">
+                <div className="relative shrink-0 w-6 h-6">
+                  <Image
+                    src="/figma-assets/PurpleCashIcon.svg"
+                    alt=""
+                    fill
+                    className="object-contain"
+                    aria-hidden="true"
+                  />
+                </div>
+                <p className="font-['Libre_Baskerville',serif] italic text-[#4d1c64] text-[24px] leading-normal tracking-[-0.72px]">
+                  Premiers départs du matin
+                </p>
+              </div>
+              <div className="border-b border-[rgba(0,0,0,0.15)] mb-2" />
+              <div className="flex flex-col mt-2">
+                {bonsPlansRows.map((row) => (
+                  <div
+                    key={row.label}
+                    className="flex items-center justify-between py-2 border-b border-[rgba(0,0,0,0.15)]"
+                  >
+                    <p className="font-['Roboto',sans-serif] text-[#232323] text-[16px]">
+                      {row.label}
+                    </p>
+                    <p className="font-['Roboto',sans-serif] font-extrabold text-[#4d1c64] text-[18px] text-right">
+                      {row.price}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="flex items-start gap-2.5 mt-auto pt-4">
+                <div className="relative shrink-0 w-6 h-6">
+                  <Image
+                    src="/figma-assets/icon-info.svg"
+                    alt=""
+                    fill
+                    className="object-contain"
+                    aria-hidden="true"
+                  />
+                </div>
+                <p className="font-['Nunito',sans-serif] text-[11px] text-[rgba(35,35,35,0.7)] leading-[1.4] tracking-[-0.5px]">
+                  <strong>Tarif réduit :</strong> applicable uniquement aux premiers départs du matin. Billets disponibles au guichet sur place.
+                </p>
+              </div>
+          </div>
+
           {/* Group Booking */}
-          <div className="bg-[#58496c] border border-[rgba(247,247,240,0.15)] flex flex-col w-full max-w-[371px] h-[317px] p-6 relative">
+          <div className="bg-[#4d1c64] border border-[rgba(247,247,240,0.15)] flex flex-col w-full max-w-[371px] min-h-[317px] p-6 relative">
               <div className="flex items-center gap-2.5 mb-3">
                 <div className="relative shrink-0 w-6 h-6">
                   <Image
@@ -122,20 +175,34 @@ export default function Prices() {
                 </p>
               </div>
               <div className="border-b border-[rgba(255,255,255,0.15)] mb-2" />
-              <div className="flex flex-col mt-2">
-                {groupRows.map((row) => (
-                  <div
-                    key={row.label}
-                    className="flex items-center justify-between py-2 border-b border-[rgba(255,255,255,0.15)]"
+              <div className="flex flex-col gap-4 mt-4">
+                <p className="font-['Roboto',sans-serif] text-white text-[16px] leading-[1.4]">
+                  Pour connaître les tarifs groupes, contactez-nous directement :
+                </p>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href="mailto:petittrain-lebayon@orange.fr"
+                    className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity"
                   >
-                    <p className="font-['Roboto',sans-serif] text-white text-[16px]">
-                      {row.label}
-                    </p>
-                    <p className="font-['Roboto',sans-serif] font-extrabold text-white text-[18px] text-right">
-                      {row.price}
-                    </p>
-                  </div>
-                ))}
+                    <div className="relative shrink-0 w-5 h-5">
+                      <Image src="/figma-assets/icon-email.svg" alt="" fill className="object-contain" aria-hidden="true" />
+                    </div>
+                    <span className="font-['Roboto',sans-serif] text-[15px] underline underline-offset-2">
+                      petittrain-lebayon@orange.fr
+                    </span>
+                  </a>
+                  <a
+                    href="tel:+33297240629"
+                    className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity"
+                  >
+                    <div className="relative shrink-0 w-5 h-5">
+                      <Image src="/figma-assets/icon-phone.svg" alt="" fill className="object-contain" aria-hidden="true" />
+                    </div>
+                    <span className="font-['Roboto',sans-serif] text-[15px]">
+                      02 97 24 06 29
+                    </span>
+                  </a>
+                </div>
               </div>
               <div className="flex items-start gap-2.5 mt-auto pt-4">
                 <div className="relative shrink-0 w-6 h-6">
@@ -148,9 +215,7 @@ export default function Prices() {
                   />
                 </div>
                 <p className="font-['Nunito',sans-serif] text-[11px] text-[rgba(255,255,255,0.7)] leading-[1.4] tracking-[-0.5px]">
-                  <strong>Pour les groupes :</strong> la réservation est
-                  conseillée. Le tarif réduit &ldquo;Groupe&rdquo; s&rsquo;applique
-                  uniquement à partir de 20 personnes embarquant.
+                  <strong>Pour les groupes :</strong> tarif réduit à partir de 20 personnes embarquant. La réservation à l&rsquo;avance est recommandée.
                 </p>
               </div>
           </div>

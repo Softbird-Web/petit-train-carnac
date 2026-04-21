@@ -42,8 +42,8 @@ const raleway = Raleway({
 
 export const metadata: Metadata = {
   title: {
-    default: "Petit Train de Carnac — Visite guidée de Carnac et ses menhirs",
-    template: "%s — Petit Train de Carnac",
+    default: "Petit Train de Carnac Morbihan — Visite guidée de Carnac et ses menhirs",
+    template: "%s — Petit Train de Carnac Morbihan",
   },
   description:
     "Découvrez Carnac, ses célèbres mégalithes, ses plages et le port de La Trinité-sur-Mer à bord du Petit Train de Carnac. Une visite guidée de 55 minutes avec commentaire audio multilingue.",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     shortcut: "/figma-assets/logo.svg",
   },
   openGraph: {
-    title: "Petit Train de Carnac — Visite guidée touristique",
+    title: "Petit Train de Carnac Morbihan — Visite guidée touristique",
     description:
       "Une façon confortable et accessible de découvrir les menhirs, les plages et les paysages de Carnac avec un commentaire audio multilingue.",
     type: "website",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Petit Train de Carnac — Visite guidée touristique",
+    title: "Petit Train de Carnac Morbihan — Visite guidée touristique",
     description:
       "Une façon confortable et accessible de découvrir les menhirs, les plages et les paysages de Carnac avec un commentaire audio multilingue.",
     images: ["/figma-assets/OpenGraph.png"],

@@ -14,10 +14,10 @@ export const metadata = {
 };
 
 const pricesRightCard = (
-  <div className="absolute bottom-[514px] lg:bottom-[30px] left-1/2 -translate-x-1/2 lg:left-[189px] lg:translate-x-0 bg-[rgba(90,74,110,0.65)] border border-[rgba(255,255,255,0.2)] rounded-xl p-6 w-[499px] max-w-[calc(100%-32px)] flex flex-col gap-4 z-20">
+  <div className="absolute bottom-[514px] lg:bottom-[30px] left-1/2 -translate-x-1/2 lg:left-[189px] lg:translate-x-0 bg-[rgba(84,32,109,0.65)] border border-[rgba(255,255,255,0.2)] rounded-xl p-6 w-[499px] max-w-[calc(100%-32px)] flex flex-col gap-4 z-20">
     <div className="flex items-start justify-between gap-4">
       <p className="font-['Roboto',sans-serif] font-semibold text-[20px] leading-[1.1] text-white tracking-[-0.8px] max-w-[312px]">
-        &ldquo;Je ne m&rsquo;attendais pas à autant pour 8 euros. Vraiment une belle expérience.&rdquo;
+        &ldquo;Je ne m&rsquo;attendais pas à autant pour 8,50 euros. Vraiment une belle expérience.&rdquo;
       </p>
       <div className="relative h-[43px] w-[76px] shrink-0">
         <Image
@@ -80,7 +80,7 @@ export default function PricesPage() {
         heading={
           <>
             Tarifs des billets du{" "}
-            <em className="italic text-[#58496c]">Petit Train de Carnac</em>
+            <em className="italic text-[#4d1c64]">Petit Train de Carnac</em>
           </>
         }
         description="Retrouvez tous les tarifs et informations de réservation pour le Petit Train de Carnac. Cette page présente les tarifs individuels et de groupe, les réductions enfants, et comment réserver votre visite guidée à Carnac en toute confiance."
@@ -89,15 +89,17 @@ export default function PricesPage() {
           <>
             <Link
               href="#"
-              className="btn-primary bg-[#5a4a6e] h-[45px] px-[22px] rounded-[4px] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap inline-flex items-center shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)]"
+              className="btn-animate-chars btn-primary bg-[#54206d] h-[45px] px-[22px] rounded-[4px] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap inline-flex items-center shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)]"
             >
-              Flyer individuel
+              <div className="btn-animate-chars__bg" />
+              <span data-button-animate-chars="" className="btn-animate-chars__text">Flyer individuel</span>
             </Link>
             <Link
               href="#"
-              className="btn-secondary bg-[#f7f7f0] border border-[rgba(0,0,0,0.2)] h-[45px] px-[22px] rounded-[4px] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap inline-flex items-center"
+              className="btn-animate-chars btn-secondary bg-[#f7f7f0] border border-[rgba(0,0,0,0.2)] h-[45px] px-[22px] rounded-[4px] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap inline-flex items-center"
             >
-              Flyer de groupe
+              <div className="btn-animate-chars__bg" />
+              <span data-button-animate-chars="" className="btn-animate-chars__text">Flyer de groupe</span>
             </Link>
           </>
         }
@@ -119,7 +121,7 @@ export default function PricesPage() {
         heading={
           <>
             Questions Fréquemment Posées{" "}
-            <em className="text-[#58496c]">sur les Tarifs</em>
+            <em className="text-[#4d1c64]">sur les Tarifs</em>
           </>
         }
         description="Trouvez des réponses claires aux questions les plus fréquentes sur les tarifs, les réductions de groupe et comment réserver le Petit Train de Carnac."

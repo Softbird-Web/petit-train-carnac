@@ -32,7 +32,7 @@ export default function InformationsHero({
                 aria-hidden="true"
               />
             </div>
-            <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
+            <p className="font-['Libre_Baskerville',serif] italic text-[#54206d] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
               {label}
             </p>
           </div>

@@ -72,8 +72,9 @@ export default function CareersInfo() {
                 <div>
                   <TransitionLink
                     href="mailto:petittrain-lebayon@orange.fr"
-                    className="btn-primary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
+                    className="btn-animate-chars btn-primary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#54206d] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
                   >
+                    <div className="btn-animate-chars__bg" />
                     <div className="relative shrink-0 w-5 h-5">
                       <Image
                         src="/figma-assets/icon-email.svg"
@@ -83,7 +84,7 @@ export default function CareersInfo() {
                         aria-hidden="true"
                       />
                     </div>
-                    Postulez &amp; Envoyez-nous votre CV
+                    <span data-button-animate-chars="" className="btn-animate-chars__text">Postulez &amp; Envoyez-nous votre CV</span>
                   </TransitionLink>
                 </div>
               )}

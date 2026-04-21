@@ -65,10 +65,10 @@ function Label({ htmlFor, children }: { htmlFor: string; children: React.ReactNo
 }
 
 const inputClass =
-  "w-full h-[42px] px-3 border border-[#d5d7da] rounded-[4px] bg-white font-['Roboto',sans-serif] text-sm text-[#181d27] placeholder:text-[#a4a7ae] focus:outline-none focus:ring-2 focus:ring-[#5a4a6e] focus:border-transparent transition-shadow"
+  "w-full h-[42px] px-3 border border-[#d5d7da] rounded-[4px] bg-white font-['Roboto',sans-serif] text-sm text-[#181d27] placeholder:text-[#a4a7ae] focus:outline-none focus:ring-2 focus:ring-[#54206d] focus:border-transparent transition-shadow"
 
 const textareaClass =
-  "w-full px-3 py-2 border border-[#d5d7da] rounded-[4px] bg-white font-['Roboto',sans-serif] text-sm text-[#181d27] placeholder:text-[#a4a7ae] focus:outline-none focus:ring-2 focus:ring-[#5a4a6e] focus:border-transparent transition-shadow resize-none"
+  "w-full px-3 py-2 border border-[#d5d7da] rounded-[4px] bg-white font-['Roboto',sans-serif] text-sm text-[#181d27] placeholder:text-[#a4a7ae] focus:outline-none focus:ring-2 focus:ring-[#54206d] focus:border-transparent transition-shadow resize-none"
 
 // ---------------------------------------------------------------------------
 // Individual booking form fields
@@ -371,7 +371,7 @@ function GroupFields({
                 value={method}
                 checked={values.preferredContact === method}
                 onChange={() => onChange({ preferredContact: method })}
-                className="accent-[#5a4a6e]"
+                className="accent-[#54206d]"
               />
               {method === 'email' ? 'Email' : 'Téléphone'}
             </label>
@@ -454,7 +454,7 @@ export default function BookingHero() {
   }
 
   return (
-    <section className="bg-[#5a4a6e] py-16 xl:py-[112px] px-5 xl:px-[64px]">
+    <section className="bg-[#54206d] py-16 xl:py-[112px] px-5 xl:px-[64px]">
       <div className="max-w-[1280px] mx-auto flex flex-col xl:flex-row gap-[64px] items-center">
         {/* ── Left: copy ── */}
         <div className="flex-1 min-w-0 flex flex-col gap-6">
@@ -523,7 +523,7 @@ export default function BookingHero() {
                   }}
                   className={`flex-1 h-[52px] font-['Roboto',sans-serif] text-base font-medium tracking-[-0.48px] transition-colors ${
                     tab === t
-                      ? 'bg-[#5a4a6e] text-white'
+                      ? 'bg-[#54206d] text-white'
                       : 'bg-[#f7f7f0] text-[#535862] hover:bg-[#eeeee6]'
                   }`}
                 >
@@ -537,13 +537,13 @@ export default function BookingHero() {
               {status === 'success' ? (
                 /* ── Success state ── */
                 <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
-                  <div className="w-14 h-14 rounded-full bg-[#5a4a6e]/10 flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-full bg-[#54206d]/10 flex items-center justify-center">
                     <svg
                       width="28"
                       height="28"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#5a4a6e"
+                      stroke="#54206d"
                       strokeWidth="2.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -567,7 +567,7 @@ export default function BookingHero() {
                       setStatus('idle')
                       setValues(defaultValues)
                     }}
-                    className="mt-2 font-['Roboto',sans-serif] text-sm text-[#5a4a6e] underline underline-offset-2"
+                    className="mt-2 font-['Roboto',sans-serif] text-sm text-[#54206d] underline underline-offset-2"
                   >
                     Soumettre une autre réservation
                   </button>
@@ -592,7 +592,7 @@ export default function BookingHero() {
                   <button
                     type="submit"
                     disabled={status === 'loading'}
-                    className="mt-6 w-full h-[48px] bg-[#5a4a6e] text-white font-['Roboto',sans-serif] text-base font-medium tracking-[-0.64px] rounded-[4px] shadow-[0px_1px_2px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] hover:bg-[#4a3a5e] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="mt-6 w-full h-[48px] bg-[#54206d] text-white font-['Roboto',sans-serif] text-base font-medium tracking-[-0.64px] rounded-[4px] shadow-[0px_1px_2px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] hover:bg-[#4a3a5e] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {status === 'loading'
                       ? 'Envoi en cours…'

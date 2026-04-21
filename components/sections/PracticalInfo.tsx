@@ -23,10 +23,11 @@ const infoCards: { id: string; photo: string; title: string; description: ReactN
     title: "Départ",
     description: (
       <>
-        Les départs se font depuis le <strong>parking du Ménec</strong> à
-        Carnac, directement en face de la Maison des Mégalithes. L&apos;arrêt
-        est clairement signalisé et facile d&apos;accès. Aucune réservation
-        préalable n&apos;est requise pour les visiteurs individuels.
+        Point de départ obligatoire pour les <strong>groupes</strong> et les{" "}
+        <strong>réservations individuelles</strong>. Situé au{" "}
+        <strong>parking du Ménec</strong> à Carnac, directement en face de la
+        Maison des Mégalithes. L&apos;arrêt est clairement signalisé et facile
+        d&apos;accès.
       </>
     ),
   },
@@ -103,7 +104,7 @@ export default function PracticalInfo() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-[rgba(88,73,108,0.52)] from-[34%] to-[rgba(88,73,108,0.8)]" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-[rgba(77,28,100,0.52)] from-[34%] to-[rgba(77,28,100,0.8)]" />
                 </div>
                 <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-2 text-white">
                   <p className="font-['Libre_Baskerville',serif] text-[24px] leading-[1.5] tracking-[-1.68px]">
@@ -128,7 +129,7 @@ export default function PracticalInfo() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-[rgba(88,73,108,0.52)] from-[34%] to-[rgba(88,73,108,0.8)]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[rgba(77,28,100,0.52)] from-[34%] to-[rgba(77,28,100,0.8)]" />
               </div>
               <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-2 text-white">
                 <p className="font-['Libre_Baskerville',serif] text-[24px] leading-[1.5] tracking-[-1.68px]">
@@ -145,7 +146,7 @@ export default function PracticalInfo() {
           </div>
 
           {/* Row 2 col 3-4: purple CTA card */}
-          <div className="col-span-2 relative h-[423px] rounded-xl overflow-hidden bg-[#58496c]">
+          <div className="col-span-2 relative h-[423px] rounded-xl overflow-hidden bg-[#4d1c64]">
               <div
                 aria-hidden="true"
                 className="absolute inset-0 pointer-events-none opacity-40"
@@ -170,9 +171,10 @@ export default function PracticalInfo() {
               <div className="absolute bottom-6 right-6">
                 <TransitionLink
                   href="/informations"
-                  className="btn-primary inline-flex items-center justify-center h-[45px] px-[22px] bg-[#f7f7f0] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-[#58496c] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
+                  className="btn-animate-chars btn-primary inline-flex items-center justify-center h-[45px] px-[22px] bg-[#f7f7f0] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-[#4d1c64] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
                 >
-                  En savoir plus
+                  <div className="btn-animate-chars__bg" />
+                  <span data-button-animate-chars="" className="btn-animate-chars__text">En savoir plus</span>
                 </TransitionLink>
               </div>
           </div>

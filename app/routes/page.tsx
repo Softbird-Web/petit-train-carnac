@@ -63,7 +63,7 @@ export default function RoutesPage() {
         heading={
           <>
             Le parcours du{' '}
-            <em className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] not-italic">
+            <em className="font-['Libre_Baskerville',serif] italic text-[#54206d] not-italic">
               Petit Train de Carnac
             </em>
           </>
@@ -93,7 +93,7 @@ export default function RoutesPage() {
         heading={
           <>
             Questions Fréquemment Posées sur le{' '}
-            <em className="text-[#58496c]">parcours</em>
+            <em className="text-[#4d1c64]">parcours</em>
           </>
         }
         description="Trouvez des réponses claires aux questions les plus fréquentes sur le parcours du Petit Train de Carnac."

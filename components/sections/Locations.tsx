@@ -44,7 +44,7 @@ export default function Locations() {
                 aria-hidden="true"
               />
             </div>
-            <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
+            <p className="font-['Libre_Baskerville',serif] italic text-[#54206d] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
               Destinations
             </p>
           </div>
@@ -78,7 +78,7 @@ export default function Locations() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-[rgba(88,73,108,0.52)] from-[34%] to-[rgba(88,73,108,0.8)]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[rgba(77,28,100,0.52)] from-[34%] to-[rgba(77,28,100,0.8)]" />
               </div>
 
               {/* Content — bottom half */}
@@ -107,8 +107,9 @@ export default function Locations() {
                   href={loc.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary mt-2 inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap w-fit"
+                  className="btn-animate-chars btn-primary mt-2 inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#54206d] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap w-fit"
                 >
+                  <div className="btn-animate-chars__bg" />
                   <div className="relative shrink-0 w-5 h-5">
                     <Image
                       src="/figma-assets/icon-ticket-white.svg"
@@ -118,7 +119,7 @@ export default function Locations() {
                       aria-hidden="true"
                     />
                   </div>
-                  {loc.cta}
+                  <span data-button-animate-chars="" className="btn-animate-chars__text">{loc.cta}</span>
                 </a>
               </div>
             </div>

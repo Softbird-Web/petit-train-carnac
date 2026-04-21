@@ -33,7 +33,7 @@ export default function BeforeYouBook() {
                 key={bullet}
                 className="flex items-start gap-3 font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.2] tracking-[-0.48px]"
               >
-                <span className="mt-[6px] shrink-0 w-1.5 h-1.5 rounded-full bg-[#5a4a6e]" />
+                <span className="mt-[6px] shrink-0 w-1.5 h-1.5 rounded-full bg-[#54206d]" />
                 {bullet}
               </li>
             ))}

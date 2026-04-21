@@ -9,7 +9,7 @@ const reviews = [
   {
     id: "dom",
     name: "Dom L.",
-    text: "C'était une expérience existentielle et hors du commun. Tout était assez banal jusqu'à ce que nous atteignions les mégalithes, où j'ai été envahi par un sentiment d'émerveillement et de bien-être. À un moment, j'ai été baigné d'une lumière blanche et j'ai senti mon âme quitter mon corps. Je me suis retrouvé entouré de milliers d'êtres me posant des questions dans des langues inconnues. Puis je me suis réveillé à l'arrière du train, sur le chemin du retour. Tout ça pour 8 euros, je ne m'y attendais pas. Ça vaut vraiment le coup.",
+    text: "C'était une expérience existentielle et hors du commun. Tout était assez banal jusqu'à ce que nous atteignions les mégalithes, où j'ai été envahi par un sentiment d'émerveillement et de bien-être. À un moment, j'ai été baigné d'une lumière blanche et j'ai senti mon âme quitter mon corps. Je me suis retrouvé entouré de milliers d'êtres me posant des questions dans des langues inconnues. Puis je me suis réveillé à l'arrière du train, sur le chemin du retour. Tout ça pour 8,50 euros, je ne m'y attendais pas. Ça vaut vraiment le coup.",
   },
   {
     id: "carine",
@@ -149,7 +149,7 @@ interface ColumnProps {
 
 function Column({ items, direction, duration, className = "" }: ColumnProps) {
   return (
-    <div className={`overflow-hidden h-[560px] ${className}`}>
+    <div className={`overflow-hidden h-full ${className}`}>
       <div
         className={`flex flex-col gap-3 ${
           direction === "down" ? "reviews-track-down" : "reviews-track-up"
@@ -195,7 +195,7 @@ const col3: TrackItem[] = [
 
 export default function Reviews() {
   return (
-    <section data-anim-section className="bg-[#58496c] flex flex-col gap-20 items-center py-16 xl:py-28 overflow-hidden">
+    <section data-anim-section className="bg-[#4d1c64] flex flex-col gap-10 xl:gap-14 items-center pt-16 pb-10 overflow-hidden min-h-[100dvh]">
       {/* Header */}
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 w-full flex justify-center">
         <div className="flex flex-col gap-6 items-center text-center max-w-[623px]">
@@ -252,7 +252,7 @@ export default function Reviews() {
 
       {/* Infinite scroll columns */}
       <div
-        className="reviews-container w-full max-w-[1320px] px-[5%]"
+        className="reviews-container flex-1 w-full px-[5%]"
         style={{
           maskImage:
             "linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)",
@@ -260,7 +260,7 @@ export default function Reviews() {
             "linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)",
         }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 h-full">
           <Column items={col1} direction="down" duration="28s" />
           <Column
             items={col2}

@@ -74,7 +74,7 @@ function FaqItem({ question, answer, open, onToggle }: FaqItemProps) {
           {question}
         </p>
         <span
-          className="shrink-0 text-[#5a4a6e] text-[24px] leading-none mt-0.5 transition-transform duration-300 select-none"
+          className="shrink-0 text-[#54206d] text-[24px] leading-none mt-0.5 transition-transform duration-300 select-none"
           aria-hidden="true"
         >
           {open ? "×" : "+"}
@@ -102,7 +102,7 @@ interface FAQProps {
 export default function FAQ({
   faqs = defaultFaqs,
   label = "FAQ",
-  heading = <>Questions <em className="text-[#58496c]">Fréquemment Posées</em></>,
+  heading = <>Questions <em className="text-[#4d1c64]">Fréquemment Posées</em></>,
   description = "Trouvez des réponses claires aux questions les plus fréquentes sur le Petit Train de Carnac.",
 }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -122,7 +122,7 @@ export default function FAQ({
                 aria-hidden="true"
               />
             </div>
-            <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
+            <p className="font-['Libre_Baskerville',serif] italic text-[#54206d] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
               {label}
             </p>
           </div>
@@ -134,9 +134,10 @@ export default function FAQ({
           </p>
           <TransitionLink
             href="/book"
-            className="btn-primary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap w-fit"
+            className="btn-animate-chars btn-primary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#54206d] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap w-fit"
           >
-            Réservez votre visite
+            <div className="btn-animate-chars__bg" />
+            <span data-button-animate-chars="" className="btn-animate-chars__text">Réservez votre visite</span>
           </TransitionLink>
         </div>
 

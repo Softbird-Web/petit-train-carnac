@@ -1,5 +1,10 @@
 # Petit Train Carnac — Project Brain
 
+## 2nd Brain
+Location: ~/Desktop/client-routine-os-main/vibe-coding/vibe-coding/
+Session start: read BRAIN.md, pull relevant pattern files.
+Session end: propose new mistakes/patterns if any emerged.
+
 ## Stack
 - Next.js 16.2.3, TypeScript, Tailwind CSS v4
 - Vercel deploy via GitHub push (branch: main)
@@ -41,12 +46,12 @@ public/figma-assets/            ← all images/SVGs; URL prefix /figma-assets/
 | # | Page | Node ID | Route | Status |
 |---|---|---|---|---|
 | 1 | Informations | 1:13939 | app/informations/page.tsx | ✅ done |
-| 2 | Prices and Tickets | 1:17365 | app/prices/page.tsx | next |
-| 3 | Routes | 1:23354 | app/routes/page.tsx | pending |
-| 4 | FAQs | 1:20537 | app/faqs/page.tsx | pending |
-| 5 | Book | 1:24145 | app/book/page.tsx | pending |
-| 6 | Privatization | 1:17070 | app/privatization/page.tsx | pending |
-| 7 | Careers | 1:23842 | app/careers/page.tsx | pending |
+| 2 | Prices and Tickets | 1:17365 | app/prices/page.tsx | ✅ done |
+| 3 | Routes | 1:23354 | app/routes/page.tsx | ✅ done |
+| 4 | FAQs | 1:20537 | app/faqs/page.tsx | ✅ done |
+| 5 | Book | 1:24145 | app/book/page.tsx | ✅ done |
+| 6 | Privatization | 1:17070 | app/privatization/page.tsx | ✅ done |
+| 7 | Careers | 1:23842 | app/careers/page.tsx | ✅ done |
 
 **One page per session. Finish, commit, end session.**
 

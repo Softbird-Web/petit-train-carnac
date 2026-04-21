@@ -59,7 +59,7 @@ function StopNumber({ n, active }: { n: string; active: boolean }) {
     <div
       className={`relative w-[67px] h-[57px] ${active ? "opacity-100" : "opacity-40"}`}
     >
-      <div className="absolute inset-0 bg-[#5a4a6e] rounded-[4px]" />
+      <div className="absolute inset-0 bg-[#54206d] rounded-[4px]" />
       <p className="absolute font-['Libre_Baskerville',serif] italic text-[#f7f7f0] text-[40px] leading-[1.2] tracking-[-2.8px] left-3 top-1">
         {n}
       </p>
@@ -105,13 +105,13 @@ export default function RoutesTimeline() {
                 aria-hidden="true"
               />
             </div>
-            <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
+            <p className="font-['Libre_Baskerville',serif] italic text-[#54206d] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
               Chronologie du Parcours
             </p>
           </div>
           <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] text-center leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[518px] [text-wrap:balance] break-words">
             Arrêts et parcours du{" "}
-            <em className="text-[#58496c]">Petit Train de Carnac</em>
+            <em className="text-[#4d1c64]">Petit Train de Carnac</em>
           </h2>
           <p className="font-['Roboto',sans-serif] text-[#535862] text-[16px] text-center leading-[1.2] tracking-[-0.48px] max-w-[570px]">
             Au cours de la visite guidée, le Petit Train de Carnac traverse
@@ -167,8 +167,9 @@ export default function RoutesTimeline() {
                 <div className="flex items-center gap-3 flex-wrap">
                   <TransitionLink
                     href="/book"
-                    className="btn-primary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
+                    className="btn-animate-chars btn-primary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#54206d] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
                   >
+                    <div className="btn-animate-chars__bg" />
                     <div className="relative shrink-0 w-5 h-5">
                       <Image
                         src="/figma-assets/icon-ticket-white.svg"
@@ -178,13 +179,14 @@ export default function RoutesTimeline() {
                         aria-hidden="true"
                       />
                     </div>
-                    Réservez votre visite
+                    <span data-button-animate-chars="" className="btn-animate-chars__text">Réservez votre visite</span>
                   </TransitionLink>
                   <TransitionLink
                     href="/prices"
-                    className="btn-secondary inline-flex items-center justify-center h-[45px] px-[22px] bg-[#f7f7f0] border border-[rgba(0,0,0,0.2)] rounded-[4px] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
+                    className="btn-animate-chars btn-secondary inline-flex items-center justify-center h-[45px] px-[22px] bg-[#f7f7f0] border border-[rgba(0,0,0,0.2)] rounded-[4px] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
                   >
-                    Voir les Tarifs
+                    <div className="btn-animate-chars__bg" />
+                    <span data-button-animate-chars="" className="btn-animate-chars__text">Voir les Tarifs</span>
                   </TransitionLink>
                 </div>
               </div>
@@ -198,7 +200,7 @@ export default function RoutesTimeline() {
 
                     {/* Timeline connector dot — desktop only */}
                     <div className="hidden lg:flex flex-col items-center justify-center self-stretch w-8 relative z-10">
-                      <div className="w-3 h-3 rounded-full bg-[#5a4a6e] border-2 border-white ring-1 ring-[#5a4a6e]" />
+                      <div className="w-3 h-3 rounded-full bg-[#54206d] border-2 border-white ring-1 ring-[#54206d]" />
                     </div>
 
                     {stop.flip ? ImageBlock : ContentBlock}

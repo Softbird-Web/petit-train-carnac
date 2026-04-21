@@ -30,20 +30,20 @@ type Status = 'idle' | 'loading' | 'success' | 'error'
 
 function FieldLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="absolute font-['Roboto',sans-serif] font-medium text-[#58496c] text-[13px] leading-none left-[10px] top-[8px] tracking-[0.1px] pointer-events-none">
+    <p className="absolute font-['Roboto',sans-serif] font-medium text-[#4d1c64] text-[13px] leading-none left-[10px] top-[8px] tracking-[0.1px] pointer-events-none">
       {children}
     </p>
   )
 }
 
 const inputClass =
-  "w-full h-[63px] pt-[26px] pb-[10px] px-[10px] bg-white border border-[rgba(88,73,108,0.12)] rounded-[10px] font-['Roboto',sans-serif] text-[14px] text-[#181d27] placeholder:text-[rgba(88,73,108,0.45)] focus:outline-none focus:ring-2 focus:ring-[#5a4a6e]/30 focus:border-[rgba(88,73,108,0.4)] transition-shadow"
+  "w-full h-[63px] pt-[26px] pb-[10px] px-[10px] bg-white border border-[rgba(77,28,100,0.12)] rounded-[10px] font-['Roboto',sans-serif] text-[14px] text-[#181d27] placeholder:text-[rgba(77,28,100,0.45)] focus:outline-none focus:ring-2 focus:ring-[#54206d]/30 focus:border-[rgba(77,28,100,0.4)] transition-shadow"
 
 const selectClass =
-  "w-full h-[63px] pt-[26px] pb-[10px] px-[10px] bg-white border border-[rgba(88,73,108,0.12)] rounded-[10px] font-['Roboto',sans-serif] text-[14px] text-[#181d27] focus:outline-none focus:ring-2 focus:ring-[#5a4a6e]/30 focus:border-[rgba(88,73,108,0.4)] transition-shadow appearance-none cursor-pointer"
+  "w-full h-[63px] pt-[26px] pb-[10px] px-[10px] bg-white border border-[rgba(77,28,100,0.12)] rounded-[10px] font-['Roboto',sans-serif] text-[14px] text-[#181d27] focus:outline-none focus:ring-2 focus:ring-[#54206d]/30 focus:border-[rgba(77,28,100,0.4)] transition-shadow appearance-none cursor-pointer"
 
 const textareaClass =
-  "w-full pt-[26px] pb-[10px] px-[10px] bg-white border border-[rgba(88,73,108,0.12)] rounded-[10px] font-['Roboto',sans-serif] text-[14px] text-[#181d27] placeholder:text-[rgba(88,73,108,0.45)] focus:outline-none focus:ring-2 focus:ring-[#5a4a6e]/30 focus:border-[rgba(88,73,108,0.4)] transition-shadow resize-none"
+  "w-full pt-[26px] pb-[10px] px-[10px] bg-white border border-[rgba(77,28,100,0.12)] rounded-[10px] font-['Roboto',sans-serif] text-[14px] text-[#181d27] placeholder:text-[rgba(77,28,100,0.45)] focus:outline-none focus:ring-2 focus:ring-[#54206d]/30 focus:border-[rgba(77,28,100,0.4)] transition-shadow resize-none"
 
 // ---------------------------------------------------------------------------
 // Component
@@ -87,9 +87,9 @@ export default function PrivatisationHero() {
 
           {status === 'success' ? (
             <div className="flex flex-col gap-6 items-start py-12">
-              <div className="w-12 h-12 rounded-full bg-[#5a4a6e]/10 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-[#54206d]/10 flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 13L9 17L19 7" stroke="#5a4a6e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M5 13L9 17L19 7" stroke="#54206d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <div className="flex flex-col gap-2">
@@ -106,7 +106,7 @@ export default function PrivatisationHero() {
             <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
 
               {/* ── Your Details ── */}
-              <p className="font-['Libre_Baskerville',serif] text-[#58496c] text-[28px] leading-none tracking-[-2px]">
+              <p className="font-['Libre_Baskerville',serif] text-[#4d1c64] text-[28px] leading-none tracking-[-2px]">
                 Vos Coordonnées
               </p>
 
@@ -180,10 +180,10 @@ export default function PrivatisationHero() {
               </div>
 
               {/* Separator */}
-              <div className="border-t border-[rgba(88,73,108,0.12)]" />
+              <div className="border-t border-[rgba(77,28,100,0.12)]" />
 
               {/* ── Event Details ── */}
-              <p className="font-['Libre_Baskerville',serif] text-[#58496c] text-[28px] leading-none tracking-[-2px]">
+              <p className="font-['Libre_Baskerville',serif] text-[#4d1c64] text-[28px] leading-none tracking-[-2px]">
                 Détails de l&apos;événement
               </p>
 
@@ -221,7 +221,7 @@ export default function PrivatisationHero() {
                   </select>
                   <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M4 6L8 10L12 6" stroke="#5a4a6e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M4 6L8 10L12 6" stroke="#54206d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                 </div>
@@ -258,7 +258,7 @@ export default function PrivatisationHero() {
                 <div className="relative">
                   <FieldLabel>
                     {`Nombre d'invités`}{' '}
-                    <span className="text-[10px] text-[rgba(88,73,108,0.55)] font-normal">(min. 10 guests)</span>
+                    <span className="text-[10px] text-[rgba(77,28,100,0.55)] font-normal">(min. 10 guests)</span>
                   </FieldLabel>
                   <input
                     id="guestCount"
@@ -287,7 +287,7 @@ export default function PrivatisationHero() {
               </div>
 
               {/* Info note */}
-              <p className="font-['Roboto',sans-serif] text-[#5a4a6e] text-[13px] leading-[1.4] tracking-[-0.3px] max-w-[354px]">
+              <p className="font-['Roboto',sans-serif] text-[#54206d] text-[13px] leading-[1.4] tracking-[-0.3px] max-w-[354px]">
                 ⓘ Plus vous nous fournissez de détails, mieux nous pourrons répondre à votre demande
               </p>
 
@@ -302,9 +302,10 @@ export default function PrivatisationHero() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="btn-primary inline-flex items-center justify-center h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap w-fit disabled:opacity-60"
+                className="btn-animate-chars btn-primary inline-flex items-center justify-center h-[45px] px-[22px] bg-[#54206d] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap w-fit disabled:opacity-60"
               >
-                {status === 'loading' ? 'Envoi en cours…' : 'Envoyer la demande'}
+                <div className="btn-animate-chars__bg" />
+                <span data-button-animate-chars="" className="btn-animate-chars__text">{status === 'loading' ? 'Envoi en cours…' : 'Envoyer la demande'}</span>
               </button>
             </form>
           )}
@@ -322,7 +323,7 @@ export default function PrivatisationHero() {
             priority
           />
           {/* Purple overlay */}
-          <div className="absolute inset-0 bg-[rgba(88,73,108,0.5)]" />
+          <div className="absolute inset-0 bg-[rgba(77,28,100,0.5)]" />
 
           {/* Bottom content — hidden on mobile, visible on xl+ */}
           <div className="hidden xl:flex absolute bottom-0 left-0 right-0 p-8 flex-col gap-6">

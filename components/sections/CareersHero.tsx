@@ -14,7 +14,7 @@ const jobPosts: JobPost[] = [
     badge: 'Poste saisonnier',
     description:
       "Conduire le Petit Train en toute sécurité sur le parcours touristique et accueillir les visiteurs à bord. Ce poste implique de conduire le train, de veiller au confort des passagers et de contribuer à une atmosphère positive tout au long de la visite.",
-    requirement: "Un permis de conduire valide est requis. Une expérience préalable avec des véhicules touristiques est un plus.",
+    requirement: "Permis D (transport en commun) requis. Une expérience préalable avec des véhicules touristiques est un plus.",
   },
   {
     title: 'Agent de Billetterie',
@@ -25,18 +25,11 @@ const jobPosts: JobPost[] = [
       "De bonnes aptitudes à la communication et une attitude amicale sont essentielles. La connaissance de langues étrangères est appréciée.",
   },
   {
-    title: "Assistant de Visite",
+    title: "Agent de Quai",
     badge: 'Poste saisonnier',
     description:
-      "Accompagner les passagers lors de l'embarquement et tout au long de la visite, répondre aux questions des visiteurs et assurer le bon déroulement des départs et des arrivées. Ce poste soutient à la fois le conducteur et l'équipe de billetterie.",
+      "Accompagner les passagers lors de l'embarquement et assurer le bon déroulement des départs et des arrivées. Ce poste soutient à la fois le conducteur et l'équipe de billetterie.",
     requirement: "Une attitude positive, de la fiabilité et une aisance avec les visiteurs de tous âges sont essentielles.",
-  },
-  {
-    title: 'Coordinateur de Groupes et de Visites Privées',
-    badge: 'Poste saisonnier / temps partiel',
-    description:
-      "Traiter les demandes de réservation de groupe et de visite privée, aider à la planification des horaires et veiller au bon déroulement des visites spéciales. Ce poste implique de la coordination, de la communication et de la rigueur.",
-    requirement: "Une expérience dans le tourisme ou le service client est un plus.",
   },
 ]
 
@@ -70,7 +63,7 @@ export default function CareersHero() {
                   aria-hidden="true"
                 />
               </div>
-              <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px]">
+              <p className="font-['Libre_Baskerville',serif] italic text-[#54206d] text-base leading-6 tracking-[-0.48px]">
                 Carrières
               </p>
             </div>
@@ -78,7 +71,7 @@ export default function CareersHero() {
             {/* Heading */}
             <h1 className="font-['Libre_Baskerville',serif] text-[40px] sm:text-[48px] xl:text-[60px] text-[#181d27] leading-[1.1] tracking-[-3.36px] [text-wrap:balance]">
               Votre carrière au{' '}
-              <em className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e]">
+              <em className="font-['Libre_Baskerville',serif] italic text-[#54206d]">
                 Petit Train de Carnac
               </em>{' '}
               commence ici
@@ -97,8 +90,9 @@ export default function CareersHero() {
             <div>
               <TransitionLink
                 href="mailto:petittrain-lebayon@orange.fr"
-                className="btn-primary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#5a4a6e] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
+                className="btn-animate-chars btn-primary inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#54206d] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap"
               >
+                <div className="btn-animate-chars__bg" />
                 <div className="relative shrink-0 w-5 h-5">
                   <Image
                     src="/figma-assets/icon-email.svg"
@@ -108,7 +102,7 @@ export default function CareersHero() {
                     aria-hidden="true"
                   />
                 </div>
-                Postulez &amp; Envoyez-nous votre CV
+                <span data-button-animate-chars="" className="btn-animate-chars__text">Postulez &amp; Envoyez-nous votre CV</span>
               </TransitionLink>
             </div>
           </div>
@@ -129,9 +123,9 @@ export default function CareersHero() {
                   <p className="font-['Roboto',sans-serif] font-medium text-[#181d27] text-[20px] leading-[1.4] tracking-[-0.6px]">
                     {job.title}
                   </p>
-                  <span className="inline-flex items-center gap-1.5 pl-2 pr-[10px] py-[2px] bg-[rgba(90,74,110,0.1)] border border-[rgba(90,74,110,0.25)] rounded-[4px]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#5a4a6e] shrink-0" />
-                    <span className="font-['Roboto',sans-serif] text-[#5a4a6e] text-[12px] leading-[1.4] tracking-[-0.36px] uppercase">
+                  <span className="inline-flex items-center gap-1.5 pl-2 pr-[10px] py-[2px] bg-[rgba(84,32,109,0.1)] border border-[rgba(84,32,109,0.25)] rounded-[4px]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#54206d] shrink-0" />
+                    <span className="font-['Roboto',sans-serif] text-[#54206d] text-[12px] leading-[1.4] tracking-[-0.36px] uppercase">
                       {job.badge}
                     </span>
                   </span>

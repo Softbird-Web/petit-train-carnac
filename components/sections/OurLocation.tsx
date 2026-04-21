@@ -14,21 +14,38 @@ const CarnacMap = dynamic(() => import("@/components/ui/CarnacMap"), {
 const locationItems = [
   {
     icon: "/figma-assets/icon-map-pin.svg",
-    title: "Point de départ principal",
+    title: "Point de départ principal — Parking du Ménec",
     description:
-      "Le point de départ principal pour les visiteurs individuels est situé au parking du Ménec à Carnac, directement en face de la Maison des Mégalithes. Cet emplacement est clairement indiqué et facile d'accès à pied depuis les attractions voisines.",
+      "Point de départ obligatoire pour les groupes et les réservations individuelles. Situé à Carnac, directement en face de la Maison des Mégalithes. Cet emplacement est clairement indiqué et facile d'accès à pied depuis les attractions voisines.",
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Parking+du+M%C3%A9nec+Carnac+France",
+  },
+  {
+    icon: "/figma-assets/icon-map-pin.svg",
+    title: "Point 2 — Carnac Plage (Pordro)",
+    description:
+      "Achetez vos billets sur place au moment du départ (pas de réservation possible). Arrêt directement à la plage de Carnac.",
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Carnac+Plage+Pordro+Carnac+France",
+  },
+  {
+    icon: "/figma-assets/icon-map-pin.svg",
+    title: "Point 3 — La Trinité-sur-Mer",
+    description:
+      "Arrêt de bus Courqué, côté mer, juste avant le rond-point Alain Barrière.",
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Arr%C3%AAt+Courqu%C3%A9+La+Trinit%C3%A9-sur-Mer+France",
   },
   {
     icon: "/figma-assets/icon-car.svg",
     title: "En voiture",
     description:
       "Si vous venez en voiture, quittez la route Nantes–Brest à Auray, puis suivez les panneaux vers Carnac et La Trinité-sur-Mer. Une fois à Carnac, suivez les panneaux pour la Maison des Mégalithes. Le point de départ du Petit Train se trouve au parking du Ménec. Des places de stationnement sont disponibles à proximité.",
+    mapsUrl: null,
   },
   {
     icon: "/figma-assets/icon-train-sm.svg",
     title: "En train",
     description:
       "La gare la plus proche est Auray, desservie par des TGV sur les lignes Paris–Quimper et Bordeaux–Brest. Depuis la gare d'Auray, vous pouvez rejoindre Carnac en voiture, taxi ou transport local. Le point de départ du Ménec est ensuite facile d'accès une fois arrivé à Carnac.",
+    mapsUrl: null,
   },
 ];
 
@@ -54,7 +71,7 @@ export default function OurLocation() {
                 aria-hidden="true"
               />
             </div>
-            <p className="font-['Libre_Baskerville',serif] italic text-[#5a4a6e] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
+            <p className="font-['Libre_Baskerville',serif] italic text-[#54206d] text-base leading-6 tracking-[-0.48px] whitespace-nowrap">
               Notre Emplacement
             </p>
           </div>
@@ -62,7 +79,7 @@ export default function OurLocation() {
           {/* Heading */}
           <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[472px] break-words">
             Comment accéder au{" "}
-            <em className="text-[#58496c]">Petit Train de Carnac</em>
+            <em className="text-[#4d1c64]">Petit Train de Carnac</em>
           </h2>
 
           {/* Subtext */}
@@ -99,6 +116,19 @@ export default function OurLocation() {
                     <p className="font-['Inter',sans-serif] text-[#535862] text-base leading-6">
                       {item.description}
                     </p>
+                    {item.mapsUrl && (
+                      <a
+                        href={item.mapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-[#54206d] text-sm font-['Roboto',sans-serif] font-medium underline underline-offset-2 hover:opacity-70 transition-opacity w-fit"
+                      >
+                        <div className="relative shrink-0 w-4 h-4">
+                          <Image src="/figma-assets/icon-map-pin.svg" alt="" fill className="object-contain" aria-hidden="true" />
+                        </div>
+                        Voir l&apos;itinéraire
+                      </a>
+                    )}
                   </div>
               </div>
             ))}
@@ -106,7 +136,7 @@ export default function OurLocation() {
 
           {/* Arrival recommendation */}
           <div className="flex flex-col gap-2 pl-16">
-            <p className="font-['Roboto',sans-serif] font-semibold text-[#5a4a6e] text-[20px] leading-[1.2] tracking-[-0.6px]">
+            <p className="font-['Roboto',sans-serif] font-semibold text-[#54206d] text-[20px] leading-[1.2] tracking-[-0.6px]">
               Conseil d&apos;arrivée
             </p>
             <p className="font-['Roboto',sans-serif] text-[#535862] text-[16px] leading-[1.2] tracking-[-0.48px] max-w-[435px]">

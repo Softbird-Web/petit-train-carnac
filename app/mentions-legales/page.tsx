@@ -8,7 +8,7 @@ export default function MentionsLegalesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-[#5a4a6e] py-16 xl:py-24 px-5 xl:px-[64px]">
+      <section className="bg-[#54206d] py-16 xl:py-24 px-5 xl:px-[64px]">
         <div className="max-w-[1312px] mx-auto">
           <h1 className="font-['Libre_Baskerville',serif] text-[40px] sm:text-[52px] xl:text-[64px] text-[#f7f7f0] leading-[1.1] tracking-[-3.36px]">
             Mentions Légales
@@ -35,7 +35,7 @@ export default function MentionsLegalesPage() {
                 href="https://www.ovh.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#5a4a6e] underline"
+                className="text-[#54206d] underline"
               >
                 www.ovh.com
               </a>
@@ -52,7 +52,7 @@ export default function MentionsLegalesPage() {
                   href="https://www.heureuses.fr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#5a4a6e] underline"
+                  className="text-[#54206d] underline"
                 >
                   www.heureuses.fr
                 </a>
@@ -63,7 +63,7 @@ export default function MentionsLegalesPage() {
           </div>
 
           {/* Divider */}
-          <div className="border-t border-[rgba(88,73,108,0.12)]" />
+          <div className="border-t border-[rgba(77,28,100,0.12)]" />
 
           <LegalSection number="1" title="INFORMATIONS FIGURANT SUR LE SITE">
             Le propriétaire du site fournit des informations à des fins purement informatives. Il
@@ -102,7 +102,7 @@ export default function MentionsLegalesPage() {
               href="https://www.cnil.fr"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#5a4a6e] underline"
+              className="text-[#54206d] underline"
             >
               www.cnil.fr
             </a>
@@ -145,7 +145,7 @@ function LegalSection({
       <p className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.7] tracking-[-0.3px]">
         {children}
       </p>
-      <div className="border-t border-[rgba(88,73,108,0.12)]" />
+      <div className="border-t border-[rgba(77,28,100,0.12)]" />
     </div>
   )
 }
