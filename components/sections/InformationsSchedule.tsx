@@ -186,7 +186,7 @@ export default function InformationsSchedule() {
             {/* Timetables heading */}
             <div className="flex items-center gap-4 pb-8 border-b border-[rgba(255,255,255,0.2)]">
               <div className="flex-1 h-px bg-[rgba(255,255,255,0.35)]" />
-              <h2 className="font-['Libre_Baskerville',serif] italic text-white text-[28px] tracking-[-1.5px] whitespace-nowrap">
+              <h2 className="font-normal font-['Libre_Baskerville',serif] italic text-white text-[28px] tracking-[-1.5px] whitespace-nowrap">
                 Horaires
               </h2>
               <div className="flex-1 h-px bg-[rgba(255,255,255,0.35)]" />
@@ -259,7 +259,7 @@ export default function InformationsSchedule() {
           {/* Heading */}
           <div className="flex items-center gap-4 w-full">
             <div className="flex-1 h-px bg-[rgba(0,0,0,0.12)]" />
-            <h2 className="font-['Libre_Baskerville',serif] italic text-[#4d1c64] text-[28px] tracking-[-1.5px] whitespace-nowrap">
+            <h2 className="font-normal font-['Libre_Baskerville',serif] italic text-[#4d1c64] text-[28px] tracking-[-1.5px] whitespace-nowrap">
               Jours fériés &amp; Hors-saison
             </h2>
             <div className="flex-1 h-px bg-[rgba(0,0,0,0.12)]" />

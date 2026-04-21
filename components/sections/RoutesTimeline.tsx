@@ -109,7 +109,7 @@ export default function RoutesTimeline() {
               Chronologie du Parcours
             </p>
           </div>
-          <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] text-center leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[518px] [text-wrap:balance] break-words">
+          <h2 className="font-normal font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] text-center leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[518px] [text-wrap:balance] break-words">
             Arrêts et parcours du{" "}
             <em className="text-[#4d1c64]">Petit Train de Carnac</em>
           </h2>

@@ -93,7 +93,7 @@ export default function PrivatisationHero() {
                 </svg>
               </div>
               <div className="flex flex-col gap-2">
-                <h2 className="font-['Libre_Baskerville',serif] text-[28px] text-[#181d27] tracking-[-2px] leading-[1.15]">
+                <h2 className="font-normal font-['Libre_Baskerville',serif] text-[28px] text-[#181d27] tracking-[-2px] leading-[1.15]">
                   Demande envoyée !
                 </h2>
                 <p className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.4] tracking-[-0.48px]">
@@ -358,7 +358,7 @@ export default function PrivatisationHero() {
             </div>
 
             {/* Heading */}
-            <h1 className="font-['Libre_Baskerville',serif] text-[32px] xl:text-[48px] leading-[1.1] tracking-[-2.5px] xl:tracking-[-3.36px] text-[#f7f7f0] max-w-[537px]">
+            <h1 className="font-normal font-['Libre_Baskerville',serif] text-[32px] xl:text-[48px] leading-[1.1] tracking-[-2.5px] xl:tracking-[-3.36px] text-[#f7f7f0] max-w-[537px]">
               Privatisez le <em>Petit Train de Carnac</em> pour votre événement
             </h1>
 

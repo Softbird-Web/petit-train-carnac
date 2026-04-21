@@ -10,7 +10,7 @@ export default function PolitiqueDeConfidentialitePage() {
       {/* Hero */}
       <section className="bg-[#54206d] py-16 xl:py-24 px-5 xl:px-[64px]">
         <div className="max-w-[1312px] mx-auto">
-          <h1 className="font-['Libre_Baskerville',serif] text-[40px] sm:text-[52px] xl:text-[64px] text-[#f7f7f0] leading-[1.1] tracking-[-3.36px]">
+          <h1 className="font-normal font-['Libre_Baskerville',serif] text-[40px] sm:text-[52px] xl:text-[64px] text-[#f7f7f0] leading-[1.1] tracking-[-3.36px]">
             Politique de Confidentialité
           </h1>
         </div>
@@ -22,7 +22,7 @@ export default function PolitiqueDeConfidentialitePage() {
 
           {/* Intro */}
           <div className="flex flex-col gap-4">
-            <h2 className="font-['Libre_Baskerville',serif] text-[24px] text-[#181d27] tracking-[-1px] leading-[1.3]">
+            <h2 className="font-normal font-['Libre_Baskerville',serif] text-[24px] text-[#181d27] tracking-[-1px] leading-[1.3]">
               Données personnelles
             </h2>
             <p className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.7] tracking-[-0.3px]">
@@ -48,7 +48,7 @@ export default function PolitiqueDeConfidentialitePage() {
 
           {/* Cookies section */}
           <div className="flex flex-col gap-4">
-            <h2 className="font-['Libre_Baskerville',serif] text-[24px] text-[#181d27] tracking-[-1px] leading-[1.3]">
+            <h2 className="font-normal font-['Libre_Baskerville',serif] text-[24px] text-[#181d27] tracking-[-1px] leading-[1.3]">
               Cookies
             </h2>
             <p className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.7] tracking-[-0.3px]">
@@ -133,7 +133,7 @@ export default function PolitiqueDeConfidentialitePage() {
           </PrivacySection>
 
           <div className="flex flex-col gap-3">
-            <h2 className="font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] tracking-[-0.8px] leading-[1.3]">
+            <h2 className="font-normal font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] tracking-[-0.8px] leading-[1.3]">
               Finalités de traitement
             </h2>
             <p className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.7] tracking-[-0.3px]">
@@ -149,7 +149,7 @@ export default function PolitiqueDeConfidentialitePage() {
           </div>
 
           <div className="flex flex-col gap-3">
-            <h2 className="font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] tracking-[-0.8px] leading-[1.3]">
+            <h2 className="font-normal font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] tracking-[-0.8px] leading-[1.3]">
               Quelles données sont traitées
             </h2>
             <ul className="list-disc pl-5 flex flex-col gap-1 font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.7] tracking-[-0.3px]">
@@ -161,7 +161,7 @@ export default function PolitiqueDeConfidentialitePage() {
           </div>
 
           <div className="flex flex-col gap-3">
-            <h2 className="font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] tracking-[-0.8px] leading-[1.3]">
+            <h2 className="font-normal font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] tracking-[-0.8px] leading-[1.3]">
               Sous-traitants
             </h2>
             <div className="overflow-x-auto">
@@ -191,7 +191,7 @@ export default function PolitiqueDeConfidentialitePage() {
           </div>
 
           <div className="flex flex-col gap-3">
-            <h2 className="font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] tracking-[-0.8px] leading-[1.3]">
+            <h2 className="font-normal font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] tracking-[-0.8px] leading-[1.3]">
               Durée de conservation
             </h2>
             <ul className="list-disc pl-5 flex flex-col gap-1 font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.7] tracking-[-0.3px]">
@@ -215,7 +215,7 @@ function PrivacySection({
 }) {
   return (
     <div className="flex flex-col gap-3">
-      <h2 className="font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] tracking-[-0.8px] leading-[1.3]">
+      <h2 className="font-normal font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] tracking-[-0.8px] leading-[1.3]">
         {title}
       </h2>
       <p className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.7] tracking-[-0.3px]">

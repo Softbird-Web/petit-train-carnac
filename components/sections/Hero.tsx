@@ -122,7 +122,7 @@ export default function Hero({
                 </div>
 
                 {/* Main heading */}
-                <h1 data-anim="hero-title" className="font-['Libre_Baskerville',serif] text-[36px] sm:text-[44px] md:text-[52px] lg:text-[60px] leading-[1.1] tracking-[-1.8px] sm:tracking-[-2.4px] md:tracking-[-3.2px] lg:tracking-[-4.2px] text-[#181d27] not-italic w-full break-words">
+                <h1 data-anim="hero-title" className="font-normal font-['Libre_Baskerville',serif] text-[36px] sm:text-[44px] md:text-[52px] lg:text-[60px] leading-[1.1] tracking-[-1.8px] sm:tracking-[-2.4px] md:tracking-[-3.2px] lg:tracking-[-4.2px] text-[#181d27] not-italic w-full break-words">
                   {heading}
                 </h1>
 
@@ -187,11 +187,6 @@ export default function Hero({
         {/* Right panel: image + diagonal split overlay */}
         <div className="flex-1 relative min-h-[320px] lg:min-h-0 overflow-hidden rounded-2xl lg:rounded-none mx-4 lg:mx-0 mb-4 lg:mb-0">
           {/* Diagonal left edge overlay — desktop only */}
-          <div
-            className="hidden lg:block absolute inset-y-0 left-0 w-24 bg-[#54206d] z-10 origin-top-left [clip-path:polygon(0_0,100%_0,0_100%)]"
-            aria-hidden="true"
-          />
-
           {/* Hero media: video (with optional opening image) or static image */}
           <div className="absolute inset-0">
             {rightVideoSrc ? (
@@ -241,7 +236,7 @@ export default function Hero({
             <div className="flex flex-col lg:flex-row lg:items-start gap-8">
               {/* Heading */}
               <div className="lg:w-[559px] shrink-0">
-                <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] text-[#181d27] not-italic break-words">
+                <h2 className="font-normal font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] text-[#181d27] not-italic break-words">
                   Réservation en Ligne
                 </h2>
               </div>

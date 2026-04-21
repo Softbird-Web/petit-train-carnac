@@ -475,7 +475,7 @@ export default function BookingHero() {
           </div>
 
           {/* Heading */}
-          <h1 className="font-['Libre_Baskerville',serif] text-[40px] sm:text-[48px] xl:text-[60px] text-white leading-[1.1] tracking-[-3.36px] [text-wrap:balance]">
+          <h1 className="font-normal font-['Libre_Baskerville',serif] text-[40px] sm:text-[48px] xl:text-[60px] text-white leading-[1.1] tracking-[-3.36px] [text-wrap:balance]">
             Réservez votre visite en Petit Train à Carnac
           </h1>
 

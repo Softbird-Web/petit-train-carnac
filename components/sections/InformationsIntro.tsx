@@ -23,7 +23,7 @@ export default function InformationsIntro() {
         {/* Two-column heading + text layout */}
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           <div className="lg:w-[559px] shrink-0">
-            <h2 className="font-['Libre_Baskerville',serif] text-[clamp(36px,4vw,48px)] leading-[1.1] tracking-[-3.36px] text-[#181d27]">
+            <h2 className="font-normal font-['Libre_Baskerville',serif] text-[clamp(36px,4vw,48px)] leading-[1.1] tracking-[-3.36px] text-[#181d27]">
               Réservation en Ligne
             </h2>
           </div>

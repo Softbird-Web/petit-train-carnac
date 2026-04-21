@@ -10,7 +10,7 @@ export default function MentionsLegalesPage() {
       {/* Hero */}
       <section className="bg-[#54206d] py-16 xl:py-24 px-5 xl:px-[64px]">
         <div className="max-w-[1312px] mx-auto">
-          <h1 className="font-['Libre_Baskerville',serif] text-[40px] sm:text-[52px] xl:text-[64px] text-[#f7f7f0] leading-[1.1] tracking-[-3.36px]">
+          <h1 className="font-normal font-['Libre_Baskerville',serif] text-[40px] sm:text-[52px] xl:text-[64px] text-[#f7f7f0] leading-[1.1] tracking-[-3.36px]">
             Mentions Légales
           </h1>
         </div>
@@ -139,7 +139,7 @@ function LegalSection({
 }) {
   return (
     <div className="flex flex-col gap-3">
-      <h2 className="font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] tracking-[-0.8px] leading-[1.3]">
+      <h2 className="font-normal font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] tracking-[-0.8px] leading-[1.3]">
         {number} – {title}
       </h2>
       <p className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.7] tracking-[-0.3px]">

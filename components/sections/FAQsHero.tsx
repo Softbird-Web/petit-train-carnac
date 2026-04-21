@@ -29,7 +29,7 @@ export default function FAQsHero() {
               </div>
 
               {/* Heading */}
-              <h1 className="font-['Libre_Baskerville',serif] text-[40px] sm:text-[48px] xl:text-[60px] text-[#181d27] leading-[1.1] tracking-[-2.5px] xl:tracking-[-4.2px] [text-wrap:balance]">
+              <h1 className="font-normal font-['Libre_Baskerville',serif] text-[40px] sm:text-[48px] xl:text-[60px] text-[#181d27] leading-[1.1] tracking-[-2.5px] xl:tracking-[-4.2px] [text-wrap:balance]">
                 Questions Fréquemment Posées
               </h1>
 
@@ -96,12 +96,7 @@ export default function FAQsHero() {
 
         {/* ── Right: photo with card overlay ── */}
         <div className="flex-1 relative min-h-[500px] xl:min-h-[721px]">
-          {/* Diagonal left edge overlay — matches homepage Hero split */}
-          <div
-            className="absolute inset-y-0 left-0 w-24 bg-[#f7f7f0] z-10 origin-top-left [clip-path:polygon(0_0,100%_0,0_100%)]"
-            aria-hidden="true"
-          />
-          <Image
+          {/* Diagonal left edge overlay — matches homepage Hero split */}          <Image
             src="/figma-assets/FAQsHero.jpg"
             alt="Le Petit Train de Carnac près des menhirs"
             fill

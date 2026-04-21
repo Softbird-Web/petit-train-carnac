@@ -38,7 +38,7 @@ export default function InformationsHero({
           </div>
 
           {/* Heading */}
-          <h1 className="font-['Libre_Baskerville',serif] text-[clamp(36px,5vw,60px)] leading-[1.1] tracking-[-4.2px] text-[#181d27] break-words">
+          <h1 className="font-normal font-['Libre_Baskerville',serif] text-[clamp(36px,5vw,60px)] leading-[1.1] tracking-[-4.2px] text-[#181d27] break-words">
             {heading}
           </h1>
 

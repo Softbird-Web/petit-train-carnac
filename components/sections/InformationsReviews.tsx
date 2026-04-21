@@ -85,7 +85,7 @@ export default function InformationsReviews() {
             </p>
           </div>
 
-          <h2 className="font-['Libre_Baskerville',serif] text-[clamp(36px,4vw,48px)] leading-[1.1] tracking-[-3.36px] text-[#f7f7f0]">
+          <h2 className="font-normal font-['Libre_Baskerville',serif] text-[clamp(36px,4vw,48px)] leading-[1.1] tracking-[-3.36px] text-[#f7f7f0]">
             What visitors say about{" "}
             <em className="font-['Libre_Baskerville',serif] italic">the train?</em>
           </h2>

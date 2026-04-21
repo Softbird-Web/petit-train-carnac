@@ -55,7 +55,7 @@ export default function CareersInfo() {
               key={panel.heading}
               className="border-b border-[rgba(0,0,0,0.2)] pb-8 mb-8 last:border-b-0 last:mb-0 flex flex-col gap-6"
             >
-              <h2 className="font-['Libre_Baskerville',serif] text-[32px] text-[#181d27] leading-[1.1] tracking-[-2.24px]">
+              <h2 className="font-normal font-['Libre_Baskerville',serif] text-[32px] text-[#181d27] leading-[1.1] tracking-[-2.24px]">
                 {panel.heading}
               </h2>
               <div className="flex flex-col gap-3">

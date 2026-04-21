@@ -37,7 +37,7 @@ export default function GroupBookingCTA() {
             </div>
 
             {/* Heading */}
-            <h2 data-anim="hero-title" className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] leading-[1.15] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] text-[#f7f7f0] not-italic break-words">
+            <h2 data-anim="hero-title" className="font-normal font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] leading-[1.15] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] text-[#f7f7f0] not-italic break-words">
               Réservation pour visites privées
             </h2>
           </div>

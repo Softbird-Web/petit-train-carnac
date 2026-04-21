@@ -1,5 +1,4 @@
 import Image from "next/image";
-import TransitionLink from "@/components/ui/TransitionLink";
 
 const locations = [
   {
@@ -48,7 +47,7 @@ export default function Locations() {
               Destinations
             </p>
           </div>
-          <h2 className="font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] text-center leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[570px] [text-wrap:balance] break-words">
+          <h2 className="font-normal font-['Libre_Baskerville',serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] text-center leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[570px] [text-wrap:balance] break-words">
             Découvrez nos autres circuits en Petit Train en Morbihan
           </h2>
           <p className="font-['Roboto',sans-serif] text-[#535862] text-[16px] text-center leading-[1.2] tracking-[-0.48px] max-w-[600px] w-full">
@@ -63,26 +62,47 @@ export default function Locations() {
         {/* Location cards */}
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-3">
           {locations.map((loc) => (
-            <div
+            <a
               key={loc.id}
-              className={`relative h-[550px] overflow-hidden ${loc.roundedClass}`}
+              href={loc.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={loc.cta}
+              className={`group relative h-[550px] overflow-hidden ${loc.roundedClass} block cursor-pointer`}
             >
-              {/* Background photo + gradient */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 pointer-events-none"
-              >
+              {/* Background photo — zooms on hover */}
+              <div className="absolute inset-0">
                 <Image
                   src={loc.image}
-                  alt=""
+                  alt={loc.imageAlt}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.05] will-change-transform"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-[rgba(77,28,100,0.52)] from-[34%] to-[rgba(77,28,100,0.8)]" />
               </div>
 
-              {/* Content — bottom half */}
-              <div className="absolute bottom-0 left-6 right-6 pb-6 flex flex-col gap-2 text-white">
+              {/* Static gradient */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-b from-[rgba(77,28,100,0.52)] from-[34%] to-[rgba(77,28,100,0.8)]"
+              />
+
+              {/* Hover overlay */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-[rgba(84,32,109,0.78)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-[cubic-bezier(0.625,0.05,0,1)] flex items-center justify-center"
+              >
+                <div className="flex flex-col items-center gap-3 translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-75 ease-[cubic-bezier(0.625,0.05,0,1)]">
+                  <p className="font-['Libre_Baskerville',serif] text-white text-[40px] leading-[1.1] tracking-[-2px]">
+                    Découvrir
+                  </p>
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <path d="M16 6v20M6 16l10 10 10-10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+
+              {/* Bottom content — fades out on hover */}
+              <div className="absolute bottom-0 left-6 right-6 pb-6 flex flex-col gap-2 text-white transition-opacity duration-300 ease-[cubic-bezier(0.625,0.05,0,1)] group-hover:opacity-0">
                 <div className="flex items-center gap-2.5">
                   <p className="font-['Libre_Baskerville',serif] text-[32px] leading-[1.5] tracking-[-2.24px]">
                     {loc.name}
@@ -103,26 +123,8 @@ export default function Locations() {
                 <p className="font-['Nunito',sans-serif] text-[14px] leading-[1.3] tracking-[-0.42px]">
                   {loc.description}
                 </p>
-                <a
-                  href={loc.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-animate-chars btn-primary mt-2 inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#54206d] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-white text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap w-fit"
-                >
-                  <div className="btn-animate-chars__bg" />
-                  <div className="relative shrink-0 w-5 h-5">
-                    <Image
-                      src="/figma-assets/icon-ticket-white.svg"
-                      alt=""
-                      fill
-                      className="object-contain"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <span data-button-animate-chars="" className="btn-animate-chars__text">{loc.cta}</span>
-                </a>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

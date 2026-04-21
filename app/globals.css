@@ -117,41 +117,63 @@ body {
   opacity: 0.8;
 }
 
-/* ── Reviews infinite scroll ────────────────────────────────── */
-@keyframes scroll-down {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-50%);
-  }
+/* ── Reviews GSAP draggable slider ──────────────────────────── */
+.gsap-reviews-slider {
+  --slider-status: on;
+  --slider-spv: 1;
+  --slider-gap: 1.5em;
+  padding-left: 5%;
+  padding-right: 5%;
+  position: relative;
+  overflow: hidden;
 }
-@keyframes scroll-up {
-  from {
-    transform: translateY(-50%);
-  }
-  to {
-    transform: translateY(0);
+
+@media (max-width: 767px) {
+  .gsap-reviews-slider {
+    --slider-gap: 1em;
   }
 }
 
-.reviews-track-down {
-  animation: scroll-down linear infinite;
-  will-change: transform;
+.gsap-reviews-slider__collection {
+  width: 100%;
+  overflow: hidden;
 }
-.reviews-track-up {
-  animation: scroll-up linear infinite;
+
+.gsap-reviews-slider__list {
+  user-select: none;
   will-change: transform;
+  touch-action: pan-y;
+  backface-visibility: hidden;
+  display: flex;
 }
-.reviews-container:hover .reviews-track-down,
-.reviews-container:hover .reviews-track-up {
-  animation-play-state: paused;
+
+.gsap-reviews-slider__item {
+  width: calc((100% - (var(--slider-spv) - 1) * var(--slider-gap)) / var(--slider-spv));
+  margin-right: var(--slider-gap);
+  flex: none;
+}
+
+.gsap-reviews-slider__item:last-child {
+  margin-right: 0;
+}
+
+[data-gsap-slider-list-status="grab"] {
+  cursor: grab;
+}
+
+[data-gsap-slider-list-status="grabbing"] {
+  cursor: grabbing;
+}
+
+
+[data-gsap-slider-control-status="not-active"] {
+  opacity: 0.25;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reviews-track-down,
-  .reviews-track-up {
-    animation: none;
+  .gsap-reviews-slider__list {
+    touch-action: auto;
   }
 }
 
