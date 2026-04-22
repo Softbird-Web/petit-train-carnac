@@ -5,6 +5,9 @@
 > It contains hard-won rules that prevent hours of rework (SSR hydration traps, Tailwind v4 surprises, Vercel deploy gotchas, Figma MCP patterns, etc.).
 > This is not a suggestion. The file exists because ignoring these costs hours, every project.
 
+> 🗺️ **TEMPLATE FOR VANNES / QUIBERON / MORBIHAN:** this repo is the canonical Petit Train template.
+> If you're cloning this for a new Petit Train microsite, read (in order): `docs/NEW-SITE-PLAYBOOK.md` → `docs/SITE-ONBOARDING-QUESTIONNAIRE-CARNAC.md` (worked example) → `docs/ARCHITECTURE.md` → `docs/CUSTOMIZATION-MAP.md`.
+
 ## 2nd Brain
 Location: ~/Desktop/client-routine-os-main/vibe-coding/vibe-coding/
 Session start: read BRAIN.md, pull relevant pattern files.
