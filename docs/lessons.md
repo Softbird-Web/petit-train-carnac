@@ -120,6 +120,45 @@ rm -rf .next && npm run dev
 - **One page per session** (already in CLAUDE.md) works. Finish → commit → end session.
 - **Don't batch QA into a "pass"** — 4 commits this session were labeled "QA pass" and each was a firefight. Screenshot per section at 360/768/1280 before moving on.
 
+## Third-party widget embeds in Next.js 16 / React 19
+
+**The rule:** any `<custom-element>` from a third-party script (Regiondo, Calendly, Intercom, etc.) needs 3 things in Next.js 16 + React 19:
+
+1. **TypeScript declaration** — React 19 removed the global `JSX` namespace. `declare global { namespace JSX { ... } }` silently does nothing and you get a `TS2339` on the custom element. Use the React module-scoped namespace:
+   ```ts
+   declare module 'react' {
+     namespace JSX {
+       interface IntrinsicElements {
+         'product-details-widget': React.DetailedHTMLProps<
+           React.HTMLAttributes<HTMLElement> & { 'widget-id': string },
+           HTMLElement
+         >
+       }
+     }
+   }
+   ```
+   **Why:** React 19's `@types/react` types put JSX inside `'react'` (scoped), not global. TS docs still show the old global pattern — don't trust them on this.
+
+2. **Script loading via `next/script strategy="afterInteractive"`** — runs after hydration, doesn't block initial paint, auto-dedupes across client-side navigations. Never use `<script>` in the component return — it'd re-insert on every render.
+
+3. **`onError` fallback state** — third-party widget domains get blocked by ad blockers (uBlock, Privacy Badger, corporate firewalls). Without a fallback, users see a blank space where they expected a booking UI. Pattern:
+   ```tsx
+   const [failed, setFailed] = useState(false)
+   if (failed) return <ContactFallback />
+   return (
+     <>
+       <Script src="..." strategy="afterInteractive" onError={() => setFailed(true)} />
+       <custom-element />
+     </>
+   )
+   ```
+
+**Additional traps:**
+- The third-party widget usually renders in iframe/shadow DOM with its own styles — you can't cascade your Tailwind classes into it. Budget zero styling work for the widget internals; style only the wrapper container.
+- If widget is above the fold, set a `min-height` on the container so the page doesn't reflow when the widget finishes loading (avoids CLS).
+- Cookie-consent classification: third-party booking/tracking widgets usually need to go in "Marketing" or "Analytics" category. Don't auto-load pre-consent in GDPR jurisdictions.
+- `next build` still prerenders the page statically — the widget hydrates client-side. That's fine for SEO (the branded header text above it is indexed as usual).
+
 ## GSAP Scroll-Reveal — unified 2-attribute contract
 
 **Why:** the original per-section-specific markup (`data-anim="hero-title"`, `data-anim="tagline"`, `data-anim="hero-paragraph"`, ...) only worked for Hero and required hard-coded script logic for each name. Adding a new section meant extending the engine. Didn't scale past 1 section.

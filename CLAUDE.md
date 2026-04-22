@@ -74,6 +74,7 @@ These decisions are global. If a decision here is wrong, fix it in ONE place, no
 - Next.js 16.2.3, TypeScript, Tailwind CSS v4
 - Vercel deploy via GitHub push (branch: main)
 - Figma MCP (local desktop plugin), file key: `wTd0GeN1Y2HWGw3nkii3t8`
+- **Booking:** Regiondo embedded widget (`product-widget.min.js`). Carnac widget ID: `5712cb43-2e72-445b-956b-947f1f624735`. Integration: `components/ui/RegiondoWidget.tsx` → `components/sections/BookingSection.tsx` → `/book` page.
 
 ## Libraries (exact import paths)
 ```

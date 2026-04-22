@@ -103,8 +103,27 @@
   - Full PageTransitionProvider compatibility preserved via `page-transition-start` event
   - TypeScript: 0 errors; `next build` → 13/13 pages prerender clean
 
+- **SEO foundation** (Apr 21):
+  - `lib/site.ts` with `SITE_URL` (env-driven, 1-line swap for custom domain) + `absoluteUrl` helper
+  - `metadataBase` in `app/layout.tsx`; `alternates.canonical` on all 10 page metadata exports
+  - `app/sitemap.ts` → `/sitemap.xml` with all 10 routes; `app/robots.ts` → `/robots.txt`
+  - Fix JSON-LD image path (relative → absolute); route `url` field through `SITE_URL`
+  - AEO: `FAQPage` JSON-LD on `/faqs` + reusable FAQ component; wrap FAQ question text in `<h3>` (semantic)
+  - `BreadcrumbList` schema on 7 subpages via new `<BreadcrumbSchema>` component
+  - `docs/seo/migration-redirect-map.xlsx` — 3-sheet workbook: 301 redirect map (Carnac + Quiberon + Vannes from old petittrain-morbihan.com sitemap), backlinks to update (TripAdvisor, OT, Google Business, tourism boards), post-migration checklist
+
+- **Regiondo booking widget integration** (Apr 21):
+  - Replaced custom `BookingHero` form + Make webhook with client's actual booking provider
+  - `components/ui/RegiondoWidget.tsx` — client component, `next/script afterInteractive`, TS custom-element type via React 19 `declare module 'react'`, `onError` fallback to phone/email
+  - `components/sections/BookingSection.tsx` — branded wrapper (section label + heading + description + cream bg + widget card)
+  - Carnac widget ID: `5712cb43-2e72-445b-956b-947f1f624735`
+  - Deleted `components/sections/BookingHero.tsx` + `app/actions/booking.ts`
+  - `tests/booking-widget.spec.ts` — 5 Playwright tests (metadata intact, widget in DOM, script loaded, 3-breakpoint screenshots, homepage regression). All pass.
+  - Widget verified rendering real booking UI (calendar, pricing, "Ajouter au panier", related offers)
+
 ## Next Steps
-- [ ] Add `MAKE_WEBHOOK_URL` + `MAKE_PRIVATISATION_WEBHOOK_URL` to Vercel environment variables and wire up Make scenarios
+- [ ] Add `MAKE_PRIVATISATION_WEBHOOK_URL` to Vercel env vars + wire up Make scenario (privatisation form still custom)
 - [ ] All 7 pages complete ✅
-- [ ] Future SEO pass (deferred): `metadataBase`, `app/sitemap.ts`, `app/robots.ts`, enrich JSON-LD with lat/lng + opening hours
-- [ ] Cleanup: unused `index` in `Features.tsx:81` map callback; consider removing unused `reviews` array in `InformationsReviews.tsx`
+- [ ] Classify Regiondo cookies in cookie-consent banner (GDPR)
+- [ ] Cleanup: unused `index` in `Features.tsx:81` map callback; unused `reviews` array in `InformationsReviews.tsx`
+- [ ] Client: set up 301 redirects at `petittrain-morbihan.com` (see `docs/seo/migration-redirect-map.xlsx`)

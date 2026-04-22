@@ -1,4 +1,4 @@
-import BookingHero from '@/components/sections/BookingHero'
+import BookingSection from '@/components/sections/BookingSection'
 import BeforeYouBook from '@/components/sections/BeforeYouBook'
 import Features from '@/components/sections/Features'
 import PracticalInfo from '@/components/sections/PracticalInfo'
@@ -18,7 +18,7 @@ export default function BookPage() {
     <>
       <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Réservation', path: '/book' }]} />
       <main>
-        <BookingHero />
+        <BookingSection />
         <BeforeYouBook />
         <Features />
         <PracticalInfo />
