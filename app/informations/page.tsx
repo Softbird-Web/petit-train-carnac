@@ -8,7 +8,7 @@ import Locations from "@/components/sections/Locations";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata = {
-  title: "Informations Pratiques — Petit Train de Carnac",
+  title: "Informations Pratiques",
   description:
     "Toutes les informations pratiques pour votre visite du Petit Train de Carnac : horaires, tarifs, réservation, accessibilité et points de départ.",
   alternates: { canonical: '/informations' },

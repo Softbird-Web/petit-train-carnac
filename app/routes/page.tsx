@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Parcours & Itinéraire — Petit Train de Carnac',
+  title: 'Parcours & Itinéraire',
   description:
     'Découvrez le parcours du Petit Train de Carnac : menhirs de Carnac, Carnac-Plage et port de La Trinité-sur-Mer. Une visite guidée de 55 minutes avec commentaire audio en 16 langues.',
   alternates: { canonical: '/routes' },

@@ -37,6 +37,7 @@ const stops: Stop[] = [
       "Arrêt situé près de la plage de Carnac",
       "Idéal pour les visiteurs séjournant côté mer",
     ],
+    note: "Achetez vos billets sur place au moment du départ (pas de réservation possible).",
     image: "/figma-assets/stop-2.jpg",
     imageAlt: "Plage de Carnac — arrêt Port en Drô",
     flip: true,

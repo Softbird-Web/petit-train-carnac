@@ -7,7 +7,7 @@ import Locations from '@/components/sections/Locations'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export const metadata = {
-  title: 'Réservez votre visite — Petit Train de Carnac',
+  title: 'Réservez votre visite',
   description:
     'Réservez vos places sur le Petit Train de Carnac. Réservations individuelles et de groupe disponibles en ligne.',
   alternates: { canonical: '/book' },

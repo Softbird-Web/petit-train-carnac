@@ -3,7 +3,7 @@ import Locations from '@/components/sections/Locations'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export const metadata = {
-  title: 'Privatisation — Petit Train de Carnac',
+  title: 'Privatisation',
   description:
     'Privatisez le Petit Train de Carnac pour votre événement d\'entreprise, visite de groupe ou occasion spéciale. Soumettez votre demande et notre équipe vous recontactera.',
   alternates: { canonical: '/privatisation' },

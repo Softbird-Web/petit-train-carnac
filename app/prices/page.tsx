@@ -9,7 +9,7 @@ import FAQ from "@/components/sections/FAQ";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata = {
-  title: "Tarifs & Billets — Petit Train de Carnac",
+  title: "Tarifs & Billets",
   description:
     "Découvrez les tarifs du Petit Train de Carnac. Tarifs individuels et de groupe pour adultes et enfants, avec réservation en ligne disponible.",
   alternates: { canonical: '/prices' },

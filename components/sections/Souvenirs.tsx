@@ -9,6 +9,9 @@ const souvenirs = [
   { src: '/figma-assets/souvenir-3.jpg', rotate: '-rotate-1' },
   { src: '/figma-assets/souvenir-4.jpg', rotate: 'rotate-2' },
   { src: '/figma-assets/souvenir-5.jpg', rotate: '-rotate-3' },
+  { src: '/figma-assets/souvenir-6.jpg', rotate: 'rotate-2' },
+  { src: '/figma-assets/souvenir-7.jpg', rotate: '-rotate-1' },
+  { src: '/figma-assets/souvenir-8.jpg', rotate: 'rotate-3' },
 ]
 
 export default function Souvenirs() {

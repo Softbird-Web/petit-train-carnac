@@ -3,7 +3,7 @@ import FAQsSection from '@/components/sections/FAQsSection'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export const metadata = {
-  title: 'FAQ — Petit Train de Carnac',
+  title: 'FAQ',
   description:
     'Questions fréquemment posées sur le Petit Train de Carnac — durée de la visite, point de départ, tarifs, réservation, langues, groupes et privatisation.',
   alternates: { canonical: '/faqs' },

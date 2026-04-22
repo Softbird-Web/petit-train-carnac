@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Carrières — Petit Train de Carnac',
+  title: 'Carrières',
   description:
     'Rejoignez l\'équipe du Petit Train de Carnac. Postes saisonniers disponibles : conducteur, agent de billetterie, assistant de visite et coordinateur de groupe à Carnac, Morbihan.',
   alternates: { canonical: '/careers' },
