@@ -9,7 +9,7 @@
 > If you're cloning this for a new Petit Train microsite, read (in order): `docs/NEW-SITE-PLAYBOOK.md` → `docs/SITE-ONBOARDING-QUESTIONNAIRE-CARNAC.md` (worked example) → `docs/ARCHITECTURE.md` → `docs/CUSTOMIZATION-MAP.md`.
 
 ## 2nd Brain
-Location: ~/Desktop/client-routine-os-main/vibe-coding/vibe-coding/
+Location: ~/Desktop/eldar-design-development-cc/vibe-coding/vibe-coding/
 Session start: read BRAIN.md, pull relevant pattern files.
 Session end: propose new mistakes/patterns if any emerged.
 
