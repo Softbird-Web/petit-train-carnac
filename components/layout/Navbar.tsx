@@ -25,7 +25,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header data-anim-navbar className="fixed top-0 left-0 right-0 z-50">
       {/* Top announcement banner */}
       <div className="bg-[#33114d] border-b border-[rgba(213,215,218,0.4)]">
         <div className="max-w-[1280px] mx-auto px-5 xl:px-0 py-[6px] flex items-center justify-center">

@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# playwright test output
+/test-results
+/playwright-report
+/playwright/.cache
+
+# claude code personal allowlist (team-shared config lives in .claude/settings.json)
+.claude/settings.local.json

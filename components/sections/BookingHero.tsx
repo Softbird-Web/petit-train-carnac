@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { submitBooking, type BookingData } from '@/app/actions/booking'
 
 // ---------------------------------------------------------------------------
@@ -9,8 +9,6 @@ import { submitBooking, type BookingData } from '@/app/actions/booking'
 // ---------------------------------------------------------------------------
 
 const DEPARTURE_TIMES = ['10:00', '11:30', '13:00', '14:30', '16:00']
-
-const todayISO = () => new Date().toISOString().split('T')[0]
 
 // ---------------------------------------------------------------------------
 // Shared form state shape
@@ -77,9 +75,11 @@ const textareaClass =
 function IndividualFields({
   values,
   onChange,
+  minDate,
 }: {
   values: FormValues
   onChange: (patch: Partial<FormValues>) => void
+  minDate: string
 }) {
   return (
     <div className="flex flex-col gap-4">
@@ -90,7 +90,7 @@ function IndividualFields({
           <input
             id="ind-date"
             type="date"
-            min={todayISO()}
+            min={minDate}
             value={values.date}
             onChange={(e) => onChange({ date: e.target.value })}
             className={inputClass}
@@ -212,9 +212,11 @@ function IndividualFields({
 function GroupFields({
   values,
   onChange,
+  minDate,
 }: {
   values: FormValues
   onChange: (patch: Partial<FormValues>) => void
+  minDate: string
 }) {
   return (
     <div className="flex flex-col gap-4">
@@ -239,7 +241,7 @@ function GroupFields({
           <input
             id="grp-date"
             type="date"
-            min={todayISO()}
+            min={minDate}
             value={values.date}
             onChange={(e) => onChange({ date: e.target.value })}
             className={inputClass}
@@ -404,6 +406,11 @@ export default function BookingHero() {
   const [values, setValues] = useState<FormValues>(defaultValues)
   const [status, setStatus] = useState<Status>('idle')
   const [errorMsg, setErrorMsg] = useState('')
+  const [minDate, setMinDate] = useState('')
+
+  useEffect(() => {
+    setMinDate(new Date().toISOString().split('T')[0])
+  }, [])
 
   function patch(update: Partial<FormValues>) {
     setValues((prev) => ({ ...prev, ...update }))
@@ -454,10 +461,10 @@ export default function BookingHero() {
   }
 
   return (
-    <section className="bg-[#54206d] py-16 xl:py-[112px] px-5 xl:px-[64px]">
+    <section data-anim-section="hero" className="bg-[#54206d] py-16 xl:py-[112px] px-5 xl:px-[64px]">
       <div className="max-w-[1280px] mx-auto flex flex-col xl:flex-row gap-[64px] items-center">
         {/* ── Left: copy ── */}
-        <div className="flex-1 min-w-0 flex flex-col gap-6">
+        <div data-anim-item className="flex-1 min-w-0 flex flex-col gap-6">
           {/* Section label */}
           <div className="flex items-center gap-2">
             <div className="relative shrink-0 w-[19px] h-[19px]">
@@ -508,7 +515,7 @@ export default function BookingHero() {
         </div>
 
         {/* ── Right: booking form card ── */}
-        <div className="w-full xl:w-[608px] shrink-0">
+        <div data-anim-item className="w-full xl:w-[608px] shrink-0">
           <div className="bg-white rounded-[8px] overflow-hidden shadow-[0_4px_32px_rgba(0,0,0,0.18)]">
             {/* Tab switcher */}
             <div className="flex border-b border-[#e9eaeb]">
@@ -583,9 +590,9 @@ export default function BookingHero() {
                   )}
 
                   {tab === 'individual' ? (
-                    <IndividualFields values={values} onChange={patch} />
+                    <IndividualFields values={values} onChange={patch} minDate={minDate} />
                   ) : (
-                    <GroupFields values={values} onChange={patch} />
+                    <GroupFields values={values} onChange={patch} minDate={minDate} />
                   )}
 
                   {/* Submit */}

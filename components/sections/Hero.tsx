@@ -106,7 +106,7 @@ export default function Hero({
               {/* Heading block */}
               <div className="flex flex-col gap-6">
                 {/* Section label */}
-                <div className="flex items-center gap-2">
+                <div data-anim-item className="flex items-center gap-2">
                   <div className="relative shrink-0 w-[19px] h-[19px]">
                     <Image
                       src="/figma-assets/icon-train.svg"
@@ -122,31 +122,31 @@ export default function Hero({
                 </div>
 
                 {/* Main heading */}
-                <h1 data-anim="hero-title" className="font-normal font-['Libre_Baskerville',serif] text-[36px] sm:text-[44px] md:text-[52px] lg:text-[60px] leading-[1.1] tracking-[-1.8px] sm:tracking-[-2.4px] md:tracking-[-3.2px] lg:tracking-[-4.2px] text-[#181d27] not-italic w-full break-words">
+                <h1 data-anim-item className="font-normal font-['Libre_Baskerville',serif] text-[36px] sm:text-[44px] md:text-[52px] lg:text-[60px] leading-[1.1] tracking-[-1.8px] sm:tracking-[-2.4px] md:tracking-[-3.2px] lg:tracking-[-4.2px] text-[#181d27] not-italic w-full break-words">
                   {heading}
                 </h1>
 
                 {/* Description */}
-                <p data-anim="hero-paragraph" className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.2] tracking-[-0.48px]">
+                <p data-anim-item className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.2] tracking-[-0.48px]">
                   {description}
                 </p>
 
                 {/* Tagline */}
                 {tagline && (
-                  <p data-anim="tagline" className="font-['Roboto',sans-serif] font-semibold text-[#535862] text-base leading-[1.2] tracking-[-0.48px]">
+                  <p data-anim-item className="font-['Roboto',sans-serif] font-semibold text-[#535862] text-base leading-[1.2] tracking-[-0.48px]">
                     {tagline}
                   </p>
                 )}
               </div>
 
               {/* CTA buttons */}
-              <div data-anim="hero-button" className="flex items-center gap-3">{buttons}</div>
+              <div data-anim-item className="flex items-center gap-3">{buttons}</div>
 
               {/* Divider */}
               <hr className="border-t border-[rgba(0,0,0,0.12)] w-[554px] max-w-full" />
 
               {/* Google rating block */}
-              <div className="flex flex-col gap-4">
+              <div data-anim-item className="flex flex-col gap-4">
                 <div className="bg-white flex items-center gap-[10px] px-2 py-1 rounded-lg w-fit">
                   <div className="relative size-6 shrink-0">
                     <Image
@@ -186,9 +186,9 @@ export default function Hero({
 
         {/* Right panel: image + diagonal split overlay */}
         <div className="flex-1 relative min-h-[320px] lg:min-h-0 overflow-hidden rounded-2xl lg:rounded-none mx-4 lg:mx-0 mb-4 lg:mb-0">
-          {/* Diagonal left edge overlay — desktop only */}
           {/* Hero media: video (with optional opening image) or static image */}
-          <div className="absolute inset-0">
+          {/* Desktop-only diagonal clip — "/" cut on the left edge so the cream section bleeds into the image */}
+          <div className="absolute inset-0 lg:[clip-path:polygon(15%_0,100%_0,100%_100%,0_100%)]">
             {rightVideoSrc ? (
               <HeroVideoPanel
                 videoSrc={rightVideoSrc}

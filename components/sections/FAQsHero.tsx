@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function FAQsHero() {
   return (
-    <section className="bg-[#f7f7f0] w-full overflow-hidden">
+    <section data-anim-section="hero" className="bg-[#f7f7f0] w-full overflow-hidden">
       <div className="flex flex-col xl:flex-row min-h-[540px] xl:min-h-[721px]">
 
         {/* ── Left: text content ── */}
@@ -13,7 +13,7 @@ export default function FAQsHero() {
             {/* Heading block */}
             <div className="flex flex-col gap-6">
               {/* Section label */}
-              <div className="flex items-center gap-2">
+              <div data-anim-item className="flex items-center gap-2">
                 <div className="relative shrink-0 w-[19px] h-[19px]">
                   <Image
                     src="/figma-assets/icon-train.svg"
@@ -29,12 +29,12 @@ export default function FAQsHero() {
               </div>
 
               {/* Heading */}
-              <h1 className="font-normal font-['Libre_Baskerville',serif] text-[40px] sm:text-[48px] xl:text-[60px] text-[#181d27] leading-[1.1] tracking-[-2.5px] xl:tracking-[-4.2px] [text-wrap:balance]">
+              <h1 data-anim-item className="font-normal font-['Libre_Baskerville',serif] text-[40px] sm:text-[48px] xl:text-[60px] text-[#181d27] leading-[1.1] tracking-[-2.5px] xl:tracking-[-4.2px] [text-wrap:balance]">
                 Questions Fréquemment Posées
               </h1>
 
               {/* Description */}
-              <p className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.2] tracking-[-0.48px] max-w-[551px]">
+              <p data-anim-item className="font-['Roboto',sans-serif] text-[#535862] text-base leading-[1.2] tracking-[-0.48px] max-w-[551px]">
                 Trouvez des réponses aux questions les plus fréquentes sur le Petit Train de Carnac.
                 Cette page couvre les informations pratiques, la réservation, le parcours de la
                 visite, l&apos;accessibilité et les visites de groupe, pour vous aider à planifier
@@ -46,7 +46,7 @@ export default function FAQsHero() {
             <div className="border-t border-[rgba(0,0,0,0.1)] w-full" />
 
             {/* Google badge + supporting text */}
-            <div className="flex flex-col gap-4">
+            <div data-anim-item className="flex flex-col gap-4">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-white rounded-[8px] px-2 py-1.5 w-fit shadow-sm">
                 <div className="relative w-6 h-6 shrink-0">

@@ -79,11 +79,11 @@ export default function PrivatisationHero() {
   }
 
   return (
-    <section className="bg-[#f7f7f0] w-full">
+    <section data-anim-section="hero" className="bg-[#f7f7f0] w-full">
       <div className="flex flex-col xl:flex-row gap-4 xl:gap-[32px] px-4 xl:px-[16px] py-4 xl:py-[16px]">
 
         {/* ── Form panel ── */}
-        <div className="w-full xl:w-[569px] shrink-0 py-6 xl:py-8">
+        <div data-anim-item className="w-full xl:w-[569px] shrink-0 py-6 xl:py-8">
 
           {status === 'success' ? (
             <div className="flex flex-col gap-6 items-start py-12">
@@ -313,7 +313,7 @@ export default function PrivatisationHero() {
 
         {/* ── Image panel — after form in DOM so it appears below form on mobile;
              xl:order-first moves it to the left column on desktop ── */}
-        <div className="xl:order-first xl:flex-1 relative min-h-[300px] sm:min-h-[420px] xl:min-h-[620px] rounded-[16px] overflow-hidden border border-[rgba(255,255,255,0.15)]">
+        <div data-anim-item className="xl:order-first xl:flex-1 relative min-h-[300px] sm:min-h-[420px] xl:min-h-[620px] rounded-[16px] overflow-hidden border border-[rgba(255,255,255,0.15)]">
           <Image
             src="/figma-assets/PrivatisationHero.jpg"
             alt="Privatisation du Petit Train de Carnac"

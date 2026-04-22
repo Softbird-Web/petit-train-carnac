@@ -33,10 +33,10 @@ const panels = [
 
 export default function CareersInfo() {
   return (
-    <section className="bg-[#f7f7f0] py-16 xl:py-[112px] px-5 xl:px-[64px]">
+    <section data-anim-section className="bg-[#f7f7f0] py-16 xl:py-[112px] px-5 xl:px-[64px]">
       <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-[80px] items-start">
         {/* Left: image */}
-        <div className="hidden lg:block shrink-0 w-[calc(50%-40px)]">
+        <div data-anim-item className="hidden lg:block shrink-0 w-[calc(50%-40px)]">
           <div className="relative w-full h-[829px] rounded-[16px] overflow-hidden">
             <Image
               src="/figma-assets/CareersLooking.png"
@@ -49,7 +49,7 @@ export default function CareersInfo() {
         </div>
 
         {/* Right: content panels */}
-        <div className="flex-1 min-w-0 flex flex-col gap-0">
+        <div data-anim-item className="flex-1 min-w-0 flex flex-col gap-0">
           {panels.map((panel) => (
             <div
               key={panel.heading}

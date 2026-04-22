@@ -21,7 +21,7 @@ export default function GroupBookingCTA() {
           {/* Left column: label + heading */}
           <div className="flex-1 flex flex-col gap-3">
             {/* Section label */}
-            <div className="flex items-center gap-2">
+            <div data-anim-item className="flex items-center gap-2">
               <div className="relative shrink-0 w-[19px] h-[19px]">
                 <Image
                   src="/figma-assets/icon-train-white.svg"

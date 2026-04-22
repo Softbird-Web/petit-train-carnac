@@ -41,7 +41,7 @@ export default function RoutesHero({
   }, [open])
 
   const imageBlock = (
-    <div className="w-full xl:flex-1 xl:min-w-0">
+    <div data-anim-item className="w-full xl:flex-1 xl:min-w-0">
       <div
         className={`relative h-[400px] md:h-[520px] xl:h-[640px] rounded-[16px] border-[5px] border-[#54206d] overflow-hidden${
           lightbox ? ' cursor-zoom-in' : ''
@@ -71,7 +71,7 @@ export default function RoutesHero({
       {/* Heading group */}
       <div className="flex flex-col gap-6">
         {/* Section label */}
-        <div className="flex items-center gap-2">
+        <div data-anim-item className="flex items-center gap-2">
           <div className="relative shrink-0 w-[19px] h-[19px]">
             <Image
               src="/figma-assets/icon-train.svg"
@@ -87,18 +87,18 @@ export default function RoutesHero({
         </div>
 
         {/* Heading */}
-        <Heading className="font-['Libre_Baskerville',serif] text-[40px] sm:text-[48px] xl:text-[60px] text-[#181d27] leading-[1.1] tracking-[-3.36px] [text-wrap:balance]">
+        <Heading data-anim-item className="font-['Libre_Baskerville',serif] text-[40px] sm:text-[48px] xl:text-[60px] text-[#181d27] leading-[1.1] tracking-[-3.36px] [text-wrap:balance]">
           {heading}
         </Heading>
 
         {/* Description */}
-        <div className="font-['Roboto',sans-serif] text-[#535862] text-[16px] leading-[1.2] tracking-[-0.48px] flex flex-col gap-4 max-w-[551px]">
+        <div data-anim-item className="font-['Roboto',sans-serif] text-[#535862] text-[16px] leading-[1.2] tracking-[-0.48px] flex flex-col gap-4 max-w-[551px]">
           {description}
         </div>
       </div>
 
       {/* CTA buttons */}
-      <div className="flex items-center gap-3 flex-wrap">
+      <div data-anim-item className="flex items-center gap-3 flex-wrap">
         <a
           href={primaryButton.href}
           target="_blank"
@@ -141,7 +141,7 @@ export default function RoutesHero({
       <div className="border-t border-[rgba(0,0,0,0.1)] w-full max-w-[554px]" />
 
       {/* Google badge */}
-      <div className="flex flex-col gap-4">
+      <div data-anim-item className="flex flex-col gap-4">
         <div className="bg-white rounded-[8px] inline-flex items-center gap-2.5 px-2 py-1 self-start">
           <div className="relative w-6 h-6 shrink-0">
             <Image
@@ -181,7 +181,7 @@ export default function RoutesHero({
 
   return (
     <>
-      <section className="bg-[#f7f7f0] py-16 xl:py-[112px] px-5 xl:px-[64px]">
+      <section data-anim-section="hero" className="bg-[#f7f7f0] py-16 xl:py-[112px] px-5 xl:px-[64px]">
         <div className="max-w-[1312px] mx-auto flex flex-col xl:flex-row items-center gap-[80px]">
           {flip ? (
             <>

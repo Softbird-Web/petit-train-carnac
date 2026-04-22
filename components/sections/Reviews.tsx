@@ -19,7 +19,7 @@ export default function Reviews() {
       {/* Header */}
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 w-full flex justify-center">
         <div className="flex flex-col gap-6 items-center text-center max-w-[623px]">
-          <div className="flex items-center gap-2">
+          <div data-anim-item className="flex items-center gap-2">
             <div className="relative shrink-0 w-[19px] h-[19px]">
               <Image
                 src="/figma-assets/icon-train.svg"
@@ -34,11 +34,11 @@ export default function Reviews() {
             </p>
           </div>
 
-          <h2 className="font-normal font-['Libre_Baskerville',serif] text-[#f7f7f0] text-[32px] sm:text-[40px] md:text-[48px] text-center leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[410px] w-full [text-wrap:balance] break-words">
+          <h2 data-anim-item className="font-normal font-['Libre_Baskerville',serif] text-[#f7f7f0] text-[32px] sm:text-[40px] md:text-[48px] text-center leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[410px] w-full [text-wrap:balance] break-words">
             Ce que disent les visiteurs <em>du train&nbsp;?</em>
           </h2>
 
-          <p className="font-['Roboto',sans-serif] text-[#f7f7f0] text-[16px] text-center leading-[1.2] tracking-[-0.48px] max-w-[570px] w-full">
+          <p data-anim-item className="font-['Roboto',sans-serif] text-[#f7f7f0] text-[16px] text-center leading-[1.2] tracking-[-0.48px] max-w-[570px] w-full">
             <strong>Le Petit Train de Carnac</strong> est noté plus de{" "}
             <a href="https://www.google.com/maps/search/Petit+Train+de+Carnac" target="_blank" rel="noopener noreferrer" className="text-[#d8b800] underline">4,7 sur Google</a>,
             avec plus de 6 000 avis, ce qui en fait l&apos;une des attractions
@@ -46,7 +46,7 @@ export default function Reviews() {
           </p>
 
           {/* Google badge */}
-          <div className="bg-white rounded-[8px] flex items-center gap-2.5 px-2 py-1 rotate-[0.54deg]">
+          <div data-anim-item className="bg-white rounded-[8px] flex items-center gap-2.5 px-2 py-1 rotate-[0.54deg]">
             <div className="relative shrink-0 w-6 h-6">
               <Image
                 src="/figma-assets/google-icon.svg"
@@ -71,7 +71,7 @@ export default function Reviews() {
       </div>
 
       {/* GSAP Draggable Slider */}
-      <div className="w-full max-w-[1280px] mx-auto">
+      <div data-anim-item className="w-full max-w-[1280px] mx-auto">
         <ReviewsSlider />
       </div>
     </section>

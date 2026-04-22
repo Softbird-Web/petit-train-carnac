@@ -29,7 +29,7 @@ export default function Prices() {
 
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 w-full flex flex-col gap-20 items-center">
         {/* Header */}
-        <div className="relative flex flex-col gap-6 items-center text-center max-w-[623px]">
+        <div data-anim-item className="relative flex flex-col gap-6 items-center text-center max-w-[623px]">
           <div className="flex items-center gap-2">
             <div className="relative shrink-0 w-[19px] h-[19px]">
               <Image
@@ -55,7 +55,7 @@ export default function Prices() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="relative flex flex-col lg:flex-row gap-8 items-start justify-center">
+        <div data-anim-item className="relative flex flex-col lg:flex-row gap-8 items-start justify-center">
           {/* Individual Tickets */}
           <div className="bg-[#f7f7f0] flex flex-col w-full max-w-[371px] min-h-[317px] p-6 relative">
               <div className="flex items-center gap-2.5 mb-3">

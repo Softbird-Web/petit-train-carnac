@@ -35,7 +35,7 @@ const jobPosts: JobPost[] = [
 
 export default function CareersHero() {
   return (
-    <section className="bg-[#f7f7f0] relative overflow-hidden py-16 xl:py-[112px] px-5 xl:px-[64px]">
+    <section data-anim-section="hero" className="bg-[#f7f7f0] relative overflow-hidden py-16 xl:py-[112px] px-5 xl:px-[64px]">
       {/* Background pattern */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <Image
@@ -53,7 +53,7 @@ export default function CareersHero() {
           {/* Heading group */}
           <div className="flex flex-col gap-6">
             {/* Section label */}
-            <div className="flex items-center gap-2">
+            <div data-anim-item className="flex items-center gap-2">
               <div className="relative shrink-0 w-[19px] h-[19px]">
                 <Image
                   src="/figma-assets/icon-train.svg"
@@ -108,7 +108,7 @@ export default function CareersHero() {
           </div>
 
           {/* Job listings */}
-          <div className="flex flex-col gap-0">
+          <div data-anim-item className="flex flex-col gap-0">
             <p className="font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] leading-[1.2] tracking-[-1.4px] mb-6">
               Postes Ouverts :
             </p>
@@ -143,7 +143,7 @@ export default function CareersHero() {
         </div>
 
         {/* Right: tall image — fills the full height of the section content */}
-        <div className="hidden lg:flex shrink-0 w-[460px] xl:w-[608px] self-stretch">
+        <div data-anim-item className="hidden lg:flex shrink-0 w-[460px] xl:w-[608px] self-stretch">
           <div className="relative w-full rounded-[8px] overflow-hidden">
             <Image
               src="/figma-assets/CareersHero.jpg"

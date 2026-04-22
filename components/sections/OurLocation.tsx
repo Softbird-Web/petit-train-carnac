@@ -54,12 +54,12 @@ export default function OurLocation() {
     <section data-anim-section className="bg-[#f7f7f0] py-16 xl:py-28 isolate">
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 w-full flex flex-col-reverse lg:flex-row items-start lg:items-center gap-12 lg:gap-20">
         {/* Map — bottom on mobile, left on desktop */}
-        <div className="w-full h-[400px] lg:flex-1 lg:self-stretch lg:h-auto lg:min-h-[560px] rounded-2xl overflow-hidden shadow-md">
+        <div data-anim-item className="w-full h-[400px] lg:flex-1 lg:self-stretch lg:h-auto lg:min-h-[560px] rounded-2xl overflow-hidden shadow-md">
           <CarnacMap />
         </div>
 
         {/* Content — top on mobile, right on desktop */}
-        <div className="flex-1 flex flex-col gap-6 max-w-[623px]">
+        <div data-anim-item className="flex-1 flex flex-col gap-6 max-w-[623px]">
           {/* Label */}
           <div className="flex items-center gap-2">
             <div className="relative shrink-0 w-[19px] h-[19px]">

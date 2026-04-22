@@ -32,7 +32,7 @@ export default function Locations() {
     <section data-anim-section className="bg-[#f7f7f0] py-16 xl:py-28 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 w-full flex flex-col gap-16 items-center">
         {/* Header */}
-        <div className="flex flex-col gap-6 items-center text-center max-w-[768px]">
+        <div data-anim-item className="flex flex-col gap-6 items-center text-center max-w-[768px]">
           <div className="flex items-center gap-2">
             <div className="relative shrink-0 w-[19px] h-[19px]">
               <Image
@@ -60,7 +60,7 @@ export default function Locations() {
         </div>
 
         {/* Location cards */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-3">
+        <div data-anim-item className="w-full grid grid-cols-1 lg:grid-cols-2 gap-3">
           {locations.map((loc) => (
             <a
               key={loc.id}

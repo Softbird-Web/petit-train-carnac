@@ -108,10 +108,10 @@ export default function FAQ({
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#f7f7f0] py-24">
+    <section data-anim-section className="bg-[#f7f7f0] py-24">
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 w-full grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-16 items-start">
         {/* Left: heading */}
-        <div className="flex flex-col gap-6 lg:sticky lg:top-28">
+        <div data-anim-item className="flex flex-col gap-6 lg:sticky lg:top-28">
           <div className="flex items-center gap-2">
             <div className="relative shrink-0 w-[19px] h-[19px]">
               <Image
@@ -141,8 +141,8 @@ export default function FAQ({
           </TransitionLink>
         </div>
 
-        {/* Right: FAQ items */}
-        <div className="flex flex-col divide-y divide-[rgba(0,0,0,0.1)]">
+        {/* Right: FAQ items — wrapper below ensures this block is one staggered item */}
+        <div data-anim-item className="flex flex-col divide-y divide-[rgba(0,0,0,0.1)]">
           {faqs.map((faq, index) => (
             <FaqItem
               key={faq.question}

@@ -94,7 +94,7 @@ export default function RoutesTimeline() {
     <section data-anim-section className="bg-[#f7f7f0] py-16 xl:py-28">
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 w-full flex flex-col gap-20 items-center">
         {/* Header */}
-        <div className="flex flex-col gap-6 items-center text-center max-w-[768px]">
+        <div data-anim-item className="flex flex-col gap-6 items-center text-center max-w-[768px]">
           <div className="flex items-center gap-2">
             <div className="relative shrink-0 w-[19px] h-[19px]">
               <Image
@@ -125,7 +125,7 @@ export default function RoutesTimeline() {
         </div>
 
         {/* Timeline stops */}
-        <div className="relative w-full flex flex-col items-center" ref={sectionRef}>
+        <div data-anim-item className="relative w-full flex flex-col items-center" ref={sectionRef}>
           <div className="timeline-line" aria-hidden="true" />
 
           {stops.map((stop, i) => {

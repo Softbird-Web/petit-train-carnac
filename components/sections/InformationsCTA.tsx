@@ -18,7 +18,7 @@ export default function InformationsCTA() {
       <div className="relative z-10 max-w-[1280px] mx-auto px-5 xl:px-0">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-start">
           {/* Left: section label + heading */}
-          <div className="flex-1 flex flex-col gap-3">
+          <div data-anim-item className="flex-1 flex flex-col gap-3">
             <div className="flex items-center gap-2">
               <div className="relative shrink-0 w-[19px] h-[19px]">
                 <Image
@@ -39,7 +39,7 @@ export default function InformationsCTA() {
           </div>
 
           {/* Right: body text + CTA */}
-          <div className="flex-1 flex flex-col gap-8">
+          <div data-anim-item className="flex-1 flex flex-col gap-8">
             <p className="font-['Inter',sans-serif] text-[18px] leading-[1.2] tracking-[-0.54px] text-[#e5e5e5]">
               Si vous voyagez en groupe ou planifiez une visite privée, nous
               vous recommandons d&apos;utiliser notre formulaire de demande

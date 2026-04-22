@@ -18,7 +18,7 @@ export default function Souvenirs() {
       <div className="absolute left-1/2 -translate-x-1/2 top-12 w-[1280px] max-w-full h-px bg-white/10 z-20" />
 
       {/* Section label — Figma left=80, top=64 */}
-      <div className="absolute left-20 top-16 flex items-center gap-[10px] z-20 pointer-events-none">
+      <div data-anim-item className="absolute left-20 top-16 flex items-center gap-[10px] z-20 pointer-events-none">
         <div className="relative shrink-0 w-[19px] h-[19px]">
             <Image
               src="/figma-assets/icon-train-white.svg"

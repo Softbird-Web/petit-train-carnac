@@ -64,11 +64,11 @@ function ReviewCard({ text, author }: { text: string; author: string }) {
 
 export default function InformationsReviews() {
   return (
-    <section className="bg-[#4d1c64] py-20 overflow-hidden">
+    <section data-anim-section className="bg-[#4d1c64] py-20 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 flex flex-col items-center gap-16">
 
         {/* Heading + Google badge */}
-        <div className="flex flex-col items-center gap-6 text-center max-w-[623px]">
+        <div data-anim-item className="flex flex-col items-center gap-6 text-center max-w-[623px]">
           {/* Section label */}
           <div className="flex items-center gap-2">
             <div className="relative shrink-0 w-[19px] h-[19px]">
@@ -138,7 +138,7 @@ export default function InformationsReviews() {
         </div>
 
         {/* 3-column review grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+        <div data-anim-item className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
           {/* Column 1: gallery image + 2 reviews */}
           <div className="flex flex-col gap-4">
             <div className="relative h-[220px] rounded-[6px] overflow-hidden">

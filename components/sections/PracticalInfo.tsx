@@ -64,7 +64,7 @@ export default function PracticalInfo() {
     <section data-anim-section className="bg-[#f7f7f0] py-20 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 w-full flex flex-col gap-12 items-start">
         {/* Header */}
-        <div className="flex flex-col gap-3 max-w-[615px]">
+        <div data-anim-item className="flex flex-col gap-3 max-w-[615px]">
           <div className="flex items-center gap-2">
             <div className="relative shrink-0 w-[19px] h-[19px]">
               <Image
@@ -90,7 +90,7 @@ export default function PracticalInfo() {
         </div>
 
         {/* Cards grid */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div data-anim-item className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {/* Row 1: 4 photo cards */}
           {infoCards.map((card) => (
             <div key={card.id} className="relative h-[423px] rounded-xl overflow-hidden">

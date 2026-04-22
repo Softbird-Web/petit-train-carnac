@@ -3,7 +3,7 @@ import TransitionLink from "@/components/ui/TransitionLink";
 
 export default function InformationsPrices() {
   return (
-    <section className="bg-[#4d1c64] relative overflow-hidden py-20">
+    <section data-anim-section className="bg-[#4d1c64] relative overflow-hidden py-20">
       {/* Faint background watermark */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none opacity-10">
         <Image
@@ -16,7 +16,7 @@ export default function InformationsPrices() {
 
       <div className="relative z-10 max-w-[1280px] mx-auto px-5 xl:px-0 flex flex-col items-center gap-12">
         {/* Heading area */}
-        <div className="flex flex-col items-center gap-6 text-center max-w-[623px]">
+        <div data-anim-item className="flex flex-col items-center gap-6 text-center max-w-[623px]">
           {/* Section label */}
           <div className="flex items-center gap-2">
             <div className="relative shrink-0 w-[19px] h-[19px]">
@@ -45,7 +45,7 @@ export default function InformationsPrices() {
         </div>
 
         {/* Pricing cards */}
-        <div className="flex flex-col md:flex-row gap-8 items-stretch w-full">
+        <div data-anim-item className="flex flex-col md:flex-row gap-8 items-stretch w-full">
           {/* Individual Tickets — cream card */}
           <div className="bg-[#f7f7f0] flex-1 p-6 flex flex-col gap-4">
             <div className="flex items-center gap-2 pb-4 border-b border-[rgba(0,0,0,0.15)]">

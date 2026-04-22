@@ -34,7 +34,7 @@ export default function Features() {
       <div className="w-full max-w-[1280px] px-5 xl:px-0 mx-auto">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
           {/* Left: label + heading */}
-          <div className="flex flex-col gap-3 max-w-[615px]">
+          <div data-anim-item className="flex flex-col gap-3 max-w-[615px]">
             <div className="flex items-center gap-2">
               <div className="relative shrink-0 w-[19px] h-[19px]">
                 <Image
@@ -55,7 +55,7 @@ export default function Features() {
           </div>
 
           {/* Right: body text */}
-          <div className="flex flex-col gap-5 max-w-[603px] font-['Inter',sans-serif] text-[18px] text-[#535862] leading-[1.2] tracking-[-0.54px]">
+          <div data-anim-item className="flex flex-col gap-5 max-w-[603px] font-['Inter',sans-serif] text-[18px] text-[#535862] leading-[1.2] tracking-[-0.54px]">
             <p>
               Le Petit Train de Carnac vous invite à découvrir la ville à un
               rythme détendu, confortablement installé à bord d&apos;un train
@@ -76,7 +76,7 @@ export default function Features() {
       {/* Features 2×2 grid + photo — inside 1280px container */}
       <div className="w-full max-w-[1280px] mx-auto px-5 xl:px-0 flex flex-col lg:flex-row items-stretch gap-12">
         {/* Left: 2×2 feature grid */}
-        <div className="flex-1">
+        <div data-anim-item className="flex-1">
           <div className="grid grid-cols-2 gap-x-8 gap-y-12">
             {features.map((feature, index) => (
               <div key={feature.title} className="flex flex-col gap-5 items-start h-full">
@@ -113,7 +113,7 @@ export default function Features() {
         </div>
 
         {/* Right: photo — inside container, rounded all corners */}
-        <div className="hidden lg:block flex-1 relative min-h-[560px] rounded-2xl overflow-hidden">
+        <div data-anim-item className="hidden lg:block flex-1 relative min-h-[560px] rounded-2xl overflow-hidden">
           <Image
             src="/figma-assets/features-photo.jpg"
             alt="Vue pittoresque depuis le Petit Train de Carnac"

@@ -104,7 +104,7 @@ export default function PricesPage() {
           </>
         }
         googleBadgeText="Le Petit Train de Carnac est noté 4,7 sur Google, avec plus de 6 000 avis, ce qui en fait l'une des attractions touristiques les plus populaires de Carnac."
-        rightImageSrc="/figma-assets/ImagePricesHero.png"
+        rightImageSrc="/figma-assets/ImagePricesHero.jpg"
         rightImageAlt="Le Petit Train de Carnac"
         rightCard={pricesRightCard}
         showBottomBanner={false}

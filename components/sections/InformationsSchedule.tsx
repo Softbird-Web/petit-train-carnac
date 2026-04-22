@@ -104,11 +104,11 @@ const monthsBottom = [
 
 export default function InformationsSchedule() {
   return (
-    <section className="bg-[#f7f7f0] py-20 overflow-hidden">
+    <section data-anim-section className="bg-[#f7f7f0] py-20 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 flex flex-col gap-8">
 
         {/* Info cards — Operating period + Weather */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div data-anim-item className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {/* Operating period card */}
           <div className="relative rounded-tl-[32px] rounded-bl-[32px] overflow-hidden min-h-[156px]">
             <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
@@ -133,7 +133,7 @@ export default function InformationsSchedule() {
                 </div>
               </div>
               <div className="flex flex-col gap-4">
-                <h3 className="font-['Libre_Baskerville',serif] text-[28px] md:text-[32px] leading-[1.25] text-white tracking-[-2.24px]">
+                <h3 className="font-normal font-['Libre_Baskerville',serif] text-[28px] md:text-[32px] leading-[1.25] text-white tracking-[-2.24px]">
                   Période d&apos;exploitation
                 </h3>
                 <p className="font-['Nunito',sans-serif] text-[14px] leading-[1.3] tracking-[-0.42px] text-white max-w-[400px]">
@@ -168,7 +168,7 @@ export default function InformationsSchedule() {
                 </div>
               </div>
               <div className="flex flex-col gap-4">
-                <h3 className="font-['Libre_Baskerville',serif] text-[28px] md:text-[32px] leading-[1.25] text-white tracking-[-2.24px]">
+                <h3 className="font-normal font-['Libre_Baskerville',serif] text-[28px] md:text-[32px] leading-[1.25] text-white tracking-[-2.24px]">
                   Météo
                 </h3>
                 <p className="font-['Nunito',sans-serif] text-[14px] leading-[1.3] tracking-[-0.42px] text-white max-w-[400px]">
@@ -181,7 +181,7 @@ export default function InformationsSchedule() {
         </div>
 
         {/* Timetable grid — purple gradient */}
-        <div className="rounded-[32px] overflow-hidden" style={{ background: "linear-gradient(112deg, #4d1c64 23%, #7b3a94 85%)" }}>
+        <div data-anim-item className="rounded-[32px] overflow-hidden" style={{ background: "linear-gradient(112deg, #4d1c64 23%, #7b3a94 85%)" }}>
           <div className="px-10 py-12 flex flex-col gap-10">
             {/* Timetables heading */}
             <div className="flex items-center gap-4 pb-8 border-b border-[rgba(255,255,255,0.2)]">
@@ -255,7 +255,7 @@ export default function InformationsSchedule() {
         </div>
 
         {/* Holidays & Off-season — standalone cream box */}
-        <div className="rounded-[32px] border border-[rgba(0,0,0,0.1)] bg-[#f7f7f0] px-10 py-12 flex flex-col items-center gap-6 text-center">
+        <div data-anim-item className="rounded-[32px] border border-[rgba(0,0,0,0.1)] bg-[#f7f7f0] px-10 py-12 flex flex-col items-center gap-6 text-center">
           {/* Heading */}
           <div className="flex items-center gap-4 w-full">
             <div className="flex-1 h-px bg-[rgba(0,0,0,0.12)]" />
