@@ -5,16 +5,20 @@ import InformationsIntro from "@/components/sections/InformationsIntro";
 import Reviews from "@/components/sections/Reviews";
 import InformationsCTA from "@/components/sections/InformationsCTA";
 import Locations from "@/components/sections/Locations";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata = {
   title: "Informations Pratiques — Petit Train de Carnac",
   description:
     "Toutes les informations pratiques pour votre visite du Petit Train de Carnac : horaires, tarifs, réservation, accessibilité et points de départ.",
+  alternates: { canonical: '/informations' },
 };
 
 export default function InformationsPage() {
   return (
-    <main>
+<>
+      <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Informations Pratiques', path: '/informations' }]} />
+          <main>
       <InformationsHero
         label="Informations Pratiques"
         heading={
@@ -36,5 +40,6 @@ export default function InformationsPage() {
       <InformationsCTA />
       <Locations />
     </main>
-  );
+  
+    </>);
 }

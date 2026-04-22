@@ -6,11 +6,13 @@ import InformationsSchedule from "@/components/sections/InformationsSchedule";
 import Reviews from "@/components/sections/Reviews";
 import Locations from "@/components/sections/Locations";
 import FAQ from "@/components/sections/FAQ";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata = {
   title: "Tarifs & Billets — Petit Train de Carnac",
   description:
     "Découvrez les tarifs du Petit Train de Carnac. Tarifs individuels et de groupe pour adultes et enfants, avec réservation en ligne disponible.",
+  alternates: { canonical: '/prices' },
 };
 
 const pricesRightCard = (
@@ -74,7 +76,9 @@ const pricingFaqs = [
 
 export default function PricesPage() {
   return (
-    <main>
+<>
+      <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Tarifs & Billets', path: '/prices' }]} />
+          <main>
       <Hero
         label="Tarifs & Billets"
         heading={
@@ -127,5 +131,6 @@ export default function PricesPage() {
         description="Trouvez des réponses claires aux questions les plus fréquentes sur les tarifs, les réductions de groupe et comment réserver le Petit Train de Carnac."
       />
     </main>
-  );
+  
+    </>);
 }

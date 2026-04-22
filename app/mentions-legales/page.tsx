@@ -2,6 +2,7 @@ export const metadata = {
   title: 'Mentions Légales — Petit Train de Carnac',
   description:
     'Mentions légales du site Petit Train de Carnac. Informations sur l\'hébergeur, l\'éditeur, la propriété intellectuelle et le droit applicable.',
+  alternates: { canonical: '/mentions-legales' },
 }
 
 export default function MentionsLegalesPage() {

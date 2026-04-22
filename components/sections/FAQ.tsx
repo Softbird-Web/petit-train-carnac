@@ -70,9 +70,9 @@ function FaqItem({ question, answer, open, onToggle }: FaqItemProps) {
         className="w-full flex items-start justify-between gap-6 text-left cursor-pointer"
         aria-expanded={open ? "true" : "false"}
       >
-        <p className="font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] leading-[1.1] tracking-[-1.4px]">
+        <h3 className="font-normal font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] leading-[1.1] tracking-[-1.4px] m-0">
           {question}
-        </p>
+        </h3>
         <span
           className="shrink-0 text-[#54206d] text-[24px] leading-none mt-0.5 transition-transform duration-300 select-none"
           aria-hidden="true"
@@ -107,8 +107,22 @@ export default function FAQ({
 }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  };
+
   return (
     <section data-anim-section className="bg-[#f7f7f0] py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 w-full grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-16 items-start">
         {/* Left: heading */}
         <div data-anim-item className="flex flex-col gap-6 lg:sticky lg:top-28">

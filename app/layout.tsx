@@ -9,6 +9,7 @@ import PageTransitionProvider from "@/components/providers/PageTransitionProvide
 import TransitionOverlay from "@/components/ui/TransitionOverlay";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import AnimationInit from "@/components/providers/AnimationInit";
+import { SITE_URL, absoluteUrl } from "@/lib/site";
 
 const libreBaskerville = Libre_Baskerville({
   subsets: ["latin"],
@@ -41,12 +42,16 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Petit Train de Carnac Morbihan — Visite guidée de Carnac et ses menhirs",
     template: "%s — Petit Train de Carnac Morbihan",
   },
   description:
     "Découvrez Carnac, ses célèbres mégalithes, ses plages et le port de La Trinité-sur-Mer à bord du Petit Train de Carnac. Une visite guidée de 55 minutes avec commentaire audio multilingue.",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/figma-assets/logo.svg",
     apple: "/figma-assets/Webclip.png",
@@ -102,9 +107,9 @@ export default function RootLayout({
                 "addressRegion": "Morbihan",
                 "addressCountry": "FR"
               },
-              "url": "https://petit-train-carnac.vercel.app",
+              "url": SITE_URL,
               "priceRange": "€",
-              "image": "/figma-assets/hero-image.jpg",
+              "image": absoluteUrl("/figma-assets/hero-image.jpg"),
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.7",

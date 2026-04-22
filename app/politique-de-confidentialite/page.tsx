@@ -2,6 +2,7 @@ export const metadata = {
   title: 'Politique de Confidentialité — Petit Train de Carnac',
   description:
     'Politique de confidentialité du Petit Train de Carnac. Informations sur la collecte et le traitement des données personnelles, cookies et droits des utilisateurs.',
+  alternates: { canonical: '/politique-de-confidentialite' },
 }
 
 export default function PolitiqueDeConfidentialitePage() {

@@ -57,6 +57,8 @@ const faqs = [
         .
       </>
     ),
+    plainAnswer:
+      "Les tarifs varient en fonction de l'âge et de la taille du groupe. Les adultes et les enfants de moins de 12 ans bénéficient de tarifs différents. Les tarifs complets sont disponibles sur la page Tarifs et Billets.",
   },
   {
     question: "Faut-il réserver à l'avance ?",
@@ -91,6 +93,8 @@ const faqs = [
         .
       </>
     ),
+    plainAnswer:
+      "Oui. Le Petit Train de Carnac peut être privatisé pour des événements d'entreprise, des associations, des groupes scolaires et des occasions privées. Un formulaire de demande dédié est disponible sur la page Privatisation.",
   },
 ]
 
@@ -113,9 +117,9 @@ function FaqItem({
         className="w-full flex items-start justify-between gap-6 text-left cursor-pointer group"
         aria-expanded={open}
       >
-        <p className="font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] leading-[1.1] tracking-[-1.4px]">
+        <h3 className="font-normal font-['Libre_Baskerville',serif] text-[20px] text-[#181d27] leading-[1.1] tracking-[-1.4px] m-0">
           {question}
-        </p>
+        </h3>
         <span
           className="shrink-0 mt-0.5 w-6 h-6 flex items-center justify-center rounded-full border border-[rgba(0,0,0,0.15)] text-[#54206d] transition-all duration-300"
           aria-hidden="true"
@@ -146,8 +150,28 @@ function FaqItem({
 export default function FAQsSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
+  // FAQPage schema — fed to Google, ChatGPT, Perplexity, etc. for answer extraction
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'plainAnswer' in faq && faq.plainAnswer
+          ? faq.plainAnswer
+          : (typeof faq.answer === 'string' ? faq.answer : ''),
+      },
+    })),
+  }
+
   return (
     <section data-anim-section className="bg-[#f7f7f0] py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="max-w-[1280px] mx-auto px-5 xl:px-[32px]">
         {faqs.map((faq, index) => (
           <FaqItem

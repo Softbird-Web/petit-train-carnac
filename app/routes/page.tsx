@@ -2,6 +2,7 @@ export const metadata = {
   title: 'Parcours & Itinéraire — Petit Train de Carnac',
   description:
     'Découvrez le parcours du Petit Train de Carnac : menhirs de Carnac, Carnac-Plage et port de La Trinité-sur-Mer. Une visite guidée de 55 minutes avec commentaire audio en 16 langues.',
+  alternates: { canonical: '/routes' },
 }
 
 import RoutesHero from '@/components/sections/RoutesHero'
@@ -9,6 +10,7 @@ import Souvenirs from '@/components/sections/Souvenirs'
 import RoutesTimeline from '@/components/sections/RoutesTimeline'
 import FAQ from '@/components/sections/FAQ'
 import Locations from '@/components/sections/Locations'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 const routeFaqs = [
   {
@@ -55,7 +57,9 @@ const routeFaqs = [
 
 export default function RoutesPage() {
   return (
-    <main>
+    <>
+      <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Le Parcours', path: '/routes' }]} />
+      <main>
       {/* Section 1: Hero with lightbox route map */}
       <RoutesHero
         headingLevel="h1"
@@ -102,6 +106,7 @@ export default function RoutesPage() {
 
       {/* Section 6: Other Petit Train locations */}
       <Locations />
-    </main>
+      </main>
+    </>
   )
 }
