@@ -35,14 +35,15 @@ Session end: propose new mistakes/patterns if any emerged.
 These decisions are global. If a decision here is wrong, fix it in ONE place, not 24.
 
 **Typography:**
-- Headings (`<h1>`, `<h2>`, `<h3>`, `<h4>`): always add `font-normal` explicitly. Browser default is `font-weight: 700`; Tailwind v4 preflight does NOT reset it; Libre Baskerville headings must render at 400.
-- Fonts loaded via `next/font/google` in `app/layout.tsx` → CSS vars on `<html>`: Libre Baskerville, Roboto, Inter, Nunito, Raleway.
-- Heading scale: `text-[48px] xl:text-[60px]` for h2, larger for h1. Always `font-['Libre_Baskerville',serif]` + `font-normal`.
-- Body: `font-['Roboto',sans-serif] text-[16px] tracking-[-0.48px]`.
+- Headings (`<h1>`–`<h4>`): always add `font-normal` explicitly. Browser default is `font-weight: 700`; Tailwind v4 preflight does NOT reset it.
+- Fonts loaded via `next/font/google` in `app/[locale]/layout.tsx` → CSS vars on `<html>`: `--font-bricolage`, `--font-manrope`.
+- Heading: `font-['Bricolage_Grotesque',sans-serif] font-normal text-[48px] xl:text-[60px]`.
+- Body: `font-['Manrope',sans-serif] text-[16px] tracking-[-0.48px]`.
+- Section labels (italic accents): `font-['Bricolage_Grotesque',sans-serif] italic`.
 
 **Color tokens** — `styles/figma-tokens.css`:
 - `--color-primary` (purple #54206d / deep purple #4d1c64)
-- `--color-bg` (cream #f7f7f0)
+- `--color-bg` (cream #f5ebdd)
 - `--color-text` (dark #181d27) / `--color-text-muted` (#535862)
 
 **Animation system** (wire on Session 0, never retrofit):
@@ -50,6 +51,21 @@ These decisions are global. If a decision here is wrong, fix it in ONE place, no
 - GSAP scroll-reveal via `data-anim-section` / `data-anim="hero-title|hero-paragraph|tagline|hero-button"` attributes
 - Osmo character-stagger button: `.btn-animate-chars` in `globals.css` + `data-button-animate-chars` in spans
 - Page transitions: `TransitionLink` + `[data-transition-wrap]` overlay
+- `LanguageDropdown.tsx` — custom motion-driven (no shadcn). Cubic-bezier `[0.22, 1, 0.36, 1]` matches GSAP's `power4.out` used elsewhere.
+
+**i18n (locked architecture):**
+- next-intl 4.9, locales: `fr/en/es/de/it/nl`, `localePrefix: 'as-needed'` → French at `/`, others at `/{locale}/...`
+- **Next 16 renames `middleware.ts` → `proxy.ts`** at project root (createMiddleware export contract is unchanged)
+- `i18n/routing.ts` — locales array + localeLabels (flag emoji + native name)
+- `i18n/request.ts` — per-request loader with **deep-merge fallback to fr.json** (missing target keys never error)
+- `i18n/navigation.ts` — locale-aware `Link / useRouter / usePathname / redirect / getPathname` (used by `TransitionLink` + `PageTransitionProvider`)
+- All pages live under `app/[locale]/...`. Each page is **async**, calls `setRequestLocale(locale)` BEFORE rendering, exports `generateMetadata` via `getTranslations({locale, namespace: 'metadata.<page>'})`
+- `Hero.tsx` is async (uses `getTranslations()`); pages rendering it must be async too
+- `messages/{locale}.json` — fr is canonical source; others are derived. Translation sync via `npm run translate` (Anthropic SDK script at `scripts/translate-i18n.ts`, needs `ANTHROPIC_API_KEY`)
+- Client components use `useTranslations(namespace)`; server components use `await getTranslations({locale, namespace})`
+- Rich text (HTML in translations): `t.rich('key', { strong: (chunks) => <strong>{chunks}</strong> })`
+- Legal pages (`mentions-legales`, `politique-de-confidentialite`) **stay French in all locales** by design (legal accuracy)
+- Sitemap (`app/sitemap.ts`) emits 1 entry per route × locale with hreflang alternates
 
 **Build/deploy gotchas (locked):**
 - Lenis = ESM-only → use `dynamic import()` on Next 16 + Turbopack
@@ -91,16 +107,34 @@ oxlint             → npx oxlint --fix <file>
 ## File Structure
 ```
 app/
-  globals.css       ← @import "../styles/figma-tokens.css" THEN @import "tailwindcss"
-  layout.tsx        ← Navbar + Footer here — never re-add in page files
-  page.tsx          ← section imports only, no logic/styles
+  globals.css                   ← @import "../styles/figma-tokens.css" THEN @import "tailwindcss" THEN @import "../styles/gallery.css"
+  sitemap.ts / robots.ts        ← stay at app/ root (Next.js convention, locale-agnostic)
+  [locale]/
+    layout.tsx                  ← Navbar + Footer here, NextIntlClientProvider, generateStaticParams, setRequestLocale, locale-driven <html lang>
+    page.tsx / */page.tsx       ← async server components; export generateMetadata via getTranslations
+i18n/
+  routing.ts                    ← locales[], defaultLocale, localePrefix: 'as-needed', localeLabels
+  request.ts                    ← per-request loader with deep-merge French fallback
+  navigation.ts                 ← createNavigation(routing) → Link, useRouter, usePathname, redirect, getPathname
+messages/
+  fr.json (canonical)           ← edit here; en/es/de/it/nl.json are derived
+proxy.ts                        ← next-intl middleware (Next 16 calls it proxy.ts, NOT middleware.ts)
+scripts/
+  translate-i18n.ts             ← AI sync via Anthropic SDK; npm run translate (needs ANTHROPIC_API_KEY)
 components/
   fancy/image/image-trail.tsx   ← DO NOT rewrite
-  layout/Navbar.tsx             ← "use client"; sticky; scroll shadow
-  sections/                     ← one file per Figma section
-  ui/ScrollReveal.tsx           ← IntersectionObserver reveal; direction=up/left/right; delay prop
+  layout/
+    Navbar.tsx                  ← "use client"; sticky; scroll shadow; renders <LanguageDropdown variant="banner" />
+    LanguageDropdown.tsx        ← custom motion-driven dropdown, ease-out-quart cubic bezier
+  sections/                     ← one file per Figma section; section components consume useTranslations() / getTranslations()
+  sections/Gallery.tsx          ← Osmo lightbox + GSAP Flip + JS shortest-column masonry, 3 cols desktop / 2 mobile via useSyncExternalStore + matchMedia
+  ui/ScrollReveal.tsx           ← IntersectionObserver reveal
+  ui/TransitionLink.tsx         ← imports from @/i18n/navigation (locale-aware)
+  providers/PageTransitionProvider.tsx ← also uses @/i18n/navigation
 lib/utils.ts                    ← cn() = twMerge(clsx(inputs))
-styles/figma-tokens.css         ← CSS vars: --color-primary, --color-bg, --color-bg-dark, --color-text, --color-text-muted
+styles/
+  figma-tokens.css              ← CSS vars (--color-bg = #f5ebdd)
+  gallery.css                   ← .gallery-masonry / .gallery-col / .lightbox-* (Osmo)
 public/figma-assets/            ← all images/SVGs; URL prefix /figma-assets/
 ```
 
@@ -124,15 +158,15 @@ public/figma-assets/            ← all images/SVGs; URL prefix /figma-assets/
 
 **One page per session. Finish, commit, end session.**
 
-## Typography (from Figma)
-- Headings: `font-['Libre_Baskerville',serif] text-[48px] leading-[1.15] tracking-[-3.36px]`
-- Section labels: `font-['Libre_Baskerville',serif] italic text-base tracking-[-0.48px]`
-- Body: `font-['Inter',sans-serif] text-[18px] leading-[1.2] tracking-[-0.54px]`
-- Buttons: `font-['Roboto',sans-serif] text-base font-medium tracking-[-0.64px]`
+## Typography (current — post font swap)
+- Headings: `font-['Bricolage_Grotesque',sans-serif] font-normal text-[48px] leading-[1.15] tracking-[-3.36px]`
+- Section labels: `font-['Bricolage_Grotesque',sans-serif] italic text-base tracking-[-0.48px]`
+- Body: `font-['Manrope',sans-serif] text-[18px] leading-[1.2] tracking-[-0.54px]`
+- Buttons: `font-['Manrope',sans-serif] text-base font-medium tracking-[-0.64px]`
 
 ## CTA Button (cream)
 ```tsx
-<Link href="#" className="inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#f7f7f0] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-[#414651] text-base font-medium font-['Roboto',sans-serif] tracking-[-0.64px] whitespace-nowrap">
+<Link href="/" className="inline-flex items-center gap-2 h-[45px] px-[22px] bg-[#f5ebdd] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] ring-1 ring-inset ring-[rgba(10,13,18,0.18)] text-[#414651] text-base font-medium font-['Manrope',sans-serif] tracking-[-0.64px] whitespace-nowrap">
   Label
 </Link>
 ```
@@ -147,6 +181,15 @@ public/figma-assets/            ← all images/SVGs; URL prefix /figma-assets/
 - **Infinite scroll columns**: total height of one card set must be ≥ container height (`h-[560px]`) for seamless loop.
 - **maskImage**: must be inline styles — only approved exception to no-inline-styles rule. `style={{ maskImage: "...", WebkitMaskImage: "..." }}`
 - **Figma MCP**: decorative SVG vectors can cause 100k+ token bloat — select sections individually, never the whole page.
+- **Next 16 middleware filename**: it's `proxy.ts` at project root, NOT `middleware.ts`. Same `createMiddleware` export, just renamed in Next 16. Easy to miss.
+- **Stale `.next` after page reorganization**: moving files under `app/[locale]/` triggers tsc errors about "Cannot find module '../../../app/foo/page.js'". `rm -rf .next && npx tsc --noEmit` clears it.
+- **Async pages + `setRequestLocale`**: every page under `[locale]` should be `async`, await `params`, and call `setRequestLocale(locale)` BEFORE rendering — otherwise next-intl drops to dynamic rendering and breaks static generation.
+- **Hero is async**: `Hero.tsx` uses `getTranslations()` so anywhere it's rendered the parent page must also be async.
+- **JSON quote escaping** for hand-authored translation files: German `„..."` and French `«...»` use Unicode quotes (`„` U+201E, `"` U+201C, `«` U+00AB, `»` U+00BB). The closing curly quote is NOT an ASCII `"`. Validate with `node -e "JSON.parse(require('fs').readFileSync('messages/de.json','utf-8'))"` after manual edits.
+- **Osmo Flip + overflow-hidden**: do NOT put `overflow-hidden` on `[data-lightbox="trigger"]`, `[data-lightbox="trigger-parent"]`, or `[data-lightbox="item"]` — breaks the Flip animation. If clipping is needed (parallax etc.), use an inner wrapper that's not in the trigger chain.
+- **CSS columns ≠ true masonry**: with uniform-aspect images, CSS `columns: 3` looks like a flat grid. Use JS shortest-column packing (see `Gallery.tsx` `distribute()`) for visible stagger.
+- **TransitionLink locale-awareness**: it imports from `@/i18n/navigation` (not `next/link`). Same for `PageTransitionProvider`'s `useRouter`. Don't accidentally swap them back to `next/navigation` — locale prefixes will break.
+- **Pricing card "BON PLAN" badge**: card has `rounded-[16px]`; without `overflow-hidden` on the card, the badge's square top-right corner pokes past the radius.
 
 ## Git Rules
 - Branch: main (direct commits approved)

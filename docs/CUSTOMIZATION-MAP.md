@@ -2,11 +2,12 @@
 
 **Every Carnac-hardcoded value, by category.** Use this as the checklist when cloning this repo to spawn a new Petit Train site.
 
-**Big picture counts** (as of 2026-04-22):
-- `"carnac"` (case-insensitive) appears in **171 lines** across .tsx/.ts/.css files
-- `#54206d` (primary violet): **63 refs** | `#4d1c64` (deep): **38 refs** | `#f7f7f0` (cream): **76 refs** | `#181d27` (heading): **55 refs** | `#33114d` (dark navbar): **2 refs**
-- Contact (phone+email): **18 refs** across 7 files
-- Regiondo widget ID: **1 ref** (centralized, good)
+**Big picture counts** (refreshed 2026-04-25 after font swap, color swap, Gallery rebuild, i18n Phase 2):
+- `"carnac"` (case-insensitive) appears across .tsx/.ts/.css files (much of it now lives in `messages/*.json`)
+- `#54206d` (primary violet) | `#4d1c64` (deep purple) | `#f5ebdd` (cream — was `#f7f7f0`) | `#181d27` (heading) | `#33114d` (dark navbar)
+- Contact (phone+email): centralized in Footer, Prices group card, BookingSection fallback, RegiondoWidget fallback, JSON-LD
+- Regiondo widget ID: **1 ref** (`components/sections/BookingSection.tsx`)
+- **i18n: ~120 keys × 6 locales** in `messages/{fr,en,es,de,it,nl}.json`. French is canonical; others derived. Legal pages stay French in all locales.
 
 **When to use this:**
 1. **Reading** — to understand scope before quoting a timeline
@@ -17,25 +18,22 @@
 
 ## 1. Identity + meta
 
-| File | Line | What | Carnac value |
-|---|---|---|---|
-| `app/layout.tsx` | 44–46 | Root title default + template | `"Petit Train de Carnac Morbihan — ..."` |
-| `app/layout.tsx` | 48–49 | Root meta description | (long French blurb) |
-| `app/layout.tsx` | 56–75 | OpenGraph + Twitter titles/descriptions | |
-| `app/layout.tsx` | 86 | `<html lang="fr">` | `fr` |
-| `app/routes/page.tsx` | 2 | Page title | `"Parcours & Itinéraire"` |
-| `app/prices/page.tsx` | 11 | Page title | `"Tarifs & Billets"` |
-| `app/informations/page.tsx` | 11 | Page title | `"Informations Pratiques"` |
-| `app/book/page.tsx` | 10 | Page title | `"Réservez votre visite"` |
-| `app/faqs/page.tsx` | 6 | Page title | `"FAQ"` |
-| `app/privatisation/page.tsx` | 6 | Page title | `"Privatisation"` |
-| `app/careers/page.tsx` | 2 | Page title | `"Carrières"` |
-| `app/mentions-legales/page.tsx` | 2 | Page title + body | `"Mentions Légales"` + entire legal copy |
-| `app/politique-de-confidentialite/page.tsx` | 2 | Page title + body | `"Politique de Confidentialité"` + privacy policy |
-| `CLAUDE.md` | all | Project brain — references "Carnac" throughout | — |
-| `package.json` | 2 | `"name": "petit-train-carnac"` | |
+**Note:** Page metadata + breadcrumbs now live in `messages/*.json` under `metadata.<page>` and `breadcrumb.<route>`. Editing fr.json + running `npm run translate` propagates to all 6 locales.
 
-**When cloning:** regenerate all titles + descriptions per the filled questionnaire. `lib/site.ts` stays as-is (env-driven).
+| File | Line / key | What | Carnac value |
+|---|---|---|---|
+| `app/[locale]/layout.tsx` | 27–65 | Root metadata (title template, default title, description, OpenGraph, Twitter) | `"Petit Train de Carnac Morbihan — ..."` |
+| `app/[locale]/layout.tsx` | 75 | `<html lang={locale}>` | `locale` from params (no hardcoded `"fr"`) |
+| `app/[locale]/layout.tsx` | 80–105 | JSON-LD schema (TouristAttraction, LocalBusiness) — name, description, address | `"Petit Train de Carnac"` etc. |
+| `app/[locale]/<page>/page.tsx` | each | Page metadata via `generateMetadata` → `getTranslations({locale, namespace: 'metadata.<page>'})` | — |
+| `messages/fr.json` | `metadata.<page>.title/description` | Per-page titles + descriptions across 8 pages | source of truth |
+| `messages/fr.json` | `breadcrumb.*` | All breadcrumb labels (home/prices/routes/book/...) | — |
+| `app/[locale]/mentions-legales/page.tsx` | body | Legal entity copy (FR-only by design) | full legal text |
+| `app/[locale]/politique-de-confidentialite/page.tsx` | body | Privacy policy (FR-only by design) | full privacy copy |
+| `package.json` | 2 | `"name": "petit-train-carnac"` | swap to `petit-train-<location>` |
+| `CLAUDE.md` | all | Project brain — references "Carnac" throughout | rewrite for new site |
+
+**When cloning:** edit `messages/fr.json` for all titles/descriptions/breadcrumbs once; `npm run translate` syncs the other 5 locales. Update root layout JSON-LD schema for the new location's address/geo.
 
 ---
 
@@ -76,19 +74,31 @@ All 18 references — split into one-line-per-file bucket. Ideal target for `bra
 
 ## 4. Brand colors
 
-**Sum of hardcoded hex refs: 234.** Ideal target for `brand.colors.*` + CSS var substitution.
+| Hex | Used as | Primary files |
+|---|---|---|
+| `#54206d` | Primary violet (buttons, italic accent, active states) | Hero, Footer, every section using accent |
+| `#4d1c64` | Deep purple (hover, dark section bg, Prices/Reviews) | Reviews, GroupBookingCTA, Prices, Gallery |
+| `#f5ebdd` | Cream background (was `#f7f7f0` before 2026-04-25 swap) | Hero, Features, BeforeYouBook, Prices cards, Footer logo bg |
+| `#181d27` | Heading text | All h1/h2/h3 classNames |
+| `#535862` | Body text muted | Manrope body paragraphs |
+| `#33114d` | Announcement banner bg | Navbar |
 
-| Hex | Used as | Count | Primary files |
-|---|---|---|---|
-| `#54206d` | Primary violet (buttons, italic accent, active states) | 63 | Hero, Footer, every section using accent |
-| `#4d1c64` | Deep purple (hover, dark section bg) | 38 | Reviews, GroupBookingCTA, InformationsPrices |
-| `#f7f7f0` | Cream background | 76 | Hero, Features, BeforeYouBook, Prices cards, etc. |
-| `#181d27` | Heading text | 55 | All h1/h2/h3 classNames |
-| `#33114d` | Announcement banner bg | 2 | Navbar only |
+**Semantic tokens** in `styles/figma-tokens.css`: `--color-primary`, `--color-bg` (= `#f5ebdd`), `--color-bg-dark`, `--color-text`, `--color-text-muted`. Most components hardcode the hex; when extracting to `brand.ts`, the tokens file becomes the bridge: brand constants → CSS vars → utility classes.
 
-**Semantic tokens exist:** `styles/figma-tokens.css` has `--color-primary`, `--color-bg`, `--color-text` etc. — but most code hardcodes the hex instead of using the CSS var. When extracting to `brand.ts`, the tokens file becomes the bridge: brand constants → CSS vars → utility classes.
+**When cloning:** replace all hex values globally with sed (`grep -rl "#54206d" app components | xargs sed -i '' 's/#54206d/#NEW/g'`). If the new site adds tones (e.g., 2 accents), requires component-by-component review.
 
-**When cloning:** replace all 5 hex values globally. Can be done with `sed`/Python regex if the brand palette is a 1:1 swap. If new site has different number of tones (e.g., 2 accents), requires component-by-component review.
+---
+
+## 4b. Fonts (locked post-swap)
+
+**Stack:** Bricolage Grotesque (headings) + Manrope (body), both via `next/font/google` in `app/[locale]/layout.tsx`.
+
+| File | What |
+|---|---|
+| `app/[locale]/layout.tsx` | `next/font/google` imports + CSS var declarations (`--font-bricolage`, `--font-manrope`) |
+| All `.tsx` files | className strings reference `font-['Bricolage_Grotesque',sans-serif]` (headings + italic labels) and `font-['Manrope',sans-serif]` (body + buttons) |
+
+**When cloning:** font stack is brand-neutral. Don't swap unless the new site's brand explicitly mandates different fonts. If swapping: edit the imports in layout, then global find/replace on the className strings (~165 occurrences across the codebase). Always keep `font-normal` on headings (browser default is 700; Tailwind v4 preflight doesn't reset).
 
 ---
 
@@ -215,6 +225,29 @@ The image manifest is the authoritative list of every image file → where it's 
 
 ---
 
+## 15. i18n — translation catalogs
+
+| File | What |
+|---|---|
+| `i18n/routing.ts` | Locales array, defaultLocale, localePrefix, localeLabels (flag emoji + native name per locale) |
+| `i18n/request.ts` | Per-request loader with deep-merge French fallback |
+| `i18n/navigation.ts` | createNavigation(routing) → Link, useRouter, usePathname, redirect, getPathname |
+| `proxy.ts` (project root) | next-intl middleware (Next 16: NOT `middleware.ts`) |
+| `messages/fr.json` | **Canonical source of truth.** Every page/section's strings, organized by namespace: `nav.*`, `navbar.*`, `footer.*`, `breadcrumb.*`, `shared.*`, `hero.*`, `metadata.<page>.*`, `pages.<page>.*`, `sections.<component>.*` |
+| `messages/{en,es,de,it,nl}.json` | Derived translations. Sync via `npm run translate` |
+| `messages/.translation-meta.json` | Auto-managed. Tracks SHA256 hashes of fr.json values; lets the sync script know what changed since last run |
+| `scripts/translate-i18n.ts` | AI sync script (Anthropic SDK). Run when fr.json changes. Needs `ANTHROPIC_API_KEY`. |
+| `app/sitemap.ts` | Emits 1 entry per route × locale with `alternates.languages` hreflang map |
+| `components/layout/LanguageDropdown.tsx` | Custom motion-driven dropdown in announcement banner |
+
+**When cloning:**
+1. Decide locales (edit `i18n/routing.ts:locales` + `localeLabels`).
+2. Edit `messages/fr.json` for new content (keep namespaced keys identical).
+3. `npm run translate` to sync the rest.
+4. Validate: `for f in messages/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf-8'))" && echo OK; done`.
+
+---
+
 ## What's safe to leave alone (generic infrastructure)
 
 Don't touch these when cloning:
@@ -240,10 +273,13 @@ Don't touch these when cloning:
 Before committing a cloned-and-swapped site, run this:
 
 ```bash
-# Any remaining Carnac-specific hardcoding?
-grep -rni "carnac\|menec\|lebayon\|54206d\|4d1c64\|5712cb43" \
-  --include="*.tsx" --include="*.ts" --include="*.css" \
-  app/ components/ lib/ styles/ docs/
+# Any remaining Carnac-specific hardcoding (code + JSON catalogs)?
+grep -rni "carnac\|menec\|lebayon\|54206d\|4d1c64\|5712cb43\|f7f7f0" \
+  --include="*.tsx" --include="*.ts" --include="*.css" --include="*.json" \
+  app/ components/ lib/ styles/ messages/ docs/
 
-# Should return only new-site values. Any "carnac"/"menec"/"lebayon" hit = something missed.
+# Should return only new-site values. Any "carnac"/"menec"/"lebayon"/"f7f7f0" hit = something missed.
+
+# i18n catalog sanity:
+for f in messages/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf-8'))" 2>&1 && echo "$f OK" || echo "$f FAIL"; done
 ```

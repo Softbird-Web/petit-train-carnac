@@ -20,9 +20,11 @@
 
 **Why arbitrary values (`text-[#54206d]`) over `theme.extend` tokens:** this is a 1-instance design (one brand, one designer, no reusable component library spanning multiple sites yet). Arbitrary values = faster iteration, direct Figma → code translation.
 
-**Why `font-normal` on every heading:** browser default is `font-weight: 700` for `<h1>`–`<h6>`, and Tailwind v4's preflight does NOT reset it. Libre Baskerville looks wrong at 700 (too thick). Every heading MUST explicitly set `font-normal` (or the intended weight).
+**Why `font-normal` on every heading:** browser default is `font-weight: 700` for `<h1>`–`<h6>`, and Tailwind v4's preflight does NOT reset it. Bricolage Grotesque looks wrong at 700 (too thick). Every heading MUST explicitly set `font-normal` (or the intended weight).
 
-**Not shadcn:** shadcn solves "design system with 50 components." We have 20-odd one-off sections, each tailored from Figma. Shadcn would add friction without benefit.
+**Font swap (April 2026):** Libre Baskerville (heading) + Roboto/Inter/Nunito/Raleway (body) → Bricolage Grotesque (heading) + Manrope (body). Both via `next/font/google`. The swap was a global find/replace on `font-['<old>',<fallback>]` classNames + `next/font/google` imports in `app/[locale]/layout.tsx`.
+
+**Not shadcn:** shadcn solves "design system with 50 components." We have 20-odd one-off sections, each tailored from Figma. Shadcn would add friction without benefit. Same logic for the i18n language dropdown — custom `LanguageDropdown.tsx` (motion-driven, ~80 lines) matches the brand palette without dragging in a theming layer.
 
 **When extracting `lib/brand.ts` in Phase 2 of NEW-SITE-PLAYBOOK:** replace hardcoded hex in components with `style={{ color: brand.colors.primary }}` or a `cn()` helper that reads CSS vars. Don't introduce shadcn just for that.
 
@@ -105,6 +107,70 @@ Client's existing booking provider. We don't want to reinvent booking; they have
 **Do not inline the script in `layout.tsx` head** — that loads Regiondo JS on every page. Keep it scoped to `/book` via the BookingSection component.
 
 **Widget ID is the only per-site variable** — passed as a prop, so RegiondoWidget is reusable across Vannes/Quiberon/Morbihan without modification.
+
+---
+
+## i18n with next-intl 4 — architecture
+
+**Locales:** `fr` (default, no URL prefix), `en`, `es`, `de`, `it`, `nl` (prefixed at `/{locale}/...`). Configured via `localePrefix: 'as-needed'` in `i18n/routing.ts`.
+
+**Why next-intl over alternatives:**
+- First-class App Router + Server Components support (next-i18next is Pages Router only)
+- Type-safe with TypeScript inference from JSON catalogs
+- Built-in middleware for locale negotiation
+- Active maintenance (4.x line), no abandonment risk
+- Locale-aware navigation wrappers (`createNavigation(routing)`) plug into `next/link` semantics
+
+**Why `localePrefix: 'as-needed'` over `'always'`:**
+- French is the canonical content + the home market — clean URLs (`/prices`, `/routes`) signal "primary content"
+- Other locales prefixed (`/en/prices`) — clear SEO signal of translation, no ambiguity for `hreflang`
+- Tradeoff: `'always'` would be slightly more uniform but would 301-redirect French users from `/` to `/fr/` on every visit, hurting LCP
+
+**The fallback chain** (the unlock for partial translation):
+1. Browser → `proxy.ts` middleware resolves locale from URL → reads `requestLocale`
+2. `i18n/request.ts` validates against `routing.locales`; if invalid, returns `defaultLocale`
+3. Loads BOTH `messages/fr.json` (canonical) AND `messages/{locale}.json` (target)
+4. Deep-merges them — target keys win, French fills missing keys
+5. Returns merged messages to React
+
+This means missing/empty target translations fall back to French automatically. Phase 1 (Navbar/Footer/Hero translated) shipped without breaking the rest of the site — untranslated section content rendered French in non-FR locales until Phase 2 caught up.
+
+**File-system architecture:**
+```
+i18n/
+  routing.ts        ← defineRouting({ locales, defaultLocale, localePrefix }) + localeLabels
+  request.ts        ← getRequestConfig with deepMerge(fallback, target)
+  navigation.ts     ← createNavigation(routing) → Link, useRouter, usePathname, redirect, getPathname
+proxy.ts            ← createMiddleware(routing) — Next 16 renamed middleware.ts → proxy.ts
+app/
+  [locale]/
+    layout.tsx      ← async; setRequestLocale(locale); NextIntlClientProvider wraps children
+    page.tsx        ← async; setRequestLocale; generateMetadata via getTranslations({locale, namespace})
+    .../page.tsx    ← same pattern per page
+  sitemap.ts        ← stays at app/ root; emits route × locale matrix with hreflang alternates
+  globals.css       ← stays at app/ root
+messages/
+  fr.json           ← canonical source of truth
+  en/es/de/it/nl.json
+  .translation-meta.json   ← auto-managed by scripts/translate-i18n.ts
+```
+
+**Server vs client component split with i18n:**
+- **Server components** (most pages, layouts, Hero): `await getTranslations({locale, namespace})` for the `t()` function. Must call `setRequestLocale(locale)` first to enable static rendering.
+- **Client components** (Navbar, Footer, BookingSection, Gallery, FAQ, LanguageDropdown): `useTranslations(namespace)` — no `setRequestLocale` needed; reads from the `NextIntlClientProvider` context.
+- **Rich text** (HTML in translations like `<strong>` or `<br/>`): `t.rich('key', { strong: (chunks) => <strong>{chunks}</strong> })`. The tag names in the JSON value map to renderer functions.
+
+**Locale-aware navigation:**
+- `TransitionLink` and `PageTransitionProvider` import from `@/i18n/navigation`, NOT `next/link` / `next/navigation`. The next-intl wrappers auto-prepend `/{locale}` to internal hrefs based on the current route. Don't accidentally swap them back.
+
+**Translation sync (`npm run translate`):**
+- `scripts/translate-i18n.ts` uses `@anthropic-ai/sdk`
+- Hashes every value in `messages/fr.json`; compares against `messages/.translation-meta.json` from last run
+- Sends one batch prompt per target locale containing only the changed keys
+- Tourism-context system prompt preserves proper nouns (Carnac, Vannes, etc.) and HTML-like tags (`<strong>`, `<br/>`)
+- Manual edits to non-FR catalogs are preserved — the script only touches keys whose source hash changed
+
+**Legal pages stay French in all locales** (`mentions-legales`, `politique-de-confidentialite`). Translating legal text is a liability — don't unless the client provides legally reviewed translations.
 
 ---
 

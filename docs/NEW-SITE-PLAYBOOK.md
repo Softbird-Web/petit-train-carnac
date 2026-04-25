@@ -27,9 +27,10 @@ This repo is the **canonical template** for all Petit Train microsites (Carnac �
    - Hero video MP4 (< 10MB, under 30s, starts on the main attraction)
    - Opening static image (shown briefly before the video plays)
    - Section photos per `docs/image-manifest.md` (1 per section, 1920px+)
-   - 5–8 gallery photos (Souvenirs section)
+   - 9–12 gallery photos (Gallery masonry section — varied aspect ratios help the cascade)
 4. Confirm Regiondo widget ID from the client's dashboard.
 5. Decide final production domain (can be set as Vercel env var later).
+6. **Decide locales** — French-only, or add EN/ES/DE/IT/NL? If multi-locale, the cloned repo already has the i18n scaffold (next-intl 4 + proxy.ts + `messages/{locale}.json`). You'll just edit the catalogs in Phase 3.
 
 **Output of Phase 0:** a filled questionnaire + a photo folder. Hand both to Claude to start Phase 1.
 
@@ -100,8 +101,40 @@ With `lib/brand.ts` existing:
    ```
    Update `docs/image-manifest.md` in the new repo with the new image list.
 3. **Copy changes** — for any copy that isn't in `brand.ts` (e.g., FAQ answers, route descriptions, section labels), find-and-replace through Claude.
-4. **SEO metadata** — update `alternates.canonical` paths if URL structure changes; update sitemap priority if routes change.
-5. **Video + opening image** in `app/page.tsx` — update `rightVideoSrc` and `openingImageSrc` props on `<Hero />`.
+4. **i18n catalog swap (if multi-locale)** — see Phase 3b below.
+5. **SEO metadata** — update `alternates.canonical` paths if URL structure changes; update sitemap priority if routes change.
+6. **Video + opening image** in `app/[locale]/page.tsx` — update `rightVideoSrc` and `openingImageSrc` props on `<Hero />`.
+
+---
+
+## Phase 3b: i18n catalog swap (only if site is multi-locale — ~1 hour)
+
+The cloned repo ships with a working i18n stack: `next-intl` 4, `proxy.ts` middleware, `i18n/{routing,request,navigation}.ts`, locale-aware `Navbar`, `LanguageDropdown`, `TransitionLink`, sitemap with hreflang. You don't need to rebuild any of that.
+
+What you DO need to do for the new site:
+
+1. **Edit `messages/fr.json`** — replace every Carnac-specific value with the new location's content. Key paths stay identical; only French values change.
+2. **Sync the other 5 locales**:
+   ```bash
+   ANTHROPIC_API_KEY=sk-ant-... npm run translate
+   ```
+   The script (`scripts/translate-i18n.ts`) hashes every French value, detects what changed since the last run (via `messages/.translation-meta.json`), and only re-translates new/changed keys per target locale. Cost: pennies per run.
+3. **Decide which locales the new site needs.** If only some, edit `i18n/routing.ts`:
+   ```ts
+   locales: ['fr', 'en', 'de'],  // drop the unused ones
+   ```
+   Update `localeLabels` in the same file to match.
+4. **Validate** all locale JSONs parse:
+   ```bash
+   for f in messages/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf-8'))" && echo "$f OK"; done
+   ```
+5. **Don't translate** the legal pages (`mentions-legales`, `politique-de-confidentialite`) unless the client provides legally reviewed translations. They're FR-only by design — fine because they fall under `app/[locale]/` and just render French content under any locale.
+
+**Watch out for:**
+- `proxy.ts` at project root must exist (Next 16 — NOT `middleware.ts`)
+- After moving any pages around: `rm -rf .next` before `tsc/dev`
+- Hand-authored translations: validate JSON parses; German `„..."` and French `«...»` use Unicode quotes (the closing curly quote is U+201C, not ASCII `"`)
+- `setRequestLocale(locale)` must be called at the top of every page under `[locale]` — otherwise static rendering breaks
 
 ---
 
@@ -154,10 +187,11 @@ With `lib/brand.ts` existing:
 | 1 — Repo setup | 2 hours | 15 min | 15 min |
 | 2 — Brand extraction | N/A | 1–2 hours | 0 (already done) |
 | 3 — Content swap | 15 hours | 4 hours | 2 hours |
+| 3b — i18n catalog swap (if multi-locale) | 8 hours (Phase 1+2) | 1 hour | 30 min |
 | 4 — QA | 3 hours | 2 hours | 1 hour |
 | 5 — SEO migration | 2 hours (new foundation) | 1 hour | 1 hour |
 | 6 — Launch | done | 1 hour | 30 min |
-| **Total** | **~22 hours** | **~10 hours** | **~5 hours** |
+| **Total** | **~30 hours** | **~10–11 hours** | **~5–6 hours** |
 
 ---
 

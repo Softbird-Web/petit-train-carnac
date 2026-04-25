@@ -4,6 +4,37 @@ Append 1–3 entries per session. Session-start: read this file. Session-end: ad
 
 ---
 
+## i18n with next-intl 4 (2026-04-25 session)
+
+- **Next 16 renames `middleware.ts` → `proxy.ts`.** Same `createMiddleware(routing)` export, same matcher config, but the file at the project root must be `proxy.ts`. If you write `middleware.ts` it's ignored silently and your locale routing breaks. Easy 30-min waste.
+- **`localePrefix: 'as-needed'`** is the right call when one locale dominates (default at `/`, others at `/{locale}/...`). Combined with `defaultLocale: 'fr'`, French pages stay at the bare path; English/Spanish/German/Italian/Dutch get prefixes. SEO-friendly.
+- **Deep-merge fallback in `i18n/request.ts`** is the unlock for partial translation. When a key is missing in `messages/it.json`, fall back to `messages/fr.json`. Lets you ship Phase 1 (Navbar/Footer/Hero translated) without exploding the rest of the site — untranslated sections render French in non-FR locales, never an `IntlError`.
+- **Every page under `[locale]` must be async**, await `params`, call `setRequestLocale(locale)` BEFORE rendering, and export `generateMetadata` via `getTranslations({locale, namespace: 'metadata.<page>'})`. Skip `setRequestLocale` and you lose static rendering — pages render dynamically every request, performance tanks.
+- **Hero (and any section using `getTranslations()`) is an async server component.** Pages that render it must be async too. JSX renders async server components fine, but the typing requires the page wrapper to be async to await `params`.
+- **`NextIntlClientProvider` wraps inside `<body>`** in `app/[locale]/layout.tsx` — not above. Outside `<body>` it errors. Inside, every client component below it can call `useTranslations()`.
+- **TransitionLink + PageTransitionProvider must use `@/i18n/navigation`**, not `next/link` / `next/navigation`. The next-intl wrappers auto-prepend `/{locale}` to non-default-locale hrefs. Forget this and clicking a navlink on `/en/prices` takes you to French `/prices`.
+- **Stale `.next` after moving pages to `[locale]`** → tsc throws "Cannot find module '../../../app/foo/page.js'". `rm -rf .next` clears it.
+- **JSON quote escaping for translation files.** German `„...""` and French `«...»` use Unicode quotes. The closing German curly quote is U+201C, not ASCII `"`. If you accidentally use ASCII `"` to close, JSON.parse fails on the unescaped quote. Validate every locale file: `node -e "JSON.parse(require('fs').readFileSync('messages/de.json','utf-8'))"`.
+- **Translation sync script** (`scripts/translate-i18n.ts`) hashes every French source value and only re-translates keys that changed since the last run (tracked in `messages/.translation-meta.json`). So manual fixes to non-FR catalogs aren't blown away. Needs `ANTHROPIC_API_KEY` env var.
+- **Custom dropdown beats shadcn for brand-controlled UIs.** `motion`'s `AnimatePresence` + cubic-bezier `[0.22, 1, 0.36, 1]` (= GSAP's `power4.out`) gives a 30-line dropdown that matches the existing site UI. shadcn would have meant theming overrides + an unused dependency. Stick with custom for components that need to feel native to the brand.
+- **Sitemap with hreflang** is one `.flatMap()` over routes × locales using `getPathname({locale, href})` — produces `<xhtml:link rel="alternate" hreflang="..."/>` automatically. Critical for multi-locale SEO.
+- **Legal pages are FR-only** (mentions-legales, politique-de-confidentialite). Translating legal text is a liability — keep them French in all locales unless the client provides legally reviewed translations.
+
+## Gallery — Osmo lightbox + JS masonry (2026-04-24 session)
+
+- **CSS `columns: N` ≠ true masonry** when images have similar aspect ratios. Same-aspect images flow into rows, looking like a flat grid. For visible stagger you need shortest-column-packing JS: assign each photo to the column with the smallest accumulated normalized height. ~10-line algorithm in `Gallery.tsx`'s `distribute()`.
+- **Osmo Flip + `overflow-hidden`**: do NOT put it on `[data-lightbox="trigger"]`, `[data-lightbox="trigger-parent"]`, or `[data-lightbox="item"]`. Flip animates by absolute-positioning the img out of its parent — overflow-hidden clips it weirdly during flight. If you need clipping (e.g. for parallax), use an inner wrapper that's NOT in the trigger chain.
+- **Parallax on Gallery imgs** is dangerous with Flip — the scrub tween fights the FLIP animation. Tried `gsap.set(img, {yPercent:0})` before Flip.getState; reverted because the resize-handling in Lenis + the y-translate clip made the cards visually janky. Skip Gallery parallax unless you have time to wire `lenis.stop()/start()` callbacks tightly.
+- **Responsive col-count via `useSyncExternalStore` + `matchMedia`** — SSR-safe, no hydration flash. `subscribe`, `getSnapshot`, `getServerSnapshot=()=>false` (default desktop on server), then `numColumns = isMobile ? 2 : 3`. Lightbox `useEffect` deps include `numColumns` so triggers re-bind on resize.
+- **Index alignment between triggers and lightbox items**: render lightbox items as `columns.flat().map(...)`. Triggers in DOM order = column-first traversal; items must match.
+
+## Figma → Code design system (2026-04-24)
+
+- **PracticalInfo card hover-reveal**: native state is solid purple (image hidden); on hover, image fades in behind the existing gradient overlay so text stays legible. Pattern: `group` + `opacity-0 group-hover:opacity-100 transition-opacity duration-500`.
+- **Icon badges**: don't double-wrap. If the SVG already has its own white fill + rounded rect, render it directly at fixed size with `rounded-[8px] shadow-[0_4px_12px_rgba(77,28,100,0.2)]`. No padded outer wrapper needed.
+- **Pricing cards with corner badge**: `rounded-[16px] overflow-hidden` on the card. Without overflow-hidden, the absolutely-positioned "BON PLAN" badge's square top-right corner pokes past the rounded card edge.
+- **Hero gradient `to-[60%]`**: `bg-gradient-to-b from-[#f5ebdd] to-white to-[60%]` makes white dominate the bottom 40% of the section. Pair with `bg-white` Note Importante banner for seamless white-to-white transition into the BookingSection below.
+
 ## Foundations (fix once, globally)
 
 - **Browser `<h1>–<h6>` default to `font-weight: 700`.** Tailwind's preflight doesn't reset it. Always add `font-normal` (or whatever weight Figma shows) explicitly on every heading. Do this in a foundations pass before building pages, or expect a 24-file patch later.

@@ -15,7 +15,7 @@
 - Production domain (if ready): `______` (e.g., `petittrain-vannes.fr` — leave blank if TBD, will use Vercel URL until set)
 - Primary SEO keyword (FR): `______` (e.g., "petit train vannes remparts")
 - Secondary keywords (up to 5): `______`
-- Languages: `______` (default: French only)
+- **Locales required**: `______` — pick from `fr` (always required, default), `en`, `es`, `de`, `it`, `nl`. The cloned repo ships with all 6 wired; trim what you don't need by editing `i18n/routing.ts:locales`. URL strategy is `as-needed` (French at `/`, others at `/{locale}/...`).
 
 ---
 
@@ -40,11 +40,11 @@ Goes into JSON-LD schema, Footer, and contact forms. Be exact.
 
 - **Primary color** (buttons, accents, headings italic): `#______`
 - **Deep/dark variant**: `#______` (for dark backgrounds / hover states)
-- **Cream background**: `#______` (default Carnac: `#f7f7f0`)
+- **Cream background**: `#______` (default Carnac: `#f5ebdd`)
 - **Heading text color**: `#______` (default Carnac: `#181d27`)
 - **Body text color**: `#______` (default Carnac: `#535862`)
-- **Heading font**: `______` (default Carnac: Libre Baskerville)
-- **Body font**: `______` (default Carnac: Roboto)
+- **Heading font**: `______` (default Carnac: Bricolage Grotesque, via `next/font/google`)
+- **Body font**: `______` (default Carnac: Manrope, via `next/font/google`)
 - **Logo SVG**: path to file: `______`
 - **Favicon / webclip**: path to files: `______`
 
