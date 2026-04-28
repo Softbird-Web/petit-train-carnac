@@ -31,11 +31,11 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Petit Train de Carnac Morbihan — Visite guidée de Carnac et ses menhirs",
+    default: "Le Petit Train de Carnac / Menhir Tour",
     template: "%s — Petit Train de Carnac Morbihan",
   },
   description:
-    "Découvrez Carnac, ses célèbres mégalithes, ses plages et le port de La Trinité-sur-Mer à bord du Petit Train de Carnac. Une visite guidée de 55 minutes avec commentaire audio multilingue.",
+    "Visite guidée des mégalithes de Carnac à bord du Petit Train — tour de 55 minutes, commentaire audio multilingue, plages et port de La Trinité-sur-Mer.",
   alternates: {
     canonical: "/",
   },
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     shortcut: "/figma-assets/logo.svg",
   },
   openGraph: {
-    title: "Petit Train de Carnac Morbihan — Visite guidée touristique",
+    title: "Le Petit Train de Carnac / Menhir Tour",
     description:
-      "Une façon confortable et accessible de découvrir les menhirs, les plages et les paysages de Carnac avec un commentaire audio multilingue.",
+      "Visite guidée des mégalithes de Carnac à bord du Petit Train — tour de 55 minutes, commentaire audio multilingue, plages et port de La Trinité-sur-Mer.",
     type: "website",
     locale: "fr_FR",
     images: [
@@ -55,15 +55,15 @@ export const metadata: Metadata = {
         url: "/figma-assets/OpenGraph.png",
         width: 1200,
         height: 630,
-        alt: "Petit Train de Carnac — Visite guidée touristique",
+        alt: "Le Petit Train de Carnac — Menhir Tour",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Petit Train de Carnac Morbihan — Visite guidée touristique",
+    title: "Le Petit Train de Carnac / Menhir Tour",
     description:
-      "Une façon confortable et accessible de découvrir les menhirs, les plages et les paysages de Carnac avec un commentaire audio multilingue.",
+      "Visite guidée des mégalithes de Carnac à bord du Petit Train — tour de 55 minutes, commentaire audio multilingue, plages et port de La Trinité-sur-Mer.",
     images: ["/figma-assets/OpenGraph.png"],
   },
 };

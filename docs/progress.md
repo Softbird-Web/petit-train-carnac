@@ -2,6 +2,13 @@
 
 ## Done
 
+- **SEO follow-up: site-wide audit** (Apr 28, 2026 — same day):
+  - **OG / Twitter cards** in `app/[locale]/layout.tsx` were stale FR copy ("Visite guidée touristique") on every page × every locale → updated to "Le Petit Train de Carnac / Menhir Tour" + mégalithes-led description. One canonical share card for now (per-locale OG deferred).
+  - **`metadata.title.default` + `metadata.description`** fallbacks in layout.tsx aligned with new branding (was the pre-rebrand long FR title).
+  - **Subpage descriptions × 6 locales** for the 4 SEO-critical pages (prices / faqs / book / informations) rewritten to lead with mégalithes / megaliths / megalitos / Megalithen / megaliti / megalieten — keyword sits in the first ~80 chars where search engines weight it highest.
+  - **Title template `%s — Petit Train de Carnac Morbihan` left as-is** per call. Subpages render e.g. "Tarifs & Billets — Petit Train de Carnac Morbihan" (unchanged); homepage bypasses the template (Next.js doesn't apply it when the page sets the full title via getTranslations).
+  - Verified live via `curl localhost` across 12 page-locale combos: title / description / og:title all correct.
+
 - **QA round post-Maryannick call** (Apr 28, 2026) — live-site corrections driven by the 2026 flyer:
   - **Schedule rewrite** (`components/sections/InformationsSchedule.tsx`): refactored from per-month list to a 3-departure × seasonal-band grid that mirrors the flyer. Le Ménec now correctly shows every 20 min (was 30), close time 17h30 in low season (was 18h00), plus the missing Oct 17-31 reduced schedule (10H–17H every 30 min) and Oct 9-16 closure. Carnac Plage low-season times: 10H15–17H15 every 30 min Saturdays included (was hourly with midday break). La Trinité low-season: 10H30–17H every 30 min Saturdays included (was 10h15–11h15 + 14h15–17h15 hourly). Jul/Aug schedules now show discrete departure-time slots and the Saturday-uses-orange-schedule rule. Closed period corrected to "novembre à mars + 9-16 octobre" (was "décembre à février" with November shown open). Color-coded period bands (yellow / purple / green for Le Ménec; orange / blue for the other two) match the flyer's swim-lanes. Saturday-rule and "online booking only at Le Ménec" notices added below the timetable.
   - **Typo fix on live site**: "Arrêt de bus Courqué" → "Cours des Quais" (with "avant le rond-point Alain Barrière" qualifier). Updated `messages/{fr,en,es,de,it,nl}.json` `item3Description` + `components/sections/OurLocation.tsx` Google Maps URL.

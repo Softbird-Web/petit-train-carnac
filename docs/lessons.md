@@ -4,6 +4,13 @@ Append 1–3 entries per session. Session-start: read this file. Session-end: ad
 
 ---
 
+## SEO post-rebrand: audit OG + subpage metadata, not just the homepage (2026-04-28 session)
+
+- **Rebrand the homepage `<title>` and you've changed ~5% of the SEO surface.** The other 95% lives in: (a) `metadata.title.template` in the root layout, (b) subpage metadata across N locales, (c) `openGraph` + `twitter` blocks (these don't pull from i18n and don't change per locale unless explicitly localized), (d) the JSON-LD `@type: TouristAttraction` block. Always audit every page × every locale via `curl <url> | grep -E '<title>|og:title|description'` before declaring an SEO swap done.
+- **Next.js title template behaviour with localized titles.** When a page returns `title: <string>` from `generateMetadata`, the layout's `template: "%s — Brand"` is applied → suffix appears on subpages. BUT when the homepage uses `getTranslations()` to set its title, the template is NOT applied (the homepage's title has special treatment as the layout default). This means a freshly-rebranded homepage title can render clean while subpages still get the OLD template suffix. To skip the template explicitly anywhere, return `title: { absolute: "..." }`. To skip it implicitly (homepage), do nothing — Next handles it.
+- **OG/Twitter cards are the silent SEO disaster.** They never appear in the page UI and never get caught by visual QA. Stale OG copy means LinkedIn/WhatsApp/Slack previews show pre-rebrand wording months after launch. Rule: any time you change a page title or description, check `<meta property="og:*">` on the same page. If `openGraph` is hardcoded in `layout.tsx` (not pulled from i18n), updating the i18n value alone is a no-op.
+- **Lift the SEO keyword into the first ~80 chars of every description.** Search engines truncate around 150–160 and weight position-0 most. "Découvrez Carnac, ses célèbres mégalithes..." ranks worse than "Visite des mégalithes de Carnac..." for the keyword "mégalithes". Same shape applies to every locale equivalent.
+
 ## QA round post-launch (2026-04-28 session) — flyer-driven audit beats client-supplied list
 
 - **Always re-audit the live site against the printed source-of-truth** when the client requests "fix X". Maryannick listed 5 changes; auditing the 2026 flyer surfaced 7 more — including a typo bug that had been live since launch ("Arrêt de bus Courqué" → should be "Cours des Quais"). Clients flag the things THEY notice; the printed flyer is the actual contract with end-users. Discrepancies hide in the gap.
