@@ -46,6 +46,7 @@ This repo is the **canonical template** for all Petit Train microsites (Carnac �
    rm -rf .git
    git init && git add . && git commit -m "initial: clone from Carnac template"
    ```
+   > ⚠️ **Always push after every commit.** `git commit` alone does NOT trigger Vercel. Run `git push origin main` after every commit — Vercel deploys are triggered by GitHub push events, not local commits. A commit sitting locally will not appear on the live domain. Verify with `git status` showing "nothing to commit, up to date" at the end of each session.
 2. **Create a fresh GitHub repo** in `Softbird-Web` org:
    ```bash
    gh repo create Softbird-Web/petit-train-<location> --private --source=. --push
@@ -142,7 +143,7 @@ What you DO need to do for the new site:
 
 1. **Local browser check** at 3 breakpoints: 390 × 844 (mobile), 768 × 1024 (tablet), 1280 × 800 (desktop)
 2. **TypeScript + build**: `npx tsc --noEmit && npx next build` → 0 errors, all pages prerender
-3. **Playwright smoke tests** — update `tests/` for the new site's values, run `npx playwright test`
+3. **Playwright smoke tests** — update `tests/` for the new site's values, run `npx playwright test`. Also run `npx playwright test tests/i18n-coverage.spec.ts` — this spec detects FR stop-word leakage into non-FR locales and literal HTML tag rendering bugs (e.g. `<br/>` appearing as text).
 4. **Visual regression** — screenshot every page at 3 breakpoints, review side-by-side with Carnac for structural consistency
 5. **Hydration check** — open `/book` and every form-containing page in dev mode, look for React hydration warnings in the console
 6. **Cookie consent** — verify the banner appears and the privacy policy links to the right page

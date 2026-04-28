@@ -159,6 +159,36 @@ rm -rf .next && npm run dev
 # Then hard-refresh the browser (Cmd+Shift+R) — normal refresh won't bypass browser cache either
 ```
 
+## Vercel deploy = `git push`, not `git commit` (2026-04-28 session)
+
+- **The trap**: `git commit` succeeds and `git log` shows the commit, but the live site never updates. Root cause: commits were never pushed to GitHub. Vercel listens to GitHub push events, not local git state. Any number of local commits do nothing until `git push origin main`.
+- **Detection**: `git status` shows "Your branch is ahead of 'origin/main' by N commits." If N > 0 after you expect the live site to reflect your changes, run `git push origin main`.
+- **Rule**: push immediately after every commit when the intent is to deploy. Never end a working session without verifying `git status` shows "nothing to commit, up to date".
+
+## Bulk i18n JSON updates — use Python, not manual Edit calls (2026-04-28 session)
+
+- **The trap**: editing 6 locale files × N keys with the Edit tool requires reading the file first (to avoid the "file not read" error), then patching specific keys. For more than ~5 changes across multiple files this is error-prone (wrong offset, partial edits, silently skips if old_string doesn't match exactly).
+- **Better approach for bulk updates** (e.g., SEO title sweep):
+  ```python
+  import json, pathlib
+
+  def deep_merge(base, patch):
+      for k, v in patch.items():
+          if isinstance(v, dict) and k in base:
+              deep_merge(base[k], v)
+          else:
+              base[k] = v
+
+  updates = { 'fr': { 'metadata': { 'home': { 'title': '...' } } }, ... }
+  for locale, patches in updates.items():
+      p = pathlib.Path(f'messages/{locale}.json')
+      d = json.loads(p.read_text())
+      deep_merge(d, patches)
+      p.write_text(json.dumps(d, ensure_ascii=False, indent=2))
+  ```
+  Then validate: `for f in messages/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf-8'))" && echo "$f ok"; done`
+- **Rule**: any change touching >3 keys across >2 locale files → write a Python script first, run it, validate JSON, then commit the result. Don't hand-patch.
+
 **When to suspect this:** you swapped an image, dev server reloaded, but the old image still shows. Not a code bug — cache issue.
 
 ## Images / Assets

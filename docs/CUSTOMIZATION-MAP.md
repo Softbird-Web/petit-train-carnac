@@ -7,7 +7,7 @@
 - `#54206d` (primary violet) | `#4d1c64` (deep purple) | `#f5ebdd` (cream — was `#f7f7f0`) | `#181d27` (heading) | `#33114d` (dark navbar)
 - Contact (phone+email): centralized in Footer, Prices group card, BookingSection fallback, RegiondoWidget fallback, JSON-LD
 - Regiondo widget ID: **1 ref** (`components/sections/BookingSection.tsx`)
-- **i18n: ~120 keys × 6 locales** in `messages/{fr,en,es,de,it,nl}.json`. French is canonical; others derived. Legal pages stay French in all locales.
+- **i18n: ~200+ keys × 6 locales** in `messages/{fr,en,es,de,it,nl}.json`. French is canonical; others derived. Legal pages stay French in all locales.
 
 **When to use this:**
 1. **Reading** — to understand scope before quoting a timeline
@@ -182,24 +182,30 @@ All 18 references — split into one-line-per-file bucket. Ideal target for `bra
 
 ## 11. Careers
 
-| File | Line(s) | What |
-|---|---|---|
-| `components/sections/CareersHero.tsx` | 11–34 | `jobPosts` array (3 jobs) |
-| `components/sections/CareersInfo.tsx` | 4–32 | 4 content panels (qui, travailler, postuler, rejoindre) |
+Both components are now **async server components** using `getTranslations()` — no hardcoded French strings remain except one email CTA.
 
-**When cloning:** check if new location has careers page (optional per site per questionnaire item 9). If yes, rewrite.
+| File | What |
+|---|---|
+| `messages/fr.json` | `sections.careersHero.*` — job titles, descriptions, requirements, seasonal badge (18 keys) |
+| `messages/fr.json` | `sections.careersInfo.*` — 4 info panels (headings + paragraphs) + apply CTA (12 keys) |
+| `components/sections/CareersHero.tsx` | hardcoded email CTA `petittrain-lebayon@orange.fr` still present (apply-by-email link) |
+| `components/sections/CareersInfo.tsx` | hardcoded email CTA `petittrain-lebayon@orange.fr` still present |
+
+**When cloning:** check if new location has careers page (optional per site). If yes: update the 30 i18n keys in `messages/fr.json` under `sections.careersHero` and `sections.careersInfo`, run `npm run translate`, and replace both hardcoded email addresses.
 
 ---
 
 ## 12. Privatisation
 
-| File | Line(s) | What |
-|---|---|---|
-| `components/sections/PrivatisationHero.tsx` | entire | Form fields + hero copy |
-| `app/actions/privatisation.ts` | entire | Server action (Make webhook POST) |
-| Vercel env var | — | `MAKE_PRIVATISATION_WEBHOOK_URL` |
+`PrivatisationHero.tsx` is a `'use client'` component now fully i18n'd via `useTranslations('sections.privatisationForm')`.
 
-**When cloning:** decide per-site if privatisation page is enabled. If yes, update webhook URL in env vars.
+| File | What |
+|---|---|
+| `messages/fr.json` | `sections.privatisationForm.*` — all 35 keys: form section headings, 12 field labels/placeholders, submit/loading buttons, success heading+body, image overlay text+alt |
+| `app/actions/privatisation.ts` | Server action (Make webhook POST) — no strings, just the webhook call |
+| Vercel env var | `MAKE_PRIVATISATION_WEBHOOK_URL` |
+
+**When cloning:** decide per-site if privatisation page is enabled. If yes: update the 35 i18n keys in `messages/fr.json` under `sections.privatisationForm`, run `npm run translate`, and set the `MAKE_PRIVATISATION_WEBHOOK_URL` env var in Vercel.
 
 ---
 
@@ -214,6 +220,8 @@ All 18 references — split into one-line-per-file bucket. Ideal target for `bra
 | `docs/seo/migration-redirect-map.xlsx` | — | Per-location 301 map for migrating off petittrain-morbihan.com |
 
 **When cloning:** update sitemap routes if URL structure differs. Fill in the correct sheet of the migration-redirect-map XLSX for the new location.
+
+**Title pattern** (established 2026-04-28): all 48 page titles follow `[keyword] — Petit Train de Carnac, Morbihan`. Homepage follows `[Brand], Morbihan — [descriptor]`. "Morbihan" always sits directly after "Carnac". This pattern lives in `messages/{locale}.json` under `metadata.<page>.title` — edit fr.json then run `npm run translate`.
 
 ---
 
@@ -233,18 +241,20 @@ The image manifest is the authoritative list of every image file → where it's 
 | `i18n/request.ts` | Per-request loader with deep-merge French fallback |
 | `i18n/navigation.ts` | createNavigation(routing) → Link, useRouter, usePathname, redirect, getPathname |
 | `proxy.ts` (project root) | next-intl middleware (Next 16: NOT `middleware.ts`) |
-| `messages/fr.json` | **Canonical source of truth.** Every page/section's strings, organized by namespace: `nav.*`, `navbar.*`, `footer.*`, `breadcrumb.*`, `shared.*`, `hero.*`, `metadata.<page>.*`, `pages.<page>.*`, `sections.<component>.*` |
+| `messages/fr.json` | **Canonical source of truth.** Every page/section's strings, organized by namespace: `nav.*`, `navbar.*`, `footer.*`, `breadcrumb.*`, `shared.*`, `hero.*`, `metadata.<page>.*`, `pages.<page>.*`, `sections.<component>.*`. B2 additions (2026-04-28): `sections.careersHero.*` (18 keys), `sections.careersInfo.*` (12 keys), `sections.privatisationForm.*` (35 keys) |
 | `messages/{en,es,de,it,nl}.json` | Derived translations. Sync via `npm run translate` |
 | `messages/.translation-meta.json` | Auto-managed. Tracks SHA256 hashes of fr.json values; lets the sync script know what changed since last run |
 | `scripts/translate-i18n.ts` | AI sync script (Anthropic SDK). Run when fr.json changes. Needs `ANTHROPIC_API_KEY`. |
 | `app/sitemap.ts` | Emits 1 entry per route × locale with `alternates.languages` hreflang map |
 | `components/layout/LanguageDropdown.tsx` | Custom motion-driven dropdown in announcement banner |
+| `tests/i18n-coverage.spec.ts` | Playwright spec: FR stop-word leakage detection + literal HTML tag detection across all 6 locales × 8 pages |
 
 **When cloning:**
 1. Decide locales (edit `i18n/routing.ts:locales` + `localeLabels`).
 2. Edit `messages/fr.json` for new content (keep namespaced keys identical).
 3. `npm run translate` to sync the rest.
 4. Validate: `for f in messages/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf-8'))" && echo OK; done`.
+5. Run `npx playwright test tests/i18n-coverage.spec.ts` — auto-detects French copy leaking into other locales (>5 FR stop-word hits per page = fail) and raw HTML tags rendered as literal text (any `<br/>` in body text = fail).
 
 ---
 
