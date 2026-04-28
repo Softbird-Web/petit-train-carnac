@@ -69,8 +69,8 @@
   },
   "metadata": {
     "home": {
-      "title": "Petit Train de Carnac Morbihan — Visite guidée de Carnac et ses menhirs",
-      "description": "Découvrez Carnac, ses célèbres mégalithes, ses plages et le port de La Trinité-sur-Mer à bord du Petit Train de Carnac. Une visite guidée de 55 minutes avec commentaire audio multilingue."
+      "title": "Le Petit Train de Carnac / Menhir Tour",
+      "description": "Visite guidée des mégalithes de Carnac à bord du Petit Train — tour de 55 minutes, commentaire audio multilingue, plages et port de La Trinité-sur-Mer."
     },
     "prices": {
       "title": "Tarifs & Billets",
@@ -217,7 +217,7 @@
       "rowChildren": "Enfants de moins de 12 ans",
       "individual": {
         "title": "Billets Individuels",
-        "note": "<strong>Pour les individuels :</strong> le point de rendez-vous est au point de départ ; guichet sur place."
+        "note": "<strong>Pour les individuels :</strong> le point de rendez-vous est au point de départ ; guichet sur place. <strong>Gratuit :</strong> enfants de moins de 3 ans et chiens."
       },
       "earlyBird": {
         "title": "Premiers départs du matin",
@@ -239,7 +239,8 @@
       "bullet3": "Les visiteurs individuels commencent et terminent la visite au point de départ du Ménec",
       "bullet4": "La visite dure environ 55 minutes",
       "bullet5": "Le commentaire audio est disponible en plusieurs langues, dont une version pour enfants",
-      "bullet6": "Le Petit Train fonctionne par tous les temps"
+      "bullet6": "Le Petit Train fonctionne par tous les temps",
+      "bullet7": "Le départ est assuré à partir de 6 adultes payants à bord"
     },
     "features": {
       "label": "Aperçu du Circuit",
@@ -250,9 +251,9 @@
       "f1Title": "Petit train touristique confortable",
       "f1Desc": "Découvrez les plus beaux sites de Carnac confortablement assis à bord de notre train touristique, conçu pour les visiteurs qui souhaitent explorer sans effort.",
       "f2Title": "Commentaire audio en 16 langues — inclus dans le billet",
-      "f2Desc": "Le commentaire audio est disponible en 16 langues, inclus dans le prix du billet. Une version pour les enfants est disponible en français et en anglais.",
+      "f2Desc": "Le commentaire audio est disponible en 16 langues, avec casques hygiéniques fournis, inclus dans le prix du billet. Une version pour les enfants est également disponible.",
       "f3Title": "Découverte du patrimoine et des paysages de Carnac",
-      "f3Desc": "Visitez les célèbres menhirs, les plages de sable blanc et le port de La Trinité-sur-Mer en un seul voyage détendu et pittoresque.",
+      "f3Desc": "Découvrez 47 points d'intérêt commentés : alignements du Ménec, Kermario et Kerlescan, plages de sable blanc et port de La Trinité-sur-Mer en un seul voyage pittoresque.",
       "f4Title": "Adapté aux familles, seniors et groupes",
       "f4Desc": "Notre train accueille tous les âges et toutes les tailles de groupes — pas de longues marches, pas d'effort, juste une expérience confortable et agréable pour tous."
     },
@@ -315,7 +316,7 @@
       "item2Title": "Point 2 — Carnac Plage (Pordro)",
       "item2Description": "Achetez vos billets sur place auprès du conducteur, sous réserve de disponibilité.",
       "item3Title": "Point 3 — La Trinité-sur-Mer",
-      "item3Description": "Arrêt de bus Courqué, côté mer. Achetez vos billets sur place auprès du conducteur, sous réserve de disponibilité.",
+      "item3Description": "Arrêt de bus Cours des Quais, côté mer (avant le rond-point Alain Barrière). Achetez vos billets sur place auprès du conducteur, sous réserve de disponibilité.",
       "item4Title": "En voiture",
       "item4Description": "Si vous venez en voiture, suivez les indications vers Carnac et le parking du Ménec. Le stationnement est gratuit.",
       "item5Title": "En train",

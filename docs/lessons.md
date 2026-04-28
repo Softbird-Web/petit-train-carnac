@@ -4,6 +4,16 @@ Append 1–3 entries per session. Session-start: read this file. Session-end: ad
 
 ---
 
+## QA round post-launch (2026-04-28 session) — flyer-driven audit beats client-supplied list
+
+- **Always re-audit the live site against the printed source-of-truth** when the client requests "fix X". Maryannick listed 5 changes; auditing the 2026 flyer surfaced 7 more — including a typo bug that had been live since launch ("Arrêt de bus Courqué" → should be "Cours des Quais"). Clients flag the things THEY notice; the printed flyer is the actual contract with end-users. Discrepancies hide in the gap.
+- **Schedule data shape collapse.** The original `InformationsSchedule.tsx` shape `{ name, hours, note: <single JSX line> }` looked clean but encouraged copy-paste that diverged from the flyer in 3 axes simultaneously: frequency (every 30 min vs. every 20 min), close time (18h vs. 17h30), and per-departure detail (each row had identical Carnac Plage / Trinité times when the flyer differs by season). Lesson: when the source-of-truth is a 3×4 grid (3 departure points × 4 seasonal bands), the data shape must be that grid — don't flatten it into a per-month list.
+- **Saturday rule + Cours des Quais typo + November closure** all hid behind "the times are wrong." Three separate bugs masquerading as one. When the symptom is "info is wrong", expand the audit before patching.
+- **Features.tsx renders f*Desc as plain `t()`, not `t.rich`.** `<strong>...</strong>` tags inside the i18n value would render as escaped HTML text, not bold. If you want emphasis in feature descriptions, switch to `t.rich({ strong: (chunks) => <strong>{chunks}</strong> })` first OR rely on natural-language emphasis (lead with the surprising number/phrase). Same gotcha applies to bullets in `BeforeYouBook.tsx`.
+- **Pricing card "BON PLAN" badge: corner-positioning trap on a section with same-color background.** Card has `bg-[#f5ebdd]` (cream) but lives inside `<section className="bg-[#4d1c64]">` (purple). Badge was `absolute top-0 right-0 bg-[#4d1c64]` — purple-on-purple at the card edge → the corner sticker visually merged into the section bg. Fix: pull the badge into the card's flex flow as an inline-pill below the heading. Self-aligned `inline-flex` + `rounded-full` + `self-start` reads as "label" not "corner sticker." Apply the same move to any sibling card on the same purple section.
+
+---
+
 ## i18n with next-intl 4 (2026-04-25 session)
 
 - **Next 16 renames `middleware.ts` → `proxy.ts`.** Same `createMiddleware(routing)` export, same matcher config, but the file at the project root must be `proxy.ts`. If you write `middleware.ts` it's ignored silently and your locale routing breaks. Easy 30-min waste.

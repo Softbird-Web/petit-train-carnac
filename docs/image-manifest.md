@@ -40,6 +40,12 @@
 | `PricesHero.jpg` | (client-provided, QA 2026-04-24) | Ticket booth + train with flags | /prices hero image (replaces ImagePricesHero.jpg) |
 | `GroupFlyer.pdf` | (client-provided, QA 2026-04-24) | Group booking flyer PDF | /prices + /routes "Flyer de groupe" download button |
 | `gallery-1.jpg` – `gallery-11.jpg` | `~/Desktop/carnac-gallery/carnac-*.jpg` + `img1.jpg` (client-provided, QA 2026-04-24) | Photo gallery — Carnac scenes, train, coast, menhirs | Gallery masonry section (homepage + /routes) — placeholder set until client curates final selection |
+| `gallery-12.jpg` | `~/Desktop/carnac-all-images/carnac-main.jpg` (Maryannick QA 2026-04-28) | Drone-style brand hero — train + Ménec menhir field (panorama) | Gallery masonry — featured tile from 2026 flyer |
+| `gallery-13.jpg` | `~/Desktop/carnac-all-images/carnac-85.jpg` | Dramatic fallen-menhir close-up (square crop) | Gallery masonry |
+| `gallery-14.jpg` | `~/Desktop/carnac-all-images/carnac-65.jpg` | Train alongside Ménec alignment (landscape) | Gallery masonry |
+| `gallery-15.jpg` | `~/Desktop/carnac-all-images/carnac-45.jpg` | Aerial Ménec alignment, cropped vertical (portrait) | Gallery masonry |
+| `gallery-16.jpg` | `~/Desktop/carnac-all-images/carnac-105.jpg` | Evening menhir vista, soft light (landscape wide) | Gallery masonry |
+| `gallery-17.jpg` | `~/Desktop/carnac-all-images/carnac-25.jpg` | Train + dolmen ground level (landscape) | Gallery masonry |
 
 ## Gotchas for this client's folder
 

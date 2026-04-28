@@ -1,106 +1,117 @@
 import Image from "next/image";
 
-const months = [
+type Band = "yellow" | "purple" | "green" | "orange" | "blue";
+
+type Period = {
+  label: string;
+  band: Band;
+  hours: string;
+  frequency?: string;
+  note?: string;
+};
+
+type Departure = {
+  number: 1 | 2 | 3;
+  name: string;
+  location: string;
+  periods: Period[];
+};
+
+const departures: Departure[] = [
   {
-    name: "Avril",
-    hours: "De 10h00 à 18h00",
-    note: (
-      <>
-        <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
-        <br />
-        <span className="text-white">Carnac plage</span> — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
-        <br />
-        <span className="text-white">La Trinité-sur-Mer</span> — Arrêt de bus Courqué, côté mer — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
-      </>
-    ),
+    number: 1,
+    name: "Parking du Ménec",
+    location: "Maison des Mégalithes",
+    periods: [
+      {
+        label: "Avril · Mai · Juin · Septembre · 1er – 8 octobre",
+        band: "yellow",
+        hours: "10H – 17H30",
+        frequency: "Un départ toutes les 20 min",
+      },
+      {
+        label: "Juillet & Août",
+        band: "purple",
+        hours: "9H30 – 18H30",
+        frequency: "Un départ toutes les 20 min",
+      },
+      {
+        label: "17 – 31 octobre",
+        band: "green",
+        hours: "10H – 17H",
+        frequency: "Un départ toutes les 30 min",
+      },
+    ],
   },
   {
-    name: "Mai",
-    hours: "De 10h00 à 18h00",
-    note: (
-      <>
-        <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
-        <br />
-        <span className="text-white">Carnac plage</span> — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
-        <br />
-        <span className="text-white">La Trinité-sur-Mer</span> — Arrêt de bus Courqué, côté mer — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
-      </>
-    ),
+    number: 2,
+    name: "Carnac Plage — Port en Drô",
+    location: "À 50 m de la Base nautique",
+    periods: [
+      {
+        label: "Avril · Mai · Juin · Septembre · 1er – 8 octobre",
+        band: "orange",
+        hours: "10H15 – 17H15",
+        frequency: "Un départ toutes les 30 min",
+        note: "Samedi inclus",
+      },
+      {
+        label: "Juillet & Août",
+        band: "blue",
+        hours: "10H · 11H · 12H · 14H · 15H · 16H · 17H · 18H",
+        note: "Sauf le samedi (le samedi : horaires « orange »)",
+      },
+    ],
   },
   {
-    name: "Juin",
-    hours: "De 10h00 à 18h00",
-    note: (
-      <>
-        <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
-        <br />
-        <span className="text-white">Carnac plage</span> — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
-        <br />
-        <span className="text-white">La Trinité-sur-Mer</span> — Arrêt de bus Courqué, côté mer — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
-      </>
-    ),
-  },
-  {
-    name: "Juillet & Août",
-    hours: "De 9h30 à 18h30",
-    note: (
-      <>
-        <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
-        <br />
-        <span className="text-white">Carnac plage</span> — Achetez vos billets sur place — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
-        <br />
-        <span className="text-white">La Trinité-sur-Mer</span> — Arrêt de bus Courqué, côté mer, juste avant le rond-point Alain Barrière — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
-      </>
-    ),
+    number: 3,
+    name: "La Trinité-sur-Mer",
+    location: "Arrêt de bus Cours des Quais, côté mer — avant le rond-point Alain Barrière",
+    periods: [
+      {
+        label: "Avril · Mai · Juin · Septembre · 1er – 8 octobre",
+        band: "orange",
+        hours: "10H30 – 17H",
+        frequency: "Un départ toutes les 30 min",
+        note: "Samedi inclus",
+      },
+      {
+        label: "Juillet & Août",
+        band: "blue",
+        hours: "10H15 · 11H15 · 14H15 · 15H15 · 16H15 · 17H15",
+        note: "Sauf le samedi (le samedi : horaires « orange »)",
+      },
+    ],
   },
 ];
 
-const monthsBottom = [
-  {
-    name: "Septembre",
-    hours: "De 10h00 à 18h00",
-    note: (
-      <>
-        <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
-        <br />
-        <span className="text-white">Carnac plage</span> — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
-        <br />
-        <span className="text-white">La Trinité-sur-Mer</span> — Arrêt de bus Courqué, côté mer — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
-      </>
-    ),
+const BAND_STYLES: Record<Band, { bg: string; text: string; pill: string }> = {
+  yellow: {
+    bg: "bg-[#fde68a]",
+    text: "text-[#4d1c64]",
+    pill: "bg-[#fde68a] text-[#4d1c64]",
   },
-  {
-    name: "Octobre",
-    hours: "De 10h00 à 18h00",
-    note: (
-      <>
-        <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
-        <br />
-        <span className="text-white">Carnac plage</span> — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
-        <br />
-        <span className="text-white">La Trinité-sur-Mer</span> — Arrêt de bus Courqué, côté mer — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
-      </>
-    ),
+  purple: {
+    bg: "bg-[#c4b5fd]",
+    text: "text-[#4d1c64]",
+    pill: "bg-[#c4b5fd] text-[#4d1c64]",
   },
-  {
-    name: "Novembre",
-    hours: "De 10h00 à 18h00",
-    note: (
-      <>
-        <span className="text-white">Parking du Ménec</span> — Départs toutes les 30 minutes
-        <br />
-        <span className="text-white">Carnac plage</span> — Toutes les heures de 10h00 à 12h00 & de 14h00 à 18h00
-        <br />
-        <span className="text-white">La Trinité-sur-Mer</span> — Arrêt de bus Courqué, côté mer — Toutes les heures de 10h15 à 11h15 & de 14h15 à 17h15
-      </>
-    ),
+  green: {
+    bg: "bg-[#a7f3d0]",
+    text: "text-[#065f46]",
+    pill: "bg-[#a7f3d0] text-[#065f46]",
   },
-  {
-    name: "Décembre à Février",
-    hours: null,
-    note: "Le Petit Train de Carnac ne fonctionne pas pendant cette période.",
+  orange: {
+    bg: "bg-[#fdba74]",
+    text: "text-[#4d1c64]",
+    pill: "bg-[#fdba74] text-[#4d1c64]",
   },
-];
+  blue: {
+    bg: "bg-[#7dd3fc]",
+    text: "text-[#0c4a6e]",
+    pill: "bg-[#7dd3fc] text-[#0c4a6e]",
+  },
+};
 
 export default function InformationsSchedule() {
   return (
@@ -137,8 +148,8 @@ export default function InformationsSchedule() {
                   Période d&apos;exploitation
                 </h3>
                 <p className="font-['Manrope',sans-serif] text-[14px] leading-[1.3] tracking-[-0.42px] text-white max-w-[400px]">
-                  Le Petit Train de Carnac fonctionne tous les jours d&apos;avril
-                  à début novembre, y compris les dimanches et jours fériés.
+                  Le Petit Train de Carnac fonctionne 7j/7 d&apos;avril à fin
+                  octobre, y compris les dimanches et jours fériés.
                 </p>
               </div>
             </div>
@@ -180,11 +191,12 @@ export default function InformationsSchedule() {
           </div>
         </div>
 
-        {/* Timetable grid — purple gradient */}
+        {/* Timetable — 3 departure panels on purple gradient */}
         <div data-anim-item className="rounded-[32px] overflow-hidden" style={{ background: "linear-gradient(112deg, #4d1c64 23%, #7b3a94 85%)" }}>
-          <div className="px-10 py-12 flex flex-col gap-10">
-            {/* Timetables heading */}
-            <div className="flex items-center gap-4 pb-8 border-b border-[rgba(255,255,255,0.2)]">
+          <div className="px-6 md:px-10 py-12 flex flex-col gap-10">
+
+            {/* Heading */}
+            <div className="flex items-center gap-4 pb-6 border-b border-[rgba(255,255,255,0.2)]">
               <div className="flex-1 h-px bg-[rgba(255,255,255,0.35)]" />
               <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] italic text-white text-[28px] tracking-[-1.5px] whitespace-nowrap">
                 Horaires
@@ -192,81 +204,98 @@ export default function InformationsSchedule() {
               <div className="flex-1 h-px bg-[rgba(255,255,255,0.35)]" />
             </div>
 
-            {/* Row 1 — Avril à Juillet/Août */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-[rgba(255,255,255,0.4)]">
-              {months.map((month) => (
-                <div key={month.name} className="flex flex-col gap-3">
-                  <p className="font-['Bricolage_Grotesque',sans-serif] italic text-[28px] md:text-[32px] leading-[normal] text-white tracking-[-2.24px]">
-                    {month.name}
-                  </p>
-                  {month.hours && (
-                    <div className="flex items-center gap-2">
-                      <div className="relative shrink-0 w-5 h-5">
-                        <Image
-                          src="/figma-assets/timetables-clock.svg"
-                          alt=""
-                          fill
-                          className="object-contain"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <p className="font-['Manrope',sans-serif] text-base text-white leading-[normal]">
-                        {month.hours}
+            {/* 3 departure panels */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {departures.map((dep) => (
+                <div key={dep.number} className="bg-white/8 rounded-[20px] p-6 flex flex-col gap-5 border border-white/15">
+                  {/* Departure header */}
+                  <div className="flex items-start gap-3">
+                    <div className="shrink-0 w-9 h-9 rounded-full bg-white text-[#4d1c64] font-['Bricolage_Grotesque',sans-serif] font-normal text-[20px] flex items-center justify-center">
+                      {dep.number}
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      <p className="font-['Bricolage_Grotesque',sans-serif] italic text-white text-[22px] leading-[1.1] tracking-[-1.2px]">
+                        Départ — {dep.name}
+                      </p>
+                      <p className="font-['Manrope',sans-serif] text-[13px] leading-[1.4] text-[rgba(255,255,255,0.7)] tracking-[-0.32px]">
+                        {dep.location}
                       </p>
                     </div>
-                  )}
-                  <p className="font-['Manrope',sans-serif] text-[13px] leading-[1.4] text-[rgba(255,255,255,0.75)] tracking-[-0.42px]">
-                    {month.note}
-                  </p>
+                  </div>
+
+                  {/* Periods */}
+                  <div className="flex flex-col gap-3">
+                    {dep.periods.map((p) => {
+                      const style = BAND_STYLES[p.band];
+                      return (
+                        <div
+                          key={p.label}
+                          className={`rounded-[12px] p-4 flex flex-col gap-2 ${style.bg} ${style.text}`}
+                        >
+                          <p className="font-['Manrope',sans-serif] font-semibold text-[12px] uppercase tracking-[0.5px] leading-tight">
+                            {p.label}
+                          </p>
+                          <div className="flex items-center gap-2">
+                            <div className="relative shrink-0 w-4 h-4">
+                              <Image
+                                src="/figma-assets/timetables-clock.svg"
+                                alt=""
+                                fill
+                                className="object-contain"
+                                aria-hidden="true"
+                                style={{ filter: "brightness(0) saturate(100%) invert(11%) sepia(54%) saturate(2954%) hue-rotate(264deg) brightness(91%) contrast(95%)" }}
+                              />
+                            </div>
+                            <p className="font-['Manrope',sans-serif] text-[15px] font-medium leading-tight">
+                              {p.hours}
+                            </p>
+                          </div>
+                          {p.frequency && (
+                            <p className="font-['Manrope',sans-serif] text-[13px] leading-[1.4] tracking-[-0.32px]">
+                              {p.frequency}
+                            </p>
+                          )}
+                          {p.note && (
+                            <p className="font-['Manrope',sans-serif] italic text-[12px] leading-[1.4] tracking-[-0.3px] opacity-80">
+                              {p.note}
+                            </p>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               ))}
             </div>
 
-            {/* Row 2 — Septembre à Décembre */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {monthsBottom.map((month) => (
-                <div key={month.name} className="flex flex-col gap-3">
-                  <p className="font-['Bricolage_Grotesque',sans-serif] italic text-[28px] md:text-[32px] leading-[1.1] text-white tracking-[-2.24px]">
-                    {month.name}
-                  </p>
-                  {month.hours && (
-                    <div className="flex items-center gap-2">
-                      <div className="relative shrink-0 w-5 h-5">
-                        <Image
-                          src="/figma-assets/timetables-clock.svg"
-                          alt=""
-                          fill
-                          className="object-contain"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <p className="font-['Manrope',sans-serif] text-base text-white leading-[normal]">
-                        {month.hours}
-                      </p>
-                    </div>
-                  )}
-                  <p className="font-['Manrope',sans-serif] text-[13px] leading-[1.4] text-[rgba(255,255,255,0.75)] tracking-[-0.42px]">
-                    {month.note}
-                  </p>
-                </div>
-              ))}
+            {/* Saturday rule + booking note */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div className="rounded-[16px] bg-white/10 border border-white/15 px-5 py-4">
+                <p className="font-['Manrope',sans-serif] text-[13px] leading-[1.5] text-white tracking-[-0.32px]">
+                  <strong>Samedi en juillet &amp; août :</strong> les départs Carnac Plage et La Trinité-sur-Mer suivent les horaires « orange » de basse saison.
+                </p>
+              </div>
+              <div className="rounded-[16px] bg-white/10 border border-white/15 px-5 py-4">
+                <p className="font-['Manrope',sans-serif] text-[13px] leading-[1.5] text-white tracking-[-0.32px]">
+                  <strong>Réservation en ligne :</strong> uniquement disponible pour le départ N°1 — Parking du Ménec.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Holidays & Off-season — standalone cream box */}
+        {/* Closures — standalone cream box */}
         <div data-anim-item className="rounded-[32px] border border-[rgba(0,0,0,0.1)] bg-[#f5ebdd] px-10 py-12 flex flex-col items-center gap-6 text-center">
-          {/* Heading */}
           <div className="flex items-center gap-4 w-full">
             <div className="flex-1 h-px bg-[rgba(0,0,0,0.12)]" />
             <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] italic text-[#4d1c64] text-[28px] tracking-[-1.5px] whitespace-nowrap">
-              Jours fériés &amp; Hors-saison
+              Jours fériés &amp; Fermetures
             </h2>
             <div className="flex-1 h-px bg-[rgba(0,0,0,0.12)]" />
           </div>
-          <p className="font-['Manrope',sans-serif] text-[#181d27] text-base leading-[normal] max-w-[476px]">
-            Les horaires des jours fériés sont identiques aux horaires habituels.
-            Le Petit Train fonctionne normalement tous les jours fériés d&apos;avril à début novembre.
+          <p className="font-['Manrope',sans-serif] text-[#181d27] text-base leading-[1.5] max-w-[560px]">
+            Les jours fériés suivent les horaires habituels.
+            Le Petit Train est <strong>fermé du 9 au 16 octobre</strong> ainsi que <strong>de novembre à mars inclus</strong>.
           </p>
         </div>
 

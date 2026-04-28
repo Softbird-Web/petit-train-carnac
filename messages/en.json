@@ -69,8 +69,8 @@
   },
   "metadata": {
     "home": {
-      "title": "Petit Train de Carnac Morbihan — Guided tour of Carnac and its menhirs",
-      "description": "Discover Carnac, its famous megaliths, its beaches and the harbour of La Trinité-sur-Mer aboard the Petit Train de Carnac. A 55-minute guided tour with multilingual audio commentary."
+      "title": "Le Petit Train de Carnac / Menhir Tour",
+      "description": "Megalith tour of Carnac aboard the Petit Train — 55-minute guided ride, multilingual audio commentary, beaches and the harbour of La Trinité-sur-Mer."
     },
     "prices": {
       "title": "Prices & Tickets",
@@ -217,7 +217,7 @@
       "rowChildren": "Children under 12",
       "individual": {
         "title": "Individual Tickets",
-        "note": "<strong>For individuals:</strong> meeting point is at the departure point; on-site ticket office."
+        "note": "<strong>For individuals:</strong> meeting point is at the departure point; on-site ticket office. <strong>Free:</strong> children under 3 and dogs."
       },
       "earlyBird": {
         "title": "Early-morning departures",
@@ -239,7 +239,8 @@
       "bullet3": "Individual visitors start and end the tour at the Ménec departure point",
       "bullet4": "The tour lasts about 55 minutes",
       "bullet5": "Audio commentary is available in several languages, including a children's version",
-      "bullet6": "The Petit Train runs in all weather"
+      "bullet6": "The Petit Train runs in all weather",
+      "bullet7": "Departure is guaranteed with at least 6 paying adults on board"
     },
     "features": {
       "label": "Tour Overview",
@@ -250,9 +251,9 @@
       "f1Title": "Comfortable sightseeing train",
       "f1Desc": "Discover the highlights of Carnac comfortably seated on board our sightseeing train, designed for visitors who want to explore effortlessly.",
       "f2Title": "Audio commentary in 16 languages — included",
-      "f2Desc": "Audio commentary is available in 16 languages, included in the ticket price. A children's version is available in French and English.",
+      "f2Desc": "Audio commentary is available in 16 languages with hygienic headphones provided, included in the ticket price. A children's audio version is also available.",
       "f3Title": "Discover Carnac's heritage and landscapes",
-      "f3Desc": "Visit the famous menhirs, the white-sand beaches and the port of La Trinité-sur-Mer in a single relaxed and scenic trip.",
+      "f3Desc": "Discover 47 commented points of interest: the Ménec, Kermario and Kerlescan menhir alignments, white-sand beaches and the harbour of La Trinité-sur-Mer in a single picturesque journey.",
       "f4Title": "Suitable for families, seniors and groups",
       "f4Desc": "Our train welcomes all ages and group sizes — no long walks, no effort, just a comfortable and enjoyable experience for everyone."
     },
@@ -315,7 +316,7 @@
       "item2Title": "Stop 2 — Carnac Plage (Pordro)",
       "item2Description": "Buy tickets on site from the driver, subject to availability.",
       "item3Title": "Stop 3 — La Trinité-sur-Mer",
-      "item3Description": "Courqué bus stop, sea side. Buy tickets on site from the driver, subject to availability.",
+      "item3Description": "Cours des Quais bus stop, sea side (before the Alain Barrière roundabout). Buy tickets on site from the driver, subject to availability.",
       "item4Title": "By car",
       "item4Description": "If you're coming by car, follow signs to Carnac and the Ménec car park. Parking is free.",
       "item5Title": "By train",

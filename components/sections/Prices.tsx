@@ -80,12 +80,7 @@ export default function Prices() {
           </div>
 
           {/* Bons Plans — Early-morning departures */}
-          <div className="bg-[#f5ebdd] border-2 border-[#4d1c64] flex flex-col w-full max-w-[371px] min-h-[317px] p-6 relative rounded-[16px] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
-            <div className="absolute top-0 right-0 bg-[#4d1c64] px-3 py-1">
-              <p className="font-['Manrope',sans-serif] text-white text-[11px] font-medium tracking-[0.5px] uppercase">
-                {t("earlyBird.badge")}
-              </p>
-            </div>
+          <div className="bg-[#f5ebdd] border-2 border-[#4d1c64] flex flex-col w-full max-w-[371px] min-h-[317px] p-6 rounded-[16px] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
             <div className="flex items-center gap-2.5 mb-3">
               <div className="relative shrink-0 w-6 h-6">
                 <Image src="/figma-assets/PurpleCashIcon.svg" alt="" fill className="object-contain" aria-hidden="true" />
@@ -94,6 +89,9 @@ export default function Prices() {
                 {t("earlyBird.title")}
               </p>
             </div>
+            <span className="inline-flex items-center self-start mb-3 px-2.5 py-1 rounded-full bg-[#4d1c64] font-['Manrope',sans-serif] text-white text-[11px] font-medium tracking-[0.5px] uppercase">
+              {t("earlyBird.badge")}
+            </span>
             <div className="border-b border-[rgba(0,0,0,0.15)] mb-2" />
             <div className="flex flex-col mt-2">
               {rowLabels.map((label, i) => (

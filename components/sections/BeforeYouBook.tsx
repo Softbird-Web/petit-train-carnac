@@ -10,6 +10,7 @@ export default function BeforeYouBook() {
     t('bullet4'),
     t('bullet5'),
     t('bullet6'),
+    t('bullet7'),
   ]
 
   return (

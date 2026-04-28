@@ -23,7 +23,7 @@ const itemConfig: Record<(typeof itemKeys)[number], { icon: string; mapsUrl: str
   },
   item3: {
     icon: "/figma-assets/icon-map-pin.svg",
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Arr%C3%AAt+Courqu%C3%A9+La+Trinit%C3%A9-sur-Mer+France",
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Cours+des+Quais+La+Trinit%C3%A9-sur-Mer+France",
   },
   item4: { icon: "/figma-assets/icon-car.svg", mapsUrl: null },
   item5: { icon: "/figma-assets/icon-train-sm.svg", mapsUrl: null },

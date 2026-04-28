@@ -10,13 +10,19 @@ type Photo = { src: string; width: number; height: number }
 // masonry actually looks varied even though all source images are 3:2.
 // object-fit: cover on the img crops to these aspects at render time.
 const GALLERY_PHOTOS: Photo[] = [
+  { src: '/figma-assets/gallery-12.jpg', width: 16, height: 9 },  // panorama — drone, train + menhirs (brand hero)
   { src: '/figma-assets/gallery-1.jpg', width: 3, height: 4 },    // portrait
+  { src: '/figma-assets/gallery-13.jpg', width: 1, height: 1 },   // square — dramatic fallen-menhir close-up
   { src: '/figma-assets/gallery-2.jpg', width: 3, height: 2 },    // landscape
+  { src: '/figma-assets/gallery-14.jpg', width: 3, height: 2 },   // landscape — train alongside menhir alignment
   { src: '/figma-assets/gallery-3.jpg', width: 1, height: 1 },    // square
+  { src: '/figma-assets/gallery-15.jpg', width: 3, height: 4 },   // portrait — aerial alignment cropped vertical
   { src: '/figma-assets/gallery-4.jpg', width: 4, height: 3 },    // landscape wide
   { src: '/figma-assets/gallery-5.jpg', width: 4, height: 5 },    // portrait
+  { src: '/figma-assets/gallery-16.jpg', width: 4, height: 3 },   // landscape — evening menhir vista
   { src: '/figma-assets/gallery-6.jpg', width: 3, height: 2 },    // landscape
   { src: '/figma-assets/gallery-7.jpg', width: 3, height: 4 },    // portrait
+  { src: '/figma-assets/gallery-17.jpg', width: 3, height: 2 },   // landscape — train + dolmen ground level
   { src: '/figma-assets/gallery-8.jpg', width: 1, height: 1 },    // square
   { src: '/figma-assets/gallery-9.jpg', width: 3, height: 2 },    // landscape
   { src: '/figma-assets/gallery-10.jpg', width: 4, height: 5 },   // portrait

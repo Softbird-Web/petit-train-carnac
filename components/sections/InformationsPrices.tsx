@@ -1,7 +1,10 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import TransitionLink from "@/components/ui/TransitionLink";
 
 export default function InformationsPrices() {
+  const t = useTranslations("sections.prices");
+
   return (
     <section data-anim-section className="bg-[#4d1c64] relative overflow-hidden py-20">
       {/* Faint background watermark */}
@@ -83,12 +86,7 @@ export default function InformationsPrices() {
           </div>
 
           {/* Bons Plans — Early morning departures */}
-          <div className="bg-[#f5ebdd] border-2 border-[#4d1c64] flex-1 p-6 flex flex-col gap-4 relative">
-            <div className="absolute top-0 right-0 bg-[#4d1c64] px-3 py-1">
-              <p className="font-['Manrope',sans-serif] text-white text-[11px] font-medium tracking-[0.5px] uppercase">
-                Great Deal
-              </p>
-            </div>
+          <div className="bg-[#f5ebdd] border-2 border-[#4d1c64] flex-1 p-6 flex flex-col gap-4">
             <div className="flex items-center gap-2 pb-4 border-b border-[rgba(0,0,0,0.15)]">
               <div className="relative shrink-0 w-6 h-6">
                 <Image src="/figma-assets/icon-ticket.svg" alt="" fill className="object-contain" aria-hidden="true" />
@@ -97,6 +95,9 @@ export default function InformationsPrices() {
                 Early Morning Departures
               </p>
             </div>
+            <span className="inline-flex items-center self-start px-2.5 py-1 rounded-full bg-[#4d1c64] font-['Manrope',sans-serif] text-white text-[11px] font-medium tracking-[0.5px] uppercase">
+              {t("earlyBird.badge")}
+            </span>
             <div className="flex flex-col gap-0">
               <div className="flex items-center justify-between py-2 border-b border-[rgba(0,0,0,0.15)]">
                 <span className="font-['Manrope',sans-serif] text-base text-[#232323]">Adults</span>

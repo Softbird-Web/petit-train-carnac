@@ -2,6 +2,18 @@
 
 ## Done
 
+- **QA round post-Maryannick call** (Apr 28, 2026) — live-site corrections driven by the 2026 flyer:
+  - **Schedule rewrite** (`components/sections/InformationsSchedule.tsx`): refactored from per-month list to a 3-departure × seasonal-band grid that mirrors the flyer. Le Ménec now correctly shows every 20 min (was 30), close time 17h30 in low season (was 18h00), plus the missing Oct 17-31 reduced schedule (10H–17H every 30 min) and Oct 9-16 closure. Carnac Plage low-season times: 10H15–17H15 every 30 min Saturdays included (was hourly with midday break). La Trinité low-season: 10H30–17H every 30 min Saturdays included (was 10h15–11h15 + 14h15–17h15 hourly). Jul/Aug schedules now show discrete departure-time slots and the Saturday-uses-orange-schedule rule. Closed period corrected to "novembre à mars + 9-16 octobre" (was "décembre à février" with November shown open). Color-coded period bands (yellow / purple / green for Le Ménec; orange / blue for the other two) match the flyer's swim-lanes. Saturday-rule and "online booking only at Le Ménec" notices added below the timetable.
+  - **Typo fix on live site**: "Arrêt de bus Courqué" → "Cours des Quais" (with "avant le rond-point Alain Barrière" qualifier). Updated `messages/{fr,en,es,de,it,nl}.json` `item3Description` + `components/sections/OurLocation.tsx` Google Maps URL.
+  - **Bons Plans badge** moved out of the card corner into an inline-flex pill directly below the "Premiers départs du matin" heading. Same fix applied on `Prices.tsx` (homepage + /prices) and `InformationsPrices.tsx` (/informations). Bonus: `InformationsPrices.tsx` had hardcoded English `"Great Deal"` — wired to `t("earlyBird.badge")` so it renders the localized label in all 6 locales.
+  - **Audioguides copy** (`sections.features.f2Desc` × 6 locales): dropped the "in French and English" tail (HDV Dricker is fixing the other languages) and added the flyer's "casques hygiéniques fournis" / "hygienic headphones provided".
+  - **47 commented points of interest** (`sections.features.f3Desc` × 6 locales): replaced the generic "menhirs, beaches, harbour" line with the flyer's number + named alignments (Ménec, Kermario, Kerlescan).
+  - **Free admission** (`sections.prices.individual.note` × 6 locales): appended "Gratuit : enfants de moins de 3 ans et chiens" / locale equivalents (rendered via `t.rich` so `<strong>` tags work).
+  - **Minimum-6-adults rule** added as `sections.beforeYouBook.bullet7` × 6 locales + wired into `BeforeYouBook.tsx`'s bullet list.
+  - **Homepage SEO**: title across all 6 locales now reads "Le Petit Train de Carnac / Menhir Tour"; descriptions rewritten to lead with "Visite des mégalithes" / "Megalith tour" / etc. so the keyword sits in the first ~100 chars.
+  - **Gallery**: added 6 new photos (`gallery-12`–`gallery-17.jpg`, all 273K–521K compressed) interleaved with deliberate aspect ratios for masonry stagger. `gallery-12` is `carnac-main.jpg` (drone-style brand hero, 16:9). Manifest updated.
+  - All 6 locale JSON files validate; `tsc --noEmit` 0 errors.
+
 - **i18n Phase 2** (Apr 25, 2026) — translated rendering across the homepage + every page's hero/metadata/breadcrumbs in all 6 locales (fr/en/es/de/it/nl):
   - Section components refactored to consume `useTranslations()` / `getTranslations()`: PracticalInfo, Prices, BeforeYouBook, Features, GroupBookingCTA, Locations, Reviews, BookingSection, Gallery, OurLocation, FAQ (default + faqs prop), InformationsIntro, InformationsCTA, FAQsHero
   - Pages migrated to async server components with `setRequestLocale` + `generateMetadata` + locale-aware breadcrumbs + Hero override translation: /prices (incl. FAQ data array), /routes, /book, /faqs, /careers, /informations, /privatisation
@@ -142,8 +154,10 @@
   - Widget verified rendering real booking UI (calendar, pricing, "Ajouter au panier", related offers)
 
 ## Next Steps
+- [ ] Gallery scrolling carousel / film strip (Maryannick request — post-launch, ~½ day dev per Alexandre)
 - [ ] Add `MAKE_PRIVATISATION_WEBHOOK_URL` to Vercel env vars + wire up Make scenario (privatisation form still custom)
 - [ ] All 7 pages complete ✅
 - [ ] Classify Regiondo cookies in cookie-consent banner (GDPR)
 - [ ] Cleanup: unused `index` in `Features.tsx:81` map callback; unused `reviews` array in `InformationsReviews.tsx`
 - [ ] Client: set up 301 redirects at `petittrain-morbihan.com` (see `docs/seo/migration-redirect-map.xlsx`)
+- [ ] Optional: translate `InformationsSchedule.tsx` (currently FR-only across all locales by design — moved to backlog)
