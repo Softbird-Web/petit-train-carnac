@@ -3,10 +3,10 @@ import { useTranslations } from "next-intl";
 import TransitionLink from "@/components/ui/TransitionLink";
 
 const cardKeys = ["duration", "departure", "schedule", "accessibility"] as const;
-const cardPhotos: Record<(typeof cardKeys)[number], { photo: string; icon: string }> = {
+const cardConfig: Record<(typeof cardKeys)[number], { photo: string; icon: string; href?: string }> = {
   duration: { photo: "/figma-assets/PracticalInfo1.jpg", icon: "/figma-assets/Icon01.svg" },
-  departure: { photo: "/figma-assets/PracticalInfo2.jpg", icon: "/figma-assets/Icon02.svg" },
-  schedule: { photo: "/figma-assets/PracticalInfo3.jpg", icon: "/figma-assets/Icon03.svg" },
+  departure: { photo: "/figma-assets/PricesHero.jpg", icon: "/figma-assets/Icon02.svg" },
+  schedule: { photo: "/figma-assets/PracticalInfo3.jpg", icon: "/figma-assets/Icon03.svg", href: "/informations#horaires" },
   accessibility: { photo: "/figma-assets/PracticalInfo4.jpg", icon: "/figma-assets/Icon04.svg" },
 };
 
@@ -44,9 +44,10 @@ export default function PracticalInfo() {
         <div data-anim-item className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {/* Row 1: 4 photo cards */}
           {cardKeys.map((key) => {
-            const { photo, icon } = cardPhotos[key];
-            return (
-              <div key={key} className="group relative h-[423px] rounded-xl overflow-hidden bg-[#4d1c64]">
+            const { photo, icon, href } = cardConfig[key];
+            const cardClassName = "group relative h-[423px] rounded-xl overflow-hidden bg-[#4d1c64]";
+            const cardContent = (
+              <>
                 <div
                   aria-hidden="true"
                   className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -72,6 +73,18 @@ export default function PracticalInfo() {
                     })}
                   </p>
                 </div>
+              </>
+            );
+            if (href) {
+              return (
+                <TransitionLink key={key} href={href} className={`${cardClassName} block`}>
+                  {cardContent}
+                </TransitionLink>
+              );
+            }
+            return (
+              <div key={key} className={cardClassName}>
+                {cardContent}
               </div>
             );
           })}

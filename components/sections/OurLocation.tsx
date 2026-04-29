@@ -19,11 +19,11 @@ const itemConfig: Record<(typeof itemKeys)[number], { icon: string; mapsUrl: str
   },
   item2: {
     icon: "/figma-assets/icon-map-pin.svg",
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Carnac+Plage+Pordro+Carnac+France",
+    mapsUrl: "https://maps.app.goo.gl/JzqVZr1pE5XGM28S9",
   },
   item3: {
     icon: "/figma-assets/icon-map-pin.svg",
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Cours+des+Quais+La+Trinit%C3%A9-sur-Mer+France",
+    mapsUrl: "https://maps.app.goo.gl/YCq38Se1CXBLyBLZ9",
   },
   item4: { icon: "/figma-assets/icon-car.svg", mapsUrl: null },
   item5: { icon: "/figma-assets/icon-train-sm.svg", mapsUrl: null },

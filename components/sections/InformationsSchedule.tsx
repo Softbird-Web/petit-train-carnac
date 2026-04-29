@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import ViewPlanButton from "@/components/ui/ViewPlanButton";
 
 type Band = "yellow" | "purple" | "green" | "orange" | "blue";
 
@@ -46,7 +47,7 @@ const departures: Departure[] = [
   },
   {
     number: 2,
-    name: "Carnac Plage — Port en Drô",
+    name: "Carnac Plage — Port-En-Drô",
     location: "À 50 m de la Base nautique",
     periods: [
       {
@@ -118,7 +119,7 @@ export default function InformationsSchedule() {
   const t = useTranslations("sections.informationsScheduleLabels");
 
   return (
-    <section data-anim-section className="bg-[#f5ebdd] py-20 overflow-hidden">
+    <section id="horaires" data-anim-section className="bg-[#f5ebdd] py-20 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-5 xl:px-0 flex flex-col gap-8">
 
         {/* Info cards — Operating period + Weather */}
@@ -269,13 +270,18 @@ export default function InformationsSchedule() {
               ))}
             </div>
 
-            {/* Saturday rule + booking note */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+            {/* Saturday rule + view plan + booking note */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
               <div className="rounded-[16px] bg-white/10 border border-white/15 px-5 py-4">
                 <p className="font-['Manrope',sans-serif] text-[13px] leading-[1.5] text-white tracking-[-0.32px]">
                   {t.rich("saturdayRule", { strong: (chunks) => <strong>{chunks}</strong> })}
                 </p>
               </div>
+              <ViewPlanButton
+                buttonLabel={t("viewPlanButton")}
+                imageAlt={t("viewPlanImageAlt")}
+                closeLabel={t("lightboxClose")}
+              />
               <div className="rounded-[16px] bg-white/10 border border-white/15 px-5 py-4">
                 <p className="font-['Manrope',sans-serif] text-[13px] leading-[1.5] text-white tracking-[-0.32px]">
                   {t.rich("onlineBookingNote", { strong: (chunks) => <strong>{chunks}</strong> })}

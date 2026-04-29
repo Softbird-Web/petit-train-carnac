@@ -46,7 +46,17 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
 
       // Listen for transition events from PageTransitionProvider
       const handleStop = () => lenis.stop()
-      const handleStart = () => lenis.start()
+      const handleStart = () => {
+        lenis.start()
+        // After transition completes, scroll to hash anchor if present in URL
+        requestAnimationFrame(() => {
+          const hash = window.location.hash
+          if (hash) {
+            const el = document.querySelector(hash)
+            if (el) lenis.scrollTo(el as HTMLElement, { offset: -80, duration: 1.2 })
+          }
+        })
+      }
       window.addEventListener('page-transition-stop', handleStop)
       window.addEventListener('page-transition-start', handleStart)
 

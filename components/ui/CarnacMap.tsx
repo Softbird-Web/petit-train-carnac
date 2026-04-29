@@ -12,7 +12,7 @@ const STOPS = [
   {
     lat: 47.5702020,
     lng: -3.0790797,
-    name: "Port en Drô",
+    name: "Port-En-Drô",
     detail: "Carnac Plage departure",
   },
   {
