@@ -33,7 +33,7 @@ function FaqItem({ question, answer, open, onToggle }: FaqItemProps) {
         className="w-full flex items-start justify-between gap-6 text-left cursor-pointer"
         aria-expanded={open ? "true" : "false"}
       >
-        <h3 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[20px] text-[#181d27] leading-[1.1] tracking-[-1.4px] m-0">
+        <h3 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[20px] text-[#181d27] leading-[1.2] tracking-[-1.4px] m-0">
           {question}
         </h3>
         <span
@@ -103,7 +103,7 @@ export default function FAQ({ faqs, label, heading, description }: FAQProps) {
               {resolvedLabel}
             </p>
           </div>
-          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] [text-wrap:balance] break-words">
+          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] leading-[1.2] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] [text-wrap:balance] break-words">
             {resolvedHeading}
           </h2>
           <p className="font-['Manrope',sans-serif] text-[#535862] text-[16px] leading-[1.2] tracking-[-0.48px]">

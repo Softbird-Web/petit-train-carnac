@@ -32,7 +32,7 @@ export default function BookingSection() {
 
           <h1
             data-anim-item
-            className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[36px] sm:text-[44px] md:text-[52px] xl:text-[60px] leading-[1.1] tracking-[-1.8px] sm:tracking-[-2.4px] md:tracking-[-3.2px] xl:tracking-[-4.2px] text-[#181d27] not-italic [text-wrap:balance] break-words"
+            className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[36px] sm:text-[44px] md:text-[52px] xl:text-[60px] leading-[1.2] tracking-[-1.8px] sm:tracking-[-2.4px] md:tracking-[-3.2px] xl:tracking-[-4.2px] text-[#181d27] not-italic [text-wrap:balance] break-words"
           >
             {t('headingPrefix')}{' '}
             <em className="italic text-[#54206d] not-[font-style:normal]">{t('headingHighlight')}</em>{' '}

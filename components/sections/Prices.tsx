@@ -36,7 +36,7 @@ export default function Prices() {
               {t("label")}
             </p>
           </div>
-          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#f5ebdd] leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[581px] w-full [text-wrap:balance] break-words">
+          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#f5ebdd] leading-[1.2] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[581px] w-full [text-wrap:balance] break-words">
             {t("heading")}
           </h2>
           <p className="font-['Manrope',sans-serif] text-[#f5ebdd] text-[16px] leading-[1.2] tracking-[-0.48px] max-w-[551px] w-full">

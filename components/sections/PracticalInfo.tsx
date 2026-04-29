@@ -32,7 +32,7 @@ export default function PracticalInfo() {
               {t("label")}
             </p>
           </div>
-          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] leading-[1.15] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[575px] w-full break-words">
+          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] leading-[1.2] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[575px] w-full break-words">
             {t("heading")}
           </h2>
           <p className="font-['Manrope',sans-serif] text-[18px] text-[#535862] leading-[1.2] tracking-[-0.54px]">

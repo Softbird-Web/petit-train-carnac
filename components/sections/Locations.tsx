@@ -31,7 +31,7 @@ export default function Locations() {
               {t("label")}
             </p>
           </div>
-          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] text-center leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[570px] [text-wrap:balance] break-words">
+          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] text-center leading-[1.2] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[570px] [text-wrap:balance] break-words">
             {t("heading")}
           </h2>
           <p className="font-['Manrope',sans-serif] text-[#535862] text-[16px] text-center leading-[1.2] tracking-[-0.48px] max-w-[600px] w-full">
@@ -71,7 +71,7 @@ export default function Locations() {
                   className="absolute inset-0 bg-[rgba(84,32,109,0.78)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-[cubic-bezier(0.625,0.05,0,1)] flex items-center justify-center"
                 >
                   <div className="flex flex-col items-center gap-3 translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-75 ease-[cubic-bezier(0.625,0.05,0,1)]">
-                    <p className="font-['Bricolage_Grotesque',sans-serif] text-white text-[40px] leading-[1.1] tracking-[-2px]">
+                    <p className="font-['Bricolage_Grotesque',sans-serif] text-white text-[40px] leading-[1.2] tracking-[-2px]">
                       {t("discover")}
                     </p>
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">

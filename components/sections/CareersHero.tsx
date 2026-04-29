@@ -46,7 +46,7 @@ export default async function CareersHero() {
             </div>
 
             {/* Heading */}
-            <h1 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[40px] sm:text-[48px] xl:text-[60px] text-[#181d27] leading-[1.1] tracking-[-3.36px] [text-wrap:balance]">
+            <h1 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[40px] sm:text-[48px] xl:text-[60px] text-[#181d27] leading-[1.2] tracking-[-3.36px] [text-wrap:balance]">
               {t('headingPrefix')}{' '}
               <em className="font-['Bricolage_Grotesque',sans-serif] italic text-[#54206d]">
                 Petit Train de Carnac

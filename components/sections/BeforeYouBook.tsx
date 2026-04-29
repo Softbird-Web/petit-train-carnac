@@ -18,7 +18,7 @@ export default function BeforeYouBook() {
       <div className="max-w-[1280px] mx-auto flex flex-col xl:flex-row gap-[64px] items-center">
         {/* Content */}
         <div data-anim-item className="flex-1 min-w-0 flex flex-col gap-6">
-          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[48px] xl:text-[60px] text-[#181d27] leading-[1.1] tracking-[-3.36px]">
+          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[48px] xl:text-[60px] text-[#181d27] leading-[1.2] tracking-[-3.36px]">
             {t('heading')}
           </h2>
 

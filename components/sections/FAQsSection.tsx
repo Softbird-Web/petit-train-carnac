@@ -46,7 +46,7 @@ function FaqItem({
         className="w-full flex items-start justify-between gap-6 text-left cursor-pointer group"
         aria-expanded={open}
       >
-        <h3 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[20px] text-[#181d27] leading-[1.1] tracking-[-1.4px] m-0">
+        <h3 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[20px] text-[#181d27] leading-[1.2] tracking-[-1.4px] m-0">
           {question}
         </h3>
         <span

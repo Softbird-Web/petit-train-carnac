@@ -32,7 +32,7 @@ export default function Reviews() {
             </p>
           </div>
 
-          <h2 data-anim-item className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[#f5ebdd] text-[32px] sm:text-[40px] md:text-[48px] text-center leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[410px] w-full [text-wrap:balance] break-words">
+          <h2 data-anim-item className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[#f5ebdd] text-[32px] sm:text-[40px] md:text-[48px] text-center leading-[1.2] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[410px] w-full [text-wrap:balance] break-words">
             {t("heading")}
           </h2>
 

@@ -23,7 +23,7 @@ export default function InformationsCTA() {
                 {t("label")}
               </p>
             </div>
-            <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[clamp(36px,4vw,48px)] leading-[1.15] tracking-[-3.36px] text-[#f5ebdd] max-w-[575px]">
+            <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[clamp(36px,4vw,48px)] leading-[1.2] tracking-[-3.36px] text-[#f5ebdd] max-w-[575px]">
               {t("heading")}
             </h2>
           </div>

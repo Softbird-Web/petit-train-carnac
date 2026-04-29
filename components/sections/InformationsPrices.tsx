@@ -36,7 +36,7 @@ export default function InformationsPrices() {
             </p>
           </div>
 
-          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[clamp(36px,4vw,48px)] leading-[1.1] tracking-[-3.36px] text-[#f5ebdd]">
+          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[clamp(36px,4vw,48px)] leading-[1.2] tracking-[-3.36px] text-[#f5ebdd]">
             An affordable adventure for the whole family
           </h2>
 

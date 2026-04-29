@@ -18,7 +18,7 @@ export default function InformationsIntro() {
 
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           <div data-anim-item className="lg:w-[559px] shrink-0">
-            <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[clamp(36px,4vw,48px)] leading-[1.1] tracking-[-3.36px] text-[#181d27]">
+            <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[clamp(36px,4vw,48px)] leading-[1.2] tracking-[-3.36px] text-[#181d27]">
               {t("heading")}
             </h2>
           </div>

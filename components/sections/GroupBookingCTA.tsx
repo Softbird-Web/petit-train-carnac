@@ -27,7 +27,7 @@ export default function GroupBookingCTA() {
               </p>
             </div>
 
-            <h2 data-anim="hero-title" className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] leading-[1.15] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] text-[#f5ebdd] not-italic break-words">
+            <h2 data-anim="hero-title" className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] leading-[1.2] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] text-[#f5ebdd] not-italic break-words">
               {t("heading")}
             </h2>
           </div>

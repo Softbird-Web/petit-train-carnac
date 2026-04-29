@@ -38,7 +38,7 @@ export default function InformationsHero({
           </div>
 
           {/* Heading */}
-          <h1 data-anim-item className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[clamp(36px,5vw,60px)] leading-[1.1] tracking-[-4.2px] text-[#181d27] break-words">
+          <h1 data-anim-item className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[clamp(36px,5vw,60px)] leading-[1.2] tracking-[-4.2px] text-[#181d27] break-words">
             {heading}
           </h1>
 

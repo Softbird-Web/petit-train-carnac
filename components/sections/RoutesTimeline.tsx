@@ -101,7 +101,7 @@ export default function RoutesTimeline() {
               {t("label")}
             </p>
           </div>
-          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] text-center leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[518px] [text-wrap:balance] break-words">
+          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] text-center leading-[1.2] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[518px] [text-wrap:balance] break-words">
             {t("headingPrefix")}{" "}
             <em className="text-[#4d1c64]">{t("headingHighlight")}</em>
           </h2>

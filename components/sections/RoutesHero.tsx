@@ -90,7 +90,7 @@ export default function RoutesHero({
         </div>
 
         {/* Heading */}
-        <Heading data-anim-item className="font-['Bricolage_Grotesque',sans-serif] text-[40px] sm:text-[48px] xl:text-[60px] text-[#181d27] leading-[1.1] tracking-[-3.36px] [text-wrap:balance]">
+        <Heading data-anim-item className="font-['Bricolage_Grotesque',sans-serif] text-[40px] sm:text-[48px] xl:text-[60px] text-[#181d27] leading-[1.2] tracking-[-3.36px] [text-wrap:balance]">
           {heading}
         </Heading>
 

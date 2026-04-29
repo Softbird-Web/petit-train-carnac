@@ -88,7 +88,7 @@ export default async function Hero({
     rightCard ?? (
       <div className="absolute bottom-[514px] lg:bottom-[30px] left-1/2 -translate-x-1/2 lg:left-auto lg:right-6 lg:translate-x-0 bg-[rgba(84,32,109,0.65)] border border-[rgba(255,255,255,0.2)] rounded-xl p-6 w-[499px] max-w-[calc(100%-32px)] flex flex-col gap-4 z-20">
         <div className="flex items-start justify-between gap-4">
-          <p className="font-['Manrope',sans-serif] font-semibold text-[20px] leading-[1.1] text-white tracking-[-0.8px] max-w-[312px]">
+          <p className="font-['Manrope',sans-serif] font-semibold text-[20px] leading-[1.2] text-white tracking-[-0.8px] max-w-[312px]">
             {t("rightCardHeading")}
           </p>
           <div className="relative h-[43px] w-[83px] shrink-0 overflow-hidden rounded">
@@ -142,7 +142,7 @@ export default async function Hero({
                 </div>
 
                 {/* Main heading */}
-                <h1 data-anim-item className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[36px] sm:text-[44px] md:text-[52px] lg:text-[60px] leading-[1.1] tracking-[-1.8px] sm:tracking-[-2.4px] md:tracking-[-3.2px] lg:tracking-[-4.2px] text-[#181d27] not-italic w-full break-words">
+                <h1 data-anim-item className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[36px] sm:text-[44px] md:text-[52px] lg:text-[60px] leading-[1.2] tracking-[-1.8px] sm:tracking-[-2.4px] md:tracking-[-3.2px] lg:tracking-[-4.2px] text-[#181d27] not-italic w-full break-words">
                   {resolvedHeading}
                 </h1>
 
@@ -256,7 +256,7 @@ export default async function Hero({
             <div className="flex flex-col lg:flex-row lg:items-start gap-8">
               {/* Heading */}
               <div className="lg:w-[559px] shrink-0">
-                <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] text-[#181d27] not-italic break-words">
+                <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] leading-[1.2] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] text-[#181d27] not-italic break-words">
                   {t("noteImportanteHeading")}
                 </h2>
               </div>

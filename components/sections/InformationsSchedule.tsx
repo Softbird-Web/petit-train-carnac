@@ -199,11 +199,11 @@ export default function InformationsSchedule() {
 
             {/* Heading */}
             <div className="flex items-center gap-4 pb-6 border-b border-[rgba(255,255,255,0.2)]">
-              <div className="flex-1 h-px bg-[rgba(255,255,255,0.35)]" />
-              <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] italic text-white text-[28px] tracking-[-1.5px] whitespace-nowrap">
+              <div className="hidden sm:flex flex-1 h-px bg-[rgba(255,255,255,0.35)]" />
+              <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] italic text-white text-[28px] tracking-[-1.5px] text-center w-full sm:w-auto">
                 {t("timetableHeading")}
               </h2>
-              <div className="flex-1 h-px bg-[rgba(255,255,255,0.35)]" />
+              <div className="hidden sm:flex flex-1 h-px bg-[rgba(255,255,255,0.35)]" />
             </div>
 
             {/* 3 departure panels */}
@@ -216,7 +216,7 @@ export default function InformationsSchedule() {
                       {dep.number}
                     </div>
                     <div className="flex flex-col gap-1">
-                      <p className="font-['Bricolage_Grotesque',sans-serif] italic text-white text-[22px] leading-[1.1] tracking-[-1.2px]">
+                      <p className="font-['Bricolage_Grotesque',sans-serif] italic text-white text-[22px] leading-[1.2] tracking-[-1.2px]">
                         {t("departurePrefix")} {dep.name}
                       </p>
                       <p className="font-['Manrope',sans-serif] text-[13px] leading-[1.4] text-[rgba(255,255,255,0.7)] tracking-[-0.32px]">
@@ -292,13 +292,13 @@ export default function InformationsSchedule() {
         </div>
 
         {/* Closures — standalone cream box */}
-        <div data-anim-item className="rounded-[32px] border border-[rgba(0,0,0,0.1)] bg-[#f5ebdd] px-10 py-12 flex flex-col items-center gap-6 text-center">
+        <div data-anim-item className="rounded-[32px] border border-[rgba(0,0,0,0.1)] bg-[#f5ebdd] px-5 py-8 sm:px-10 sm:py-12 flex flex-col items-center gap-6 text-center">
           <div className="flex items-center gap-4 w-full">
-            <div className="flex-1 h-px bg-[rgba(0,0,0,0.12)]" />
-            <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] italic text-[#4d1c64] text-[28px] tracking-[-1.5px] whitespace-nowrap">
+            <div className="hidden sm:flex flex-1 h-px bg-[rgba(0,0,0,0.12)]" />
+            <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] italic text-[#4d1c64] text-[28px] tracking-[-1.5px] text-center w-full sm:w-auto">
               {t("closuresHeading")}
             </h2>
-            <div className="flex-1 h-px bg-[rgba(0,0,0,0.12)]" />
+            <div className="hidden sm:flex flex-1 h-px bg-[rgba(0,0,0,0.12)]" />
           </div>
           <p className="font-['Manrope',sans-serif] text-[#181d27] text-base leading-[1.5] max-w-[560px]">
             {t.rich("closuresBody", { strong: (chunks) => <strong>{chunks}</strong> })}

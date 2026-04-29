@@ -51,7 +51,7 @@ export default function OurLocation() {
             </p>
           </div>
 
-          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] leading-[1.1] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[472px] break-words">
+          <h2 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[32px] sm:text-[40px] md:text-[48px] text-[#181d27] leading-[1.2] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-3.36px] max-w-[472px] break-words">
             {t("heading")}
           </h2>
 
@@ -73,7 +73,7 @@ export default function OurLocation() {
                   </div>
 
                   <div className="flex flex-col gap-2 pt-2.5 flex-1">
-                    <p className="font-['Bricolage_Grotesque',sans-serif] text-[24px] text-[#181d27] leading-[1.1] tracking-[-1.68px]">
+                    <p className="font-['Bricolage_Grotesque',sans-serif] text-[24px] text-[#181d27] leading-[1.2] tracking-[-1.68px]">
                       {t(`${key}Title`)}
                     </p>
                     <p className="font-['Manrope',sans-serif] text-[#535862] text-base leading-6">

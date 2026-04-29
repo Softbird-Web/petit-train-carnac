@@ -223,26 +223,17 @@ export default function ReviewsSlider() {
         })
       }
 
-      function blurIn() {
-        gsap.to(track, { filter: 'blur(2px)', duration: 0.1, ease: 'power1.in', overwrite: 'auto' })
-      }
-      function blurOut() {
-        gsap.to(track, { filter: 'blur(0px)', duration: 0.2, ease: 'power2.out', overwrite: 'auto' })
-      }
-
       controls.forEach(btn => {
         const dir = btn.getAttribute('data-gsap-slider-control')
         btn.addEventListener('click', () => {
           if (btn.disabled) return
           const delta = dir === 'next' ? 1 : -1
           const target = activeIndex + delta
-          blurIn()
           gsap.to(track, {
             duration: 0.75,
             x: snapPoints[target],
             ease: 'expo.out',
             onUpdate: () => updateStatus(gsap.getProperty(track, 'x') as number),
-            onComplete: blurOut,
           })
         })
       })
@@ -257,10 +248,10 @@ export default function ReviewsSlider() {
         minDuration: 0.4,
         edgeResistance: 0.85,
         snap: { x: snapPoints },
-        onPress() { track.setAttribute('data-gsap-slider-list-status', 'grabbing'); collectionRect = collection!.getBoundingClientRect(); blurIn() },
+        onPress() { track.setAttribute('data-gsap-slider-list-status', 'grabbing'); collectionRect = collection!.getBoundingClientRect() },
         onDrag() { setX(this.x); updateStatus(this.x) },
         onThrowUpdate() { setX(this.x); updateStatus(this.x) },
-        onThrowComplete() { setX(this.endX); updateStatus(this.endX); track.setAttribute('data-gsap-slider-list-status', 'grab'); blurOut() },
+        onThrowComplete() { setX(this.endX); updateStatus(this.endX); track.setAttribute('data-gsap-slider-list-status', 'grab') },
         onRelease() { setX(this.x); updateStatus(this.x); track.setAttribute('data-gsap-slider-list-status', 'grab') },
       })[0]
 

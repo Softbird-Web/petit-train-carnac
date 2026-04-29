@@ -44,7 +44,7 @@ export default function Footer() {
         <div className="relative z-10 w-full max-w-[1280px] mx-auto px-5 xl:px-0 py-16">
           <div className="flex flex-col lg:flex-row gap-8 items-start">
             <div className="flex flex-col gap-8 max-w-[570px]">
-              <p className="font-['Bricolage_Grotesque',sans-serif] text-[#f5ebdd] text-[28px] sm:text-[34px] md:text-[40px] leading-[1.15] tracking-[-1.3px] sm:tracking-[-2px] md:tracking-[-2.8px] break-words">
+              <p className="font-['Bricolage_Grotesque',sans-serif] text-[#f5ebdd] text-[28px] sm:text-[34px] md:text-[40px] leading-[1.2] tracking-[-1.3px] sm:tracking-[-2px] md:tracking-[-2.8px] break-words">
                 {t("footer.ctaHeading")}
               </p>
               <div className="flex flex-col gap-8 items-start">
