@@ -70,7 +70,9 @@ export default function Gallery() {
   const cleanupRef = useRef<(() => void) | null>(null)
   const isMobile = useSyncExternalStore(subscribeMobile, getMobileSnapshot, getMobileServerSnapshot)
   const numColumns = isMobile ? 2 : 3
-  const columns = distribute(GALLERY_PHOTOS, numColumns)
+  const columns = isMobile
+    ? GALLERY_PHOTOS.reduce<Photo[][]>((cols, p, i) => { cols[i % 2].push(p); return cols }, [[], []])
+    : distribute(GALLERY_PHOTOS, numColumns)
   const flatPhotos = columns.flat()
 
   useEffect(() => {
