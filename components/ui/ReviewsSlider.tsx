@@ -225,7 +225,7 @@ export default function ReviewsSlider() {
 
       controls.forEach(btn => {
         const dir = btn.getAttribute('data-gsap-slider-control')
-        btn.addEventListener('click', () => {
+        btn.onclick = () => {
           if (btn.disabled) return
           const delta = dir === 'next' ? 1 : -1
           const target = activeIndex + delta
@@ -233,9 +233,11 @@ export default function ReviewsSlider() {
             duration: 0.75,
             x: snapPoints[target],
             ease: 'expo.out',
+            overwrite: true,
             onUpdate: () => updateStatus(gsap.getProperty(track, 'x') as number),
+            onComplete: () => updateStatus(snapPoints[target]),
           })
-        })
+        }
       })
 
       draggableRef.current = Draggable.create(track, {
