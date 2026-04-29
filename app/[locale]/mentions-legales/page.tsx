@@ -11,7 +11,7 @@ export default function MentionsLegalesPage() {
       {/* Hero */}
       <section className="bg-[#54206d] py-16 xl:py-24 px-5 xl:px-[64px]">
         <div className="max-w-[1312px] mx-auto">
-          <h1 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[40px] sm:text-[52px] xl:text-[64px] text-[#f5ebdd] leading-[1.1] tracking-[-3.36px]">
+          <h1 className="font-normal font-['Bricolage_Grotesque',sans-serif] text-[40px] sm:text-[52px] xl:text-[64px] text-[#f5ebdd] leading-[1.2] tracking-[-3.36px]">
             Mentions Légales
           </h1>
         </div>

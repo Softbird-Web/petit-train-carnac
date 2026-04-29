@@ -47,7 +47,9 @@ export default function LanguageDropdown({ variant = 'banner' }: LanguageDropdow
       ? 'inline-flex items-center gap-1.5 px-2.5 h-7 rounded-md text-[#f5ebdd] hover:bg-[rgba(245,235,221,0.12)] font-["Manrope",sans-serif] text-[12px] md:text-sm font-medium tracking-[-0.42px] transition-colors duration-200'
       : 'inline-flex items-center gap-1.5 px-3 h-9 rounded-md bg-[rgba(245,235,221,0.1)] hover:bg-[rgba(245,235,221,0.2)] text-[#f5ebdd] font-["Manrope",sans-serif] text-sm font-medium tracking-[-0.42px] transition-colors duration-200'
 
-  const panelAlign = variant === 'banner' ? 'right-0' : 'left-0'
+  const panelAlign    = variant === 'banner' ? 'right-0'       : 'left-0'
+  const panelPosition = variant === 'mobile' ? 'bottom-full mb-2' : 'top-full mt-2'
+  const panelOrigin   = variant === 'mobile' ? 'origin-bottom' : 'origin-top'
 
   return (
     <div ref={ref} className="relative">
@@ -80,12 +82,12 @@ export default function LanguageDropdown({ variant = 'banner' }: LanguageDropdow
       <AnimatePresence>
         {open && (
           <motion.ul
-            initial={{ opacity: 0, y: -8, scale: 0.96 }}
+            initial={{ opacity: 0, y: variant === 'mobile' ? 8 : -8, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -6, scale: 0.97 }}
+            exit={{ opacity: 0, y: variant === 'mobile' ? 6 : -6, scale: 0.97 }}
             transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
             role="listbox"
-            className={`absolute ${panelAlign} top-full mt-2 min-w-[192px] py-1.5 rounded-lg bg-white shadow-[0_8px_32px_rgba(0,0,0,0.18)] ring-1 ring-black/5 origin-top z-50`}
+            className={`absolute ${panelAlign} ${panelPosition} min-w-[192px] py-1.5 rounded-lg bg-white shadow-[0_8px_32px_rgba(0,0,0,0.18)] ring-1 ring-black/5 ${panelOrigin} z-50`}
           >
             {routing.locales.map((l) => {
               const active = l === locale

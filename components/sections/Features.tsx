@@ -44,7 +44,7 @@ export default function Features() {
       <div className="w-full max-w-[1280px] mx-auto px-5 xl:px-0 flex flex-col lg:flex-row items-stretch gap-12">
         {/* Left: 2×2 feature grid */}
         <div data-anim-item className="flex-1">
-          <div className="grid grid-cols-2 gap-x-8 gap-y-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
             {featureKeys.map((key) => (
               <div key={key} className="flex flex-col gap-5 items-start h-full">
                 {/* Icon box */}

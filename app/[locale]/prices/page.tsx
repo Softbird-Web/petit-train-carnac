@@ -28,7 +28,7 @@ export default async function PricesPage({ params }: PageProps) {
   const pricesRightCard = (
     <div className="absolute bottom-[514px] lg:bottom-[30px] left-1/2 -translate-x-1/2 lg:left-[189px] lg:translate-x-0 bg-[rgba(84,32,109,0.65)] border border-[rgba(255,255,255,0.2)] rounded-xl p-6 w-[499px] max-w-[calc(100%-32px)] flex flex-col gap-4 z-20">
       <div className="flex items-start justify-between gap-4">
-        <p className="font-['Manrope',sans-serif] font-semibold text-[20px] leading-[1.1] text-white tracking-[-0.8px] max-w-[312px]">
+        <p className="font-['Manrope',sans-serif] font-semibold text-[20px] leading-[1.2] text-white tracking-[-0.8px] max-w-[312px]">
           {t("pages.prices.reviewQuote")}
         </p>
         <div className="relative h-[43px] w-[76px] shrink-0">

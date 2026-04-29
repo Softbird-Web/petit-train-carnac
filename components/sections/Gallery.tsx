@@ -389,7 +389,7 @@ export default function Gallery() {
                     key={photo.src}
                     data-lightbox="trigger-parent"
                     className="gallery-grid__item"
-                    style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
+                    style={{ aspectRatio: isMobile ? '4/3' : `${photo.width} / ${photo.height}` }}
                   >
                     <button data-lightbox="trigger" className="gallery-item__button" aria-label={t('expandImage', { n: ci * 10 + i + 1 })}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
