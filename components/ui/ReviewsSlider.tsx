@@ -308,8 +308,8 @@ export default function ReviewsSlider() {
         </div>
       </div>
 
-      {/* Arrow controls — right-aligned */}
-      <div data-gsap-slider-controls="" className="flex justify-end gap-2 px-[5%]">
+      {/* Arrow controls — right-aligned, desktop only */}
+      <div data-gsap-slider-controls="" className="hidden md:flex justify-end gap-2 px-[5%]">
         <button
           data-gsap-slider-control="prev"
           aria-label={t('prevAriaLabel')}
