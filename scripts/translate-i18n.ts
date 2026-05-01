@@ -23,7 +23,7 @@ const ROOT = join(__dirname, '..')
 const MESSAGES_DIR = join(ROOT, 'messages')
 const META_PATH = join(MESSAGES_DIR, '.translation-meta.json')
 const SOURCE_LOCALE = 'fr'
-const ALL_TARGETS = ['en', 'es', 'de', 'it', 'nl'] as const
+const ALL_TARGETS = ['en', 'es', 'de', 'it', 'nl', 'cs'] as const
 
 type Locale = (typeof ALL_TARGETS)[number]
 type FlatMap = Record<string, string>
@@ -34,6 +34,7 @@ const LOCALE_NAMES: Record<Locale, string> = {
   de: 'German',
   it: 'Italian',
   nl: 'Dutch',
+  cs: 'Czech',
 }
 
 function flatten(obj: unknown, prefix = '', out: FlatMap = {}): FlatMap {

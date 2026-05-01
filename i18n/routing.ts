@@ -1,7 +1,7 @@
 import { defineRouting } from 'next-intl/routing'
 
 export const routing = defineRouting({
-  locales: ['fr', 'en', 'es', 'de', 'it', 'nl'],
+  locales: ['fr', 'en', 'es', 'de', 'it', 'nl', 'cs'],
   defaultLocale: 'fr',
   localePrefix: 'as-needed',
 })
@@ -15,4 +15,5 @@ export const localeLabels: Record<Locale, { native: string; flag: string }> = {
   de: { native: 'Deutsch', flag: '🇩🇪' },
   it: { native: 'Italiano', flag: '🇮🇹' },
   nl: { native: 'Nederlands', flag: '🇳🇱' },
+  cs: { native: 'Čeština', flag: '🇨🇿' },
 }
