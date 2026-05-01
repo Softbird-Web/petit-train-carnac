@@ -112,7 +112,7 @@ Client's existing booking provider. We don't want to reinvent booking; they have
 
 ## i18n with next-intl 4 — architecture
 
-**Locales:** `fr` (default, no URL prefix), `en`, `es`, `de`, `it`, `nl` (prefixed at `/{locale}/...`). Configured via `localePrefix: 'as-needed'` in `i18n/routing.ts`.
+**Locales:** `fr` (default, no URL prefix), `en`, `es`, `de`, `it`, `nl`, `cs` (prefixed at `/{locale}/...`). Configured via `localePrefix: 'as-needed'` in `i18n/routing.ts`.
 
 **Why next-intl over alternatives:**
 - First-class App Router + Server Components support (next-i18next is Pages Router only)
@@ -151,7 +151,7 @@ app/
   globals.css       ← stays at app/ root
 messages/
   fr.json           ← canonical source of truth
-  en/es/de/it/nl.json
+  en/es/de/it/nl/cs.json
   .translation-meta.json   ← auto-managed by scripts/translate-i18n.ts
 ```
 

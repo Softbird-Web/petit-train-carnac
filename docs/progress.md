@@ -179,3 +179,10 @@
 - [ ] Cleanup: unused `index` in `Features.tsx:81` map callback; unused `reviews` array in `InformationsReviews.tsx`
 - [ ] Client: set up 301 redirects at `petittrain-morbihan.com` (see `docs/seo/migration-redirect-map.xlsx`)
 - [ ] Optional: translate `InformationsSchedule.tsx` (currently FR-only across all locales by design — moved to backlog)
+
+- **Czech (cs) language added** (May 1, 2026):
+  - Added `cs` locale to `i18n/routing.ts` — `locales` array + `localeLabels` (`Čeština` / 🇨🇿)
+  - Added `cs` / `Czech` to `scripts/translate-i18n.ts` `ALL_TARGETS` + `LOCALE_NAMES`
+  - Created `messages/cs.json` — 405 keys manually translated to Czech
+  - Site now supports 7 languages: fr, en, es, de, it, nl, cs
+  - Live at `/cs` on lepetittraindecarnac.fr

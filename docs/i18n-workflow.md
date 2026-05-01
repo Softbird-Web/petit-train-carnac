@@ -8,7 +8,7 @@
 ANTHROPIC_API_KEY=sk-ant-... npm run translate
 ```
 
-The script translates only the keys that changed since the last run, in all 5 target locales (en, es, de, it, nl). Anything missing falls back to French at runtime so the site never breaks.
+The script translates only the keys that changed since the last run, in all 6 target locales (en, es, de, it, nl, cs). Anything missing falls back to French at runtime so the site never breaks.
 
 ---
 
@@ -27,6 +27,7 @@ messages/
   de.json
   it.json
   nl.json
+  cs.json
   .translation-meta.json   ← auto-managed; tracks source key hashes
 
 proxy.ts            ← next-intl middleware (Next 16 calls it proxy.ts)
@@ -45,6 +46,7 @@ scripts/translate-i18n.ts  ← AI sync script
 | `de` | `/de/prices` |
 | `it` | `/it/prices` |
 | `nl` | `/nl/prices` |
+| `cs` | `/cs/prices` |
 
 The language dropdown (top-right of the announcement banner) calls `router.replace(pathname, { locale })` to swap locales while staying on the same logical page.
 
