@@ -501,6 +501,7 @@
       "eventTypePlaceholder": "Bedrijfsevenement, verenigingsbezoek, schoolgroep, familieevenement, privétour…",
       "departureLocationLabel": "Gewenste vertreklocatie*",
       "departureLocationAriaLabel": "Gewenste vertreklocatie",
+      "departureLocationPlaceholder": "Selecteer...",
       "departureTimeLabel": "Gewenste vertrektijd*",
       "departureTimeAriaLabel": "Gewenste vertrektijd",
       "eventDateLabel": "Datum van uw evenement",

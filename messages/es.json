@@ -501,6 +501,7 @@
       "eventTypePlaceholder": "Evento corporativo, visita de asociación, grupo escolar, evento familiar, visita privada…",
       "departureLocationLabel": "Lugar de salida preferido*",
       "departureLocationAriaLabel": "Lugar de salida preferido",
+      "departureLocationPlaceholder": "Por favor selecciona...",
       "departureTimeLabel": "Hora de salida preferida*",
       "departureTimeAriaLabel": "Hora de salida preferida",
       "eventDateLabel": "Fecha del evento",

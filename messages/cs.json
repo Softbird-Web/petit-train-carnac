@@ -501,6 +501,7 @@
       "eventTypePlaceholder": "Firemní akce, spolková návštěva, školní skupina, rodinná akce, soukromý výlet…",
       "departureLocationLabel": "Požadované místo odjezdu*",
       "departureLocationAriaLabel": "Požadované místo odjezdu",
+      "departureLocationPlaceholder": "Prosím vyberte...",
       "departureTimeLabel": "Požadovaný čas odjezdu*",
       "departureTimeAriaLabel": "Požadovaný čas odjezdu",
       "eventDateLabel": "Datum vaší akce",

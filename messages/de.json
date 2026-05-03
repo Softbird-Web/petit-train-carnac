@@ -501,6 +501,7 @@
       "eventTypePlaceholder": "Firmenveranstaltung, Vereinsbesuch, Schulgruppe, Familienveranstaltung, Privatführung…",
       "departureLocationLabel": "Gewünschter Abfahrtsort*",
       "departureLocationAriaLabel": "Gewünschter Abfahrtsort",
+      "departureLocationPlaceholder": "Bitte auswählen...",
       "departureTimeLabel": "Gewünschte Abfahrtszeit*",
       "departureTimeAriaLabel": "Gewünschte Abfahrtszeit",
       "eventDateLabel": "Datum Ihrer Veranstaltung",

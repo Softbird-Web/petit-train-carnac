@@ -215,7 +215,7 @@ export default function PrivatisationHero() {
                     onChange={set('departureLocation')}
                     className={selectClass}
                   >
-                    <option value="" disabled>Ménec car park, Carnac</option>
+                    <option value="" disabled>{t('departureLocationPlaceholder')}</option>
                     <option value="menec">Ménec car park, Carnac</option>
                     <option value="kermario">Kermario car park</option>
                     <option value="carnac-ville">Carnac centre</option>
